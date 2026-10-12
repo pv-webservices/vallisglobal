@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
+import {business} from '../data/catalogue';
+---
+<section class="cta-band on-dark" aria-labelledby="cta-title">
+ <ResponsiveImage src="/images/hero/navy-marble.webp" sizes="100vw" alt="" width="1672" height="941" loading="lazy"/>
+ <div class="container cta-inner">
+  <div data-reveal>
+   <span class="eyebrow">Your next project starts here</span>
+   <h2 id="cta-title">Let’s build better spaces <em>together.</em></h2>
+   <p class="lead">Get product details, expert consultation or a customised quote for your next project.</p>
+   <div class="btn-row"><a class="btn" href="/contact/#enquiry">Request a Quote <Icon name="arrow" size={16}/></a><a class="btn btn--ghost" href="/products/">Explore Products <Icon name="arrow" size={16}/></a></div>
+  </div>
+  <div class="cta-contacts" data-reveal style="--i:2">
+   <a class="cta-contact" href={`tel:${business.tel}`}><Icon name="phone" size={24}/><div><small>Call us today</small><span>{business.phone}</span></div><Icon name="arrowUpRight" size={20}/></a>
+   <a class="cta-contact" href={`mailto:${business.email}`}><Icon name="mail" size={24}/><div><small>Drop us an email</small><span>{business.email}</span></div><Icon name="arrowUpRight" size={20}/></a>
+   <a class="cta-contact" href={business.whatsapp} target="_blank" rel="noopener"><Icon name="whatsapp" size={24}/><div><small>Chat on WhatsApp</small><span>Message our team<span class="sr-only"> (opens in a new tab)</span></span></div><Icon name="arrowUpRight" size={20}/></a>
+  </div>
+ </div>
+</section>

@@ -1,0 +1,49 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import ResponsiveImage from '../../../components/ResponsiveImage.astro';
+import Icon from '../../../components/Icon.astro';
+import {categories,products,enquiryUrl,isPhoto} from '../../../data/catalogue';
+export function getStaticPaths(){return categories.map(category=>({params:{category:category.slug},props:{category}}));}
+const {category:c}=Astro.props;
+const selected=products.filter(p=>p.category===c.slug);
+const [lead,...rest]=c.intro.split('. ');
+const detail=rest.join('. ')||c.intro;
+const suited=c.applications.map(a=>a.toLowerCase()).join(', ').replace(/, ([^,]*)$/,' and $1');
+---
+<Layout title={c.name} description={`${c.intro} Explore genuine models and enquire with BUILDMART INDIA in Gurugram.`} preload={c.scene}>
+ <PageHero label={`Collection ${c.number} · BUILDMART INDIA`} title={c.name} description={detail} image={c.scene} alt={`${c.name} application setting`} crumbs={[{label:'Products',href:'/products/'},{label:c.name}]}>
+  <a class="btn" href={enquiryUrl(undefined,c)}>Discuss this collection <Icon name="arrow" size={16}/></a>
+ </PageHero>
+
+ <section class="section">
+  <div class="container">
+   <div class="category-intro">
+    <div>
+     <span class="eyebrow" data-reveal>Form meets function</span>
+     <h2 data-reveal style="--i:1">{lead.replace(/\.$/,'')}<em>.</em></h2>
+     <p class="lead" data-reveal style="--i:2">Suited to {suited}. Each model page lists its catalogue specifications so you can shortlist with confidence before requesting a quotation.</p>
+     <div class="tags" data-reveal style="--i:3">{c.applications.map(a=><span>{a}</span>)}</div>
+    </div>
+    <aside class="note-card" data-reveal style="--i:2">
+     <span class="eyebrow">Select with confidence</span>
+     <h3>Details make the difference.</h3>
+     <p style="margin-top:16px">{c.considerations}</p>
+     <p>Share your drawings, product preference and required quantities when requesting a quotation. Availability and final specifications will be confirmed for your project.</p>
+     <a class="btn" href={enquiryUrl(undefined,c)}>Request a quotation <Icon name="arrow" size={16}/></a>
+    </aside>
+   </div>
+   <div class="collection-head"><div><span class="eyebrow">The collection</span><h2>{c.name}</h2></div><span class="result-count">{selected.length} selected models</span></div>
+   <div class="product-grid">{selected.map(p=><ProductCard product={p}/>)}</div>
+   {c.slug==='glass-railings'&&<div class="note-card" style="margin-top:48px"><span class="eyebrow">MRW catalogue</span><h3>Railing possibilities.</h3><p style="margin-top:16px">The application imagery on this page comes from the supplied MRW catalogue. The individually listed spigots are identified using their VALLIS catalogue model codes.</p><a class="link-arrow" href="/railings pdf.pdf" target="_blank" rel="noopener">Explore the MRW railing catalogue <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></div>}
+  </div>
+ </section>
+
+ <section class="section on-dark">
+  <div class="container">
+   <div class="section-head"><div data-reveal><span class="eyebrow">Explore further</span><h2>The details belong <em>together.</em></h2></div><p class="lead" data-reveal style="--i:1">Complete the specification with hardware from our other collections.</p></div>
+   <div class="other-collections">{categories.filter(o=>o.slug!==c.slug).map((o,i)=><a href={`/products/${o.slug}/`} data-reveal style={`--i:${i%4}`}><ResponsiveImage class={isPhoto(o.image)?'is-photo':undefined} src={o.image} sizes="64px" alt="" width="64" height="64" loading="lazy"/><b>{o.name}</b><Icon name="arrow" size={18}/></a>)}</div>
+  </div>
+ </section>
+</Layout>

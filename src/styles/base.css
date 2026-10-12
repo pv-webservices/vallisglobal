@@ -1,0 +1,332 @@
+/* BUILDMART INDIA — design tokens, base elements and typography */
+:root {
+  --navy-950: #030d1a;
+  --navy-900: #061d36;
+  --navy-800: #0b2846;
+  --navy-700: #14385d;
+  --gold: #c4a05c;
+  --gold-light: #e4cd9c;
+  --gold-deep: #94733a;
+  --ivory: #f7f3ec;
+  --paper: #fcfaf6;
+  --stone: #ebe4d7;
+  --ink: #0c1a2c;
+  --muted: #5d6876;
+  --muted-light: rgba(247, 243, 236, 0.72);
+  --line: rgba(12, 26, 44, 0.12);
+  --line-strong: rgba(12, 26, 44, 0.22);
+  --line-light: rgba(247, 243, 236, 0.16);
+  --line-gold: rgba(196, 160, 92, 0.42);
+
+  --serif: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --gutter: clamp(20px, 5vw, 88px);
+  --wide: 1600px;
+  --narrow: 1180px;
+  --section: clamp(84px, 10vw, 168px);
+  --header-h: 88px;
+
+  --r-sm: 2px;
+  --r-md: 6px;
+  --shadow-soft: 0 24px 60px -32px rgba(3, 13, 26, 0.45);
+  --shadow-lift: 0 36px 80px -36px rgba(3, 13, 26, 0.6);
+
+  --ease: cubic-bezier(0.22, 0.61, 0.24, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur: 0.5s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 24px);
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+body.menu-open {
+  overflow: hidden;
+}
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+img {
+  height: auto;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+::selection {
+  background: var(--gold);
+  color: var(--navy-950);
+}
+[hidden] {
+  display: none !important;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.012em;
+  margin: 0;
+  text-wrap: balance;
+}
+h1 {
+  font-size: clamp(2.9rem, 7.2vw, 7rem);
+  line-height: 0.96;
+}
+h2 {
+  font-size: clamp(2.3rem, 4.6vw, 4.4rem);
+}
+h3 {
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  line-height: 1.12;
+}
+p {
+  margin: 0 0 1.1em;
+  text-wrap: pretty;
+}
+em,
+.italic {
+  font-style: italic;
+}
+h1 em,
+h2 em {
+  color: var(--gold);
+  font-weight: 500;
+}
+.on-dark h1 em,
+.on-dark h2 em {
+  color: var(--gold-light);
+}
+.lead {
+  font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 58ch;
+}
+.on-dark .lead {
+  color: var(--muted-light);
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 22px;
+}
+.eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.8;
+}
+.on-dark .eyebrow {
+  color: var(--gold);
+}
+.eyebrow.plain::before {
+  display: none;
+}
+.muted {
+  color: var(--muted);
+}
+.on-dark .muted {
+  color: var(--muted-light);
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 1000;
+  background: var(--gold);
+  color: var(--navy-950);
+  padding: 12px 18px;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Layout primitives */
+.container {
+  width: min(100% - 2 * var(--gutter), var(--wide));
+  margin-inline: auto;
+}
+.container.narrow {
+  width: min(100% - 2 * var(--gutter), var(--narrow));
+}
+.section {
+  padding-block: var(--section);
+  position: relative;
+}
+.section.tight {
+  padding-block: calc(var(--section) * 0.62);
+}
+.on-dark {
+  background: var(--navy-900);
+  color: var(--ivory);
+}
+.bg-ivory {
+  background: var(--ivory);
+}
+.bg-stone {
+  background: var(--stone);
+}
+.bg-deep {
+  background: var(--navy-950);
+  color: var(--ivory);
+}
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: end;
+  gap: clamp(24px, 5vw, 96px);
+  margin-bottom: clamp(40px, 5vw, 76px);
+}
+.section-head .lead {
+  margin: 0;
+}
+.section-head-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 28px;
+}
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image: radial-gradient(rgba(196, 160, 92, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+}
+
+/* Motion: scroll reveals (progressively enhanced; content is visible without JS) */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.9s var(--ease-out),
+    transform 0.9s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.js [data-reveal="fade"] {
+  transform: none;
+}
+.js [data-reveal="clip"] {
+  opacity: 1;
+  transform: none;
+}
+/* The clip is applied to the child so the observed element keeps a measurable, visible box. */
+.js [data-reveal="clip"] > * {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1.3s var(--ease-out);
+}
+.js [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+.js [data-reveal="clip"].is-in > * {
+  /* Negative inset so offset frames and captions outside the box stay visible */
+  clip-path: inset(-25% -25% -25% -25%);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --header-h: 72px;
+  }
+  .section-head {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+  .js [data-reveal],
+  .js [data-reveal="clip"] > * {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}

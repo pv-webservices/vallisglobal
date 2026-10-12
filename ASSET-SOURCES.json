@@ -1,0 +1,775 @@
+{
+  "catalogue_assets": [
+    {
+      "file": "vallis-p5-x101.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 5,
+      "xref": 101,
+      "bbox": [
+        63.77629852294922,
+        217.8909912109375,
+        291.99884033203125,
+        641.19677734375
+      ],
+      "width": 475,
+      "height": 881,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p7-x168.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 7,
+      "xref": 168,
+      "bbox": [
+        60.66790008544922,
+        251.89706420898438,
+        284.0106506347656,
+        629.3455810546875
+      ],
+      "width": 465,
+      "height": 786,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p13-x344.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 13,
+      "xref": 344,
+      "bbox": [
+        -0.13763427734375,
+        -0.371337890625,
+        542.8114013671875,
+        842.3328857421875
+      ],
+      "width": 1131,
+      "height": 1755,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p13-x372.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 13,
+      "xref": 372,
+      "bbox": [
+        343.83319091796875,
+        267.0362854003906,
+        568.1436767578125,
+        682.1719970703125
+      ],
+      "width": 467,
+      "height": 864,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p14-x403.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 14,
+      "xref": 403,
+      "bbox": [
+        29.083999633789062,
+        105.7750244140625,
+        289.75836181640625,
+        366.4493713378906
+      ],
+      "width": 543,
+      "height": 543,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p15-x438.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 15,
+      "xref": 438,
+      "bbox": [
+        87.66719818115234,
+        240.53936767578125,
+        271.0617370605469,
+        643.4757690429688
+      ],
+      "width": 345,
+      "height": 758,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p16-x469.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 16,
+      "xref": 469,
+      "bbox": [
+        48.7963981628418,
+        131.14674377441406,
+        253.0238037109375,
+        347.86798095703125
+      ],
+      "width": 425,
+      "height": 451,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p25-x904.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 25,
+      "xref": 904,
+      "bbox": [
+        70.96880340576172,
+        195.12265014648438,
+        226.87432861328125,
+        249.48199462890625
+      ],
+      "width": 324,
+      "height": 113,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p25-x906.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 25,
+      "xref": 906,
+      "bbox": [
+        333.9346008300781,
+        203.57579040527344,
+        489.8401184082031,
+        254.7637939453125
+      ],
+      "width": 324,
+      "height": 106,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p32-x1118.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 32,
+      "xref": 1118,
+      "bbox": [
+        -0.43549999594688416,
+        -0.29034423828125,
+        595.7438354492188,
+        842.32177734375
+      ],
+      "width": 1242,
+      "height": 1755,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p32-x1133.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 32,
+      "xref": 1133,
+      "bbox": [
+        216.52659606933594,
+        421.89459228515625,
+        454.8924560546875,
+        679.5874633789062
+      ],
+      "width": 496,
+      "height": 536,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p33-x1192.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 33,
+      "xref": 1192,
+      "bbox": [
+        333.93487548828125,
+        187.7434539794922,
+        489.84039306640625,
+        258.3553466796875
+      ],
+      "width": 324,
+      "height": 147,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p54-x1915.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 54,
+      "xref": 1915,
+      "bbox": [
+        113.17120361328125,
+        138.3485870361328,
+        216.85292053222656,
+        387.51318359375
+      ],
+      "width": 216,
+      "height": 519,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p60-x2078.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 60,
+      "xref": 2078,
+      "bbox": [
+        -0.19670000672340393,
+        -0.25372314453125,
+        595.4723510742188,
+        607.424560546875
+      ],
+      "width": 1240,
+      "height": 1265,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p61-x2131.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 61,
+      "xref": 2131,
+      "bbox": [
+        63.779300689697266,
+        75.17316436767578,
+        208.81253051757812,
+        178.36444091796875
+      ],
+      "width": 302,
+      "height": 214,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p61-x2132.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 61,
+      "xref": 2132,
+      "bbox": [
+        56.6244010925293,
+        430.7792053222656,
+        187.91773986816406,
+        561.7098388671875
+      ],
+      "width": 273,
+      "height": 272,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p62-x2160.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 62,
+      "xref": 2160,
+      "bbox": [
+        100.56950378417969,
+        78.26815032958984,
+        256.5191955566406,
+        161.33837890625
+      ],
+      "width": 324,
+      "height": 173,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p62-x2161.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 62,
+      "xref": 2161,
+      "bbox": [
+        114.7427978515625,
+        442.78326416015625,
+        246.0361328125,
+        542.0347900390625
+      ],
+      "width": 273,
+      "height": 206,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p69-x2356.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 69,
+      "xref": 2356,
+      "bbox": [
+        -0.4643999934196472,
+        -0.30499267578125,
+        595.7399291992188,
+        757.8192749023438
+      ],
+      "width": 1242,
+      "height": 1579,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p70-x2408.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 70,
+      "xref": 2408,
+      "bbox": [
+        72.69960021972656,
+        356.2222900390625,
+        298.5845947265625,
+        465.9273681640625
+      ],
+      "width": 301,
+      "height": 146,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p70-x2410.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 70,
+      "xref": 2410,
+      "bbox": [
+        86.6698989868164,
+        556.0387573242188,
+        309.06292724609375,
+        666.5390625
+      ],
+      "width": 296,
+      "height": 147,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p70-x2415.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 70,
+      "xref": 2415,
+      "bbox": [
+        66.006103515625,
+        60.72993469238281,
+        329.58966064453125,
+        232.13128662109375
+      ],
+      "width": 549,
+      "height": 357,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p71-x2445.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 71,
+      "xref": 2445,
+      "bbox": [
+        82.2594985961914,
+        104.71559143066406,
+        305.63580322265625,
+        179.45367431640625
+      ],
+      "width": 297,
+      "height": 99,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p77-x2613.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 77,
+      "xref": 2613,
+      "bbox": [
+        -0.23019999265670776,
+        -0.12713623046875,
+        595.5819091796875,
+        560.4718017578125
+      ],
+      "width": 1241,
+      "height": 1167,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p78-x2667.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 78,
+      "xref": 2667,
+      "bbox": [
+        36.39899826049805,
+        151.96575927734375,
+        217.59417724609375,
+        256.66436767578125
+      ],
+      "width": 377,
+      "height": 218,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p78-x2668.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 78,
+      "xref": 2668,
+      "bbox": [
+        48.938499450683594,
+        364.2652893066406,
+        205.04837036132812,
+        477.0062561035156
+      ],
+      "width": 325,
+      "height": 234,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p78-x2669.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 78,
+      "xref": 2669,
+      "bbox": [
+        54.443599700927734,
+        568.39794921875,
+        199.54025268554688,
+        674.1720581054688
+      ],
+      "width": 302,
+      "height": 220,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p85-x2907.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 85,
+      "xref": 2907,
+      "bbox": [
+        44.37689971923828,
+        110.4002914428711,
+        197.9439697265625,
+        236.81768798828125
+      ],
+      "width": 319,
+      "height": 263,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p97-x3488.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 97,
+      "xref": 3488,
+      "bbox": [
+        75.58799743652344,
+        87.47708129882812,
+        127.57100677490234,
+        184.96746826171875
+      ],
+      "width": 108,
+      "height": 203,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p110-x4371.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 110,
+      "xref": 4371,
+      "bbox": [
+        106.78849792480469,
+        217.41368103027344,
+        176.7866668701172,
+        381.9974670410156
+      ],
+      "width": 145,
+      "height": 342,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p110-x4373.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 110,
+      "xref": 4373,
+      "bbox": [
+        72.76139831542969,
+        504.72344970703125,
+        210.8133544921875,
+        687.1107788085938
+      ],
+      "width": 287,
+      "height": 379,
+      "alpha": true
+    },
+    {
+      "file": "vallis-p123-x4791.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 123,
+      "xref": 4791,
+      "bbox": [
+        93.77179718017578,
+        79.37208557128906,
+        252.43435668945312,
+        204.37896728515625
+      ],
+      "width": 330,
+      "height": 260,
+      "alpha": false
+    },
+    {
+      "file": "vallis-p123-x4792.webp",
+      "source": "vallisglobal products pdf.pdf",
+      "page": 123,
+      "xref": 4792,
+      "bbox": [
+        70.06205749511719,
+        237.21112060546875,
+        228.2299041748047,
+        383.3600769042969
+      ],
+      "width": 329,
+      "height": 304,
+      "alpha": false
+    },
+    {
+      "file": "nimkro-p5-x134.webp",
+      "source": "door handle pdf.pdf",
+      "page": 5,
+      "xref": 134,
+      "bbox": [
+        -18.01312255859375,
+        -63.325439453125,
+        299.1942138671875,
+        361.50592041015625
+      ],
+      "width": 881,
+      "height": 1180,
+      "alpha": false
+    },
+    {
+      "file": "nimkro-p17-x1343.webp",
+      "source": "door handle pdf.pdf",
+      "page": 17,
+      "xref": 1343,
+      "bbox": [
+        -18.377349853515625,
+        179.59124755859375,
+        291.8730163574219,
+        595.1051025390625
+      ],
+      "width": 861,
+      "height": 1154,
+      "alpha": false
+    },
+    {
+      "file": "nimkro-p17-x1395.webp",
+      "source": "door handle pdf.pdf",
+      "page": 17,
+      "xref": 1395,
+      "bbox": [
+        414.9867858886719,
+        371.2686462402344,
+        475.91339111328125,
+        431.8348083496094
+      ],
+      "width": 169,
+      "height": 168,
+      "alpha": false
+    },
+    {
+      "file": "nimkro-p28-x2408.webp",
+      "source": "door handle pdf.pdf",
+      "page": 28,
+      "xref": 2408,
+      "bbox": [
+        3.198500156402588,
+        225.04800415039062,
+        253.25367736816406,
+        559.9434204101562
+      ],
+      "width": 694,
+      "height": 930,
+      "alpha": false
+    },
+    {
+      "file": "nimkro-p28-x2467.webp",
+      "source": "door handle pdf.pdf",
+      "page": 28,
+      "xref": 2467,
+      "bbox": [
+        415.1711120605469,
+        371.0423583984375,
+        475.7666320800781,
+        431.6377868652344
+      ],
+      "width": 168,
+      "height": 168,
+      "alpha": false
+    },
+    {
+      "file": "nimkro-p37-x3374.webp",
+      "source": "door handle pdf.pdf",
+      "page": 37,
+      "xref": 3374,
+      "bbox": [
+        26.793899536132812,
+        480.5432434082031,
+        273.7929992675781,
+        811.3455810546875
+      ],
+      "width": 686,
+      "height": 918,
+      "alpha": false
+    },
+    {
+      "file": "mrw-p10-x82.webp",
+      "source": "railings pdf.pdf",
+      "page": 10,
+      "xref": 82,
+      "bbox": [
+        -0.2199999988079071,
+        30.380126953125,
+        841.93994140625,
+        563.419921875
+      ],
+      "width": 2339,
+      "height": 1480,
+      "alpha": true
+    },
+    {
+      "file": "mrw-p12-x96.webp",
+      "source": "railings pdf.pdf",
+      "page": 12,
+      "xref": 96,
+      "bbox": [
+        -0.2199999988079071,
+        36.14007568359375,
+        841.93994140625,
+        568.9398193359375
+      ],
+      "width": 2339,
+      "height": 1479,
+      "alpha": true
+    },
+    {
+      "file": "mrw-p16-x124.webp",
+      "source": "railings pdf.pdf",
+      "page": 16,
+      "xref": 124,
+      "bbox": [
+        -0.2199999988079071,
+        35.9000244140625,
+        841.93994140625,
+        568.9398193359375
+      ],
+      "width": 2339,
+      "height": 1480,
+      "alpha": true
+    },
+    {
+      "file": "mrw-p20-x152.webp",
+      "source": "railings pdf.pdf",
+      "page": 20,
+      "xref": 152,
+      "bbox": [
+        -0.2199999988079071,
+        35.9000244140625,
+        841.93994140625,
+        568.9398193359375
+      ],
+      "width": 2339,
+      "height": 1480,
+      "alpha": true
+    },
+    {
+      "file": "mrw-p22-x166.webp",
+      "source": "railings pdf.pdf",
+      "page": 22,
+      "xref": 166,
+      "bbox": [
+        -0.2199999988079071,
+        36.14007568359375,
+        841.93994140625,
+        568.9398193359375
+      ],
+      "width": 2339,
+      "height": 1479,
+      "alpha": true
+    },
+    {
+      "file": "mrw-p24-x180.webp",
+      "source": "railings pdf.pdf",
+      "page": 24,
+      "xref": 180,
+      "bbox": [
+        -0.2199999988079071,
+        35.9000244140625,
+        841.93994140625,
+        568.9398193359375
+      ],
+      "width": 2339,
+      "height": 1480,
+      "alpha": true
+    },
+    {
+      "file": "mrw-p35-x257.webp",
+      "source": "railings pdf.pdf",
+      "page": 35,
+      "xref": 257,
+      "bbox": [
+        -0.2199999988079071,
+        36.14007568359375,
+        841.93994140625,
+        568.9398193359375
+      ],
+      "width": 2339,
+      "height": 1479,
+      "alpha": true
+    },
+    {
+      "file": "mrw-p43-x312.webp",
+      "source": "railings pdf.pdf",
+      "page": 43,
+      "xref": 312,
+      "bbox": [
+        -0.2199999988079071,
+        35.9000244140625,
+        841.93994140625,
+        568.9398193359375
+      ],
+      "width": 2339,
+      "height": 1480,
+      "alpha": true
+    },
+    {
+      "file": "mrw-p45-x326.webp",
+      "source": "railings pdf.pdf",
+      "page": 45,
+      "xref": 326,
+      "bbox": [
+        -0.2199999988079071,
+        35.9000244140625,
+        841.93994140625,
+        568.9398193359375
+      ],
+      "width": 2339,
+      "height": 1480,
+      "alpha": true
+    },
+    {
+      "file": "fhc-200.webp",
+      "source": "pvc-doors-5.jpeg",
+      "crop": [
+        100,
+        560,
+        310,
+        905
+      ]
+    },
+    {
+      "file": "fhc-200d.webp",
+      "source": "pvc-doors-5.jpeg",
+      "crop": [
+        430,
+        560,
+        640,
+        905
+      ]
+    },
+    {
+      "file": "fhc-100.webp",
+      "source": "pvc-doors-5.jpeg",
+      "crop": [
+        775,
+        560,
+        960,
+        905
+      ]
+    },
+    {
+      "file": "lv-200.webp",
+      "source": "pvc-doors-4.jpeg",
+      "crop": [
+        155,
+        310,
+        485,
+        815
+      ]
+    }
+  ],
+  "logo": {
+    "file": "/images/brand/logo-original.jpeg",
+    "source": "vallisglobal-website-logo.jpeg",
+    "processing": "Unchanged supplied logo"
+  },
+  "decorative_backdrop": {
+    "file": "/images/hero/navy-marble.webp",
+    "source": "AI-generated navy marble studio backdrop; no products or project claims"
+  },
+  "gallery_usage": "VALLIS and MRW supplied application imagery, labelled as inspiration. Not represented as completed BUILDMART projects.",
+  "responsive_variants": "320, 640 and 960 pixel WebP derivatives where smaller than the source, generated from the same extracted catalogue images; responsive srcset selection preserves product proportions."
+}

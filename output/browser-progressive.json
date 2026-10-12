@@ -1,0 +1,39 @@
+{
+  "results": [
+    {
+      "route": "/",
+      "h1": "The art ofarchitecturalhardware",
+      "mainVisible": true,
+      "links": 61,
+      "overflow": false
+    },
+    {
+      "route": "/products/",
+      "h1": "Architectural hardware for every space.",
+      "mainVisible": true,
+      "links": 110,
+      "overflow": false
+    },
+    {
+      "route": "/products/hotel-digital-locks/vacs-12/",
+      "h1": "Fingerprint Digital Lock",
+      "mainVisible": true,
+      "links": 16,
+      "overflow": false
+    },
+    {
+      "route": "/contact/",
+      "h1": "Every great space starts with a conversation.",
+      "mainVisible": true,
+      "links": 7,
+      "overflow": false
+    }
+  ],
+  "contactFallback": true,
+  "reducedMotion": {
+    "preference": true,
+    "heroAnimation": "none"
+  },
+  "keyboardFocus": "Skip to content",
+  "status": "PASS"
+}

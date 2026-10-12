@@ -1,0 +1,29 @@
+---
+import {categories,generated,asset} from '../data/catalogue';
+import ResponsiveImage from './ResponsiveImage.astro';
+import Icon from './Icon.astro';
+interface Props {headingLevel?:'h2'|'h3';}
+const {headingLevel='h3'}=Astro.props;
+const H=headingLevel;
+// Art direction per collection: "stage" tiles float a genuine product cut-out; others use a scene photograph.
+const tiles:Record<string,{area:string;image:string;stage?:boolean;alt:string}>={
+ 'hotel-digital-locks':{area:'locks',image:asset('vallis-p15-x438'),stage:true,alt:'VALLIS VACS 13 camera digital lock'},
+ 'door-hardware':{area:'door',image:generated('door-hardware-scene'),alt:'Hallway of flush doors with slim stainless lever handles'},
+ 'door-closers':{area:'closer',image:asset('vallis-p70-x2408'),stage:true,alt:'VALLIS overhead door closer'},
+ 'spider-fittings':{area:'spider',image:asset('vallis-p60-x2078'),alt:'Spider fittings supporting an interior glass wall'},
+ 'glass-fittings':{area:'glass',image:asset('vallis-p85-x2907'),stage:true,alt:'VALLIS glass-to-glass shower hinge'},
+ 'glass-railings':{area:'rail',image:asset('mrw-p10-x82'),alt:'Glass-railed staircase in a residential interior'},
+ 'furniture-hardware':{area:'furniture',image:generated('furniture-hardware-scene'),alt:'Navy kitchen cabinetry with brushed-gold handles'},
+ 'shaft-doors':{area:'shaft',image:generated('shaft-doors-scene'),alt:'Service corridor with flush metal shaft doors'},
+};
+---
+<div class="bento">
+ {categories.map((c,i)=>{const t=tiles[c.slug];return(
+  <a class:list={['tile',`tile-${t.area}`,{'tile--stage':t.stage}]} href={`/products/${c.slug}/`} data-reveal style={`--i:${i%4}`}>
+   <div class="tile-media"><ResponsiveImage src={t.image} sizes={t.area==='locks'?'(max-width: 1024px) 100vw, 50vw':'(max-width: 1024px) 50vw, 25vw'} alt={t.alt} width="800" height="600" loading="lazy"/></div>
+   <span class="tile-num">{c.number}</span>
+   <span class="tile-arrow" aria-hidden="true"><Icon name="arrowUpRight" size={18}/></span>
+   <H>{c.name}</H>
+   <p>{c.intro.split('. ').slice(1).join('. ')||c.intro}</p>
+  </a>)})}
+</div>

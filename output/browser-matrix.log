@@ -1,0 +1,89 @@
+### Result
+{"routes":48,"widths":[1440,768,390,320],"checks":192,"problems":[],"runtimeErrors":[],"status":"PASS"}
+### Ran Playwright code
+```js
+await (async (page) => {
+  const base = "http://127.0.0.1:4322";
+  const sitemap = await (await page.request.get(base + "/sitemap.xml")).text();
+  const routes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)]
+    .map((m) => new URL(m[1]).pathname)
+    .concat("/404.html");
+  const widths = [1440, 768, 390, 320];
+  const problems = [];
+  let checks = 0;
+  const runtimeErrors = [];
+  page.on("pageerror", (error) => runtimeErrors.push(error.message));
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  for (const width of widths) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const route of routes) {
+      const response = await page.goto(base + route, { waitUntil: "load" });
+      if (!response || response.status() !== 200)
+        problems.push({ route, width, http: response?.status() });
+      await page.evaluate(async () => {
+        document
+          .querySelectorAll("img")
+          .forEach((img) => (img.loading = "eager"));
+        await Promise.all(
+          Array.from(document.images).map((img) =>
+            img.decode().catch(() => {}),
+          ),
+        );
+      });
+      const data = await page.evaluate(() => {
+        const broken = Array.from(document.images)
+          .filter((img) => !img.complete || !img.naturalWidth)
+          .map((img) => img.getAttribute("src"));
+        const headings = [];
+        document.querySelectorAll("h1,h2,h3").forEach((el) => {
+          if (el.closest(".carousel-track")) return;
+          const range = document.createRange();
+          range.selectNodeContents(el);
+          const rects = Array.from(range.getClientRects());
+          if (rects.some((r) => r.left < -1 || r.right > innerWidth + 1))
+            headings.push(el.textContent?.trim());
+        });
+        return {
+          overflow: document.documentElement.scrollWidth > innerWidth + 1,
+          broken,
+          headings,
+          h1: document.querySelectorAll("h1").length,
+        };
+      });
+      if (
+        data.overflow ||
+        data.broken.length ||
+        data.headings.length ||
+        data.h1 !== 1
+      )
+        problems.push({ route, width, ...data });
+      checks++;
+    }
+  }
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(base + "/");
+  await page.evaluate(async () => {
+    document.querySelectorAll("img").forEach((img) => (img.loading = "eager"));
+    await Promise.all(
+      Array.from(document.images).map((img) => img.decode().catch(() => {})),
+    );
+  });
+  await page.screenshot({
+    path: "output/playwright/home-desktop-final.png",
+    fullPage: true,
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.screenshot({
+    path: "output/playwright/home-mobile-final.png",
+    fullPage: true,
+  });
+  return {
+    routes: routes.length,
+    widths,
+    checks,
+    problems,
+    runtimeErrors,
+    status: problems.length || runtimeErrors.length ? "FAIL" : "PASS",
+  };
+})(page);
+```

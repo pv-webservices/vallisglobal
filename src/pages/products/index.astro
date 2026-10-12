@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CollectionBento from '../../components/CollectionBento.astro';
+import CatalogueDownloads from '../../components/CatalogueDownloads.astro';
+import Icon from '../../components/Icon.astro';
+import {categories,products,asset} from '../../data/catalogue';
+---
+<Layout title="Architectural Hardware Collections" description="Browse eight BUILDMART INDIA hardware categories and genuine VALLIS and NIMKRO models. Explore product specifications and request a project quotation." preload={asset('mrw-p10-x82')}>
+ <PageHero label="The BUILDMART collection" title="Architectural hardware for <em>every space.</em>" description="From a welcoming entrance to the smallest finishing detail. Explore our considered collection of locks, fittings and architectural hardware." image={asset('mrw-p10-x82')} alt="Residential interior with a glass-railed staircase" crumbs={[{label:'Products'}]}>
+  <a class="btn" href="#catalogue-search">Search the catalogue <Icon name="arrowDown" size={16}/></a>
+ </PageHero>
+
+ <section class="section bg-ivory">
+  <div class="container">
+   <div class="section-head"><div data-reveal><span class="eyebrow">Eight collections. One vision.</span><h2>Find your finishing <em>detail.</em></h2></div><p class="lead" data-reveal style="--i:1">Start with a collection, or search every catalogue model below by product, brand or model code.</p></div>
+   <CollectionBento/>
+  </div>
+ </section>
+
+ <section class="section" id="catalogue-search">
+  <div class="container">
+   <div class="catalogue-tools">
+    <div data-reveal><span class="eyebrow">Selected catalogue models</span><h2>Explore the <em>products.</em></h2></div>
+    <div class="search-field" data-reveal style="--i:1"><label for="product-search">Search by product, brand or model</label><div class="search-box"><Icon name="search" size={18}/><input type="search" id="product-search" placeholder="Try VACS 12, a handle, or a spigot…" autocomplete="off"/></div></div>
+   </div>
+   <div class="chips" role="group" aria-label="Filter products by category"><button class="chip" data-filter="all" aria-pressed="true">All products</button>{categories.map(c=><button class="chip" data-filter={c.slug} aria-pressed="false">{c.name}</button>)}</div>
+   <p class="result-count" aria-live="polite" id="result-count">{products.length} products</p>
+   <div class="product-grid" id="all-products">{products.map(p=><ProductCard product={p}/>)}</div>
+   <p class="empty-state" id="no-results" hidden>No matching products. Try another model or clear the category filter.</p>
+  </div>
+ </section>
+
+ <section class="section bg-stone">
+  <div class="container">
+   <div class="section-head"><div data-reveal><span class="eyebrow">Look a little closer</span><h2>The complete <em>catalogues.</em></h2></div><p class="lead" data-reveal style="--i:1">Explore the supplied collections in full. For current availability, finishes and project suitability, speak to our team.</p></div>
+   <CatalogueDownloads/>
+  </div>
+ </section>
+
+ <script>
+  const input=document.querySelector<HTMLInputElement>('#product-search');let filter='all';
+  const cards=Array.from(document.querySelectorAll<HTMLElement>('#all-products .product-card'));
+  const buttons=document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+  function update(){
+   const term=input?.value.toLowerCase().trim()||'';let count=0;
+   cards.forEach(card=>{const show=(filter==='all'||card.dataset.category===filter)&&!!card.dataset.search?.includes(term);card.hidden=!show;if(show)count++;});
+   const output=document.querySelector('#result-count');if(output)output.textContent=`${count} product${count===1?'':'s'}`;
+   const empty=document.querySelector<HTMLElement>('#no-results');if(empty)empty.hidden=count>0;
+  }
+  const select=(button:HTMLButtonElement)=>{filter=button.dataset.filter||'all';buttons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));update();};
+  input?.addEventListener('input',update);
+  buttons.forEach(button=>button.addEventListener('click',()=>select(button)));
+ </script>
+</Layout>

@@ -1,0 +1,67 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import Icon from '../../../components/Icon.astro';
+import {products,categories,enquiryUrl,productUrl,business,isPhoto} from '../../../data/catalogue';
+export function getStaticPaths(){return products.map(product=>({params:{category:product.category,product:product.slug},props:{product}}));}
+const {product:p}=Astro.props;const c=categories.find(c=>c.slug===p.category)!;
+const related=products.filter(o=>o.category===p.category&&o.slug!==p.slug).slice(0,4);
+const sourceFile=p.brand==='NIMKRO'?'/door handle pdf.pdf':p.brand==='BUILDMART INDIA'?`/${p.source.split(': ')[1]}`:'/vallisglobal products pdf.pdf';
+const schema={'@context':'https://schema.org','@type':'Product',name:`${p.brand} ${p.model} ${p.name}`,model:p.model,description:p.description,image:p.images.map(i=>`${business.origin}${i}`),brand:{'@type':'Brand',name:p.brand},url:`${business.origin}${productUrl(p)}`};
+---
+<Layout title={`${p.model} — ${p.name}`} description={`${p.description} View ${p.brand} ${p.model} catalogue specifications and request a quotation from BUILDMART INDIA.`} schema={schema} solidHeader>
+ <section class="product-hero">
+  <div class="container">
+   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/products/">Products</a><span aria-hidden="true">/</span><a href={`/products/${c.slug}/`}>{c.name}</a><span aria-hidden="true">/</span><span aria-current="page">{p.model}</span></nav>
+   <div class="product-layout">
+    <div class="detail-gallery">
+     <div class:list={['detail-stage',{'is-photo':isPhoto(p.image)}]}><img id="main-product-image" src={p.image} alt={`${p.brand} ${p.model} ${p.name}`} width="650" height="600" fetchpriority="high"/><button class="zoom-trigger" aria-label="Enlarge product image"><Icon name="expand" size={16}/>Enlarge</button></div>
+     {p.images.length>1&&<div class="thumbnails" role="group" aria-label="Product images">{p.images.map((im,i)=><button data-image={im} aria-label={`View product image ${i+1}`} aria-pressed={i===0?'true':'false'}><img class={isPhoto(im)?'is-photo':undefined} src={im} alt="" width="80" height="80"/></button>)}</div>}
+    </div>
+    <div class="product-copy">
+     <span class="eyebrow">{p.brand} · {c.name}</span>
+     <h1>{p.name}</h1>
+     <span class="product-model">MODEL · {p.model}</span>
+     <p>{p.description}</p>
+     {p.features.length>0&&<ul class="feature-list">{p.features.map(f=><li><Icon name="check" size={18}/>{f}</li>)}</ul>}
+     <div class="tags">{p.applications.map(a=><span>{a}</span>)}</div>
+     <div class="btn-row"><a class="btn" href={enquiryUrl(p)}>Enquire about this product <Icon name="arrow" size={16}/></a><a class="link-arrow" href={`tel:${business.tel}`}>Speak to our team <Icon name="phone" size={14}/></a></div>
+     <p class="technical-source">Product information from {p.source}{p.page?`, page ${p.page}`:''}. Confirm the selected variant and installation details with our team.</p>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <section class="section on-dark">
+  <div class="container spec-layout">
+   <div>
+    <span class="eyebrow" data-reveal>The technical details</span>
+    <h2 data-reveal style="--i:1">Product <em>specifications.</em></h2>
+    <table class="spec-table"><caption class="sr-only">{p.model} catalogue specifications</caption><tbody>{Object.entries(p.specs).map(([key,value])=><tr><th scope="row">{key}</th><td>{value}</td></tr>)}</tbody></table>
+    <a class="link-arrow" href={`${sourceFile}${p.page?'#page='+p.page:''}`} target="_blank" rel="noopener">View the source catalogue <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a>
+   </div>
+   <aside class="note-card" style="background:var(--navy-800);--i:2" data-reveal>
+    <span class="eyebrow">For your project</span>
+    <h3>Select the right detail.</h3>
+    <p style="margin-top:16px">{c.considerations}</p>
+    <p>Share your quantities, preferred finish and project requirements for a considered product recommendation.</p>
+    <a class="btn" href={enquiryUrl(p)}>Request a quotation <Icon name="arrow" size={16}/></a>
+   </aside>
+  </div>
+ </section>
+
+ {related.length>0&&<section class="section bg-ivory"><div class="container"><div class="section-head"><div data-reveal><span class="eyebrow">In the same collection</span><h2>Explore related <em>products.</em></h2></div><div class="section-head-actions" data-reveal style="--i:1"><p class="lead">More from {c.name}.</p><a class="link-arrow" href={`/products/${c.slug}/`}>View the collection <Icon name="arrow" size={14}/></a></div></div><div class="product-grid">{related.map(p=><ProductCard product={p}/>)}</div></div></section>}
+
+ <dialog class="lightbox on-stage" aria-label="Enlarged product image">
+  <button class="icon-btn lightbox-close" aria-label="Close image"><Icon name="close" size={20}/></button>
+  <figure><img src={p.image} alt={`${p.brand} ${p.model} enlarged product photograph`} width="900" height="800"/><figcaption><span>{p.brand} · {p.model} · {p.name}</span></figcaption></figure>
+ </dialog>
+
+ <script>
+  const main=document.querySelector<HTMLImageElement>('#main-product-image');const dialog=document.querySelector<HTMLDialogElement>('.lightbox');const enlarged=dialog?.querySelector('img');
+  document.querySelectorAll<HTMLButtonElement>('[data-image]').forEach(button=>button.addEventListener('click',()=>{if(main&&button.dataset.image){main.src=button.dataset.image;if(enlarged)enlarged.src=main.src;}document.querySelectorAll('[data-image]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));}));
+  document.querySelector('.zoom-trigger')?.addEventListener('click',()=>dialog?.showModal());
+  document.querySelector('.lightbox-close')?.addEventListener('click',()=>dialog?.close());
+  dialog?.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+ </script>
+</Layout>

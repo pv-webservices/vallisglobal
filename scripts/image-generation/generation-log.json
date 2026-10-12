@@ -1,0 +1,122 @@
+{
+  "finishes": {
+    "placement": "Process section “Find the finish” and Products overview",
+    "alt": "Architectural metal finish samples — brushed stainless steel, satin brass, matte black and champagne gold — on navy stone",
+    "model": "gpt-image-2.5-flare",
+    "quality": "high",
+    "size": "1024x1024",
+    "generated": "2026-10-12T07:24:23.729Z"
+  },
+  "shaft-doors-scene": {
+    "placement": "Shaft Doors collection hero",
+    "alt": "Clean service corridor in a modern commercial building with flush metal service-access doors",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1536x1024",
+    "generated": "2026-10-12T07:25:13.753Z"
+  },
+  "healthcare-corridor": {
+    "placement": "Home “Spaces” sector — Hospitals & Institutions",
+    "alt": "Bright, calm hospital corridor with wide timber-faced doors and overhead door closers",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1536x1024",
+    "generated": "2026-10-12T07:25:13.754Z"
+  },
+  "institutional-atrium": {
+    "placement": "Home “Spaces” sector — Institutional & Corporate projects",
+    "alt": "Multi-storey institutional atrium with frameless glass balustrades and point-fixed glass façade",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1536x1024",
+    "generated": "2026-10-12T07:25:13.754Z"
+  },
+  "door-hardware-scene": {
+    "placement": "Door Hardware collection hero",
+    "alt": "Minimal hallway with tall flush doors and slim stainless-steel lever handles",
+    "model": "gpt-image-2.5-flare",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-12T07:25:13.754Z"
+  },
+  "craft-detail": {
+    "placement": "Home craftsmanship section and About page story",
+    "alt": "Close detail of a brushed brass lever handle on a dark oak door with soft side light",
+    "model": "gpt-image-2.5-flare",
+    "quality": "high",
+    "size": "1024x1536",
+    "generated": "2026-10-12T07:25:13.754Z"
+  },
+  "furniture-hardware-scene": {
+    "placement": "Furniture Hardware collection hero and category tile",
+    "alt": "Luxury kitchen with deep navy cabinetry and slim brushed-gold cabinet handles",
+    "model": "gpt-image-2.5-flare",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-12T07:25:13.754Z"
+  },
+  "hero-entrance": {
+    "placement": "Home hero (full-bleed background)",
+    "alt": "Grand residential entrance with tall walnut doors, long brushed-gold pull handles and a glass-railed staircase at dusk",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-12T07:25:13.754Z"
+  },
+  "consultation": {
+    "placement": "Contact page hero and enquiry section",
+    "alt": "Hardware samples, a digital lock and architectural drawings laid out on a walnut consultation table",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-12T07:25:13.754Z"
+  },
+  "glass-fittings-scene": {
+    "placement": "Glass Fittings collection hero",
+    "alt": "Frameless glass shower enclosure with polished stainless-steel hinges in a marble bathroom",
+    "model": "gpt-image-2.5-flare",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-12T07:46:21.358Z"
+  },
+  "precision-macro": {
+    "placement": "Home “Why choose” — Precision in the details",
+    "alt": "Macro of a polished stainless-steel spider fitting holding the corners of four glass panels",
+    "model": "gpt-image-2.5-flare",
+    "quality": "high",
+    "size": "1024x1536",
+    "generated": "2026-10-12T08:24:33.751Z"
+  },
+  "fit-check": {
+    "placement": "Home Process step 03 — Confirm the fit",
+    "alt": "Steel tape measure, glass sample edge and lever handle on architectural door drawings",
+    "model": "gpt-image-2.5-flare",
+    "quality": "high",
+    "size": "1024x1024",
+    "generated": "2026-10-12T08:24:33.752Z"
+  },
+  "hero-touch": {
+    "placement": "Home hero scroll chapter 03 — The detail you touch",
+    "alt": "Long brushed-gold pull handle on a fluted walnut door beside navy cabinetry with slim gold handles",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-12T08:24:33.752Z"
+  },
+  "hero-access": {
+    "placement": "Home hero scroll chapter 01 — Access, refined; Process step 01",
+    "alt": "Matte-black digital smart lock with fingerprint reader on a tall walnut apartment entrance door",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-12T08:24:33.752Z"
+  },
+  "hero-clarity": {
+    "placement": "Home hero scroll chapter 02 — Clarity in glass",
+    "alt": "Double-height atrium at dusk with a frameless glass balustrade and a point-fixed glass facade",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-12T08:24:33.752Z"
+  }
+}

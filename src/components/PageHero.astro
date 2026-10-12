@@ -1,0 +1,15 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+interface Crumb {label:string;href?:string;}
+interface Props {label:string;title:string;description:string;image?:string;alt?:string;crumbs?:Crumb[];compact?:boolean;position?:string;}
+const {label,title,description,image,alt='',crumbs=[],compact=false,position='center'}=Astro.props;
+---
+<section class:list={['page-hero',{compact,'no-image':!image}]}>
+ {image&&<div class="page-hero-media"><ResponsiveImage src={image} sizes="100vw" alt={alt} width="1600" height="1000" fetchpriority="high" style={`object-position:${position}`}/></div>}
+ <div class="container page-hero-inner">
+  {crumbs.length>0&&<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a>{crumbs.map(c=><Fragment><span aria-hidden="true">/</span>{c.href?<a href={c.href}>{c.label}</a>:<span aria-current="page">{c.label}</span>}</Fragment>)}</nav>}
+  <span class="eyebrow">{label}</span>
+  <h1 set:html={title}/>
+  <div class="page-hero-meta"><p class="lead">{description}</p><slot/></div>
+ </div>
+</section>

@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import Icon from '../components/Icon.astro';
+import ProductCard from '../components/ProductCard.astro';
+import CollectionBento from '../components/CollectionBento.astro';
+import CatalogueDownloads from '../components/CatalogueDownloads.astro';
+import {categories,products,gallery,catalogues,asset,generated} from '../data/catalogue';
+
+// Hero scroll scenes: image, desktop/mobile focal points and the progress-rail label.
+const scenes=[
+ {image:generated('hero-entrance'),pos:'62% 50%',posM:'74% 50%',label:'The art'},
+ {image:generated('hero-access'),pos:'60% 50%',posM:'70% 50%',label:'Access'},
+ {image:generated('hero-clarity'),pos:'60% 50%',posM:'72% 50%',label:'Clarity'},
+ {image:generated('hero-touch'),pos:'62% 50%',posM:'66% 50%',label:'Touch'},
+];
+const chapters=[
+ {label:'Hotel & Digital Locks',title:'Access, <em>refined.</em>',text:'Fingerprint, PIN, card and app access for hotel rooms and residential entrances — with mechanical backup on the listed models.',href:'/products/hotel-digital-locks/',cta:'Explore locks'},
+ {label:'Spider Fittings · Glass Fittings · Railings',title:'Clarity in <em>glass.</em>',text:'Point-supported façades, patch fittings and frameless railings that let light lead the architecture.',href:'/products/glass-railings/',cta:'Explore glass hardware'},
+ {label:'Door & Furniture Hardware',title:'The detail you <em>touch.</em>',text:'Lever handles, pull handles and cabinet hardware in brushed steel, warm metal tones and black accents.',href:'/products/door-hardware/',cta:'Explore door hardware'},
+];
+const benefits=[
+ {icon:'diamond',title:'Considered materials',text:'Explore documented materials and grades for each product.',image:generated('craft-detail'),alt:'Brushed brass lever handle on a dark oak door',caption:'Stainless steel, brass tones and aluminium alloy — documented per model.'},
+ {icon:'grid',title:'Precision in the details',text:'Select fittings around your door and glass requirements.',image:generated('precision-macro'),alt:'Stainless-steel spider fitting holding four glass panels',caption:'Glass thickness, fixing conditions and door weights matter.'},
+ {icon:'spark',title:'Elegant finishes',text:'Find a finish that complements your architectural palette.',image:generated('furniture-hardware-scene'),alt:'Navy kitchen cabinetry with brushed-gold handles',caption:'From brushed steel to warmer metal tones and black accents.'},
+ {icon:'shield',title:'Purposeful performance',text:'Choose the right model for the demands of your space.',image:generated('healthcare-corridor'),alt:'Hospital corridor with timber doors and overhead door closers',caption:'Hotel access, busy corridors, service risers — each has its own needs.'},
+ {icon:'building',title:'A complete collection',text:'From entrance locks to the finishing touch on cabinetry.',image:generated('consultation'),alt:'Hardware samples, a digital lock and drawings on a consultation table',caption:'Eight collections, one conversation.'},
+];
+const featured=['VACS 12','VBL 255','VSDC 1101','VSF 91','VSH 704','H 2102','VRS 101','FHC 200'].map(m=>products.find(p=>p.model===m)!);
+const sectors=[
+ {name:'Residential Spaces',slug:'hotel-digital-locks',image:asset('mrw-p16-x124'),alt:'Residential staircase with a frameless glass balustrade',text:'Digital entrance locks, lever handles, glass railings and cabinet hardware for private homes.'},
+ {name:'Hotels & Hospitality',slug:'hotel-digital-locks',image:asset('vallis-p13-x344'),alt:'Hotel guest room interior from the VALLIS catalogue',text:'RFID guest-room locks, door closers and refined hardware for hospitality interiors.'},
+ {name:'Hospitals & Institutions',slug:'door-closers',image:generated('healthcare-corridor'),alt:'Calm hospital corridor with timber doors and overhead door closers',text:'Controlled door movement and durable fittings for busy corridors and shared spaces.'},
+ {name:'Commercial Buildings',slug:'spider-fittings',image:asset('mrw-p22-x166'),alt:'Commercial atrium with glass balustrades',text:'Spider fittings, glass railings and patch fittings for open, light-filled commercial interiors.'},
+ {name:'Corporate Offices',slug:'glass-fittings',image:asset('vallis-p60-x2078'),alt:'Office meeting room enclosed by point-fixed glass',text:'Glass partitions, pull handles and closers for contemporary workplaces.'},
+ {name:'Institutional Projects',slug:'shaft-doors',image:generated('institutional-atrium'),alt:'Institutional atrium with glass balustrades and a point-fixed glass façade',text:'Shaft doors for service risers and glass systems for large public buildings.'},
+];
+const steps=[
+ {title:'Choose the function.',text:'Consider access methods, door movement, glass connections or service-access needs first. Start with the requirements of the space.',image:generated('hero-access'),alt:'Digital smart lock on a walnut entrance door'},
+ {title:'Find the finish.',text:'Explore the finishes documented for your chosen model, from brushed stainless steel to warmer metal tones and black accents.',image:generated('finishes'),alt:'Brushed stainless steel, satin brass, matte black and champagne gold finish samples on navy stone'},
+ {title:'Confirm the fit.',text:'Check the door or glass dimensions, installation conditions and related components before finalising your product selection.',image:generated('fit-check'),alt:'Tape measure, glass sample and lever handle on architectural door drawings'},
+];
+const mosaic=[gallery[0],gallery[2],gallery[6],gallery[3],gallery[1],gallery[4]];
+---
+<Layout title="The Art of Architectural Hardware" description="Explore BUILDMART INDIA’s architectural hardware collection: hotel and digital locks, door hardware, glass fittings, railings, furniture hardware and shaft doors in Gurugram." home preload="/images/generated/hero-entrance.webp">
+
+ <!-- Hero: pinned, scroll-driven chapters -->
+ <section class="hero-cine" data-hero aria-labelledby="hero-title">
+  <div class="hero-sticky">
+   <div class="hero-scenes" aria-hidden="true">
+    {scenes.map((sc,i)=><div class="hero-scene" data-scene={i} style={`--pos:${sc.pos};--pos-m:${sc.posM}`}><ResponsiveImage src={sc.image} sizes="100vw" alt="" width="1536" height="1024" fetchpriority={i===0?'high':undefined} loading={i===0?undefined:'lazy'} decoding="async"/></div>)}
+   </div>
+   <div class="hero-veil" aria-hidden="true"></div>
+   <span class="hero-frame-line v" aria-hidden="true"></span>
+   <div class="container hero-layer">
+    <div class="hero-panel hero-intro" data-panel="0">
+     <span class="eyebrow">Premium architectural hardware · Gurugram</span>
+     <h1 id="hero-title"><span class="line"><span style="--i:0">The art of</span></span><span class="line"><span style="--i:1">architectural</span></span><span class="line"><span style="--i:2"><em>hardware</em></span></span></h1>
+     <p class="hero-sub"><strong>Innovative. Durable. Elegant.</strong>Complete hardware solutions for modern architecture — from the first touch of an entrance lock to the line of a glass railing.</p>
+     <div class="btn-row"><a class="btn" href="/products/">Explore Catalogue <Icon name="arrow" size={16}/></a><a class="btn btn--ghost" href="/contact/#enquiry">Request a Quote <Icon name="arrow" size={16}/></a></div>
+    </div>
+    {chapters.map((c,i)=><article class="hero-panel hero-chapter" data-panel={i+1}>
+     <span class="chapter-num">0{i+1}<small>/ 03</small></span>
+     <span class="eyebrow">{c.label}</span>
+     <h2 set:html={c.title}/>
+     <p>{c.text}</p>
+     <a class="link-arrow" href={c.href}>{c.cta} <Icon name="arrow" size={14}/></a>
+    </article>)}
+   </div>
+   <nav class="hero-progress" aria-label="Hero chapters">{scenes.map((sc,i)=><button type="button" data-goto={i} aria-current={i===0?'step':undefined}><span>0{i+1}</span>{sc.label}</button>)}</nav>
+   <div class="hero-foot">
+    <div class="container hero-foot-inner">
+     <div class="hero-fact"><b>{String(categories.length).padStart(2,'0')}</b><span>Product<br/>collections</span></div>
+     <div class="hero-fact"><b>{products.length}</b><span>Catalogue<br/>models</span></div>
+     <div class="hero-fact"><b>{String(catalogues.length).padStart(2,'0')}</b><span>Source<br/>catalogues</span></div>
+     <a class="scroll-cue" href="#intro">Scroll to explore <i aria-hidden="true"></i></a>
+     <span class="hero-counter" aria-hidden="true"><b data-counter>01</b><small>/ 04</small></span>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Collections marquee -->
+ <div class="marquee" aria-label="Product collections">
+  <div class="marquee-track">
+   {[0,1].map(copy=><div class="marquee-group" aria-hidden={copy===1?'true':undefined}>{categories.map(c=><a href={`/products/${c.slug}/`} tabindex={copy===1?-1:undefined}>{c.name}</a>)}</div>)}
+  </div>
+ </div>
+
+ <!-- Intro / Why choose: interactive showcase -->
+ <section class="section why" id="intro" data-why>
+  <div class="container">
+   <div class="why-grid">
+    <div class="why-head">
+     <span class="eyebrow" data-reveal>Why choose BUILDMART INDIA</span>
+     <p class="statement" data-reveal style="--i:1">Hardware is part of how a space feels — <em>the way a door opens,</em> the line of a glass railing, the finish of a cabinet handle.</p>
+     <p class="lead" data-reveal style="--i:2">BUILDMART INDIA presents architectural hardware solutions for modern residential, hospitality and commercial environments — a considered range brought together under one roof in Gurugram.</p>
+    </div>
+    <div class="why-body">
+     <ol class="why-items">
+      {benefits.map((b,i)=><li data-reveal style={`--i:${i}`}>
+       <button type="button" class:list={['why-item',{'is-active':i===0}]} data-why-item={i} aria-pressed={i===0?'true':'false'} aria-controls="why-stage">
+        <span class="why-num">0{i+1}</span>
+        <span class="why-text"><span class="why-title"><Icon name={b.icon} size={22}/>{b.title}</span><span class="why-desc"><span>{b.text}</span></span></span>
+        <span class="why-bar" aria-hidden="true"><i></i></span>
+       </button>
+      </li>)}
+     </ol>
+     <a class="link-arrow" href="/about/" data-reveal>Know more about us <Icon name="arrow" size={14}/></a>
+    </div>
+    <div class="why-visual" data-reveal="clip">
+     <figure class="why-stage" id="why-stage">
+      {benefits.map((b,i)=><ResponsiveImage class={i===0?'is-active':''} src={b.image} sizes="(max-width: 1024px) 92vw, 46vw" alt={b.alt} width="1024" height="1280" loading="lazy" data-why-image={i} data-caption={b.caption}/>)}
+      <figcaption class="why-caption"><small data-why-count>01 / 05</small><span data-why-caption aria-live="polite">{benefits[0].caption}</span></figcaption>
+     </figure>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Collections -->
+ <section class="section bg-ivory" id="collection">
+  <div class="container">
+   <div class="section-head">
+    <div data-reveal><span class="eyebrow">Premium collection</span><h2>Our product <em>range.</em></h2></div>
+    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead">A complete range of architectural hardware designed for safety, functionality and aesthetics across every space.</p><a class="link-arrow" href="/products/">View all products <Icon name="arrow" size={14}/></a></div>
+   </div>
+   <CollectionBento/>
+  </div>
+ </section>
+
+ <!-- Featured products -->
+ <section class="section featured on-dark" data-rail aria-labelledby="featured-title">
+  <div class="container">
+   <div class="section-head">
+    <div data-reveal><span class="eyebrow">Featured luxury solutions</span><h2 id="featured-title">Signature pieces, <em>selected.</em></h2></div>
+    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead">Genuine catalogue models from across the collection — each with its own specifications and enquiry route.</p></div>
+   </div>
+   <div class="rail-track" tabindex="0" aria-label="Featured products, scroll horizontally">{featured.map(p=><ProductCard product={p}/>)}</div>
+   <div class="rail-foot">
+    <div class="rail-progress" aria-hidden="true"><span></span></div>
+    <div class="rail-controls"><button class="round-btn" data-direction="-1" aria-label="Previous products"><Icon name="arrowLeft" size={20}/></button><button class="round-btn" data-direction="1" aria-label="Next products"><Icon name="arrow" size={20}/></button></div>
+    <a class="link-arrow" href="/products/#catalogue-search">All products <Icon name="arrow" size={14}/></a>
+   </div>
+  </div>
+ </section>
+
+ <!-- Spaces -->
+ <section class="section" aria-labelledby="spaces-title">
+  <div class="container">
+   <div class="section-head">
+    <div data-reveal><span class="eyebrow">Industries we serve</span><h2 id="spaces-title">Spaces that <em>inspire.</em></h2></div>
+    <p class="lead" data-reveal style="--i:1">High-performance hardware solutions for residential, commercial, hospitality and infrastructure projects.</p>
+   </div>
+   <div class="spaces-grid" data-sectors>
+    <ol class="sector-list">
+     {sectors.map((s,i)=><li class:list={['sector',{'is-active':i===0}]} data-index={i} data-reveal style={`--i:${i%3}`}>
+      <a href={`/products/${s.slug}/`}>
+       <span class="sector-num">0{i+1}</span>
+       <div><h3>{s.name}</h3><p>{s.text}</p></div>
+       <span class="sector-arrow" aria-hidden="true"><Icon name="arrowUpRight" size={18}/></span>
+       <ResponsiveImage class="sector-thumb" src={s.image} sizes="90vw" alt="" width="900" height="506" loading="lazy"/>
+      </a>
+     </li>)}
+    </ol>
+    <div class="sector-visual" aria-hidden="true">
+     {sectors.map((s,i)=><ResponsiveImage class={i===0?'is-active':''} src={s.image} sizes="50vw" alt="" width="900" height="990" loading="lazy"/>)}
+     <div class="sector-caption"><span data-sector-label>{sectors[0].name}</span><span>BUILDMART INDIA</span></div>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- Process: sticky storytelling -->
+ <section class="section bg-stone process" aria-labelledby="process-title" data-process>
+  <div class="container">
+   <div class="section-head">
+    <div data-reveal><span class="eyebrow">A considered choice</span><h2 id="process-title">Function. Finish. <em>Fit.</em></h2></div>
+    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead">Each architectural detail has a job to do. We help you explore the documented product range with attention to application, compatibility and finish.</p></div>
+   </div>
+   <div class="process-grid">
+    <div class="process-visual" aria-hidden="true">
+     <div class="process-frame">
+      {steps.map((st,i)=><ResponsiveImage class={i===0?'is-active':''} src={st.image} sizes="(max-width: 1024px) 92vw, 44vw" alt="" width="1024" height="1024" loading="lazy" data-step-image={i}/>)}
+      <span class="process-badge"><b data-step-count>01</b><small>/ 03</small></span>
+     </div>
+    </div>
+    <ol class="steps">
+     {steps.map((st,i)=><li class:list={['step',{'is-active':i===0}]} data-step={i}><b>0{i+1}</b><div><h3>{st.title}</h3><p>{st.text}</p><ResponsiveImage class="step-thumb" src={st.image} sizes="92vw" alt={st.alt} width="900" height="600" loading="lazy"/></div></li>)}
+    </ol>
+   </div>
+   <div class="btn-row process-cta" data-reveal><a class="btn btn--dark" href="/contact/#enquiry">Discuss your project <Icon name="arrow" size={16}/></a><a class="link-arrow" href="/products/">Browse all collections <Icon name="arrow" size={14}/></a></div>
+  </div>
+ </section>
+
+ <!-- Gallery teaser -->
+ <section class="section bg-deep" aria-labelledby="gallery-title">
+  <div class="container">
+   <div class="section-head">
+    <div data-reveal><span class="eyebrow">Application gallery</span><h2 id="gallery-title">Architectural <em>inspiration.</em></h2></div>
+    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead" style="color:var(--muted-light)">Light, glass and metal working together — application imagery from the VALLIS and MRW catalogues.</p><a class="link-arrow" href="/gallery/">Open the gallery <Icon name="arrow" size={14}/></a></div>
+   </div>
+   <div class="mosaic">{mosaic.map((g,i)=><a href="/gallery/" data-reveal="fade" style={`--i:${i}`}><ResponsiveImage src={g.image} sizes={i===0?'(max-width: 760px) 100vw, 58vw':'(max-width: 760px) 50vw, 33vw'} alt={g.alt} width="900" height="570" loading="lazy"/><span><small>{g.group}</small>{g.title}</span></a>)}</div>
+   <p class="source-note">Application imagery from the supplied catalogues, presented as inspiration — not as completed BUILDMART INDIA projects.</p>
+  </div>
+ </section>
+
+ <!-- Catalogues -->
+ <section class="section" aria-labelledby="catalogues-title">
+  <div class="container">
+   <div class="section-head">
+    <div data-reveal><span class="eyebrow">Look a little closer</span><h2 id="catalogues-title">The complete <em>catalogues.</em></h2></div>
+    <p class="lead" data-reveal style="--i:1">Explore the supplied collections in full. For current availability, finishes and project suitability, speak to our team.</p>
+   </div>
+   <CatalogueDownloads/>
+  </div>
+ </section>
+
+ <script>import '../scripts/home.ts';</script>
+</Layout>

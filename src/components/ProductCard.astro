@@ -1,0 +1,15 @@
+---
+import {type Product,productUrl,enquiryUrl,isPhoto} from '../data/catalogue';
+import ResponsiveImage from './ResponsiveImage.astro';
+import Icon from './Icon.astro';
+interface Props {product:Product;}
+const {product:p}=Astro.props;
+---
+<article class="product-card" data-search={`${p.name} ${p.brand} ${p.model} ${p.category}`.toLowerCase()} data-category={p.category}>
+ <div class:list={['product-stage',{'is-photo':isPhoto(p.image)}]}><span class="product-tag">{p.brand}</span><ResponsiveImage src={p.image} sizes="(max-width: 600px) 80vw, (max-width: 1100px) 40vw, 320px" alt={`${p.brand} ${p.model} ${p.name}`} width="480" height="440" loading="lazy"/></div>
+ <div class="product-info">
+  <span class="eyebrow">Model · {p.model}</span>
+  <h3><a href={productUrl(p)}>{p.name}</a></h3>
+  <div class="product-actions"><span>View details <Icon name="arrow" size={14}/></span><a href={enquiryUrl(p)} aria-label={`Enquire about ${p.brand} ${p.model} ${p.name}`}>Enquire</a></div>
+ </div>
+</article>

@@ -1,0 +1,199 @@
+---
+import '@fontsource/cormorant-garamond/latin-500.css';
+import '@fontsource/cormorant-garamond/latin-500-italic.css';
+import '@fontsource/cormorant-garamond/latin-600.css';
+import '@fontsource/manrope/latin-400.css';
+import '@fontsource/manrope/latin-500.css';
+import '@fontsource/manrope/latin-600.css';
+import '../styles/base.css';
+import '../styles/layout.css';
+import '../styles/cards.css';
+import '../styles/components.css';
+import '../styles/hero.css';
+import '../styles/home.css';
+import '../styles/pages.css';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import Icon from '../components/Icon.astro';
+import EnquiryCTA from '../components/EnquiryCTA.astro';
+import {business,categories,isPhoto} from '../data/catalogue';
+import manifest from '../data/image-manifest.json';
+interface Props {title:string;description:string;home?:boolean;schema?:unknown;noindex?:boolean;solidHeader?:boolean;cta?:boolean;preload?:string;}
+const {title,description,home=false,schema,noindex=false,solidHeader=false,cta=true,preload}=Astro.props;
+const path=Astro.url.pathname;
+const canonical=new URL(path,business.origin).href;
+const indexable=import.meta.env.PUBLIC_INDEXABLE==='true'&&!noindex;
+const nav=[['Home','/'],['About','/about/'],['Products','/products/'],['Gallery','/gallery/'],['Contact','/contact/']];
+const preloadSet=preload?(manifest as Record<string,{srcset:string}>)[preload]?.srcset:undefined;
+const isCurrent=(href:string)=>href==='/'?path==='/':path.startsWith(href);
+const organization={'@context':'https://schema.org','@type':'LocalBusiness',name:business.name,url:business.origin,telephone:business.tel,email:business.email,address:{'@type':'PostalAddress',streetAddress:'A14/15, Golf Course Rd, DLF Phase 1',addressLocality:'Gurugram',addressRegion:'Haryana',postalCode:'122002',addressCountry:'IN'}};
+---
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+ <title>{title} | BUILDMART INDIA</title>
+ <meta name="description" content={description}/>
+ <meta name="robots" content={indexable?'index, follow':'noindex, nofollow'}/>
+ <link rel="canonical" href={canonical}/>
+ <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+ <meta name="theme-color" content="#030d1a"/>
+ <meta property="og:type" content="website"/>
+ <meta property="og:title" content={`${title} | BUILDMART INDIA`}/>
+ <meta property="og:description" content={description}/>
+ <meta property="og:url" content={canonical}/>
+ <meta property="og:image" content={`${business.origin}/vallisglobal-website-logo.jpeg`}/>
+ <meta property="og:site_name" content="BUILDMART INDIA"/>
+ <script type="application/ld+json" set:html={JSON.stringify(schema||organization).replace(/</g,'<')}/>
+ <script is:inline>
+  document.documentElement.classList.add('js');
+  try{if(sessionStorage.getItem('bm-visited'))document.documentElement.classList.add('no-loader');sessionStorage.setItem('bm-visited','1');}catch(e){document.documentElement.classList.add('no-loader');}
+ </script>
+ {preload&&<link rel="preload" as="image" fetchpriority="high" href={preload} imagesrcset={preloadSet} imagesizes={preloadSet?'100vw':undefined}/>}
+</head>
+<body class:list={{'is-home':home}}>
+ <div class="loader" aria-hidden="true"><img src="/images/brand/eagle-mark.webp" alt="" width="264" height="133"/><span></span></div>
+ <a class="skip-link" href="#main">Skip to content</a>
+
+ <header class:list={['site-header',{'is-solid':solidHeader}]} id="header">
+  <div class="container header-inner">
+   <a class="brand" href="/" aria-label="BUILDMART INDIA home"><ResponsiveImage src="/images/brand/logo-reversed.webp" sizes="140px" alt="BUILDMART INDIA" width="140" height="79" fetchpriority="high"/></a>
+   <nav class="desktop-nav" aria-label="Main navigation">
+    {nav.map(([name,href])=>name==='Products'?(
+     <div class="nav-item">
+      <a class="nav-link" href={href} aria-current={isCurrent(href)?'page':undefined}>{name}<Icon name="chevron" size={14}/></a>
+      <div class="mega">
+       {categories.map(c=><a href={`/products/${c.slug}/`}><ResponsiveImage class={isPhoto(c.image)?'is-photo':undefined} src={c.image} sizes="54px" alt="" width="54" height="54" loading="lazy"/><span><small>{c.number}</small><b>{c.name}</b></span></a>)}
+       <a class="mega-all" href="/products/">View the complete collection <Icon name="arrow" size={16}/></a>
+      </div>
+     </div>
+    ):<a class="nav-link" href={href} aria-current={isCurrent(href)?'page':undefined}>{name}</a>)}
+   </nav>
+   <div class="header-actions">
+    <a class="header-phone" href={`tel:${business.tel}`}><Icon name="phone" size={17}/>{business.phone}</a>
+    <a class="btn btn--sm header-enquire" href="/contact/#enquiry">Enquire Now <Icon name="arrow" size={16}/></a>
+    <button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+   </div>
+  </div>
+ </header>
+
+ <dialog id="mobile-menu" class="mobile-menu" aria-label="Main navigation">
+  <div class="mobile-menu-inner">
+   <div class="mobile-menu-top"><img src="/images/brand/logo-reversed-w320.webp" alt="BUILDMART INDIA" width="116" height="66"/><button class="icon-btn menu-close" aria-label="Close navigation"><Icon name="close" size={20}/></button></div>
+   <nav class="mobile-nav" aria-label="Mobile navigation">{nav.map(([name,href],i)=><a href={href} aria-current={isCurrent(href)?'page':undefined}><small>0{i+1}</small>{name}</a>)}</nav>
+   <div><span class="eyebrow">Collections</span><div class="mobile-collections">{categories.map(c=><a href={`/products/${c.slug}/`}>{c.name}</a>)}</div></div>
+   <div class="mobile-menu-contact">
+    <a class="btn" href="/contact/#enquiry">Discuss your project <Icon name="arrow" size={16}/></a>
+    <a href={`tel:${business.tel}`}><Icon name="phone" size={18}/>{business.phone}</a>
+    <a href={`mailto:${business.email}`}><Icon name="mail" size={18}/>{business.email}</a>
+    <a href="/privacy-policies/">Privacy &amp; Policies</a>
+   </div>
+  </div>
+ </dialog>
+
+ <main id="main"><slot/></main>
+ {cta&&<EnquiryCTA/>}
+
+ <footer class="site-footer">
+  <div class="container footer-grid">
+   <div class="footer-brand">
+    <a href="/" aria-label="BUILDMART INDIA home"><ResponsiveImage src="/images/brand/logo-reversed.webp" sizes="150px" alt="BUILDMART INDIA" width="150" height="85" loading="lazy"/></a>
+    <p class="tagline">Considered hardware.<br/>Exceptional spaces.</p>
+    <p>Architectural hardware solutions for modern homes, hospitality and commercial spaces.</p>
+   </div>
+   <div><h2>Explore</h2><ul>{nav.map(([name,href])=><li><a href={href}>{name}</a></li>)}<li><a href="/privacy-policies/">Privacy &amp; Policies</a></li></ul></div>
+   <div class="footer-collections"><h2>Our collections</h2><ul>{categories.map(c=><li><a href={`/products/${c.slug}/`}>{c.name}</a></li>)}</ul></div>
+   <div>
+    <h2>Visit &amp; connect</h2>
+    <address>
+     <p><Icon name="pin" size={18}/><span>{business.address}</span></p>
+     <a href={`tel:${business.tel}`}><Icon name="phone" size={18}/><span>{business.phone}</span></a>
+     <a href={`mailto:${business.email}`}><Icon name="mail" size={18}/><span>{business.email}</span></a>
+     <a href={business.whatsapp} target="_blank" rel="noopener"><Icon name="whatsapp" size={18}/><span>Chat on WhatsApp<span class="sr-only"> (opens in a new tab)</span></span></a>
+    </address>
+    <p style="margin-top:22px"><a class="link-arrow" href={business.maps} target="_blank" rel="noopener">Get directions <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></p>
+   </div>
+  </div>
+  <div class="container footer-bottom">
+   <span>© {new Date().getFullYear()} BUILDMART INDIA. All rights reserved.</span>
+   <div><a href="/privacy-policies/">Privacy &amp; Policies</a><a href="/sitemap.xml">Sitemap</a><a href="#main" class="back-top">Back to top ↑</a></div>
+  </div>
+ </footer>
+
+ <nav class="action-bar" aria-label="Quick contact">
+  <a href={`tel:${business.tel}`}><Icon name="phone" size={17}/>Call</a>
+  <a href={business.whatsapp} target="_blank" rel="noopener"><Icon name="whatsapp" size={18}/>WhatsApp</a>
+  <a href="/contact/#enquiry">Enquire <Icon name="arrow" size={15}/></a>
+ </nav>
+
+ <script>
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setTimeout(()=>document.documentElement.classList.add('loaded'),1400);
+
+  // Header state + floating contact visibility
+  const header=document.querySelector<HTMLElement>('.site-header');
+  const floaters=document.querySelectorAll<HTMLElement>('.action-bar');
+  const pinnedHero=document.querySelector<HTMLElement>('[data-hero]');
+  // Quick-contact bar appears once the visitor has scrolled past the hero (or 60% of a screen).
+  const barThreshold=()=>pinnedHero?pinnedHero.offsetTop+pinnedHero.offsetHeight-window.innerHeight*0.9:window.innerHeight*0.6;
+  const onScroll=()=>{
+   const y=window.scrollY;
+   header?.classList.toggle('scrolled',y>40);
+   floaters.forEach(el=>el.classList.toggle('is-visible',y>barThreshold()));
+  };
+  onScroll();
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Mobile menu
+  const menu=document.querySelector<HTMLDialogElement>('#mobile-menu');
+  const toggle=document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const closeMenu=()=>menu?.close();
+  toggle?.addEventListener('click',()=>{menu?.showModal();toggle.setAttribute('aria-expanded','true');document.body.classList.add('menu-open');});
+  document.querySelector('.menu-close')?.addEventListener('click',closeMenu);
+  menu?.addEventListener('close',()=>{toggle?.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open');});
+  menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  matchMedia('(min-width: 1025px)').addEventListener('change',e=>{if(e.matches)closeMenu();});
+
+  document.querySelector('.back-top')?.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:reduce?'instant':'smooth'});document.querySelector<HTMLElement>('.brand')?.focus({preventScroll:true});});
+
+  // Scroll reveals
+  const revealables=document.querySelectorAll<HTMLElement>('[data-reveal]');
+  if(reduce||!('IntersectionObserver' in window)){revealables.forEach(el=>el.classList.add('is-in'));}
+  else{
+   const pending=new Set(revealables);
+   const reveal=(el:Element)=>{el.classList.add('is-in');pending.delete(el as HTMLElement);observer.unobserve(el);};
+   const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)reveal(entry.target);}),{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+   revealables.forEach(el=>observer.observe(el));
+   // Backup: never leave content hidden if an observer callback is missed.
+   const sweep=()=>pending.forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight*0.94)reveal(el);});
+   window.addEventListener('scroll',sweep,{passive:true});
+   window.addEventListener('load',sweep);
+  }
+
+  // Horizontal rails with controls and progress
+  document.querySelectorAll<HTMLElement>('[data-rail]').forEach(rail=>{
+   const track=rail.querySelector<HTMLElement>('.rail-track');
+   const bar=rail.querySelector<HTMLElement>('.rail-progress span');
+   const prev=rail.querySelector<HTMLButtonElement>('[data-direction="-1"]');
+   const next=rail.querySelector<HTMLButtonElement>('[data-direction="1"]');
+   if(!track)return;
+   const update=()=>{
+    const max=track.scrollWidth-track.clientWidth;
+    const ratio=max>0?track.scrollLeft/max:1;
+    const visible=track.scrollWidth>0?track.clientWidth/track.scrollWidth:1;
+    if(bar)bar.style.transform=`scaleX(${Math.min(1,visible+ratio*(1-visible))})`;
+    if(prev)prev.disabled=track.scrollLeft<4;
+    if(next)next.disabled=track.scrollLeft>max-4;
+   };
+   [prev,next].forEach(button=>button?.addEventListener('click',()=>{
+    const step=(track.firstElementChild as HTMLElement)?.offsetWidth||300;
+    track.scrollBy({left:Number(button.dataset.direction)*(step+20),behavior:reduce?'instant':'smooth'});
+   }));
+   track.addEventListener('scroll',update,{passive:true});
+   window.addEventListener('resize',update);
+   update();
+  });
+
+ </script>
+</body>
+</html>

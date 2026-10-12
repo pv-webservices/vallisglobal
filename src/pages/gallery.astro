@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import Icon from '../components/Icon.astro';
+import {gallery,asset} from '../data/catalogue';
+const groups=[...new Set(gallery.map(g=>g.group))];
+---
+<Layout title="Architectural Inspiration & Application Gallery" description="Explore glass railings, hospitality interiors and architectural hardware applications from the supplied VALLIS and MRW catalogues." preload={asset('mrw-p20-x152')}>
+ <PageHero label="The application gallery" title="Spaces that inspire. <em>Details that define.</em>" description="A visual exploration of architectural possibilities, using application imagery from the supplied VALLIS and MRW catalogues." image={asset('mrw-p20-x152')} alt="Glass railing on a sunlit terrace overlooking the sea" crumbs={[{label:'Gallery'}]} compact/>
+
+ <section class="section">
+  <div class="container">
+   <div class="section-head">
+    <div data-reveal><span class="eyebrow">Architectural inspiration</span><h2>See the <em>possibilities.</em></h2></div>
+    <p class="lead" data-reveal style="--i:1">Catalogue application imagery, presented for inspiration. Select an image to view it larger.</p>
+   </div>
+   <div class="chips" role="group" aria-label="Filter gallery"><button class="chip" data-gallery-filter="all" aria-pressed="true">All inspiration</button>{groups.map(group=><button class="chip" data-gallery-filter={group} aria-pressed="false">{group}</button>)}</div>
+   <p id="gallery-count" class="result-count" aria-live="polite">{gallery.length} images</p>
+   <div class="gallery-grid">{gallery.map(g=><button class="gallery-item" data-group={g.group} data-large-image={g.image} data-caption={g.title} aria-label={`${g.group}: ${g.title} — enlarge image`}><ResponsiveImage src={g.image} sizes="(max-width: 700px) 100vw, 33vw" alt={g.alt} width="900" height="570" loading="lazy"/><span><span><small>{g.group}</small>{g.title}</span><Icon name="arrowUpRight" size={20}/></span></button>)}</div>
+   <p class="source-note">These catalogue images illustrate product applications and are not presented as completed BUILDMART INDIA projects.</p>
+  </div>
+ </section>
+
+ <dialog class="lightbox" aria-label="Architectural application image">
+  <button class="icon-btn lightbox-close" aria-label="Close gallery image"><Icon name="close" size={20}/></button>
+  <figure><img src={gallery[0].image} alt={gallery[0].alt} width="1600" height="1012"/><figcaption><span class="lightbox-caption"></span><span class="lightbox-nav"><button class="round-btn" data-step="-1" aria-label="Previous image"><Icon name="arrowLeft" size={20}/></button><button class="round-btn" data-step="1" aria-label="Next image"><Icon name="arrow" size={20}/></button></span></figcaption></figure>
+ </dialog>
+
+ <script>
+  const items=Array.from(document.querySelectorAll<HTMLButtonElement>('.gallery-item'));
+  const filters=document.querySelectorAll<HTMLButtonElement>('[data-gallery-filter]');
+  filters.forEach(b=>b.addEventListener('click',()=>{let count=0;items.forEach(item=>{item.hidden=b.dataset.galleryFilter!=='all'&&item.dataset.group!==b.dataset.galleryFilter;if(!item.hidden)count++;});filters.forEach(o=>o.setAttribute('aria-pressed',String(o===b)));const output=document.querySelector('#gallery-count');if(output)output.textContent=`${count} images`;}));
+  const dialog=document.querySelector<HTMLDialogElement>('.lightbox');
+  const image=dialog?.querySelector('img');const caption=dialog?.querySelector<HTMLElement>('.lightbox-caption');
+  let current=0;
+  const visible=()=>items.filter(i=>!i.hidden);
+  const show=(item:HTMLButtonElement)=>{current=visible().indexOf(item);if(image){image.src=item.dataset.largeImage||'';image.alt=item.querySelector('img')?.alt||'';}if(caption)caption.textContent=`${item.dataset.caption} · Catalogue application imagery`;};
+  items.forEach(item=>item.addEventListener('click',()=>{show(item);dialog?.showModal();}));
+  const step=(dir:number)=>{const list=visible();if(!list.length)return;show(list[(current+dir+list.length)%list.length]);};
+  dialog?.querySelectorAll<HTMLButtonElement>('[data-step]').forEach(b=>b.addEventListener('click',()=>step(Number(b.dataset.step))));
+  dialog?.addEventListener('keydown',e=>{if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1);});
+  dialog?.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+  document.querySelector('.lightbox-close')?.addEventListener('click',()=>dialog?.close());
+ </script>
+</Layout>

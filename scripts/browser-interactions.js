@@ -1,0 +1,163 @@
+async (page) => {
+  const base = "http://127.0.0.1:4322";
+  const assertions = [];
+  const check = (condition, name) => {
+    assertions.push({ name, pass: !!condition });
+    if (!condition) throw new Error(name);
+  };
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(base + "/products/");
+  await page.locator("#product-search").fill("VACS 12");
+  check(
+    (await page.locator(".product-card:visible").count()) === 1,
+    "Product search selects the genuine VACS 12 model",
+  );
+  await page.locator("#product-search").fill("no-such-model");
+  check(
+    await page.locator("#no-results").isVisible(),
+    "Search announces an empty result",
+  );
+  await page.locator("#product-search").fill("");
+  await page.locator('[data-filter="door-closers"]').click();
+  check(
+    (await page.locator(".product-card:visible").count()) === 4,
+    "Category filter shows four door closers",
+  );
+  await page.goto(base + "/products/hotel-digital-locks/vacs-12/");
+  await page.locator("[data-image]").nth(1).click();
+  check(
+    (await page.locator("#main-product-image").getAttribute("src")).includes(
+      "x403",
+    ),
+    "Product thumbnail changes the main image",
+  );
+  await page.locator(".zoom-trigger").click();
+  check(
+    await page.locator("dialog.lightbox").isVisible(),
+    "Product image enlarges in a dialog",
+  );
+  await page.keyboard.press("Escape");
+  check(
+    !(await page.locator("dialog.lightbox").isVisible()),
+    "Escape closes the product dialog",
+  );
+  await page.locator(".product-copy .button").click();
+  check(
+    (await page.locator("#product").inputValue()).includes("VACS 12"),
+    "Product enquiry preselects the model",
+  );
+  check(
+    (await page.locator("#category").inputValue()) === "hotel-digital-locks",
+    "Product enquiry preselects the category",
+  );
+  await page.locator('#enquiry-form button[type="submit"]').click();
+  check(
+    (await page.locator('[aria-invalid="true"]').count()) >= 4,
+    "Invalid form fields receive errors",
+  );
+  check(
+    await page.locator("#form-error").textContent(),
+    "Form error is announced",
+  );
+  await page.locator("#full-name").fill("Synthetic QA");
+  await page.locator("#email").fill("qa@example.com");
+  await page.locator("#phone").fill("9999999999");
+  await page
+    .locator("#message")
+    .fill("Synthetic local QA only. Please quote two VACS 12 locks.");
+  await page.locator('input[name="consent"]').check();
+  await page.locator('#enquiry-form button[type="submit"]').click();
+  check(
+    await page.locator("#draft-result").isVisible(),
+    "Valid inputs prepare a reviewable enquiry draft",
+  );
+  const emailHref = await page.locator("#email-draft").getAttribute("href");
+  const waHref = await page.locator("#whatsapp-draft").getAttribute("href");
+  check(
+    emailHref.startsWith("mailto:info@vallisglobal.in?"),
+    "Email draft uses the approved recipient",
+  );
+  check(
+    decodeURIComponent(emailHref).includes("VACS 12"),
+    "Email draft contains the selected model",
+  );
+  check(
+    waHref.startsWith("https://wa.me/919990069207?"),
+    "WhatsApp draft uses the approved number",
+  );
+  await page
+    .locator("#message")
+    .fill("Changed synthetic enquiry requirements.");
+  check(
+    !(await page.locator("#draft-result").isVisible()),
+    "Editing the form invalidates the earlier draft",
+  );
+  check(
+    (await page.locator("#email-draft").getAttribute("href")) === null,
+    "Invalidated draft cannot be opened",
+  );
+  check(
+    await page.evaluate(() => localStorage.length === 0),
+    "Enquiry details are not saved in local storage",
+  );
+  await page.goto(base + "/gallery/");
+  await page.locator('[data-gallery-filter="Residential"]').click();
+  check(
+    (await page.locator(".gallery-item:visible").count()) === 2,
+    "Gallery filter displays residential inspiration",
+  );
+  await page.locator(".gallery-item:visible").first().click();
+  check(
+    await page.locator("dialog.lightbox").isVisible(),
+    "Gallery opens an enlarged image",
+  );
+  await page.keyboard.press("Escape");
+  check(
+    !(await page.locator("dialog.lightbox").isVisible()),
+    "Escape closes the gallery dialog",
+  );
+  await page.goto(base + "/");
+  const track = page.locator(".inspiration .carousel-track");
+  await page.locator('.inspiration [data-direction="1"]').click();
+  check(
+    await track.evaluate((el) => el.scrollLeft > 0),
+    "Carousel next button moves the track",
+  );
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator(".menu-toggle").click();
+  check(
+    await page.locator("#mobile-menu").isVisible(),
+    "Mobile navigation opens",
+  );
+  check(
+    (await page.locator(".menu-toggle").getAttribute("aria-expanded")) ===
+      "true",
+    "Mobile navigation announces expanded state",
+  );
+  await page.keyboard.press("Escape");
+  check(
+    !(await page.locator("#mobile-menu").isVisible()),
+    "Escape closes mobile navigation",
+  );
+  await page.locator(".menu-toggle").click();
+  await page.locator('#mobile-menu a[href="/about/"]').click();
+  check(
+    new URL(page.url()).pathname === "/about/",
+    "Mobile navigation follows the About link",
+  );
+  await page.goto(base + "/contact/");
+  await page.screenshot({
+    path: "output/playwright/contact-mobile.png",
+    fullPage: true,
+  });
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto(base + "/products/hotel-digital-locks/vacs-12/");
+  await page.screenshot({
+    path: "output/playwright/product-desktop.png",
+    fullPage: true,
+  });
+  await page.context().setOffline(true);
+  await page.context().setOffline(false);
+  return { assertions, status: "PASS", messagesSent: 0 };
+}

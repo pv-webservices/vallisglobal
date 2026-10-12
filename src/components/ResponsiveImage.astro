@@ -1,0 +1,8 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import manifest from '../data/image-manifest.json';
+interface Props extends HTMLAttributes<'img'> {src:string;sizes?:string;}
+const {src,sizes='(max-width: 600px) 100vw, 50vw',width,height,...rest}=Astro.props;
+const data=(manifest as Record<string,{width:number;height:number;srcset:string}>)[src];
+---
+<img {...rest} src={src} srcset={data?.srcset} sizes={data?sizes:undefined} width={width||data?.width} height={height||data?.height}/>

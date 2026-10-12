@@ -1,0 +1,106 @@
+{
+  "assertions": [
+    {
+      "name": "Product search selects the genuine VACS 12 model",
+      "pass": true
+    },
+    {
+      "name": "Search announces an empty result",
+      "pass": true
+    },
+    {
+      "name": "Category filter shows four door closers",
+      "pass": true
+    },
+    {
+      "name": "Product thumbnail changes the main image",
+      "pass": true
+    },
+    {
+      "name": "Product image enlarges in a dialog",
+      "pass": true
+    },
+    {
+      "name": "Escape closes the product dialog",
+      "pass": true
+    },
+    {
+      "name": "Product enquiry preselects the model",
+      "pass": true
+    },
+    {
+      "name": "Product enquiry preselects the category",
+      "pass": true
+    },
+    {
+      "name": "Invalid form fields receive errors",
+      "pass": true
+    },
+    {
+      "name": "Form error is announced",
+      "pass": true
+    },
+    {
+      "name": "Valid inputs prepare a reviewable enquiry draft",
+      "pass": true
+    },
+    {
+      "name": "Email draft uses the approved recipient",
+      "pass": true
+    },
+    {
+      "name": "Email draft contains the selected model",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp draft uses the approved number",
+      "pass": true
+    },
+    {
+      "name": "Editing the form invalidates the earlier draft",
+      "pass": true
+    },
+    {
+      "name": "Invalidated draft cannot be opened",
+      "pass": true
+    },
+    {
+      "name": "Enquiry details are not saved in local storage",
+      "pass": true
+    },
+    {
+      "name": "Gallery filter displays residential inspiration",
+      "pass": true
+    },
+    {
+      "name": "Gallery opens an enlarged image",
+      "pass": true
+    },
+    {
+      "name": "Escape closes the gallery dialog",
+      "pass": true
+    },
+    {
+      "name": "Carousel next button moves the track",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation opens",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation announces expanded state",
+      "pass": true
+    },
+    {
+      "name": "Escape closes mobile navigation",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation follows the About link",
+      "pass": true
+    }
+  ],
+  "status": "PASS",
+  "messagesSent": 0
+}

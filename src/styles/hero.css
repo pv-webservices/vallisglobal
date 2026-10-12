@@ -1,0 +1,421 @@
+/* BUILDMART INDIA — cinematic scroll hero (home)
+   Scroll is the timeline: JS maps section progress to --p and per-layer opacity/transform.
+   Without JS or with reduced motion the hero is a single, static full-screen scene. */
+
+.hero-cine {
+  position: relative;
+  height: 100svh;
+  min-height: 620px;
+  background: var(--navy-950);
+  color: var(--ivory);
+}
+.js .hero-cine {
+  height: 400vh;
+}
+.hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Scenes */
+.hero-scenes {
+  position: absolute;
+  inset: -2%;
+  z-index: -3;
+  transform: translate3d(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * -10px), 0);
+  transition: transform 1.2s var(--ease-out);
+}
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.hero-scene:first-child {
+  opacity: 1;
+}
+.hero-scene img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--pos, 60% 50%);
+}
+.hero-scene:first-child img {
+  animation: hero-settle 2.8s var(--ease-out) both;
+}
+.hero-veil {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(3, 13, 26, 0.92) 0%, rgba(3, 13, 26, 0.6) 36%, rgba(3, 13, 26, 0.08) 70%),
+    linear-gradient(0deg, rgba(3, 13, 26, 0.9) 0%, rgba(3, 13, 26, 0) 34%),
+    linear-gradient(180deg, rgba(3, 13, 26, 0.55) 0%, transparent 20%);
+}
+.hero-veil::after {
+  /* darkens as the sequence closes, handing over to the next section */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--navy-950);
+  opacity: var(--close, 0);
+}
+
+/* Gold frame lines drawn on load */
+.hero-frame-line {
+  position: absolute;
+  z-index: -1;
+  background: var(--line-gold);
+  pointer-events: none;
+}
+.hero-frame-line.v {
+  top: calc(var(--header-h) + 24px);
+  bottom: 120px;
+  right: calc(var(--gutter) + 230px);
+  width: 1px;
+  transform-origin: top;
+  animation: draw-y 1.6s var(--ease-out) 0.6s both;
+}
+@keyframes draw-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+/* Copy layer */
+.hero-layer {
+  position: relative;
+  height: 100%;
+  padding-top: calc(var(--header-h) + 24px);
+  padding-bottom: 130px;
+}
+.hero-panel {
+  position: absolute;
+  left: 0;
+  bottom: 140px;
+  width: min(820px, 100%);
+  will-change: opacity, transform;
+}
+.js .hero-chapter {
+  opacity: 0;
+  visibility: hidden;
+}
+.hero-chapter {
+  display: none;
+}
+.js .hero-chapter {
+  display: block;
+}
+.hero-panel .eyebrow {
+  color: var(--gold);
+}
+.hero-cine h1 {
+  font-size: clamp(3.2rem, 7.8vw, 8.4rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.hero-cine h1 .line {
+  display: block;
+  overflow: hidden;
+  padding: 0 0.08em 0.14em 0;
+  margin-bottom: -0.1em;
+}
+.hero-cine h1 .line > span {
+  display: block;
+  animation: line-up 1.2s var(--ease-out) both;
+  animation-delay: calc(0.3s + var(--i, 0) * 0.12s);
+}
+.hero-cine h1 em,
+.hero-chapter h2 em {
+  color: var(--gold-light);
+}
+.hero-sub {
+  margin: 28px 0 38px;
+  max-width: 34rem;
+  font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+  color: rgba(247, 243, 236, 0.84);
+  animation: fade-up 1s var(--ease-out) 0.85s both;
+}
+.hero-sub strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.55em;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--ivory);
+  margin-bottom: 6px;
+}
+.hero-intro .btn-row {
+  animation: fade-up 1s var(--ease-out) 1s both;
+}
+.chapter-num {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-family: var(--serif);
+  font-size: clamp(3.4rem, 6vw, 5.6rem);
+  font-style: italic;
+  line-height: 0.9;
+  color: var(--gold);
+}
+.chapter-num small {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: rgba(247, 243, 236, 0.6);
+}
+.hero-chapter h2 {
+  font-size: clamp(2.8rem, 6.2vw, 6.4rem);
+  line-height: 0.95;
+  margin-bottom: 22px;
+}
+.hero-chapter p {
+  max-width: 32rem;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  color: rgba(247, 243, 236, 0.82);
+  margin-bottom: 26px;
+}
+.hero-chapter .link-arrow {
+  color: var(--gold-light);
+}
+
+/* Chapter rail */
+.hero-progress {
+  position: absolute;
+  right: var(--gutter);
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  gap: 6px;
+  padding-left: 22px;
+  animation: fade-up 1s var(--ease-out) 1.15s both;
+}
+.hero-progress::before,
+.hero-progress::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: var(--line-light);
+}
+.hero-progress::after {
+  background: var(--gold);
+  transform-origin: top;
+  transform: scaleY(var(--p, 0));
+}
+.hero-progress button {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: baseline;
+  min-width: 170px;
+  padding: 10px 0;
+  text-align: left;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(247, 243, 236, 0.6);
+  text-shadow: 0 1px 12px rgba(3, 13, 26, 0.9);
+  transition:
+    color 0.4s,
+    transform 0.5s var(--ease);
+}
+.hero-progress button span {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--gold);
+  opacity: 0.6;
+  transition: opacity 0.4s;
+}
+.hero-progress button:hover,
+.hero-progress button[aria-current="step"] {
+  color: var(--ivory);
+}
+.hero-progress button[aria-current="step"] {
+  transform: translateX(6px);
+}
+.hero-progress button[aria-current="step"] span {
+  opacity: 1;
+}
+
+/* Foot */
+.hero-foot {
+  position: absolute;
+  inset: auto 0 0;
+  border-top: 1px solid var(--line-light);
+  background: linear-gradient(0deg, rgba(3, 13, 26, 0.65), rgba(3, 13, 26, 0.15));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.hero-foot-inner {
+  display: grid;
+  grid-template-columns: repeat(3, auto) 1fr;
+  align-items: center;
+  gap: clamp(20px, 4vw, 72px);
+  padding-block: 22px;
+}
+.hero-fact {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.hero-fact b {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gold-light);
+}
+.hero-fact span {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(247, 243, 236, 0.72);
+}
+.scroll-cue {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(247, 243, 236, 0.75);
+}
+.scroll-cue i {
+  position: relative;
+  width: 1px;
+  height: 42px;
+  background: var(--line-light);
+  overflow: hidden;
+}
+.scroll-cue i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  animation: scroll-line 2.2s var(--ease) infinite;
+}
+.hero-counter {
+  display: none;
+}
+
+@keyframes scroll-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(100%);
+  }
+}
+@keyframes line-up {
+  from {
+    transform: translateY(105%);
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero-progress,
+  .hero-frame-line {
+    display: none;
+  }
+}
+@media (max-width: 760px) {
+  .js .hero-cine {
+    height: 300vh;
+  }
+  .hero-veil {
+    background:
+      linear-gradient(0deg, rgba(3, 13, 26, 0.97) 6%, rgba(3, 13, 26, 0.6) 52%, rgba(3, 13, 26, 0.35) 100%),
+      linear-gradient(90deg, rgba(3, 13, 26, 0.5), transparent);
+  }
+  .hero-scene img {
+    object-position: var(--pos-m, 68% 50%);
+  }
+  .hero-panel {
+    bottom: 112px;
+  }
+  .hero-sub {
+    margin: 18px 0 26px;
+  }
+  .hero-chapter h2 {
+    font-size: clamp(2.6rem, 12vw, 3.6rem);
+  }
+  .chapter-num {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  .hero-foot-inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    gap: 10px;
+    padding-block: 16px;
+  }
+  .hero-fact {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hero-fact b {
+    font-size: 1.8rem;
+  }
+  .hero-fact span {
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+  }
+  .scroll-cue {
+    display: none;
+  }
+  .js .hero-counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    color: var(--gold-light);
+  }
+  .hero-counter small {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: rgba(247, 243, 236, 0.6);
+  }
+}
+@media (max-height: 700px) and (min-width: 761px) {
+  .hero-panel {
+    bottom: 110px;
+  }
+  .hero-cine h1 {
+    font-size: clamp(3rem, 6.4vw, 6rem);
+  }
+  .hero-sub {
+    margin: 18px 0 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .hero-cine {
+    height: 100svh;
+  }
+  .js .hero-chapter,
+  .js .hero-counter {
+    display: none;
+  }
+  .hero-scenes {
+    transform: none !important;
+  }
+}

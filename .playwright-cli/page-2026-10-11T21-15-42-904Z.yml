@@ -1,0 +1,477 @@
+- generic [active] [ref=f3e1]:
+  - link "Skip to content" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - link "BUILDMART INDIA home" [ref=f3e5] [cursor=pointer]:
+        - /url: /
+        - img "BUILDMART INDIA" [ref=f3e6]
+      - generic [ref=f3e7]:
+        - link "Search products" [ref=f3e8] [cursor=pointer]:
+          - /url: /products/#catalogue-search
+        - link "Enquire Now →" [ref=f3e11] [cursor=pointer]:
+          - /url: /contact/#enquiry
+          - text: Enquire Now
+          - generic [ref=f3e12]: →
+        - button "Open navigation" [ref=f3e13] [cursor=pointer]
+  - main [ref=f3e16]:
+    - region [ref=f3e17]:
+      - generic [ref=f3e18]:
+        - generic [ref=f3e19]:
+          - generic [ref=f3e20]: PREMIUM ARCHITECTURAL HARDWARE
+          - heading "The art of architectural hardware" [level=1] [ref=f3e21]:
+            - generic [ref=f3e22]: The art of
+            - generic [ref=f3e23]: architectural
+            - generic [ref=f3e24]: hardware
+          - paragraph [ref=f3e25]:
+            - strong [ref=f3e26]: Innovative. Durable. Elegant.
+            - text: Complete hardware solutionsfor modern architecture.
+          - generic [ref=f3e27]:
+            - link "Explore Catalogue →" [ref=f3e28] [cursor=pointer]:
+              - /url: /products/
+              - text: Explore Catalogue
+              - generic [ref=f3e29]: →
+            - link "Discover the Details" [ref=f3e30] [cursor=pointer]:
+              - /url: /gallery/
+              - generic [aria-hidden] [ref=f3e31]: ↗
+              - text: Discover the Details
+        - generic [ref=f3e32]:
+          - generic [ref=f3e33]: DESIGNED FOR EVERY DETAIL
+          - link "EXPLORE BELOW" [ref=f3e35] [cursor=pointer]:
+            - /url: "#collection"
+            - text: EXPLORE BELOW
+            - generic [aria-hidden] [ref=f3e36]: ↓
+    - generic [ref=f3e38]:
+      - generic [ref=f3e39]: PremiumMaterials
+      - generic [ref=f3e43]: ModernDesigns
+      - generic [ref=f3e47]: Long-lastingPerformance
+      - generic [ref=f3e51]: CompleteSolutions
+    - generic [ref=f3e56]:
+      - generic [ref=f3e57]:
+        - generic [ref=f3e58]:
+          - generic [ref=f3e59]: PREMIUM COLLECTION
+          - heading "Our Product Range" [level=2] [ref=f3e60]
+        - link "View All Products →" [ref=f3e61] [cursor=pointer]:
+          - /url: /products/
+          - text: View All Products
+          - generic [ref=f3e62]: →
+      - generic [ref=f3e63]:
+        - link [ref=f3e64] [cursor=pointer]:
+          - /url: /products/hotel-digital-locks/
+          - img "Hotel & Digital Locks" [ref=f3e66]
+          - generic [ref=f3e67]:
+            - text: "01"
+            - heading "Hotel & Digital Locks" [level=3] [ref=f3e68]
+            - generic [aria-hidden] [ref=f3e69]: ↗
+        - link [ref=f3e70] [cursor=pointer]:
+          - /url: /products/door-hardware/
+          - img "Door Hardware" [ref=f3e72]
+          - generic [ref=f3e73]:
+            - text: "02"
+            - heading "Door Hardware" [level=3] [ref=f3e74]
+            - generic [aria-hidden] [ref=f3e75]: ↗
+        - link [ref=f3e76] [cursor=pointer]:
+          - /url: /products/door-closers/
+          - img "Door Closers" [ref=f3e78]
+          - generic [ref=f3e79]:
+            - text: "03"
+            - heading "Door Closers" [level=3] [ref=f3e80]
+            - generic [aria-hidden] [ref=f3e81]: ↗
+        - link [ref=f3e82] [cursor=pointer]:
+          - /url: /products/spider-fittings/
+          - img "Spider Fittings" [ref=f3e84]
+          - generic [ref=f3e85]:
+            - text: "04"
+            - heading "Spider Fittings" [level=3] [ref=f3e86]
+            - generic [aria-hidden] [ref=f3e87]: ↗
+        - link [ref=f3e88] [cursor=pointer]:
+          - /url: /products/glass-fittings/
+          - img "Glass Fittings" [ref=f3e90]
+          - generic [ref=f3e91]:
+            - text: "05"
+            - heading "Glass Fittings" [level=3] [ref=f3e92]
+            - generic [aria-hidden] [ref=f3e93]: ↗
+        - link [ref=f3e94] [cursor=pointer]:
+          - /url: /products/glass-railings/
+          - img "Glass Railings" [ref=f3e96]
+          - generic [ref=f3e97]:
+            - text: "06"
+            - heading "Glass Railings" [level=3] [ref=f3e98]
+            - generic [aria-hidden] [ref=f3e99]: ↗
+        - link [ref=f3e100] [cursor=pointer]:
+          - /url: /products/furniture-hardware/
+          - img "Furniture Hardware" [ref=f3e102]
+          - generic [ref=f3e103]:
+            - text: "07"
+            - heading "Furniture Hardware" [level=3] [ref=f3e104]
+            - generic [aria-hidden] [ref=f3e105]: ↗
+        - link [ref=f3e106] [cursor=pointer]:
+          - /url: /products/shaft-doors/
+          - img "Shaft Doors" [ref=f3e108]
+          - generic [ref=f3e109]:
+            - text: "08"
+            - heading "Shaft Doors" [level=3] [ref=f3e110]
+            - generic [aria-hidden] [ref=f3e111]: ↗
+    - generic [ref=f3e112]:
+      - img "MRW catalogue architectural atrium with glass railings" [ref=f3e113]
+      - generic [ref=f3e114]:
+        - generic [ref=f3e115]:
+          - generic [ref=f3e116]: SPACES & POSSIBILITIES
+          - heading "Spaces that inspire." [level=2] [ref=f3e117]: Spacesthat inspire.
+          - paragraph [ref=f3e118]: Thoughtful hardware solutions for residential, commercial, hospitality and institutional environments.
+        - generic [ref=f3e119]:
+          - link "Residential Spaces" [ref=f3e120] [cursor=pointer]:
+            - /url: /products/hotel-digital-locks/
+            - text: Residential Spaces
+            - generic [aria-hidden] [ref=f3e121]: →
+          - link "Hotels & Hospitality" [ref=f3e122] [cursor=pointer]:
+            - /url: /products/hotel-digital-locks/
+            - text: Hotels & Hospitality
+            - generic [aria-hidden] [ref=f3e123]: →
+          - link "Hospitals & Institutions" [ref=f3e124] [cursor=pointer]:
+            - /url: /products/door-closers/
+            - text: Hospitals & Institutions
+            - generic [aria-hidden] [ref=f3e125]: →
+          - link "Commercial Buildings" [ref=f3e126] [cursor=pointer]:
+            - /url: /products/spider-fittings/
+            - text: Commercial Buildings
+            - generic [aria-hidden] [ref=f3e127]: →
+    - generic [ref=f3e129]:
+      - generic [ref=f3e130]:
+        - generic [ref=f3e131]:
+          - generic [ref=f3e132]: APPLICATION GALLERY
+          - heading "Architectural Inspiration" [level=2] [ref=f3e133]
+        - generic [ref=f3e134]:
+          - button "Previous architectural images" [ref=f3e135] [cursor=pointer]: ←
+          - button "Next architectural images" [ref=f3e136] [cursor=pointer]: →
+      - generic [ref=f3e137]:
+        - link "MRW catalogue interior with a glass-railed staircase Light, lines & open views ↗" [ref=f3e138] [cursor=pointer]:
+          - /url: /gallery/
+          - img "MRW catalogue interior with a glass-railed staircase" [ref=f3e139]
+          - generic [ref=f3e140]: Light, lines & open views ↗
+        - link "MRW catalogue glass balustrade overlooking a commercial atrium An open commercial perspective ↗" [ref=f3e141] [cursor=pointer]:
+          - /url: /gallery/
+          - img "MRW catalogue glass balustrade overlooking a commercial atrium" [ref=f3e142]
+          - generic [ref=f3e143]: An open commercial perspective ↗
+        - link "VALLIS catalogue hospitality interior A considered arrival ↗" [ref=f3e144] [cursor=pointer]:
+          - /url: /gallery/
+          - img "VALLIS catalogue hospitality interior" [ref=f3e145]
+          - generic [ref=f3e146]: A considered arrival ↗
+        - link "MRW catalogue glass railing on a sunlit terrace Uninterrupted horizons ↗" [ref=f3e147] [cursor=pointer]:
+          - /url: /gallery/
+          - img "MRW catalogue glass railing on a sunlit terrace" [ref=f3e148]
+          - generic [ref=f3e149]: Uninterrupted horizons ↗
+        - link "MRW catalogue modern staircase with glass balustrade Sculptural stairways ↗" [ref=f3e150] [cursor=pointer]:
+          - /url: /gallery/
+          - img "MRW catalogue modern staircase with glass balustrade" [ref=f3e151]
+          - generic [ref=f3e152]: Sculptural stairways ↗
+        - link "MRW catalogue architectural glass railing application Architecture in the details ↗" [ref=f3e153] [cursor=pointer]:
+          - /url: /gallery/
+          - img "MRW catalogue architectural glass railing application" [ref=f3e154]
+          - generic [ref=f3e155]: Architecture in the details ↗
+        - link "VALLIS catalogue spider fittings supporting an interior glass wall The clarity of glass ↗" [ref=f3e156] [cursor=pointer]:
+          - /url: /gallery/
+          - img "VALLIS catalogue spider fittings supporting an interior glass wall" [ref=f3e157]
+          - generic [ref=f3e158]: The clarity of glass ↗
+        - link "MRW catalogue balcony glass balustrade Clean balcony lines ↗" [ref=f3e159] [cursor=pointer]:
+          - /url: /gallery/
+          - img "MRW catalogue balcony glass balustrade" [ref=f3e160]
+          - generic [ref=f3e161]: Clean balcony lines ↗
+      - paragraph [ref=f3e162]: Application imagery from the supplied catalogues, presented as inspiration.
+    - generic [ref=f3e164]:
+      - heading "Why Choose BUILDMART INDIA" [level=2] [ref=f3e165]
+      - generic [ref=f3e166]:
+        - article [ref=f3e167]:
+          - generic [ref=f3e170]:
+            - heading "Considered materials" [level=3] [ref=f3e171]
+            - paragraph [ref=f3e172]: Explore documented materials and grades for each product.
+        - article [ref=f3e173]:
+          - generic [ref=f3e176]:
+            - heading "Precision in the details" [level=3] [ref=f3e177]
+            - paragraph [ref=f3e178]: Select fittings around your door and glass requirements.
+        - article [ref=f3e179]:
+          - generic [ref=f3e182]:
+            - heading "Elegant finishes" [level=3] [ref=f3e183]
+            - paragraph [ref=f3e184]: Find a finish that complements your architectural palette.
+        - article [ref=f3e185]:
+          - generic [ref=f3e188]:
+            - heading "Purposeful performance" [level=3] [ref=f3e189]
+            - paragraph [ref=f3e190]: Choose the right model for the demands of your space.
+        - article [ref=f3e191]:
+          - generic [ref=f3e194]:
+            - heading "A complete collection" [level=3] [ref=f3e195]
+            - paragraph [ref=f3e196]: From entrance locks to the finishing touch on cabinetry.
+    - generic [ref=f3e198]:
+      - generic [ref=f3e199]:
+        - heading "Featured Luxury Solutions" [level=2] [ref=f3e200]
+        - generic [ref=f3e201]:
+          - button "Previous featured products" [ref=f3e202] [cursor=pointer]: ←
+          - button "Next featured products" [ref=f3e203] [cursor=pointer]: →
+      - generic [ref=f3e204]:
+        - article [ref=f3e205]:
+          - link "View VALLIS VACS 12 Fingerprint Digital Lock" [ref=f3e206] [cursor=pointer]:
+            - /url: /products/hotel-digital-locks/vacs-12/
+            - img "VALLIS VACS 12 Fingerprint Digital Lock" [ref=f3e207]
+            - generic [ref=f3e208]:
+              - text: View details
+              - generic [aria-hidden] [ref=f3e209]: ↗
+          - generic [ref=f3e210]:
+            - generic [ref=f3e211]: VALLIS · VACS 12
+            - heading [level=3] [ref=f3e212]:
+              - link "Fingerprint Digital Lock" [ref=f3e213] [cursor=pointer]:
+                - /url: /products/hotel-digital-locks/vacs-12/
+            - link "Enquire about this product" [ref=f3e214] [cursor=pointer]:
+              - /url: /contact/?product=VALLIS+VACS+12+%E2%80%94+Fingerprint+Digital+Lock&category=hotel-digital-locks#enquiry
+              - text: Enquire about this product
+              - generic [aria-hidden] [ref=f3e215]: →
+        - article [ref=f3e216]:
+          - link "View VALLIS VBL 255 Architectural Lever Handle" [ref=f3e217] [cursor=pointer]:
+            - /url: /products/door-hardware/vbl-255/
+            - img "VALLIS VBL 255 Architectural Lever Handle" [ref=f3e218]
+            - generic [ref=f3e219]:
+              - text: View details
+              - generic [aria-hidden] [ref=f3e220]: ↗
+          - generic [ref=f3e221]:
+            - generic [ref=f3e222]: VALLIS · VBL 255
+            - heading [level=3] [ref=f3e223]:
+              - link "Architectural Lever Handle" [ref=f3e224] [cursor=pointer]:
+                - /url: /products/door-hardware/vbl-255/
+            - link "Enquire about this product" [ref=f3e225] [cursor=pointer]:
+              - /url: /contact/?product=VALLIS+VBL+255+%E2%80%94+Architectural+Lever+Handle&category=door-hardware#enquiry
+              - text: Enquire about this product
+              - generic [aria-hidden] [ref=f3e226]: →
+        - article [ref=f3e227]:
+          - link "View VALLIS VSDC 1101 Overhead Door Closer" [ref=f3e228] [cursor=pointer]:
+            - /url: /products/door-closers/vsdc-1101/
+            - img "VALLIS VSDC 1101 Overhead Door Closer" [ref=f3e229]
+            - generic [ref=f3e230]:
+              - text: View details
+              - generic [aria-hidden] [ref=f3e231]: ↗
+          - generic [ref=f3e232]:
+            - generic [ref=f3e233]: VALLIS · VSDC 1101
+            - heading [level=3] [ref=f3e234]:
+              - link "Overhead Door Closer" [ref=f3e235] [cursor=pointer]:
+                - /url: /products/door-closers/vsdc-1101/
+            - link "Enquire about this product" [ref=f3e236] [cursor=pointer]:
+              - /url: /contact/?product=VALLIS+VSDC+1101+%E2%80%94+Overhead+Door+Closer&category=door-closers#enquiry
+              - text: Enquire about this product
+              - generic [aria-hidden] [ref=f3e237]: →
+        - article [ref=f3e238]:
+          - link "View VALLIS VSF 91 4-arm fin-type spider" [ref=f3e239] [cursor=pointer]:
+            - /url: /products/spider-fittings/vsf-91/
+            - img "VALLIS VSF 91 4-arm fin-type spider" [ref=f3e240]
+            - generic [ref=f3e241]:
+              - text: View details
+              - generic [aria-hidden] [ref=f3e242]: ↗
+          - generic [ref=f3e243]:
+            - generic [ref=f3e244]: VALLIS · VSF 91
+            - heading [level=3] [ref=f3e245]:
+              - link "4-arm fin-type spider" [ref=f3e246] [cursor=pointer]:
+                - /url: /products/spider-fittings/vsf-91/
+            - link "Enquire about this product" [ref=f3e247] [cursor=pointer]:
+              - /url: /contact/?product=VALLIS+VSF+91+%E2%80%94+4-arm+fin-type+spider&category=spider-fittings#enquiry
+              - text: Enquire about this product
+              - generic [aria-hidden] [ref=f3e248]: →
+        - article [ref=f3e249]:
+          - link "View VALLIS VSH 704 180° Glass-to-Glass Hinge" [ref=f3e250] [cursor=pointer]:
+            - /url: /products/glass-fittings/vsh-704/
+            - img "VALLIS VSH 704 180° Glass-to-Glass Hinge" [ref=f3e251]
+            - generic [ref=f3e252]:
+              - text: View details
+              - generic [aria-hidden] [ref=f3e253]: ↗
+          - generic [ref=f3e254]:
+            - generic [ref=f3e255]: VALLIS · VSH 704
+            - heading [level=3] [ref=f3e256]:
+              - link "180° Glass-to-Glass Hinge" [ref=f3e257] [cursor=pointer]:
+                - /url: /products/glass-fittings/vsh-704/
+            - link "Enquire about this product" [ref=f3e258] [cursor=pointer]:
+              - /url: /contact/?product=VALLIS+VSH+704+%E2%80%94+180%C2%B0+Glass-to-Glass+Hinge&category=glass-fittings#enquiry
+              - text: Enquire about this product
+              - generic [aria-hidden] [ref=f3e259]: →
+        - article [ref=f3e260]:
+          - link "View NIMKRO H 2102 Fluted Cabinet Handle" [ref=f3e261] [cursor=pointer]:
+            - /url: /products/furniture-hardware/h-2102/
+            - img "NIMKRO H 2102 Fluted Cabinet Handle" [ref=f3e262]
+            - generic [ref=f3e263]:
+              - text: View details
+              - generic [aria-hidden] [ref=f3e264]: ↗
+          - generic [ref=f3e265]:
+            - generic [ref=f3e266]: NIMKRO · H 2102
+            - heading [level=3] [ref=f3e267]:
+              - link "Fluted Cabinet Handle" [ref=f3e268] [cursor=pointer]:
+                - /url: /products/furniture-hardware/h-2102/
+            - link "Enquire about this product" [ref=f3e269] [cursor=pointer]:
+              - /url: /contact/?product=NIMKRO+H+2102+%E2%80%94+Fluted+Cabinet+Handle&category=furniture-hardware#enquiry
+              - text: Enquire about this product
+              - generic [aria-hidden] [ref=f3e270]: →
+        - article [ref=f3e271]:
+          - link "View VALLIS VRS 101 Round-Profile Glass Spigot" [ref=f3e272] [cursor=pointer]:
+            - /url: /products/glass-railings/vrs-101/
+            - img "VALLIS VRS 101 Round-Profile Glass Spigot" [ref=f3e273]
+            - generic [ref=f3e274]:
+              - text: View details
+              - generic [aria-hidden] [ref=f3e275]: ↗
+          - generic [ref=f3e276]:
+            - generic [ref=f3e277]: VALLIS · VRS 101
+            - heading [level=3] [ref=f3e278]:
+              - link "Round-Profile Glass Spigot" [ref=f3e279] [cursor=pointer]:
+                - /url: /products/glass-railings/vrs-101/
+            - link "Enquire about this product" [ref=f3e280] [cursor=pointer]:
+              - /url: /contact/?product=VALLIS+VRS+101+%E2%80%94+Round-Profile+Glass+Spigot&category=glass-railings#enquiry
+              - text: Enquire about this product
+              - generic [aria-hidden] [ref=f3e281]: →
+        - article [ref=f3e282]:
+          - link "View BUILDMART INDIA FHC Double Door Double Shaft Door with Vision Panels" [ref=f3e283] [cursor=pointer]:
+            - /url: /products/shaft-doors/fhc-double-door/
+            - img "BUILDMART INDIA FHC Double Door Double Shaft Door with Vision Panels" [ref=f3e284]
+            - generic [ref=f3e285]:
+              - text: View details
+              - generic [aria-hidden] [ref=f3e286]: ↗
+          - generic [ref=f3e287]:
+            - generic [ref=f3e288]: BUILDMART INDIA · FHC Double Door
+            - heading [level=3] [ref=f3e289]:
+              - link "Double Shaft Door with Vision Panels" [ref=f3e290] [cursor=pointer]:
+                - /url: /products/shaft-doors/fhc-double-door/
+            - link "Enquire about this product" [ref=f3e291] [cursor=pointer]:
+              - /url: /contact/?product=BUILDMART+INDIA+FHC+Double+Door+%E2%80%94+Double+Shaft+Door+with+Vision+Panels&category=shaft-doors#enquiry
+              - text: Enquire about this product
+              - generic [aria-hidden] [ref=f3e292]: →
+    - generic [ref=f3e294]:
+      - heading "Solutions for Every Space" [level=2] [ref=f3e295]
+      - generic [ref=f3e296]:
+        - link "Residential Spaces" [ref=f3e297] [cursor=pointer]:
+          - /url: /products/hotel-digital-locks/
+          - generic [ref=f3e298]:
+            - generic [ref=f3e301]: Residential Spaces
+            - generic [aria-hidden] [ref=f3e302]: →
+        - link "Hotels & Hospitality" [ref=f3e303] [cursor=pointer]:
+          - /url: /products/hotel-digital-locks/
+          - generic [ref=f3e304]:
+            - generic [ref=f3e307]: Hotels & Hospitality
+            - generic [aria-hidden] [ref=f3e308]: →
+        - link "Hospitals & Institutions" [ref=f3e309] [cursor=pointer]:
+          - /url: /products/door-closers/
+          - generic [ref=f3e310]:
+            - generic [ref=f3e313]: Hospitals & Institutions
+            - generic [aria-hidden] [ref=f3e314]: →
+        - link "Commercial Buildings" [ref=f3e315] [cursor=pointer]:
+          - /url: /products/spider-fittings/
+          - generic [ref=f3e316]:
+            - generic [ref=f3e319]: Commercial Buildings
+            - generic [aria-hidden] [ref=f3e320]: →
+        - link "Corporate Offices" [ref=f3e321] [cursor=pointer]:
+          - /url: /products/glass-fittings/
+          - generic [ref=f3e322]:
+            - generic [ref=f3e325]: Corporate Offices
+            - generic [aria-hidden] [ref=f3e326]: →
+        - link "Institutional Projects" [ref=f3e327] [cursor=pointer]:
+          - /url: /products/shaft-doors/
+          - generic [ref=f3e328]:
+            - generic [ref=f3e331]: Institutional Projects
+            - generic [aria-hidden] [ref=f3e332]: →
+    - generic [ref=f3e333]:
+      - generic [ref=f3e334]:
+        - img "MRW catalogue contemporary terrace with glass balustrade" [ref=f3e335]
+        - heading "Crafted for modern architecture." [level=2] [ref=f3e336]: Crafted formodern architecture.
+      - generic [ref=f3e338]:
+        - generic [ref=f3e339]: ABOUT BUILDMART INDIA
+        - heading "Excellence in every detail." [level=2] [ref=f3e340]: Excellence inevery detail.
+        - paragraph [ref=f3e341]: Bring function and finish together. Our architectural hardware collection spans locking solutions, door hardware, glass fittings, railings and furniture details for modern residential and commercial spaces.
+        - link "Know More About Us →" [ref=f3e342] [cursor=pointer]:
+          - /url: /about/
+          - text: Know More About Us
+          - generic [ref=f3e343]: →
+  - generic [ref=f3e345]:
+    - generic [ref=f3e346]:
+      - generic [ref=f3e347]: YOUR NEXT PROJECT STARTS HERE
+      - heading "Let’s build better spaces together." [level=2] [ref=f3e348]: Let’s buildbetter spaces together.
+    - link "Call us +91 9990069207" [ref=f3e349] [cursor=pointer]:
+      - /url: tel:+919990069207
+      - generic [ref=f3e352]:
+        - generic [ref=f3e353]: Call us
+        - text: +91 9990069207
+    - link "Email us info@vallisglobal.in" [ref=f3e354] [cursor=pointer]:
+      - /url: mailto:info@vallisglobal.in
+      - generic [ref=f3e357]:
+        - generic [ref=f3e358]: Email us
+        - text: info@vallisglobal.in
+    - link "Request a Quote →" [ref=f3e359] [cursor=pointer]:
+      - /url: /contact/#enquiry
+      - text: Request a Quote
+      - generic [ref=f3e360]: →
+  - contentinfo [ref=f3e361]:
+    - generic [ref=f3e362]:
+      - generic [ref=f3e363]:
+        - link "BUILDMART INDIA home" [ref=f3e364] [cursor=pointer]:
+          - /url: /
+          - img "BUILDMART INDIA" [ref=f3e365]
+        - paragraph [ref=f3e366]: Considered hardware.Exceptional spaces.
+        - paragraph [ref=f3e367]: Architectural hardware solutions for modern homes, hospitality and commercial spaces.
+      - generic [ref=f3e368]:
+        - heading "Explore" [level=2] [ref=f3e369]
+        - list [ref=f3e370]:
+          - listitem [ref=f3e371]:
+            - link "Home" [ref=f3e372] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f3e373]:
+            - link "About" [ref=f3e374] [cursor=pointer]:
+              - /url: /about/
+          - listitem [ref=f3e375]:
+            - link "Products" [ref=f3e376] [cursor=pointer]:
+              - /url: /products/
+          - listitem [ref=f3e377]:
+            - link "Gallery" [ref=f3e378] [cursor=pointer]:
+              - /url: /gallery/
+          - listitem [ref=f3e379]:
+            - link "Contact" [ref=f3e380] [cursor=pointer]:
+              - /url: /contact/
+          - listitem [ref=f3e381]:
+            - link "Privacy & Policies" [ref=f3e382] [cursor=pointer]:
+              - /url: /privacy-policies/
+      - generic [ref=f3e383]:
+        - heading "Our collections" [level=2] [ref=f3e384]
+        - list [ref=f3e385]:
+          - listitem [ref=f3e386]:
+            - link "Hotel & Digital Locks" [ref=f3e387] [cursor=pointer]:
+              - /url: /products/hotel-digital-locks/
+          - listitem [ref=f3e388]:
+            - link "Door Hardware" [ref=f3e389] [cursor=pointer]:
+              - /url: /products/door-hardware/
+          - listitem [ref=f3e390]:
+            - link "Door Closers" [ref=f3e391] [cursor=pointer]:
+              - /url: /products/door-closers/
+          - listitem [ref=f3e392]:
+            - link "Spider Fittings" [ref=f3e393] [cursor=pointer]:
+              - /url: /products/spider-fittings/
+          - listitem [ref=f3e394]:
+            - link "Glass Fittings" [ref=f3e395] [cursor=pointer]:
+              - /url: /products/glass-fittings/
+          - listitem [ref=f3e396]:
+            - link "Glass Railings" [ref=f3e397] [cursor=pointer]:
+              - /url: /products/glass-railings/
+          - listitem [ref=f3e398]:
+            - link "Furniture Hardware" [ref=f3e399] [cursor=pointer]:
+              - /url: /products/furniture-hardware/
+          - listitem [ref=f3e400]:
+            - link "Shaft Doors" [ref=f3e401] [cursor=pointer]:
+              - /url: /products/shaft-doors/
+      - generic [ref=f3e402]:
+        - heading "Visit & connect" [level=2] [ref=f3e403]
+        - generic [ref=f3e404]:
+          - paragraph [ref=f3e405]: A14/15, Golf Course Rd, DLF Phase 1, Gurugram, Haryana 122002
+          - link "+91 9990069207" [ref=f3e408] [cursor=pointer]:
+            - /url: tel:+919990069207
+          - link "info@vallisglobal.in" [ref=f3e411] [cursor=pointer]:
+            - /url: mailto:info@vallisglobal.in
+        - link "Get directions ↗" [ref=f3e414] [cursor=pointer]:
+          - /url: /contact/#location
+    - generic [ref=f3e415]:
+      - text: © 2026 BUILDMART INDIA. All rights reserved.
+      - generic [ref=f3e416]:
+        - link "Privacy & Policies" [ref=f3e417] [cursor=pointer]:
+          - /url: /privacy-policies/
+        - link "Sitemap" [ref=f3e418] [cursor=pointer]:
+          - /url: /sitemap.xml
+        - link "Back to top" [ref=f3e419] [cursor=pointer]:
+          - /url: "#"
+          - text: ↑ Back to top

@@ -1,0 +1,8 @@
+async (page) => {
+ const browser=page.context().browser();const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const probe=await context.newPage();const results=[];
+ for(const route of ['/','/products/','/products/hotel-digital-locks/vacs-12/','/contact/']){await probe.goto('http://127.0.0.1:4322'+route);const result=await probe.evaluate(()=>({h1:document.querySelector('h1')?.textContent,mainVisible:document.querySelector('main')?.getBoundingClientRect().height>100,links:document.querySelectorAll('main a[href]').length,overflow:document.documentElement.scrollWidth>innerWidth+1}));results.push({route,...result});}
+ const fallback=await probe.locator('noscript').textContent();await context.close();
+ await page.emulateMedia({reducedMotion:'reduce'});await page.goto('http://127.0.0.1:4322/');const reducedMotion=await page.evaluate(()=>({preference:matchMedia('(prefers-reduced-motion: reduce)').matches,heroAnimation:getComputedStyle(document.querySelector('.hero-copy')).animationName}));
+ await page.keyboard.press('Tab');const keyboardFocus=await page.evaluate(()=>document.activeElement?.textContent?.trim());
+ return {results,contactFallback:!!fallback?.includes('info@vallisglobal.in'),reducedMotion,keyboardFocus,status:results.every(r=>r.mainVisible&&!r.overflow)&&fallback.includes('info@vallisglobal.in')&&reducedMotion.heroAnimation==='none'?'PASS':'FAIL'};
+}

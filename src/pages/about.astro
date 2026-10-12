@@ -1,0 +1,66 @@
+---
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+import CollectionBento from '../components/CollectionBento.astro';
+import CatalogueDownloads from '../components/CatalogueDownloads.astro';
+import {asset,generated} from '../data/catalogue';
+const pillars=[
+ ['Choose the function.','Consider access methods, door movement, glass connections or service-access needs first. Start with the requirements of the space.'],
+ ['Find the finish.','Explore the finishes documented for your chosen model, from brushed stainless steel to warmer metal tones and black accents.'],
+ ['Confirm the fit.','Check the door or glass dimensions, installation conditions and related components before finalising your product selection.'],
+];
+---
+<Layout title="About BUILDMART INDIA" description="Discover BUILDMART INDIA’s approach to architectural hardware, with a considered range of locking solutions, door fittings, glass hardware and furniture details in Gurugram." preload={asset('mrw-p12-x96')}>
+ <PageHero label="The BUILDMART perspective" title="Great spaces begin with <em>considered details.</em>" description="Architectural hardware that brings function, form and finish together." image={asset('mrw-p12-x96')} alt="Contemporary terrace with a frameless glass balustrade" crumbs={[{label:'About'}]}/>
+
+ <section class="section">
+  <div class="container split">
+   <div class="prose">
+    <span class="eyebrow" data-reveal>About BUILDMART INDIA</span>
+    <h2 data-reveal style="--i:1">The detail makes <em>the difference.</em></h2>
+    <p class="lead" data-reveal style="--i:2">Hardware is part of how a space feels. The way a door opens, the line of a glass railing, the finish of a cabinet handle.</p>
+    <p data-reveal style="--i:2">BUILDMART INDIA presents architectural hardware solutions for modern residential, hospitality and commercial environments. Our collection covers hotel and digital locks, door hardware, door closers, spider fittings, glass fittings, glass railings, furniture hardware and shaft doors.</p>
+    <p data-reveal style="--i:3">Based in Gurugram, we welcome product and project enquiries through our published contact details. Explore the catalogue, share your requirements and discuss the details that suit your space.</p>
+    <a class="link-arrow" href="/contact/" data-reveal>Start a conversation <Icon name="arrow" size={14}/></a>
+   </div>
+   <figure class="framed split-media tall" data-reveal="clip"><ResponsiveImage src={generated('craft-detail')} sizes="(max-width: 1024px) 90vw, 44vw" alt="Close detail of a brushed brass lever handle on a dark oak door" width="1024" height="1536" loading="lazy"/><figcaption><small>Form &amp; function</small>Hardware you touch every day.</figcaption></figure>
+  </div>
+ </section>
+
+ <section class="section on-dark">
+  <div class="container split reverse">
+   <div class="prose">
+    <span class="eyebrow" data-reveal>Our approach</span>
+    <h2 data-reveal style="--i:1">Purpose in every <em>selection.</em></h2>
+    <p class="lead" data-reveal style="--i:2">Each architectural detail has a job to do. We help you explore the documented product range with attention to application, compatibility and finish.</p>
+    <p data-reveal style="--i:2">A hotel lock and a residential entrance lock can have different access requirements. A glass fitting needs to match its glass thickness and fixing conditions. A closer needs to suit the door it controls.</p>
+    <p data-reveal style="--i:3">Our product pages keep model information distinct, helping you make a considered shortlist before discussing your project.</p>
+    <a class="btn" href="/products/" data-reveal>Explore the collection <Icon name="arrow" size={16}/></a>
+   </div>
+   <div class="split-media wide" data-reveal="clip"><ResponsiveImage src={generated('consultation')} sizes="(max-width: 1024px) 90vw, 46vw" alt="Hardware samples, a digital lock and architectural drawings on a walnut consultation table" width="1536" height="1024" loading="lazy"/></div>
+  </div>
+ </section>
+
+ <section class="section bg-ivory">
+  <div class="container">
+   <div class="section-head"><div data-reveal><span class="eyebrow">A considered choice</span><h2>Function. Finish. <em>Fit.</em></h2></div><p class="lead" data-reveal style="--i:1">Three questions that guide every hardware selection — before a quotation, before an order.</p></div>
+   <div class="pillars">{pillars.map(([title,text],i)=><article class="pillar" data-reveal style={`--i:${i}`}><b>0{i+1}</b><h3>{title}</h3><p>{text}</p></article>)}</div>
+  </div>
+ </section>
+
+ <section class="section">
+  <div class="container">
+   <div class="section-head"><div data-reveal><span class="eyebrow">One range. Many possibilities.</span><h2>Hardware for modern <em>architecture.</em></h2></div><p class="lead" data-reveal style="--i:1">Eight collections spanning locking solutions, door and glass hardware, railings, furniture details and service-access doors.</p></div>
+   <CollectionBento/>
+  </div>
+ </section>
+
+ <section class="section bg-stone">
+  <div class="container">
+   <div class="section-head"><div data-reveal><span class="eyebrow">Catalogue collections</span><h2>Explore the source <em>collections.</em></h2></div><p class="lead" data-reveal style="--i:1">VALLIS, NIMKRO and MRW names are retained on their respective catalogue products and application images.</p></div>
+   <CatalogueDownloads/>
+  </div>
+ </section>
+</Layout>
