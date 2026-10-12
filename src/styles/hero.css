@@ -88,16 +88,19 @@
 }
 
 /* Copy layer */
+/* Panels share one grid cell, bottom-aligned inside the space between header and foot.
+   `safe end` keeps tall copy from climbing under the header on short viewports. */
 .hero-layer {
   position: relative;
+  display: grid;
+  align-items: safe end;
   height: 100%;
-  padding-top: calc(var(--header-h) + 24px);
-  padding-bottom: 130px;
+  padding-top: calc(var(--header-h) + 28px);
+  padding-bottom: 140px;
 }
 .hero-panel {
-  position: absolute;
-  left: 0;
-  bottom: 140px;
+  grid-area: 1 / 1;
+  position: relative;
   width: min(820px, 100%);
   will-change: opacity, transform;
 }
@@ -113,9 +116,10 @@
 }
 .hero-panel .eyebrow {
   color: var(--gold);
+  text-shadow: 0 1px 12px rgba(3, 13, 26, 0.8);
 }
 .hero-cine h1 {
-  font-size: clamp(3.2rem, 7.8vw, 8.4rem);
+  font-size: clamp(2.8rem, min(7.8vw, 11.5svh), 8.4rem);
   line-height: 0.9;
   letter-spacing: -0.02em;
 }
@@ -349,11 +353,28 @@
   .hero-scene img {
     object-position: var(--pos-m, 68% 50%);
   }
-  .hero-panel {
-    bottom: 112px;
+  .hero-layer {
+    padding-top: calc(var(--header-h) + 20px);
+    padding-bottom: 104px;
+  }
+  .hero-panel .eyebrow {
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 10.5px;
+    line-height: 1.7;
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+  }
+  .hero-panel .eyebrow::before {
+    flex: none;
+    width: 22px;
+    margin-top: 0.85em;
+  }
+  .hero-cine h1 {
+    font-size: clamp(2.5rem, min(12.5vw, 8.2svh), 3.6rem);
   }
   .hero-sub {
-    margin: 18px 0 26px;
+    margin: 16px 0 22px;
   }
   .hero-chapter h2 {
     font-size: clamp(2.6rem, 12vw, 3.6rem);
@@ -397,14 +418,34 @@
   }
 }
 @media (max-height: 700px) and (min-width: 761px) {
-  .hero-panel {
-    bottom: 110px;
+  .hero-layer {
+    padding-top: calc(var(--header-h) + 16px);
+    padding-bottom: 112px;
+  }
+  .hero-panel .eyebrow {
+    margin-bottom: 14px;
   }
   .hero-cine h1 {
-    font-size: clamp(3rem, 6.4vw, 6rem);
+    font-size: clamp(2.6rem, min(6.4vw, 9svh), 6rem);
   }
   .hero-sub {
-    margin: 18px 0 24px;
+    margin: 14px 0 20px;
+  }
+  .hero-sub strong {
+    font-size: 1.4em;
+    margin-bottom: 2px;
+  }
+}
+/* Short phones: keep the tagline, drop the supporting sentence so the CTAs clear the foot. */
+@media (max-height: 760px) and (max-width: 760px) {
+  .hero-sub-text {
+    display: none;
+  }
+  .hero-sub strong {
+    margin-bottom: 0;
+  }
+  .hero-intro .btn-row {
+    gap: 10px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
