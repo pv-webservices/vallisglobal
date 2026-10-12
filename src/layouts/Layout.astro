@@ -109,7 +109,6 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
      <p><Icon name="pin" size={18}/><span>{business.address}</span></p>
      <a href={`tel:${business.tel}`}><Icon name="phone" size={18}/><span>{business.phone}</span></a>
      <a href={`mailto:${business.email}`}><Icon name="mail" size={18}/><span>{business.email}</span></a>
-     <a href={business.whatsapp} target="_blank" rel="noopener"><Icon name="whatsapp" size={18}/><span>Chat on WhatsApp<span class="sr-only"> (opens in a new tab)</span></span></a>
     </address>
     <p style="margin-top:22px"><a class="link-arrow" href={business.maps} target="_blank" rel="noopener">Get directions <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></p>
    </div>
@@ -122,7 +121,7 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
 
  <nav class="action-bar" aria-label="Quick contact">
   <a href={`tel:${business.tel}`}><Icon name="phone" size={17}/>Call</a>
-  <a href={business.whatsapp} target="_blank" rel="noopener"><Icon name="whatsapp" size={18}/>WhatsApp</a>
+  <a href={`mailto:${business.email}`}><Icon name="mail" size={17}/>Email</a>
   <a href="/contact/#enquiry">Enquire <Icon name="arrow" size={15}/></a>
  </nav>
 

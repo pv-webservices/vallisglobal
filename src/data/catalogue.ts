@@ -5,7 +5,6 @@ export const business = {
   email: "info@vallisglobal.in",
   address: "A14/15, Golf Course Rd, DLF Phase 1, Gurugram, Haryana 122002",
   origin: "https://www.vallisglobal.in",
-  whatsapp: "https://wa.me/919990069207",
   maps: "https://www.google.com/maps/search/?api=1&query=A14%2F15%2C%20Golf%20Course%20Rd%2C%20DLF%20Phase%201%2C%20Gurugram%2C%20Haryana%20122002",
 };
 export const asset = (name: string) => `/images/catalogue/${name}.webp`;
