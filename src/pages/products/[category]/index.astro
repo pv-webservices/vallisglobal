@@ -5,7 +5,6 @@ import ProductCard from '../../../components/ProductCard.astro';
 import ResponsiveImage from '../../../components/ResponsiveImage.astro';
 import Icon from '../../../components/Icon.astro';
 import FireDoorHardware from '../../../components/FireDoorHardware.astro';
-import NewHandles from '../../../components/NewHandles.astro';
 import UpvcGuide from '../../../components/UpvcGuide.astro';
 import {categories,products,enquiryUrl,isPhoto} from '../../../data/catalogue';
 export function getStaticPaths(){return categories.map(category=>({params:{category:category.slug},props:{category}}));}
@@ -43,7 +42,6 @@ const suited=c.applications.map(a=>a.toLowerCase()).join(', ').replace(/, ([^,]*
   </div>
  </section>
 
- {c.slug==='door-hardware'&&<NewHandles/>}
  {(c.slug==='door-hardware'||c.slug==='shaft-doors')&&<FireDoorHardware/>}
  {c.slug==='upvc-windows'&&<UpvcGuide/>}
 

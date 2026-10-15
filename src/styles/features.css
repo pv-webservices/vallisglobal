@@ -1,4 +1,4 @@
-/* VALLIS — fire door hardware explorer, designer handles showcase and office cards */
+/* VALLIS — fire door hardware explorer, office cards and uPVC window sections */
 
 /* Fire door hardware explorer */
 .fire-door-grid {
@@ -117,50 +117,6 @@
   max-width: 52ch;
 }
 
-/* Designer lever handles */
-.handle-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.4vw, 20px);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.handle-grid li:first-child {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-.handle-grid figure {
-  position: relative;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  border-radius: var(--r-md);
-  background: var(--paper);
-}
-.handle-grid img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  transition: transform 0.8s var(--ease);
-}
-.handle-grid figure:hover img {
-  transform: scale(1.04);
-}
-.handle-grid figcaption {
-  position: absolute;
-  left: 12px;
-  bottom: 12px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(3, 13, 26, 0.78);
-  color: var(--ivory);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
 
 /* Office cards (contact page + footer) */
 .office-label {
@@ -204,12 +160,6 @@
   .fire-door-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .handle-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .handle-grid li:first-child {
-    grid-row: auto;
-  }
   .locations {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -225,10 +175,6 @@
   }
   .fire-door-list {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .handle-grid li:first-child {
-    grid-column: span 2;
-    grid-row: auto;
   }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -211,6 +211,7 @@ export interface Product {
 const v = "VALLIS Architectural Hardware catalogue";
 const legacy = "VALLIS Legacy Series catalogue";
 const windows = "VALLIS uPVC window systems";
+const designer = "VALLIS designer lever handle collection";
 const SOURCE_FILES: Record<string, string> = {
   [v]: "/vallisglobal products pdf.pdf",
 };
@@ -250,6 +251,21 @@ const lock = "hotel-digital-locks",
   furniture = "furniture-hardware",
   shaft = "shaft-doors",
   win = "upvc-windows";
+const lever = (n: number) => asset(`vallis-lever-${String(n).padStart(2, "0")}`);
+/** Designer lever handles: product photographs, numbered as supplied (vallis-lever-01 … 13). */
+const designerHandle = (
+  model: string,
+  name: string,
+  shots: number[],
+  description: string,
+  specs: Record<string, string>,
+  features: string[],
+): Product => ({
+  ...p(door, model, name, "", 0, description, specs, features, "VALLIS", designer),
+  image: lever(shots[0]),
+  images: shots.map(lever),
+  page: undefined,
+});
 /** Shared performance specification of the multi-chamber uPVC profile system. */
 const upvcSystem = {
   Profile: "60 mm multi-chamber uPVC (up to 6 chambers)",
@@ -398,6 +414,70 @@ export const products: Product[] = [
       "Centres (CTC)": "300 / 450 / 600 mm",
       Finishes: "Matt / Combi / Black",
     },
+  ),
+  designerHandle(
+    "VDH 01",
+    "Round-Rose Inlay Lever Handle",
+    [1, 5, 11, 8],
+    "A softly rounded lever on a round rose, finished with a coloured inlay and a circular detail.",
+    {
+      Rose: "Round",
+      "Finishes shown": "Polished gold with sage inlay / Polished gold with teal inlay / Antique brass",
+      Type: "Lever handle on rose",
+    },
+    ["Coloured inlay set into the lever", "Circular detail at the pivot", "Matching round rose"],
+  ),
+  designerHandle(
+    "VDH 02",
+    "Square-Rose Inlay Lever Handle",
+    [2, 6],
+    "A straight, squared lever with a sea-green inlay framed by polished metal end caps.",
+    { Rose: "Square", "Finish shown": "Polished gold with sea-green inlay", Type: "Lever handle on rose" },
+    ["Coloured inlay with metal end caps", "Crisp square rose", "Part of a coordinated finish family"],
+  ),
+  designerHandle(
+    "VDH 03",
+    "Two-Tone Square-Rose Lever Handle",
+    [3, 6],
+    "A squared lever pairing a slate-grey grip with rose-gold end caps and rose.",
+    { Rose: "Square", "Finish shown": "Rose gold with slate-grey grip", Type: "Lever handle on rose" },
+    ["Two-tone metal and grip finish", "Crisp square rose"],
+  ),
+  designerHandle(
+    "VDH 04",
+    "Slot-Detail Lever Handle",
+    [4, 10, 9],
+    "A tapered lever with a slim inset slot detail, available in a family of contemporary finishes.",
+    {
+      Rose: "Square",
+      "Finishes shown": "Matte black / Champagne / Satin chrome / Bronze / Brass",
+      Type: "Lever handle on rose",
+    },
+    ["Slim inset slot detail", "Contemporary tapered profile", "Wide choice of finishes"],
+  ),
+  designerHandle(
+    "VDH 05",
+    "Fluted Grip Lever Handle",
+    [7],
+    "A rounded lever with a fluted grey grip on a rose-gold round rose.",
+    { Rose: "Round", "Finish shown": "Rose gold with fluted grey grip", Type: "Lever handle on rose" },
+    ["Tactile fluted grip", "Rose-gold metal accents"],
+  ),
+  designerHandle(
+    "VDH 06",
+    "Round-Rose Slot Lever Handle",
+    [13],
+    "A teal-inlay lever with a slim slot detail on a polished gold round rose.",
+    { Rose: "Round", "Finish shown": "Polished gold with teal inlay", Type: "Lever handle on rose" },
+    ["Coloured inlay with slot detail", "Matching round rose"],
+  ),
+  designerHandle(
+    "VDH 07",
+    "Slim Square-Rose Lever Handle",
+    [12, 9],
+    "A slim, flat lever with an engraved edge detail on a square rose.",
+    { Rose: "Square", "Finish shown": "Antique brass", Type: "Lever handle on rose" },
+    ["Slim flat profile", "Fine edge detail", "Warm antique-brass finish"],
   ),
   ...[
     ["1101", "2408", "40"],
@@ -774,26 +854,6 @@ export const gallery = [
     alt: "VALLIS catalogue balcony glass balustrade",
   },
 ];
-/** New VALLIS designer lever handle collection (photographed samples, models confirmed on enquiry). */
-export const newHandles = [
-  ["Polished gold lever with a sage-green inlay on a round rose", "Gold · Sage"],
-  ["Gold lever with a sea-green inlay on a square rose", "Gold · Sea green"],
-  ["Rose-gold lever with a slate-grey inlay on a square rose", "Rose gold · Slate"],
-  ["Matte black lever with a slim slot detail on a square rose", "Matte black"],
-  ["Polished gold lever with a sage inlay on a round rose", "Gold · Sage"],
-  ["Four square-rose levers in gold, black, champagne and satin finishes", "Finish family"],
-  ["Rose-gold round-rose lever with a fluted grey grip", "Rose gold · Fluted"],
-  ["Round-rose levers in polished gold and antique brass", "Gold · Antique brass"],
-  ["Slim levers in bronze, black, satin chrome and brass", "Finish family"],
-  ["Slot-detail levers in matte black, champagne and satin chrome", "Finish family"],
-  ["Gold round-rose lever with a teal inlay", "Gold · Teal"],
-  ["Antique brass lever on a square rose", "Antique brass"],
-  ["Gold round-rose lever with a teal inlay and slot detail", "Gold · Teal"],
-].map(([alt, finish], i) => ({
-  image: asset(`vallis-lever-${String(i + 1).padStart(2, "0")}`),
-  alt: `VALLIS designer lever handle — ${alt}`,
-  finish,
-}));
 /** Fire door hardware explorer: hotspot positions are percentages of the fire-door-hardware image. */
 export const fireDoorHardware = [
   { name: "Door Closer", x: 32.5, y: 11, text: "Overhead hydraulic closer returns the leaf to the closed and latched position after every use." },
