@@ -1,4 +1,4 @@
-/* BUILDMART INDIA — collection tiles, product cards, rails and catalogue cards */
+/* VALLIS — collection tiles, product cards, rails and catalogue cards */
 
 /* Collection tiles (bento) */
 .bento {
@@ -8,7 +8,8 @@
   grid-template-areas:
     "locks locks door door"
     "locks locks closer spider"
-    "glass rail furniture shaft";
+    "glass rail furniture shaft"
+    "windows windows windows windows";
   gap: clamp(12px, 1.3vw, 20px);
 }
 .tile {
@@ -164,6 +165,9 @@
 }
 .tile-shaft {
   grid-area: shaft;
+}
+.tile-windows {
+  grid-area: windows;
 }
 
 /* Product card */
@@ -368,7 +372,7 @@
 /* Catalogue cards */
 .catalogues {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: clamp(14px, 1.6vw, 24px);
 }
 .catalogue-card {

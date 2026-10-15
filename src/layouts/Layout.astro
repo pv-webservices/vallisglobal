@@ -12,10 +12,11 @@ import '../styles/components.css';
 import '../styles/hero.css';
 import '../styles/home.css';
 import '../styles/pages.css';
+import '../styles/features.css';
 import ResponsiveImage from '../components/ResponsiveImage.astro';
 import Icon from '../components/Icon.astro';
 import EnquiryCTA from '../components/EnquiryCTA.astro';
-import {business,categories,isPhoto} from '../data/catalogue';
+import {business,offices,categories,isPhoto} from '../data/catalogue';
 import manifest from '../data/image-manifest.json';
 interface Props {title:string;description:string;home?:boolean;schema?:unknown;noindex?:boolean;solidHeader?:boolean;cta?:boolean;preload?:string;}
 const {title,description,home=false,schema,noindex=false,solidHeader=false,cta=true,preload}=Astro.props;
@@ -25,25 +26,26 @@ const indexable=import.meta.env.PUBLIC_INDEXABLE==='true'&&!noindex;
 const nav=[['Home','/'],['About','/about/'],['Products','/products/'],['Gallery','/gallery/'],['Contact','/contact/']];
 const preloadSet=preload?(manifest as Record<string,{srcset:string}>)[preload]?.srcset:undefined;
 const isCurrent=(href:string)=>href==='/'?path==='/':path.startsWith(href);
-const organization={'@context':'https://schema.org','@type':'LocalBusiness',name:business.name,url:business.origin,telephone:business.tel,email:business.email,address:{'@type':'PostalAddress',streetAddress:'A14/15, Golf Course Rd, DLF Phase 1',addressLocality:'Gurugram',addressRegion:'Haryana',postalCode:'122002',addressCountry:'IN'}};
+const organization={'@context':'https://schema.org','@type':'LocalBusiness',name:business.name,legalName:business.company,url:business.origin,telephone:business.tel,email:business.email,address:{'@type':'PostalAddress',streetAddress:'A14/15, Golf Course Rd, DLF Phase 1',addressLocality:'Gurugram',addressRegion:'Haryana',postalCode:'122002',addressCountry:'IN'}};
 ---
 <!doctype html>
 <html lang="en">
 <head>
  <meta charset="utf-8"/>
  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
- <title>{title} | BUILDMART INDIA</title>
+ <title>{title} | {business.name}</title>
  <meta name="description" content={description}/>
  <meta name="robots" content={indexable?'index, follow':'noindex, nofollow'}/>
  <link rel="canonical" href={canonical}/>
- <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+ <link rel="icon" href="/favicon.png" type="image/png"/>
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
  <meta name="theme-color" content="#030d1a"/>
  <meta property="og:type" content="website"/>
- <meta property="og:title" content={`${title} | BUILDMART INDIA`}/>
+ <meta property="og:title" content={`${title} | ${business.name}`}/>
  <meta property="og:description" content={description}/>
  <meta property="og:url" content={canonical}/>
- <meta property="og:image" content={`${business.origin}/vallisglobal-website-logo.jpeg`}/>
- <meta property="og:site_name" content="BUILDMART INDIA"/>
+ <meta property="og:image" content={`${business.origin}/vallis-website-logo.webp`}/>
+ <meta property="og:site_name" content={business.name}/>
  <script type="application/ld+json" set:html={JSON.stringify(schema||organization).replace(/</g,'<')}/>
  <script is:inline>
   document.documentElement.classList.add('js');
@@ -52,12 +54,12 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
  {preload&&<link rel="preload" as="image" fetchpriority="high" href={preload} imagesrcset={preloadSet} imagesizes={preloadSet?'100vw':undefined}/>}
 </head>
 <body class:list={{'is-home':home}}>
- <div class="loader" aria-hidden="true"><img src="/images/brand/eagle-mark.webp" alt="" width="264" height="133"/><span></span></div>
+ <div class="loader" aria-hidden="true"><img src="/images/brand/vallis-mark.webp" alt="" width="353" height="266"/><span></span></div>
  <a class="skip-link" href="#main">Skip to content</a>
 
  <header class:list={['site-header',{'is-solid':solidHeader}]} id="header">
   <div class="container header-inner">
-   <a class="brand" href="/" aria-label="BUILDMART INDIA home"><ResponsiveImage src="/images/brand/logo-reversed.webp" sizes="140px" alt="BUILDMART INDIA" width="140" height="79" fetchpriority="high"/></a>
+   <a class="brand" href="/" aria-label="VALLIS Architectural Hardware home"><ResponsiveImage src="/images/brand/vallis-logo-horizontal.webp" sizes="200px" alt="VALLIS Architectural Hardware" width="951" height="179" fetchpriority="high"/></a>
    <nav class="desktop-nav" aria-label="Main navigation">
     {nav.map(([name,href])=>name==='Products'?(
      <div class="nav-item">
@@ -79,7 +81,7 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
 
  <dialog id="mobile-menu" class="mobile-menu" aria-label="Main navigation">
   <div class="mobile-menu-inner">
-   <div class="mobile-menu-top"><img src="/images/brand/logo-reversed-w320.webp" alt="BUILDMART INDIA" width="116" height="66"/><button class="icon-btn menu-close" aria-label="Close navigation"><Icon name="close" size={20}/></button></div>
+   <div class="mobile-menu-top"><img src="/images/brand/vallis-logo-w320.webp" alt="VALLIS Architectural Hardware" width="320" height="250"/><button class="icon-btn menu-close" aria-label="Close navigation"><Icon name="close" size={20}/></button></div>
    <nav class="mobile-nav" aria-label="Mobile navigation">{nav.map(([name,href],i)=><a href={href} aria-current={isCurrent(href)?'page':undefined}><small>0{i+1}</small>{name}</a>)}</nav>
    <div><span class="eyebrow">Collections</span><div class="mobile-collections">{categories.map(c=><a href={`/products/${c.slug}/`}>{c.name}</a>)}</div></div>
    <div class="mobile-menu-contact">
@@ -97,7 +99,7 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
  <footer class="site-footer">
   <div class="container footer-grid">
    <div class="footer-brand">
-    <a href="/" aria-label="BUILDMART INDIA home"><ResponsiveImage src="/images/brand/logo-reversed.webp" sizes="150px" alt="BUILDMART INDIA" width="150" height="85" loading="lazy"/></a>
+    <a href="/" aria-label="VALLIS Architectural Hardware home"><ResponsiveImage src="/images/brand/vallis-logo.webp" sizes="150px" alt="VALLIS Architectural Hardware" width="647" height="506" loading="lazy"/></a>
     <p class="tagline">Considered hardware.<br/>Exceptional spaces.</p>
     <p>Architectural hardware solutions for modern homes, hospitality and commercial spaces.</p>
    </div>
@@ -105,16 +107,16 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
    <div class="footer-collections"><h2>Our collections</h2><ul>{categories.map(c=><li><a href={`/products/${c.slug}/`}>{c.name}</a></li>)}</ul></div>
    <div>
     <h2>Visit &amp; connect</h2>
-    <address>
-     <p><Icon name="pin" size={18}/><span>{business.address}</span></p>
-     <a href={`tel:${business.tel}`}><Icon name="phone" size={18}/><span>{business.phone}</span></a>
-     <a href={`mailto:${business.email}`}><Icon name="mail" size={18}/><span>{business.email}</span></a>
-    </address>
-    <p style="margin-top:22px"><a class="link-arrow" href={business.maps} target="_blank" rel="noopener">Get directions <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></p>
+    {offices.map(o=><address class="footer-office">
+     <h3>{o.city} · {o.label}</h3>
+     <p><Icon name="pin" size={18}/><span>{o.address}</span></p>
+     <a href={`tel:${o.tel}`}><Icon name="phone" size={18}/><span>{o.phone}</span></a>
+    </address>)}
+    <address class="footer-office"><a href={`mailto:${business.email}`}><Icon name="mail" size={18}/><span>{business.email}</span></a></address>
    </div>
   </div>
   <div class="container footer-bottom">
-   <span>© {new Date().getFullYear()} BUILDMART INDIA. All rights reserved.</span>
+   <span>© {new Date().getFullYear()} {business.name} — a brand of {business.company}. All rights reserved.</span>
    <div><a href="/privacy-policies/">Privacy &amp; Policies</a><a href="/sitemap.xml">Sitemap</a><a href="#main" class="back-top">Back to top ↑</a></div>
   </div>
  </footer>

@@ -5,6 +5,7 @@ import Icon from '../components/Icon.astro';
 import ProductCard from '../components/ProductCard.astro';
 import CollectionBento from '../components/CollectionBento.astro';
 import CatalogueDownloads from '../components/CatalogueDownloads.astro';
+import FireDoorHardware from '../components/FireDoorHardware.astro';
 import {categories,products,gallery,catalogues,asset,generated} from '../data/catalogue';
 
 // Hero scroll scenes: image, desktop/mobile focal points and the progress-rail label.
@@ -24,14 +25,14 @@ const benefits=[
  {icon:'grid',title:'Precision in the details',text:'Select fittings around your door and glass requirements.',image:generated('precision-macro'),alt:'Stainless-steel spider fitting holding four glass panels',caption:'Glass thickness, fixing conditions and door weights matter.'},
  {icon:'spark',title:'Elegant finishes',text:'Find a finish that complements your architectural palette.',image:generated('furniture-hardware-scene'),alt:'Navy kitchen cabinetry with brushed-gold handles',caption:'From brushed steel to warmer metal tones and black accents.'},
  {icon:'shield',title:'Purposeful performance',text:'Choose the right model for the demands of your space.',image:generated('healthcare-corridor'),alt:'Hospital corridor with timber doors and overhead door closers',caption:'Hotel access, busy corridors, service risers — each has its own needs.'},
- {icon:'building',title:'A complete collection',text:'From entrance locks to the finishing touch on cabinetry.',image:generated('consultation'),alt:'Hardware samples, a digital lock and drawings on a consultation table',caption:'Eight collections, one conversation.'},
+ {icon:'building',title:'A complete collection',text:'From entrance locks to the finishing touch on cabinetry.',image:generated('consultation'),alt:'Hardware samples, a digital lock and drawings on a consultation table',caption:'Nine collections, one conversation.'},
 ];
-const featured=['VACS 12','VBL 255','VSDC 1101','VSF 91','VSH 704','H 2102','VRS 101','FHC 200'].map(m=>products.find(p=>p.model===m)!);
+const featured=['VACS 12','VBL 255','VSDC 1101','VSF 91','VSH 704','H 2102','VRS 101','FHC 200','uPVC Casement'].map(m=>products.find(p=>p.model===m)!);
 const sectors=[
- {name:'Residential Spaces',slug:'hotel-digital-locks',image:asset('mrw-p16-x124'),alt:'Residential staircase with a frameless glass balustrade',text:'Digital entrance locks, lever handles, glass railings and cabinet hardware for private homes.'},
+ {name:'Residential Spaces',slug:'hotel-digital-locks',image:asset('vallis-rail-p16-x124'),alt:'Residential staircase with a frameless glass balustrade',text:'Digital entrance locks, lever handles, glass railings and cabinet hardware for private homes.'},
  {name:'Hotels & Hospitality',slug:'hotel-digital-locks',image:asset('vallis-p13-x344'),alt:'Hotel guest room interior from the VALLIS catalogue',text:'RFID guest-room locks, door closers and refined hardware for hospitality interiors.'},
  {name:'Hospitals & Institutions',slug:'door-closers',image:generated('healthcare-corridor'),alt:'Calm hospital corridor with timber doors and overhead door closers',text:'Controlled door movement and durable fittings for busy corridors and shared spaces.'},
- {name:'Commercial Buildings',slug:'spider-fittings',image:asset('mrw-p22-x166'),alt:'Commercial atrium with glass balustrades',text:'Spider fittings, glass railings and patch fittings for open, light-filled commercial interiors.'},
+ {name:'Commercial Buildings',slug:'spider-fittings',image:asset('vallis-rail-p22-x166'),alt:'Commercial atrium with glass balustrades',text:'Spider fittings, glass railings and patch fittings for open, light-filled commercial interiors.'},
  {name:'Corporate Offices',slug:'glass-fittings',image:asset('vallis-p60-x2078'),alt:'Office meeting room enclosed by point-fixed glass',text:'Glass partitions, pull handles and closers for contemporary workplaces.'},
  {name:'Institutional Projects',slug:'shaft-doors',image:generated('institutional-atrium'),alt:'Institutional atrium with glass balustrades and a point-fixed glass façade',text:'Shaft doors for service risers and glass systems for large public buildings.'},
 ];
@@ -42,7 +43,7 @@ const steps=[
 ];
 const mosaic=[gallery[0],gallery[2],gallery[6],gallery[3],gallery[1],gallery[4]];
 ---
-<Layout title="The Art of Architectural Hardware" description="Explore BUILDMART INDIA’s architectural hardware collection: hotel and digital locks, door hardware, glass fittings, railings, furniture hardware and shaft doors in Gurugram." home preload="/images/generated/hero-entrance.webp">
+<Layout title="The Art of Architectural Hardware" description="Explore VALLIS’ architectural hardware collection: hotel and digital locks, door hardware, glass fittings, railings, furniture hardware and shaft doors in Gurugram." home preload="/images/generated/hero-entrance.webp">
 
  <!-- Hero: pinned, scroll-driven chapters -->
  <section class="hero-cine" data-hero aria-labelledby="hero-title">
@@ -92,9 +93,9 @@ const mosaic=[gallery[0],gallery[2],gallery[6],gallery[3],gallery[1],gallery[4]]
   <div class="container">
    <div class="why-grid">
     <div class="why-head">
-     <span class="eyebrow" data-reveal>Why choose BUILDMART INDIA</span>
+     <span class="eyebrow" data-reveal>Why choose VALLIS</span>
      <p class="statement" data-reveal style="--i:1">Hardware is part of how a space feels — <em>the way a door opens,</em> the line of a glass railing, the finish of a cabinet handle.</p>
-     <p class="lead" data-reveal style="--i:2">BUILDMART INDIA presents architectural hardware solutions for modern residential, hospitality and commercial environments — a considered range brought together under one roof in Gurugram.</p>
+     <p class="lead" data-reveal style="--i:2">VALLIS, a brand of Buildmart India, presents architectural hardware solutions for modern residential, hospitality and commercial environments — a considered range brought together under one roof in Gurugram.</p>
     </div>
     <div class="why-body">
      <ol class="why-items">
@@ -165,11 +166,14 @@ const mosaic=[gallery[0],gallery[2],gallery[6],gallery[3],gallery[1],gallery[4]]
     </ol>
     <div class="sector-visual" aria-hidden="true">
      {sectors.map((s,i)=><ResponsiveImage class={i===0?'is-active':''} src={s.image} sizes="50vw" alt="" width="900" height="990" loading="lazy"/>)}
-     <div class="sector-caption"><span data-sector-label>{sectors[0].name}</span><span>BUILDMART INDIA</span></div>
+     <div class="sector-caption"><span data-sector-label>{sectors[0].name}</span><span>VALLIS</span></div>
     </div>
    </div>
   </div>
  </section>
+
+ <!-- Fire door hardware explorer -->
+ <FireDoorHardware/>
 
  <!-- Process: sticky storytelling -->
  <section class="section bg-stone process" aria-labelledby="process-title" data-process>
@@ -198,10 +202,10 @@ const mosaic=[gallery[0],gallery[2],gallery[6],gallery[3],gallery[1],gallery[4]]
   <div class="container">
    <div class="section-head">
     <div data-reveal><span class="eyebrow">Application gallery</span><h2 id="gallery-title">Architectural <em>inspiration.</em></h2></div>
-    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead" style="color:var(--muted-light)">Light, glass and metal working together — application imagery from the VALLIS and MRW catalogues.</p><a class="link-arrow" href="/gallery/">Open the gallery <Icon name="arrow" size={14}/></a></div>
+    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead" style="color:var(--muted-light)">Light, glass and metal working together — application imagery from the VALLIS catalogues.</p><a class="link-arrow" href="/gallery/">Open the gallery <Icon name="arrow" size={14}/></a></div>
    </div>
    <div class="mosaic">{mosaic.map((g,i)=><a href="/gallery/" data-reveal="fade" style={`--i:${i}`}><ResponsiveImage src={g.image} sizes={i===0?'(max-width: 760px) 100vw, 58vw':'(max-width: 760px) 50vw, 33vw'} alt={g.alt} width="900" height="570" loading="lazy"/><span><small>{g.group}</small>{g.title}</span></a>)}</div>
-   <p class="source-note">Application imagery from the supplied catalogues, presented as inspiration — not as completed BUILDMART INDIA projects.</p>
+   <p class="source-note">Application imagery from the supplied catalogues, presented as inspiration — not as completed VALLIS projects.</p>
   </div>
  </section>
 

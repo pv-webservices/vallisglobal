@@ -6,8 +6,8 @@ import Icon from '../components/Icon.astro';
 import {gallery,asset} from '../data/catalogue';
 const groups=[...new Set(gallery.map(g=>g.group))];
 ---
-<Layout title="Architectural Inspiration & Application Gallery" description="Explore glass railings, hospitality interiors and architectural hardware applications from the supplied VALLIS and MRW catalogues." preload={asset('mrw-p20-x152')}>
- <PageHero label="The application gallery" title="Spaces that inspire. <em>Details that define.</em>" description="A visual exploration of architectural possibilities, using application imagery from the supplied VALLIS and MRW catalogues." image={asset('mrw-p20-x152')} alt="Glass railing on a sunlit terrace overlooking the sea" crumbs={[{label:'Gallery'}]} compact/>
+<Layout title="Architectural Inspiration & Application Gallery" description="Explore glass railings, hospitality interiors and architectural hardware applications from the VALLIS catalogues." preload={asset('vallis-rail-p20-x152')}>
+ <PageHero label="The application gallery" title="Spaces that inspire. <em>Details that define.</em>" description="A visual exploration of architectural possibilities, using application imagery from the VALLIS catalogues." image={asset('vallis-rail-p20-x152')} alt="Glass railing on a sunlit terrace overlooking the sea" crumbs={[{label:'Gallery'}]} compact/>
 
  <section class="section">
   <div class="container">
@@ -18,7 +18,7 @@ const groups=[...new Set(gallery.map(g=>g.group))];
    <div class="chips" role="group" aria-label="Filter gallery"><button class="chip" data-gallery-filter="all" aria-pressed="true">All inspiration</button>{groups.map(group=><button class="chip" data-gallery-filter={group} aria-pressed="false">{group}</button>)}</div>
    <p id="gallery-count" class="result-count" aria-live="polite">{gallery.length} images</p>
    <div class="gallery-grid">{gallery.map(g=><button class="gallery-item" data-group={g.group} data-large-image={g.image} data-caption={g.title} aria-label={`${g.group}: ${g.title} — enlarge image`}><ResponsiveImage src={g.image} sizes="(max-width: 700px) 100vw, 33vw" alt={g.alt} width="900" height="570" loading="lazy"/><span><span><small>{g.group}</small>{g.title}</span><Icon name="arrowUpRight" size={20}/></span></button>)}</div>
-   <p class="source-note">These catalogue images illustrate product applications and are not presented as completed BUILDMART INDIA projects.</p>
+   <p class="source-note">These catalogue images illustrate product applications and are not presented as completed VALLIS projects.</p>
   </div>
  </section>
 

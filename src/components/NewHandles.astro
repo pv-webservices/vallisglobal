@@ -1,0 +1,17 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+import Icon from './Icon.astro';
+import {newHandles} from '../data/catalogue';
+const enquiry='/contact/?category=door-hardware&product=VALLIS%20designer%20lever%20handle%20collection#enquiry';
+---
+<section class="section bg-stone" aria-labelledby="new-handles-title">
+ <div class="container">
+  <div class="section-head">
+   <div data-reveal><span class="eyebrow">New arrivals</span><h2 id="new-handles-title">Designer lever <em>handles.</em></h2></div>
+   <div class="section-head-actions" data-reveal style="--i:1"><p class="lead">Sculpted levers on round and square roses, in polished gold, rose gold, antique brass, satin chrome and matte black — with coloured inlays for a distinctive touch.</p><a class="link-arrow" href={enquiry}>Enquire about the collection <Icon name="arrow" size={14}/></a></div>
+  </div>
+  <ul class="handle-grid">
+   {newHandles.map((h,i)=><li data-reveal="fade" style={`--i:${i%4}`}><figure><ResponsiveImage src={h.image} sizes="(max-width: 600px) 92vw, (max-width: 1024px) 46vw, 30vw" alt={h.alt} width="1280" height="960" loading="lazy"/><figcaption>{h.finish}</figcaption></figure></li>)}
+  </ul>
+ </div>
+</section>

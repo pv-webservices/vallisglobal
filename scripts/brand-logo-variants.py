@@ -1,8 +1,11 @@
-"""Create transparent logo variants from the supplied BUILDMART INDIA logo (the original file is untouched).
+"""Create transparent logo variants from the supplied VALLIS logo (public/vallis-website-logo.webp, untouched).
 
-- logo-reversed.webp : gold eagle + ivory wordmark, for navy backgrounds
-- logo-transparent.webp : original colours on a transparent background
-- eagle-mark.webp : the gold eagle alone, for the loader and compact placements
+The source is a gold logo on a white field. Each pixel is un-blended from white so the gold keeps
+its gradient and anti-aliased edges on any background.
+
+- vallis-logo.webp            : stacked lockup (V mark, wordmark, descriptor) for the footer and menus
+- vallis-logo-horizontal.webp : V mark beside the wordmark + descriptor, for the compact site header
+- vallis-mark.webp            : the V mark alone, for the loader and compact placements
 """
 from pathlib import Path
 import numpy as np
@@ -10,31 +13,62 @@ from PIL import Image
 
 root = Path(__file__).resolve().parents[1]
 brand = root / 'public/images/brand'
-src = np.asarray(Image.open(brand / 'logo-original.jpeg').convert('RGB')).astype(np.float32)
+src = np.asarray(Image.open(root / 'public/vallis-website-logo.webp').convert('RGB')).astype(np.float32)
 
-GOLD = np.array([196, 160, 92], np.float32)
-NAVY = np.array([22, 36, 72], np.float32)
-IVORY = np.array([246, 241, 231], np.float32)
-
-r, g, b = src[..., 0], src[..., 1], src[..., 2]
-is_gold = (r - b) > 12
-alpha_gold = np.clip(((255 - src) / (255 - GOLD)).mean(axis=2), 0, 1)
-alpha_navy = np.clip(((255 - src) / (255 - NAVY)).mean(axis=2), 0, 1)
-alpha = np.where(is_gold, alpha_gold, alpha_navy)
-alpha = np.clip((alpha - 0.04) / 0.96, 0, 1)  # remove JPEG noise in the white field
+# Alpha = how far a pixel is from white, scaled so the darkest gold becomes fully opaque.
+distance = 255 - src.min(axis=2)
+alpha = np.clip(distance / np.percentile(distance[distance > 40], 60), 0, 1)
+alpha = np.clip((alpha - 0.05) / 0.95, 0, 1)  # remove compression noise in the white field
+safe = np.maximum(alpha, 1e-3)[..., None]
+colour = np.clip((src - (1 - alpha[..., None]) * 255) / safe, 0, 255)
+logo = Image.fromarray(np.dstack([colour, alpha * 255]).astype(np.uint8), 'RGBA')
 
 
-def save(colour_gold, colour_text, name, crop=None):
-    rgb = np.where(is_gold[..., None], colour_gold, colour_text)
-    out = np.dstack([rgb, alpha * 255]).astype(np.uint8)
-    im = Image.fromarray(out, 'RGBA')
-    if crop:
-        im = im.crop(crop)
-    im = im.crop(im.getbbox())
+def rows_with_ink(im):
+    """Return (start, end) row bands that contain visible pixels."""
+    ink = np.asarray(im)[..., 3].max(axis=1) > 20
+    bands, start = [], None
+    for y, on in enumerate(ink):
+        if on and start is None:
+            start = y
+        if not on and start is not None:
+            bands.append((start, y))
+            start = None
+    if start is not None:
+        bands.append((start, len(ink)))
+    return bands
+
+
+def tight(im):
+    return im.crop(im.getbbox())
+
+
+def save(im, name):
     im.save(brand / name, 'WEBP', quality=92, method=6)
     print(name, im.size)
 
 
-save(GOLD, IVORY, 'logo-reversed.webp')
-save(GOLD, NAVY, 'logo-transparent.webp')
-save(GOLD, GOLD, 'eagle-mark.webp', crop=(0, 0, src.shape[1], 225))
+stacked = tight(logo)
+save(stacked, 'vallis-logo.webp')
+
+# Bands top to bottom: V mark, VALLIS wordmark, ARCHITECTURAL HARDWARE descriptor.
+bands = rows_with_ink(stacked)
+mark_band, word_band, desc_band = bands[0], bands[1], bands[-1]
+mark = tight(stacked.crop((0, mark_band[0], stacked.width, mark_band[1])))
+word = tight(stacked.crop((0, word_band[0], stacked.width, word_band[1])))
+desc = tight(stacked.crop((0, desc_band[0], stacked.width, desc_band[1])))
+save(mark, 'vallis-mark.webp')
+
+# Horizontal lockup: mark at the height of wordmark + descriptor, separated by a measured gap.
+text_gap = round(word.height * 0.22)
+text_h = word.height + text_gap + desc.height
+scale = text_h / mark.height
+mark_small = mark.resize((round(mark.width * scale), text_h), Image.Resampling.LANCZOS)
+gap = round(word.height * 0.55)
+text_w = max(word.width, desc.width)
+horizontal = Image.new('RGBA', (mark_small.width + gap + text_w, text_h), (0, 0, 0, 0))
+horizontal.alpha_composite(mark_small, (0, 0))
+x = mark_small.width + gap
+horizontal.alpha_composite(word, (x + (text_w - word.width) // 2, 0))
+horizontal.alpha_composite(desc, (x + (text_w - desc.width) // 2, word.height + text_gap))
+save(horizontal, 'vallis-logo-horizontal.webp')

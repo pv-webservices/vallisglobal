@@ -1,4 +1,4 @@
-/* BUILDMART INDIA — shared UI components and responsive overrides (loaded after layout.css and cards.css) */
+/* VALLIS — shared UI components and responsive overrides (loaded after layout.css and cards.css) */
 
 /* Buttons: directional fill, icon nudge — no shimmer or glow */
 .btn {
@@ -474,7 +474,8 @@
       "door door"
       "closer spider"
       "glass rail"
-      "furniture shaft";
+      "furniture shaft"
+      "windows windows";
   }
   .catalogues {
     grid-template-columns: minmax(0, 1fr);

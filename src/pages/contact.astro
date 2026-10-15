@@ -3,9 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import ResponsiveImage from '../components/ResponsiveImage.astro';
 import Icon from '../components/Icon.astro';
-import {business,categories,generated} from '../data/catalogue';
+import {business,offices,categories,generated} from '../data/catalogue';
 ---
-<Layout title="Contact & Product Enquiries" description="Contact BUILDMART INDIA in Gurugram for architectural hardware enquiries and quotations. Call +91 9990069207 or email info@vallisglobal.in." cta={false} preload={generated('consultation')}>
+<Layout title="Contact & Product Enquiries" description="Contact VALLIS in Gurugram and Dubai for architectural hardware enquiries and quotations. Call +91 9990069207, +971 551504568 or email info@vallisglobal.in." cta={false} preload={generated('consultation')}>
  <PageHero label="Let’s talk about your project" title="Every great space starts with <em>a conversation.</em>" description="Share your product shortlist, preferred finishes and project requirements. We’ll help you explore the right details." image={generated('consultation')} alt="Hardware samples and architectural drawings on a walnut consultation table" crumbs={[{label:'Contact'}]} compact>
   <div class="btn-row"><a class="btn" href={`tel:${business.tel}`}><Icon name="phone" size={16}/>{business.phone}</a><a class="btn btn--ghost" href={`mailto:${business.email}`}><Icon name="mail" size={16}/>{business.email}</a></div>
  </PageHero>
@@ -19,7 +19,7 @@ import {business,categories,generated} from '../data/catalogue';
     <div class="contact-cards">
      <div class="contact-card" data-reveal><Icon name="phone"/><div><h3>Call us</h3><a href={`tel:${business.tel}`}>{business.phone}</a></div></div>
      <div class="contact-card" data-reveal style="--i:1"><Icon name="mail"/><div><h3>Email us</h3><a href={`mailto:${business.email}`}>{business.email}</a></div></div>
-     <div class="contact-card" data-reveal style="--i:2"><Icon name="pin"/><div><h3>Find us</h3><p>{business.address}</p><a class="link-arrow" href={business.maps} target="_blank" rel="noopener">Open directions <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></div></div>
+     {offices.map((o,i)=><div class="contact-card" data-reveal style={`--i:${i+2}`}><Icon name="pin"/><div><h3>{o.city}<small class="office-label">{o.label}</small></h3><p>{o.address}</p><a href={`tel:${o.tel}`}>{o.phone}</a><br/><a class="link-arrow" href={o.maps} target="_blank" rel="noopener">Open directions <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></div></div>)}
     </div>
    </div>
 
@@ -56,18 +56,20 @@ import {business,categories,generated} from '../data/catalogue';
 
  <section class="section" id="location">
   <div class="container">
-   <div class="location" data-reveal>
-    <div class="location-media" role="img" aria-label="BUILDMART INDIA location on Golf Course Road, Gurugram">
-     <ResponsiveImage src="/images/hero/navy-marble.webp" sizes="(max-width: 1024px) 100vw, 55vw" alt="" width="1672" height="941" loading="lazy"/>
-     <div class="location-pin"><Icon name="pin" size={34}/><div>BUILDMART INDIA<small>Golf Course Road · Gurugram</small></div></div>
-    </div>
-    <div class="location-copy on-dark" style="background:transparent">
-     <span class="eyebrow">Visit &amp; connect</span>
-     <h2>Find us in <em>Gurugram.</em></h2>
-     <p>{business.address}</p>
-     <p>Contact our team to discuss your product requirements before your visit.</p>
-     <a class="btn" href={business.maps} target="_blank" rel="noopener">Get Directions <Icon name="arrowUpRight" size={16}/><span class="sr-only"> (opens in a new tab)</span></a>
-    </div>
+   <div class="locations">
+    {offices.map(o=><div class="location" data-reveal>
+     <div class="location-media" role="img" aria-label={`VALLIS ${o.label} in ${o.city}`}>
+      <ResponsiveImage src="/images/hero/navy-marble.webp" sizes="(max-width: 1024px) 100vw, 50vw" alt="" width="1672" height="941" loading="lazy"/>
+      <div class="location-pin"><Icon name="pin" size={34}/><div>VALLIS<small>{o.label} · {o.city}</small></div></div>
+     </div>
+     <div class="location-copy on-dark" style="background:transparent">
+      <span class="eyebrow">Visit &amp; connect</span>
+      <h2>Find us in <em>{o.city}.</em></h2>
+      <p>{o.address}</p>
+      <p><a href={`tel:${o.tel}`}>{o.phone}</a></p>
+      <a class="btn" href={o.maps} target="_blank" rel="noopener">Get Directions <Icon name="arrowUpRight" size={16}/><span class="sr-only"> (opens in a new tab)</span></a>
+     </div>
+    </div>)}
    </div>
   </div>
  </section>
@@ -91,7 +93,7 @@ import {business,categories,generated} from '../data/catalogue';
     if(get('website').value){summary.textContent='Please contact us directly by email or phone.';return;}
     if(first){result.hidden=true;summary.textContent='Please correct the highlighted fields before preparing your enquiry.';first.focus();return;}
     const label=(get('category') as HTMLSelectElement).selectedOptions[0].text;
-    const body=`Hello BUILDMART INDIA,\n\nI would like to enquire about architectural hardware for my project.\n\nName: ${get('name').value.trim()}\nEmail: ${get('email').value.trim()}\nPhone: ${get('phone').value.trim()}\nCompany: ${get('company').value.trim()||'Not specified'}\nCategory: ${label}\nProduct / model: ${get('product').value.trim()||'Please advise'}\n\nProject requirements:\n${get('message').value.trim()}\n\nPlease contact me to discuss availability and a quotation.`;
+    const body=`Hello VALLIS team,\n\nI would like to enquire about architectural hardware for my project.\n\nName: ${get('name').value.trim()}\nEmail: ${get('email').value.trim()}\nPhone: ${get('phone').value.trim()}\nCompany: ${get('company').value.trim()||'Not specified'}\nCategory: ${label}\nProduct / model: ${get('product').value.trim()||'Please advise'}\n\nProject requirements:\n${get('message').value.trim()}\n\nPlease contact me to discuss availability and a quotation.`;
     const subject=`Product enquiry — ${get('product').value.trim()||label}`;
     emailLink.href=`mailto:info@vallisglobal.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     document.querySelector('#draft-preview')!.textContent=body;result.hidden=false;summary.textContent='';status.textContent='Draft prepared. No message has been sent.';document.querySelector<HTMLElement>('#draft-title')?.focus();

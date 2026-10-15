@@ -1,0 +1,304 @@
+/* VALLIS — fire door hardware explorer, designer handles showcase and office cards */
+
+/* Fire door hardware explorer */
+.fire-door-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+}
+.fire-door-figure {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+  margin: 0;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+}
+.fire-door-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.fire-pin {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.fire-pin::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  opacity: 0.7;
+  animation: fire-pulse 2.4s var(--ease) infinite;
+}
+.fire-pin span {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy-950);
+  font: 600 0.82rem/1 var(--sans);
+  box-shadow: 0 6px 18px -6px rgba(3, 13, 26, 0.7);
+  transition:
+    transform 0.3s var(--ease),
+    background 0.3s var(--ease);
+}
+.fire-pin:hover span,
+.fire-pin:focus-visible span,
+.fire-pin.is-active span {
+  transform: scale(1.18);
+  background: var(--gold-light);
+}
+@keyframes fire-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+.fire-door-list {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fire-door-list li {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 14px;
+  border-left: 2px solid var(--line-light);
+  outline: none;
+  transition:
+    background 0.3s var(--ease),
+    border-color 0.3s var(--ease);
+}
+.fire-door-list li.is-active,
+.fire-door-list li:focus-visible {
+  background: rgba(196, 160, 92, 0.1);
+  border-color: var(--gold);
+}
+.fire-door-list b {
+  font: 500 1.35rem/1.1 var(--serif);
+  color: var(--gold);
+}
+.fire-door-list h3 {
+  font: 600 0.95rem/1.3 var(--sans);
+  letter-spacing: 0.02em;
+}
+.fire-door-list p {
+  margin-top: 4px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted-light);
+}
+.fire-door-cta {
+  margin-top: clamp(32px, 4vw, 52px);
+  align-items: center;
+}
+.fire-door-cta .source-note {
+  margin: 0;
+  max-width: 52ch;
+}
+
+/* Designer lever handles */
+.handle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 20px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.handle-grid li:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.handle-grid figure {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  background: var(--paper);
+}
+.handle-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease);
+}
+.handle-grid figure:hover img {
+  transform: scale(1.04);
+}
+.handle-grid figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(3, 13, 26, 0.78);
+  color: var(--ivory);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Office cards (contact page + footer) */
+.office-label {
+  display: block;
+  margin-top: 2px;
+  font: 500 0.7rem/1.4 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.footer-office + .footer-office {
+  margin-top: 18px;
+}
+.footer-office h3 {
+  margin-bottom: 8px;
+  font: 600 0.72rem/1.4 var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.locations {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+}
+.locations .location {
+  grid-template-columns: minmax(0, 1fr);
+}
+.locations .location-media {
+  min-height: 240px;
+}
+
+@media (max-width: 1024px) {
+  .fire-door-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .fire-door-figure {
+    position: relative;
+    top: auto;
+  }
+  .fire-door-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .handle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .handle-grid li:first-child {
+    grid-row: auto;
+  }
+  .locations {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .fire-pin {
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+  }
+  .fire-pin span {
+    font-size: 0.66rem;
+  }
+  .fire-door-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .handle-grid li:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fire-pin::before {
+    animation: none;
+  }
+}
+
+/* uPVC windows */
+.upvc-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin: 0 0 clamp(48px, 6vw, 80px);
+  padding: 0 0 28px;
+  list-style: none;
+  border-bottom: 1px solid var(--line-light);
+}
+.upvc-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+}
+.upvc-highlights svg {
+  color: var(--gold);
+}
+.upvc-profile {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line-light);
+  border: 1px solid var(--line-light);
+}
+.upvc-profile > div {
+  padding: clamp(22px, 2.6vw, 36px);
+  background: var(--navy-950);
+}
+.upvc-profile b {
+  font: 500 1.4rem/1 var(--serif);
+  color: var(--gold);
+}
+.upvc-profile h3 {
+  margin: 14px 0 8px;
+  font: 600 1rem/1.3 var(--sans);
+}
+.upvc-profile p {
+  color: var(--muted-light);
+  font-size: 0.9rem;
+}
+.upvc-guide {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 20px);
+}
+.upvc-guide p {
+  margin: 12px 0 18px;
+}
+.upvc-guide .tags a {
+  text-decoration: none;
+}
+@media (max-width: 1024px) {
+  .upvc-profile,
+  .upvc-guide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .upvc-profile,
+  .upvc-guide {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

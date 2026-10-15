@@ -118,5 +118,69 @@
     "quality": "high",
     "size": "1536x1024",
     "generated": "2026-10-12T08:24:33.752Z"
+  },
+  "upvc-tilt-turn": {
+    "placement": "uPVC Windows collection — tilt-turn window product image",
+    "alt": "A white uPVC tilt and turn window with the sash tilted inward from the top for ventilation, satin handle turned upward",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024",
+    "generated": "2026-10-15T21:32:28.627Z"
+  },
+  "upvc-fixed": {
+    "placement": "uPVC Windows collection — fixed window product image",
+    "alt": "A large white uPVC fixed picture window with a single uninterrupted pane framing a green landscape view",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024",
+    "generated": "2026-10-15T21:32:28.629Z"
+  },
+  "upvc-casement": {
+    "placement": "uPVC Windows collection — casement window product image",
+    "alt": "A white uPVC casement window, its side-hinged sash open outward about 60 degrees, with a slim satin espagnolette handle",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024",
+    "generated": "2026-10-15T21:32:28.629Z"
+  },
+  "upvc-sliding": {
+    "placement": "uPVC Windows collection — sliding window product image",
+    "alt": "A wide white uPVC two-track sliding window with one sash slid half open on its track, slim interlock and recessed handle",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024",
+    "generated": "2026-10-15T21:32:28.629Z"
+  },
+  "upvc-top-hung": {
+    "placement": "uPVC Windows collection — top-hung window product image",
+    "alt": "A compact white uPVC top-hung ventilator window above a stone kitchen counter, sash hinged at the top and pushed open outward at the bottom",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024",
+    "generated": "2026-10-15T21:32:28.629Z"
+  },
+  "upvc-french": {
+    "placement": "uPVC Windows collection — french window product image",
+    "alt": "A pair of floor-to-ceiling white uPVC French windows opened inward onto a sunlit terrace, with slim satin handles",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1024",
+    "generated": "2026-10-15T21:32:28.629Z"
+  },
+  "upvc-windows-scene": {
+    "placement": "uPVC Windows collection hero",
+    "alt": "Light-filled living room with tall white uPVC casement and fixed windows overlooking a garden",
+    "model": "gpt-image-2.5-flare",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-15T21:32:28.629Z"
+  },
+  "fire-door-hardware": {
+    "placement": "Fire door hardware explorer (home page and Door Hardware collection) — annotated with HTML hotspots",
+    "alt": "Ivory steel fire-rated double door fitted with closer, hinges, smoke seals, wired-glass vision panels, panic bars, lever trim and drop seal",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-15T21:32:28.629Z"
   }
 }

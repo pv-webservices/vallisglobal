@@ -6,10 +6,9 @@ import {products,categories,enquiryUrl,productUrl,business,isPhoto} from '../../
 export function getStaticPaths(){return products.map(product=>({params:{category:product.category,product:product.slug},props:{product}}));}
 const {product:p}=Astro.props;const c=categories.find(c=>c.slug===p.category)!;
 const related=products.filter(o=>o.category===p.category&&o.slug!==p.slug).slice(0,4);
-const sourceFile=p.brand==='NIMKRO'?'/door handle pdf.pdf':p.brand==='BUILDMART INDIA'?`/${p.source.split(': ')[1]}`:'/vallisglobal products pdf.pdf';
 const schema={'@context':'https://schema.org','@type':'Product',name:`${p.brand} ${p.model} ${p.name}`,model:p.model,description:p.description,image:p.images.map(i=>`${business.origin}${i}`),brand:{'@type':'Brand',name:p.brand},url:`${business.origin}${productUrl(p)}`};
 ---
-<Layout title={`${p.model} — ${p.name}`} description={`${p.description} View ${p.brand} ${p.model} catalogue specifications and request a quotation from BUILDMART INDIA.`} schema={schema} solidHeader>
+<Layout title={`${p.model} — ${p.name}`} description={`${p.description} View ${p.brand} ${p.model} catalogue specifications and request a quotation from VALLIS.`} schema={schema} solidHeader>
  <section class="product-hero">
   <div class="container">
    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/products/">Products</a><span aria-hidden="true">/</span><a href={`/products/${c.slug}/`}>{c.name}</a><span aria-hidden="true">/</span><span aria-current="page">{p.model}</span></nav>
@@ -38,7 +37,7 @@ const schema={'@context':'https://schema.org','@type':'Product',name:`${p.brand}
     <span class="eyebrow" data-reveal>The technical details</span>
     <h2 data-reveal style="--i:1">Product <em>specifications.</em></h2>
     <table class="spec-table"><caption class="sr-only">{p.model} catalogue specifications</caption><tbody>{Object.entries(p.specs).map(([key,value])=><tr><th scope="row">{key}</th><td>{value}</td></tr>)}</tbody></table>
-    <a class="link-arrow" href={`${sourceFile}${p.page?'#page='+p.page:''}`} target="_blank" rel="noopener">View the source catalogue <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a>
+    {p.sourceFile&&<a class="link-arrow" href={`${p.sourceFile}${p.page?'#page='+p.page:''}`} target="_blank" rel="noopener">View the source catalogue <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a>}
    </div>
    <aside class="note-card" style="background:var(--navy-800);--i:2" data-reveal>
     <span class="eyebrow">For your project</span>

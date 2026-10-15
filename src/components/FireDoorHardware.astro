@@ -1,0 +1,44 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+import Icon from './Icon.astro';
+import {fireDoorHardware,generated} from '../data/catalogue';
+interface Props {headingLevel?:'h2'|'h3';}
+const {headingLevel='h2'}=Astro.props;
+const H=headingLevel;
+---
+<section class="section on-dark fire-door" aria-labelledby="fire-door-title" data-fire-door>
+ <div class="container">
+  <div class="section-head">
+   <div data-reveal><span class="eyebrow">Fire door hardware</span><H id="fire-door-title">Every component, <em>working together.</em></H></div>
+   <p class="lead" data-reveal style="--i:1">A fire door protects only when its complete hardware set performs as one. Explore the VALLIS fire door hardware fitted to a typical double-leaf steel fire door.</p>
+  </div>
+  <div class="fire-door-grid">
+   <figure class="fire-door-figure" data-reveal>
+    <ResponsiveImage src={generated('fire-door-hardware')} sizes="(max-width: 1024px) 92vw, 60vw" alt="Steel fire-rated double door fitted with a door closer, hinges, door silencers, wired-glass vision panels, panic bars, outside lever trim, smoke strips and door bottom strips" width="1536" height="1024" loading="lazy"/>
+    {fireDoorHardware.map((h,i)=><button class="fire-pin" style={`left:${h.x}%;top:${h.y}%`} data-pin={i} aria-label={`${h.name}: ${h.text}`} aria-describedby={`fire-item-${i}`}><span>{i+1}</span></button>)}
+   </figure>
+   <ol class="fire-door-list">
+    {fireDoorHardware.map((h,i)=><li id={`fire-item-${i}`} data-item={i} tabindex="0"><b>{String(i+1).padStart(2,'0')}</b><div><h3>{h.name}</h3><p>{h.text}</p></div></li>)}
+   </ol>
+  </div>
+  <div class="btn-row fire-door-cta" data-reveal><a class="btn" href="/contact/?category=door-hardware&product=Fire%20door%20hardware%20set#enquiry">Enquire about fire door hardware <Icon name="arrow" size={16}/></a><span class="source-note">Fire ratings depend on the tested door assembly. Confirm certification requirements for your project with our team.</span></div>
+ </div>
+</section>
+
+<script>
+ document.querySelectorAll<HTMLElement>('[data-fire-door]').forEach(root=>{
+  const pins=root.querySelectorAll<HTMLElement>('[data-pin]');
+  const items=root.querySelectorAll<HTMLElement>('[data-item]');
+  const activate=(index:string|undefined)=>{
+   pins.forEach(p=>p.classList.toggle('is-active',p.dataset.pin===index));
+   items.forEach(it=>it.classList.toggle('is-active',it.dataset.item===index));
+  };
+  [...pins,...items].forEach(el=>{
+   const index=el.dataset.pin??el.dataset.item;
+   el.addEventListener('mouseenter',()=>activate(index));
+   el.addEventListener('focus',()=>activate(index));
+   el.addEventListener('click',()=>activate(index));
+  });
+  root.addEventListener('mouseleave',()=>activate(undefined));
+ });
+</script>

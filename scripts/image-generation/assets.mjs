@@ -187,4 +187,55 @@ export const ASSETS = [
       'patch-fitting sample neatly arranged. Warm late-afternoon light through tall windows, navy wall behind. ' +
       'Shot from a high three-quarter angle.',
   },
+  {
+    id: 'fire-door-hardware',
+    placement: 'Fire door hardware explorer (home page and Door Hardware collection) — annotated with HTML hotspots',
+    tier: 'key',
+    complexity: 'high',
+    orientation: 'landscape',
+    alt: 'Ivory steel fire-rated double door fitted with closer, hinges, smoke seals, wired-glass vision panels, panic bars, lever trim and drop seal',
+    prompt:
+      'Straight-on, perfectly symmetrical front elevation photograph of an ivory-white powder-coated steel fire-rated ' +
+      'double door set in a steel frame, centred in the frame and filling about 70% of the image height, set into a ' +
+      'smooth deep navy plaster wall, polished pale stone floor. Clearly visible hardware: a silver overhead hydraulic ' +
+      'door closer with arm mounted at the top-left of the left leaf; three visible stainless-steel butt hinges on the ' +
+      'outer edge of each leaf; a slim dark intumescent smoke seal strip along the vertical meeting edges; a narrow tall ' +
+      'rectangular vision panel of georgian wired safety glass in the upper half of each leaf; a horizontal ' +
+      'stainless-steel panic push bar exit device across each leaf at waist height; a stainless lever handle outside ' +
+      'trim near the centre; an aluminium automatic drop-down door bottom seal along the base of each leaf. Even, soft, ' +
+      'frontal studio lighting with gentle shadows, every component crisp and readable. Generous empty wall on both ' +
+      'sides of the door.',
+  },
+  {
+    id: 'upvc-windows-scene',
+    placement: 'uPVC Windows collection hero',
+    tier: 'key',
+    complexity: 'low',
+    orientation: 'landscape',
+    alt: 'Light-filled living room with tall white uPVC casement and fixed windows overlooking a garden',
+    prompt:
+      'Serene luxury living room with a wall of tall slim white uPVC windows — a pair of casement sashes beside large ' +
+      'fixed panes — looking out onto a lush green garden. Warm afternoon sunlight, ivory stone floor, a navy velvet ' +
+      'sofa and brass accents. The window frames, gaskets and slim hardware handles are crisp and clearly visible. ' +
+      'Wide-angle architectural interior photograph.',
+  },
+  ...[
+    ['casement', 'A white uPVC casement window, its side-hinged sash open outward about 60 degrees, with a slim satin espagnolette handle'],
+    ['sliding', 'A wide white uPVC two-track sliding window with one sash slid half open on its track, slim interlock and recessed handle'],
+    ['tilt-turn', 'A white uPVC tilt and turn window with the sash tilted inward from the top for ventilation, satin handle turned upward'],
+    ['fixed', 'A large white uPVC fixed picture window with a single uninterrupted pane framing a green landscape view'],
+    ['top-hung', 'A compact white uPVC top-hung ventilator window above a stone kitchen counter, sash hinged at the top and pushed open outward at the bottom'],
+    ['french', 'A pair of floor-to-ceiling white uPVC French windows opened inward onto a sunlit terrace, with slim satin handles'],
+  ].map(([id, subject]) => ({
+    id: `upvc-${id}`,
+    placement: `uPVC Windows collection — ${id} window product image`,
+    tier: 'standard',
+    complexity: 'low',
+    orientation: 'square',
+    alt: subject,
+    prompt:
+      `${subject}, installed in a smooth ivory plaster wall of an elegant home. Frontal three-quarter view, the whole ` +
+      'window visible and centred with space around it, multi-chamber white uPVC profile with grey EPDM gaskets, clear ' +
+      'double-glazed unit. Soft natural daylight, clean and uncluttered composition.',
+  })),
 ];

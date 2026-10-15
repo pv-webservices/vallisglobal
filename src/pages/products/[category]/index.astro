@@ -4,6 +4,9 @@ import PageHero from '../../../components/PageHero.astro';
 import ProductCard from '../../../components/ProductCard.astro';
 import ResponsiveImage from '../../../components/ResponsiveImage.astro';
 import Icon from '../../../components/Icon.astro';
+import FireDoorHardware from '../../../components/FireDoorHardware.astro';
+import NewHandles from '../../../components/NewHandles.astro';
+import UpvcGuide from '../../../components/UpvcGuide.astro';
 import {categories,products,enquiryUrl,isPhoto} from '../../../data/catalogue';
 export function getStaticPaths(){return categories.map(category=>({params:{category:category.slug},props:{category}}));}
 const {category:c}=Astro.props;
@@ -12,8 +15,8 @@ const [lead,...rest]=c.intro.split('. ');
 const detail=rest.join('. ')||c.intro;
 const suited=c.applications.map(a=>a.toLowerCase()).join(', ').replace(/, ([^,]*)$/,' and $1');
 ---
-<Layout title={c.name} description={`${c.intro} Explore genuine models and enquire with BUILDMART INDIA in Gurugram.`} preload={c.scene}>
- <PageHero label={`Collection ${c.number} · BUILDMART INDIA`} title={c.name} description={detail} image={c.scene} alt={`${c.name} application setting`} crumbs={[{label:'Products',href:'/products/'},{label:c.name}]}>
+<Layout title={c.name} description={`${c.intro} Explore genuine models and enquire with VALLIS in Gurugram and Dubai.`} preload={c.scene}>
+ <PageHero label={`Collection ${c.number} · VALLIS`} title={c.name} description={detail} image={c.scene} alt={`${c.name} application setting`} crumbs={[{label:'Products',href:'/products/'},{label:c.name}]}>
   <a class="btn" href={enquiryUrl(undefined,c)}>Discuss this collection <Icon name="arrow" size={16}/></a>
  </PageHero>
 
@@ -36,9 +39,13 @@ const suited=c.applications.map(a=>a.toLowerCase()).join(', ').replace(/, ([^,]*
    </div>
    <div class="collection-head"><div><span class="eyebrow">The collection</span><h2>{c.name}</h2></div><span class="result-count">{selected.length} selected models</span></div>
    <div class="product-grid">{selected.map(p=><ProductCard product={p}/>)}</div>
-   {c.slug==='glass-railings'&&<div class="note-card" style="margin-top:48px"><span class="eyebrow">MRW catalogue</span><h3>Railing possibilities.</h3><p style="margin-top:16px">The application imagery on this page comes from the supplied MRW catalogue. The individually listed spigots are identified using their VALLIS catalogue model codes.</p><a class="link-arrow" href="/railings pdf.pdf" target="_blank" rel="noopener">Explore the MRW railing catalogue <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></div>}
+   {c.slug==='glass-railings'&&<div class="note-card" style="margin-top:48px"><span class="eyebrow">VALLIS catalogue</span><h3>Railing possibilities.</h3><p style="margin-top:16px">Explore VALLIS glass railing systems, spigots and architectural applications. The individually listed spigots are identified using their VALLIS catalogue model codes.</p><a class="link-arrow" href="/railings pdf.pdf" target="_blank" rel="noopener">Explore the VALLIS railing catalogue <Icon name="arrowUpRight" size={14}/><span class="sr-only"> (opens in a new tab)</span></a></div>}
   </div>
  </section>
+
+ {c.slug==='door-hardware'&&<NewHandles/>}
+ {(c.slug==='door-hardware'||c.slug==='shaft-doors')&&<FireDoorHardware/>}
+ {c.slug==='upvc-windows'&&<UpvcGuide/>}
 
  <section class="section on-dark">
   <div class="container">

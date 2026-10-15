@@ -1,0 +1,41 @@
+---
+import Icon from './Icon.astro';
+import {products,productUrl} from '../data/catalogue';
+const highlights=['Noise reduction up to 47 dB','Thermal insulation — U-value as low as 1.0','Multi-point security locking','Zero maintenance, no painting required'];
+const profile=[
+ {title:'Multi-chamber design',text:'Up to 6 chambers in a 60 mm profile for maximum insulation.'},
+ {title:'Steel reinforcement',text:'Galvanised steel inside the profile for structural strength.'},
+ {title:'EPDM gaskets',text:'A twin sealing system for air and water tightness.'},
+ {title:'Lead-free formula',text:'Eco-friendly calcium-zinc stabilisers.'},
+ {title:'UV resistant',text:'A TiO₂ additive keeps frames from yellowing.'},
+ {title:'Double-glazed unit',text:'Insulating glass for quiet, comfortable rooms.'},
+];
+const link=(model:string)=>{const p=products.find(p=>p.model===`uPVC ${model}`);return p?productUrl(p):'/products/upvc-windows/';};
+const guide=[
+ {need:'For maximum ventilation',text:'Choose casement or tilt & turn windows. They open wide for full airflow.',types:['Casement','Tilt & Turn']},
+ {need:'For compact spaces',text:'Sliding windows don’t swing out — perfect for balconies and tight areas.',types:['Sliding','Fixed']},
+ {need:'For garden views',text:'French windows create dramatic floor-to-ceiling openings to the outdoors.',types:['French','Fixed']},
+ {need:'For kitchens & bathrooms',text:'Top-hung ventilators bring in fresh air while keeping rain out.',types:['Top Hung']},
+];
+---
+<section class="section on-dark" aria-labelledby="upvc-profile-title">
+ <div class="container">
+  <ul class="upvc-highlights" data-reveal>{highlights.map(h=><li><Icon name="check" size={18}/>{h}</li>)}</ul>
+  <div class="section-head">
+   <div data-reveal><span class="eyebrow">Technical specifications</span><h2 id="upvc-profile-title">Premium uPVC <em>profile.</em></h2></div>
+   <p class="lead" data-reveal style="--i:1">Every VALLIS window is built on a multi-chamber uPVC profile. Share these details with your architect or builder.</p>
+  </div>
+  <div class="upvc-profile">{profile.map((f,i)=><div data-reveal style={`--i:${i%3}`}><b>0{i+1}</b><h3>{f.title}</h3><p>{f.text}</p></div>)}</div>
+ </div>
+</section>
+
+<section class="section bg-stone" aria-labelledby="upvc-guide-title">
+ <div class="container">
+  <div class="section-head">
+   <div data-reveal><span class="eyebrow">Choose the right window</span><h2 id="upvc-guide-title">Not sure which <em>type?</em></h2></div>
+   <p class="lead" data-reveal style="--i:1">A quick guide to matching the window style to the space. Our team can visit your site, understand your requirements and recommend the right solution.</p>
+  </div>
+  <div class="upvc-guide">{guide.map((g,i)=><div class="note-card" data-reveal style={`--i:${i}`}><h3>{g.need}</h3><p>{g.text}</p><div class="tags">{g.types.map(t=><a href={link(t)}>{t} windows</a>)}</div></div>)}</div>
+  <div class="btn-row" style="margin-top:40px" data-reveal><a class="btn btn--dark" href="/contact/?category=upvc-windows#enquiry">Book a consultation <Icon name="arrow" size={16}/></a></div>
+ </div>
+</section>
