@@ -1,5 +1,5 @@
 ---
-import {categories,generated,asset} from '../data/catalogue';
+import {categories,generated,asset,supplied} from '../data/catalogue';
 import ResponsiveImage from './ResponsiveImage.astro';
 import Icon from './Icon.astro';
 interface Props {headingLevel?:'h2'|'h3';}
@@ -12,10 +12,11 @@ const tiles:Record<string,{area:string;image:string;stage?:boolean;alt:string}>=
  'door-closers':{area:'closer',image:asset('vallis-p70-x2408'),stage:true,alt:'VALLIS overhead door closer'},
  'spider-fittings':{area:'spider',image:asset('vallis-p60-x2078'),alt:'Spider fittings supporting an interior glass wall'},
  'glass-fittings':{area:'glass',image:asset('vallis-p85-x2907'),stage:true,alt:'VALLIS glass-to-glass shower hinge'},
- 'glass-railings':{area:'rail',image:asset('vallis-rail-p10-x82'),alt:'Glass-railed staircase in a residential interior'},
+ 'glass-railings':{area:'rail',image:asset('vallis-p110-x4371'),stage:true,alt:'VALLIS round-profile glass railing spigot'},
  'furniture-hardware':{area:'furniture',image:generated('furniture-hardware-scene'),alt:'Navy kitchen cabinetry with brushed-gold handles'},
- 'shaft-doors':{area:'shaft',image:generated('shaft-doors-scene'),alt:'Service corridor with flush metal shaft doors'},
+ 'fhc-doors':{area:'shaft',image:generated('shaft-doors-scene'),alt:'Service corridor with flush metal FHC doors'},
  'upvc-windows':{area:'windows',image:generated('upvc-windows-scene'),alt:'Living room with tall white uPVC casement and fixed windows overlooking a garden'},
+ 'shower-cubicles':{area:'shower',image:supplied('shower-cubicle-1'),alt:'Frameless corner shower cubicle with clear glass, hinges and a shower handle'},
 };
 ---
 <div class="bento">

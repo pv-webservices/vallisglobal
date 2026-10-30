@@ -15,12 +15,28 @@ const only = args.filter((a) => !a.startsWith('--'));
 
 const exists = (file) => access(file).then(() => true, () => false);
 
+// Assets with `references` (project-relative image paths) are sent to the edits endpoint so the
+// result can reproduce genuine VALLIS products, logos or source photographs.
+async function buildRequest(asset, body, apiKey) {
+  const auth = { Authorization: `Bearer ${apiKey}` };
+  if (!asset.references?.length) {
+    return { url: GENERATION.endpoint, headers: { ...auth, 'Content-Type': 'application/json' }, body: JSON.stringify(body) };
+  }
+  const form = new FormData();
+  for (const [key, value] of Object.entries(body)) form.append(key, String(value));
+  for (const ref of asset.references) {
+    const png = await sharp(path.join(root, ref)).png().toBuffer();
+    form.append('image[]', new Blob([png], { type: 'image/png' }), `${path.parse(ref).name}.png`);
+  }
+  return { url: GENERATION.editEndpoint, headers: auth, body: form };
+}
+
 async function requestImage(asset) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error('OPENAI_API_KEY is not set. Add it to .env (never commit it).');
   const body = {
     model: selectModel(asset),
-    prompt: `${asset.prompt}\n\n${ART_DIRECTION}`,
+    prompt: `${asset.prompt}\n\n${asset.artDirection ?? ART_DIRECTION}`,
     size: IMAGE_SIZES[asset.orientation],
     quality: selectQuality(asset),
     n: 1,
@@ -28,10 +44,11 @@ async function requestImage(asset) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), GENERATION.requestTimeoutMs);
   try {
-    const response = await fetch(GENERATION.endpoint, {
+    const request = await buildRequest(asset, body, apiKey);
+    const response = await fetch(request.url, {
       method: 'POST',
-      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+      headers: request.headers,
+      body: request.body,
       signal: controller.signal,
     });
     const json = await response.json().catch(() => ({}));

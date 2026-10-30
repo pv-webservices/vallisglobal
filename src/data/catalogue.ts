@@ -32,9 +32,11 @@ export const asset = (name: string) => `/images/catalogue/${name}.webp`;
 /** Photographs (rather than transparent product cut-outs) should fill their frame. */
 const PHOTO_IMAGES = ["vallis-legacy-p17-x1343", "vallis-legacy-p28-x2408", "vallis-legacy-p37-x3374", "vallis-legacy-p5-x134", "vallis-p13-x344", "vallis-p32-x1118", "vallis-p60-x2078", "vallis-p69-x2356", "vallis-p77-x2613"];
 export const isPhoto = (src: string) =>
-  src.includes("/generated/") || src.includes("/vallis-rail-") || PHOTO_IMAGES.some((name) => src.includes(`/${name}.`));
+  src.includes("/generated/") || src.includes("/supplied/") || src.includes("/vallis-rail-") || PHOTO_IMAGES.some((name) => src.includes(`/${name}.`));
 /** AI-generated art-directed imagery (see scripts/image-generation). */
 export const generated = (name: string) => `/images/generated/${name}.webp`;
+/** Client-supplied photographs, upscaled and optimised by scripts/optimize-supplied-photos.py. */
+export const supplied = (name: string) => `/images/supplied/${name}.webp`;
 // The Legacy Series handle PDF is withheld until a VALLIS-branded edition is supplied.
 export const catalogues = [
   {
@@ -162,14 +164,14 @@ export const categories = [
     icon: "furniture",
   },
   {
-    slug: "shaft-doors",
-    name: "Shaft Doors",
-    short: "Shaft Doors",
+    slug: "fhc-doors",
+    name: "FHC Doors",
+    short: "FHC Doors",
     number: "08",
     image: asset("fhc-200"),
     scene: generated("shaft-doors-scene"),
     intro:
-      "Purposeful access for building services. Explore the VALLIS fire and electrical shaft-door range.",
+      "Purposeful access for building services. Explore the VALLIS range of FHC and electrical shaft doors.",
     applications: ["Electrical shafts", "Service risers", "Utility access"],
     considerations:
       "Confirm opening sizes, leaf configuration, ventilation and required compliance documentation. No fire rating is stated without model-specific test evidence.",
@@ -180,14 +182,28 @@ export const categories = [
     name: "uPVC Windows",
     short: "uPVC Windows",
     number: "09",
-    image: generated("upvc-casement"),
+    image: supplied("upvc-casement-door"),
     scene: generated("upvc-windows-scene"),
     intro:
-      "Quiet, light-filled spaces. Casement, sliding, tilt & turn, fixed, top-hung and French uPVC windows engineered for insulation, security and zero maintenance.",
+      "Quiet, light-filled spaces. uPVC casement and sliding windows and doors, French doors and slide & fold doors, engineered for insulation, security and zero maintenance.",
     applications: ["Homes & villas", "Apartments", "Offices"],
     considerations:
       "Window type, opening size, glass specification and hardware are selected for each opening. Share drawings or site dimensions so our team can recommend the right configuration, then confirm acoustic and thermal values for the chosen system.",
     icon: "window",
+  },
+  {
+    slug: "shower-cubicles",
+    name: "Shower Cubicles",
+    short: "Shower Cubicles",
+    number: "10",
+    image: supplied("shower-cubicle-4"),
+    scene: supplied("shower-cubicle-1"),
+    intro:
+      "Calm, frameless enclosures. Hinged, corner and sliding shower cubicles assembled with VALLIS shower hinges, glass connectors and shower handles.",
+    applications: ["Residential bathrooms", "Hotel bathrooms", "Spa & wellness"],
+    considerations:
+      "Confirm the opening size, glass thickness, wall and floor conditions and door swing before fabrication. Hinges and rollers are selected for the weight of each glass panel.",
+    icon: "glass",
   },
 ];
 export type Category = (typeof categories)[number];
@@ -249,7 +265,7 @@ const lock = "hotel-digital-locks",
   glass = "glass-fittings",
   rail = "glass-railings",
   furniture = "furniture-hardware",
-  shaft = "shaft-doors",
+  shaft = "fhc-doors",
   win = "upvc-windows";
 const lever = (n: number) => asset(`vallis-lever-${String(n).padStart(2, "0")}`);
 /** Designer lever handles: product photographs, numbered as supplied (vallis-lever-01 … 13). */
@@ -276,18 +292,37 @@ const upvcSystem = {
   "Thermal insulation": "U-value as low as 1.0 W/m²K, depending on glazing",
   Formulation: "Lead-free calcium-zinc stabilisers, TiO₂ UV protection",
 };
+/** Products illustrated by photographs rather than a catalogue page. */
+const photoProduct = (
+  category: string,
+  model: string,
+  name: string,
+  images: string[],
+  description: string,
+  specs: Record<string, string>,
+  features: string[],
+  source: string,
+): Product => ({
+  ...p(category, model, name, "", 0, description, specs, features, "VALLIS", source),
+  image: images[0],
+  images,
+  page: undefined,
+});
 const windowProduct = (
   type: string,
   name: string,
   description: string,
   specs: Record<string, string>,
   features: string[],
-): Product => ({
-  ...p(win, `uPVC ${type}`, name, "", 0, description, { ...specs, ...upvcSystem }, features, "VALLIS", windows),
-  image: generated(`upvc-${type.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`),
-  images: [generated(`upvc-${type.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`)],
-  page: undefined,
-});
+  images = [generated(`upvc-${type.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`)],
+): Product => photoProduct(win, `uPVC ${type}`, name, images, description, { ...specs, ...upvcSystem }, features, windows);
+const showers = "VALLIS shower cubicle systems";
+/** Shower cubicle hardware shared by the hinged and corner enclosures. */
+const showerHardware = {
+  Glass: "Clear toughened glass — thickness confirmed per project",
+  Hardware: "VALLIS shower hinges, glass-to-glass connectors and shower handles",
+  Finishes: "Chrome / satin — confirm per project",
+};
 export const products: Product[] = [
   p(
     lock,
@@ -670,24 +705,24 @@ export const products: Product[] = [
   ...[
     [
       "FHC 200",
-      "fhc-200",
-      "Double Shaft Door with Vision Panels",
+      "fhc-200-clear",
+      "FHC Double Door with Vision Panels",
       "Red powder-coated finish",
       "Double leaf with two vision panels",
       "pvc-doors-5.jpeg",
     ],
     [
       "FHC 200D",
-      "fhc-200d",
-      "Heavy Duty Shaft Door",
+      "fhc-200d-clear",
+      "FHC Heavy Duty Double Door",
       "Red finish",
       "Double leaf with vision panels",
       "pvc-doors-5.jpeg",
     ],
     [
       "FHC 100",
-      "fhc-100",
-      "Single Shaft Door with Vision Panel",
+      "fhc-100-clear",
+      "FHC Single Door with Vision Panel",
       "Red finish",
       "Single leaf with vision panel",
       "pvc-doors-5.jpeg",
@@ -707,19 +742,21 @@ export const products: Product[] = [
       name,
       img,
       1,
-      "A shaft-access door from the VALLIS shaft-door range.",
+      "An FHC door from the VALLIS FHC door range.",
       { "Finish shown": finish, Configuration: configuration },
       ["Project-specific size and fixing to be confirmed"],
       "VALLIS",
-      `VALLIS shaft-door sheet: ${source}`,
+      `VALLIS FHC door sheet: ${source}`,
     ),
+    // FHC doors use re-rendered photographs with clear, reflection-free vision glass.
+    ...(img.endsWith("-clear") ? { image: generated(img), images: [generated(img)] } : {}),
     page: undefined,
     sourceFile: `/${source}`,
   })),
   windowProduct(
     "Casement",
-    "Casement Window",
-    "Classic side-hinged windows with excellent ventilation and unobstructed views.",
+    "Casement Window & Door",
+    "Classic side-hinged windows and matching doors with excellent ventilation and unobstructed views.",
     { Operation: "Side-hinged sash, opens up to 90°", Locking: "Multi-point, 3–5 locking points" },
     [
       "Maximum ventilation — opens up to 90° for full airflow",
@@ -727,66 +764,81 @@ export const products: Product[] = [
       "3–5 point locking for security",
       "Easy access for cleaning",
     ],
+    [supplied("upvc-casement-door")],
   ),
   windowProduct(
     "Sliding",
-    "Sliding Window",
-    "Space-saving horizontal sliding windows, ideal for modern apartments and balconies.",
+    "Sliding Window & Door",
+    "Space-saving horizontal sliding windows and large sliding doors, ideal for modern apartments, balconies and garden openings.",
     { Operation: "Horizontal sliding sashes on a track", Locking: "Multi-point locking" },
     [
       "Sashes glide sideways and never swing into the room",
-      "Ideal for balconies and compact spaces",
+      "Ideal for balconies, terraces and compact spaces",
       "Large glazed area for light and views",
       "Smooth, low-effort operation",
     ],
-  ),
-  windowProduct(
-    "Tilt & Turn",
-    "Tilt & Turn Window",
-    "Versatile European-style windows with dual opening modes for ventilation and cleaning.",
-    { Operation: "Dual mode — tilts inward at the top or turns inward like a casement", Locking: "Multi-point locking" },
-    [
-      "Tilt mode for secure, draught-free ventilation",
-      "Turn mode for full opening and easy cleaning",
-      "Single handle controls both modes",
-      "Excellent sealing when closed",
-    ],
-  ),
-  windowProduct(
-    "Fixed",
-    "Fixed Window",
-    "Non-opening windows for maximum light and uninterrupted views.",
-    { Operation: "Non-opening (fixed glazing)" },
-    [
-      "Maximum daylight and uninterrupted views",
-      "Highest sealing and insulation performance",
-      "Combines with opening sashes in larger compositions",
-      "Ideal for compact spaces and picture windows",
-    ],
-  ),
-  windowProduct(
-    "Top Hung",
-    "Top Hung / Ventilator Window",
-    "Compact awning-style windows, perfect for ventilation in kitchens and bathrooms.",
-    { Operation: "Top-hinged sash opens outward at the bottom" },
-    [
-      "Ventilation while keeping rain out",
-      "Compact size for kitchens, bathrooms and utility areas",
-      "Privacy-friendly positioning above counters",
-      "Secure, weather-tight closing",
-    ],
+    [supplied("upvc-sliding-door-1"), supplied("upvc-sliding-door-2")],
   ),
   windowProduct(
     "French",
-    "French Window",
-    "Floor-to-ceiling double windows creating seamless indoor-outdoor transitions.",
-    { Operation: "Pair of side-hinged floor-to-ceiling sashes", Locking: "Multi-point locking" },
+    "French Door",
+    "Floor-to-ceiling double doors with Georgian bars, creating seamless indoor-outdoor transitions.",
+    { Operation: "Pair of side-hinged floor-to-ceiling leaves", Locking: "Multi-point locking" },
     [
       "Dramatic floor-to-ceiling openings to gardens and terraces",
-      "Wide, unobstructed passage when both sashes open",
-      "Abundant natural light",
+      "Wide, unobstructed passage when both leaves open",
+      "Georgian bar detailing for a classic look",
       "Multi-point security locking",
     ],
+    [supplied("upvc-french-door")],
+  ),
+  windowProduct(
+    "Slide & Fold",
+    "Slide & Fold Door",
+    "Folding panels that stack neatly to one side, opening an entire wall to a terrace, garden or pool.",
+    { Operation: "Hinged panels fold and slide along a top and bottom track", Locking: "Multi-point locking" },
+    [
+      "Opens almost the full width of the opening",
+      "Panels stack compactly to one side",
+      "Ideal for terraces, poolsides and garden rooms",
+      "Weather-tight when closed",
+    ],
+    [supplied("upvc-slide-fold")],
+  ),
+  photoProduct(
+    "shower-cubicles",
+    "Shower Hinged",
+    "Hinged Shower Cubicle",
+    [supplied("shower-cubicle-3"), supplied("shower-cubicle-2")],
+    "A frameless in-line shower enclosure with a hinged glass door, fixed panels and a full-height shower handle.",
+    { Configuration: "In-line — hinged door between fixed panels", ...showerHardware },
+    ["Frameless clear-glass look", "Glass-to-glass hinged door", "Full-height shower handle", "Made to the size of the opening"],
+    showers,
+  ),
+  photoProduct(
+    "shower-cubicles",
+    "Shower Corner",
+    "Corner Shower Cubicle",
+    [supplied("shower-cubicle-1"), supplied("shower-cubicle-4")],
+    "A three-sided corner shower enclosure with a hinged door, a top stabiliser rail and glass-to-glass connectors.",
+    { Configuration: "Corner / three-sided with hinged door", ...showerHardware },
+    ["Corner or freestanding layouts", "Top stabiliser rail for rigidity", "Towel-bar style shower handle", "Made to the size of the opening"],
+    showers,
+  ),
+  photoProduct(
+    "shower-cubicles",
+    "Shower Sliding",
+    "Sliding Shower Enclosure",
+    [supplied("shower-sliding")],
+    "A frameless sliding shower door running on an exposed stainless-steel roller track — no swing space needed.",
+    {
+      Configuration: "Sliding door beside a fixed panel",
+      Glass: "Clear toughened glass — thickness confirmed per project",
+      Hardware: "Stainless-steel top track, sliding rollers and pull handle",
+      Finishes: "Chrome / satin — confirm per project",
+    },
+    ["Saves space — the door does not swing out", "Exposed stainless roller track", "Full-height pull handle", "Made to the size of the opening"],
+    showers,
   ),
 ];
 products
@@ -852,6 +904,29 @@ export const gallery = [
     title: "Clean balcony lines",
     group: "Glass Railings",
     alt: "VALLIS catalogue balcony glass balustrade",
+  },  {
+    image: supplied("patch-door-3"),
+    title: "Frameless glass entrances",
+    group: "Glass Fittings",
+    alt: "Office glass partition with a frameless door on patch fittings and a long pull handle",
+  },
+  {
+    image: supplied("shower-cubicle-2"),
+    title: "A frameless shower enclosure",
+    group: "Shower Cubicles",
+    alt: "Corner shower cubicle in clear glass with hinges and a shower handle against marble walls",
+  },
+  {
+    image: supplied("upvc-sliding-door-2"),
+    title: "Slim sliding doors",
+    group: "uPVC Windows & Doors",
+    alt: "Dark-framed uPVC sliding doors opening a kitchen onto a garden",
+  },
+  {
+    image: supplied("shower-sliding"),
+    title: "Sliding into calm",
+    group: "Shower Cubicles",
+    alt: "Frameless sliding shower door on a stainless-steel roller track",
   },
 ];
 /** Fire door hardware explorer: hotspot positions are percentages of the fire-door-hardware image. */
@@ -859,7 +934,6 @@ export const fireDoorHardware = [
   { name: "Door Closer", x: 32.5, y: 11, text: "Overhead hydraulic closer returns the leaf to the closed and latched position after every use." },
   { name: "Door Silencer", x: 72, y: 10.5, text: "Rubber buffers in the frame stop cushion closing and keep the leaf quiet and aligned." },
   { name: "Hinge", x: 28, y: 31.5, text: "Heavy-duty stainless-steel butt hinges carry the weight of the steel leaf." },
-  { name: "Wire Glass", x: 56.5, y: 30, text: "Wired safety-glass vision panel keeps sight lines open while holding together under heat." },
   { name: "Panic Bar Exit Device", x: 37.5, y: 51, text: "Push-bar exit device releases the door with one push for fast evacuation." },
   { name: "Outside Lever Trim", x: 52.5, y: 50, text: "Lever trim gives controlled access from the outside face of the door." },
   { name: "Smoke Strip", x: 50.1, y: 66, text: "Smoke and intumescent seals along the meeting edges limit the passage of smoke." },

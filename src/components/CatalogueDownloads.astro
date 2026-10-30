@@ -2,4 +2,4 @@
 import {catalogues} from '../data/catalogue';
 import Icon from './Icon.astro';
 ---
-<div class="catalogues">{catalogues.map((c,i)=><a class="catalogue-card" href={c.file} target="_blank" rel="noopener" data-reveal style={`--i:${i}`}><span class="eyebrow">Catalogue · PDF · {c.size}</span><h3>{c.name}</h3><p>{c.note}</p><span class="link-arrow">Open catalogue <Icon name="arrowUpRight" size={14}/></span><span class="sr-only"> (opens in a new tab)</span></a>)}</div>
+<div class="catalogues">{catalogues.map((c,i)=><a class="catalogue-card" href={c.file} target="_blank" rel="noopener" data-reveal style={`--i:${i}`}><span class="eyebrow">Catalogue · PDF · {c.size}</span><h3>{c.name}</h3><p>{c.note}</p><span class="link-arrow">Download catalogue <Icon name="arrowDown" size={14}/></span><span class="sr-only"> (opens in a new tab)</span></a>)}</div>

@@ -1,0 +1,21 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+import {supplied} from '../data/catalogue';
+// Corporate image: the public-sector organisations supplied by VALLIS for brand representation.
+const clients=[
+ {name:'Central Public Works Department',short:'CPWD',image:supplied('client-cpwd')},
+ {name:'NBCC (India) Limited — A Navratna CPSE',short:'NBCC',image:supplied('client-nbcc')},
+];
+---
+<section class="section clients" aria-labelledby="clients-title">
+ <div class="container clients-inner">
+  <div class="clients-head" data-reveal>
+   <span class="eyebrow">Corporate image</span>
+   <h2 id="clients-title">Trusted by leading <em>institutions.</em></h2>
+   <p class="lead">VALLIS architectural hardware is associated with India’s leading public-sector construction organisations.</p>
+  </div>
+  <ul class="clients-logos">
+   {clients.map((c,i)=><li data-reveal style={`--i:${i}`}><ResponsiveImage src={c.image} sizes="200px" alt={`${c.short} logo`} loading="lazy"/><span>{c.name}</span></li>)}
+  </ul>
+ </div>
+</section>

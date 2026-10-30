@@ -787,3 +787,104 @@
     bottom: 24px;
   }
 }
+
+/* Catalogue download lead form */
+.lead-dialog {
+  width: min(640px, calc(100vw - 32px));
+  max-height: calc(100svh - 32px);
+  padding: 0;
+  border: 0;
+  border-radius: var(--r-md);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: var(--shadow-lift);
+  overflow: auto;
+}
+.lead-dialog::backdrop {
+  background: rgba(3, 13, 26, 0.82);
+  backdrop-filter: blur(6px);
+}
+.lead-dialog[open] {
+  animation: menu-in 0.4s var(--ease-out);
+}
+.lead-form {
+  position: relative;
+  padding: clamp(28px, 4vw, 48px);
+}
+.lead-form h2 {
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  margin: 10px 0 8px;
+}
+.lead-form .form-intro {
+  margin-bottom: 26px;
+}
+.lead-form .btn[type="submit"] {
+  margin-top: 18px;
+}
+.lead-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.lead-close:hover,
+.lead-close:focus-visible {
+  border-color: var(--gold);
+}
+@media (max-width: 600px) {
+  .lead-form .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Corporate image: client logos */
+.clients-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+.clients-head h2 {
+  margin: 10px 0 14px;
+}
+.clients-logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 24px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.clients-logos li {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: clamp(24px, 3vw, 40px);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: #fff;
+  text-align: center;
+}
+.clients-logos img {
+  width: auto;
+  height: clamp(96px, 10vw, 140px);
+  object-fit: contain;
+}
+.clients-logos span {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+@media (max-width: 900px) {
+  .clients-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -41,6 +41,15 @@ The site was art-directed into a premium navy, ivory and champagne-gold system b
 - **Motion**: CSS transitions on transform/opacity and IntersectionObserver reveals, with a scroll-position backup so content is never left hidden. Clip reveals clip the child, not the observed element. There's also a brief first-visit loader and a collections marquee. Everything respects `prefers-reduced-motion`.
 - **Conversion**: Enquire/Call/WhatsApp actions appear in the header, hero and every CTA band. On phones, a sticky Call · WhatsApp · Enquire bar appears once the visitor scrolls past the hero. The site has no floating WhatsApp button and no header search icon (product search lives on /products/).
 
+## October 2026 client updates
+
+- **Hero**: five banners — full product range (`hero-collection`, widened by `scripts/extend-hero-canvas.py`), digital lock, handles, patch-fitting glass doors and shower cubicles. Chapter numbers follow the rail (02 / 05 …).
+- **Supplied photos** (WhatsApp originals in `source-assets/supplied-2026-10-31/`, kept out of `public/`): `python scripts/optimize-supplied-photos.py` upscales, sharpens and writes responsive WebP to `public/images/supplied/`, merging entries into the image manifest.
+- **Reference-based AI images**: assets in `scripts/image-generation/assets.mjs` may list `references`; these go to the OpenAI edits endpoint (VALLIS logo on the `craft-detail` handle, the VACS 13 lock scene, the product-range banner and the FHC doors with clear vision glass). Reference crops from the latest catalogue live in `scripts/image-generation/references/`.
+- **New collection**: Shower Cubicles (hinged, corner, sliding). uPVC now includes Casement Window & Door, Sliding Window & Door, French Door and Slide & Fold Door.
+- **Catalogue lead form** (`src/components/CatalogueGate.astro`): every PDF link opens a name / email / phone / consent form first. Set `PUBLIC_LEAD_ENDPOINT` to a form-handling URL to receive each lead as JSON; without it the form still gates the download but stores nothing. Without JavaScript, the PDF links open directly.
+- **Corporate image** (`src/components/ClientLogos.astro`): CPWD and NBCC logos on the homepage.
+
 ## AI image generation
 
 Fifteen art-directed images in `public/images/generated/`: four hero chapters, a craftsmanship detail, a precision macro, finishes, a fit-check still life, the Door Hardware, Glass Fittings, Furniture Hardware and Shaft Doors scenes, two sector images and a consultation scene. Each one has a single, recorded placement. Product pages always use the genuine catalogue image. The privacy page states that atmospheric images are illustrative.
