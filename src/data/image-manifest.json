@@ -473,5 +473,145 @@
     "width": 353,
     "height": 266,
     "srcset": "/images/brand/vallis-mark-w320.webp 320w, /images/brand/vallis-mark.webp 353w"
+  },
+  "/images/supplied/patch-door-1.webp": {
+    "width": 1400,
+    "height": 933,
+    "srcset": "/images/supplied/patch-door-1-w320.webp 320w, /images/supplied/patch-door-1-w640.webp 640w, /images/supplied/patch-door-1-w960.webp 960w, /images/supplied/patch-door-1-w1280.webp 1280w, /images/supplied/patch-door-1.webp 1400w"
+  },
+  "/images/supplied/patch-door-2.webp": {
+    "width": 1050,
+    "height": 1400,
+    "srcset": "/images/supplied/patch-door-2-w320.webp 320w, /images/supplied/patch-door-2-w640.webp 640w, /images/supplied/patch-door-2-w960.webp 960w, /images/supplied/patch-door-2.webp 1050w"
+  },
+  "/images/supplied/patch-door-3.webp": {
+    "width": 1400,
+    "height": 933,
+    "srcset": "/images/supplied/patch-door-3-w320.webp 320w, /images/supplied/patch-door-3-w640.webp 640w, /images/supplied/patch-door-3-w960.webp 960w, /images/supplied/patch-door-3-w1280.webp 1280w, /images/supplied/patch-door-3.webp 1400w"
+  },
+  "/images/supplied/patch-door-4.webp": {
+    "width": 1400,
+    "height": 933,
+    "srcset": "/images/supplied/patch-door-4-w320.webp 320w, /images/supplied/patch-door-4-w640.webp 640w, /images/supplied/patch-door-4-w960.webp 960w, /images/supplied/patch-door-4-w1280.webp 1280w, /images/supplied/patch-door-4.webp 1400w"
+  },
+  "/images/supplied/patch-door-5.webp": {
+    "width": 1400,
+    "height": 933,
+    "srcset": "/images/supplied/patch-door-5-w320.webp 320w, /images/supplied/patch-door-5-w640.webp 640w, /images/supplied/patch-door-5-w960.webp 960w, /images/supplied/patch-door-5-w1280.webp 1280w, /images/supplied/patch-door-5.webp 1400w"
+  },
+  "/images/supplied/hero-patch-fittings.webp": {
+    "width": 2048,
+    "height": 1142,
+    "srcset": "/images/supplied/hero-patch-fittings-w320.webp 320w, /images/supplied/hero-patch-fittings-w640.webp 640w, /images/supplied/hero-patch-fittings-w960.webp 960w, /images/supplied/hero-patch-fittings-w1280.webp 1280w, /images/supplied/hero-patch-fittings.webp 2048w"
+  },
+  "/images/supplied/shower-cubicle-1.webp": {
+    "width": 2048,
+    "height": 1152,
+    "srcset": "/images/supplied/shower-cubicle-1-w320.webp 320w, /images/supplied/shower-cubicle-1-w640.webp 640w, /images/supplied/shower-cubicle-1-w960.webp 960w, /images/supplied/shower-cubicle-1-w1280.webp 1280w, /images/supplied/shower-cubicle-1.webp 2048w"
+  },
+  "/images/supplied/shower-cubicle-2.webp": {
+    "width": 1050,
+    "height": 1400,
+    "srcset": "/images/supplied/shower-cubicle-2-w320.webp 320w, /images/supplied/shower-cubicle-2-w640.webp 640w, /images/supplied/shower-cubicle-2-w960.webp 960w, /images/supplied/shower-cubicle-2.webp 1050w"
+  },
+  "/images/supplied/shower-cubicle-3.webp": {
+    "width": 1400,
+    "height": 1400,
+    "srcset": "/images/supplied/shower-cubicle-3-w320.webp 320w, /images/supplied/shower-cubicle-3-w640.webp 640w, /images/supplied/shower-cubicle-3-w960.webp 960w, /images/supplied/shower-cubicle-3-w1280.webp 1280w, /images/supplied/shower-cubicle-3.webp 1400w"
+  },
+  "/images/supplied/shower-cubicle-4.webp": {
+    "width": 1400,
+    "height": 1400,
+    "srcset": "/images/supplied/shower-cubicle-4-w320.webp 320w, /images/supplied/shower-cubicle-4-w640.webp 640w, /images/supplied/shower-cubicle-4-w960.webp 960w, /images/supplied/shower-cubicle-4-w1280.webp 1280w, /images/supplied/shower-cubicle-4.webp 1400w"
+  },
+  "/images/supplied/shower-sliding.webp": {
+    "width": 1400,
+    "height": 1400,
+    "srcset": "/images/supplied/shower-sliding-w320.webp 320w, /images/supplied/shower-sliding-w640.webp 640w, /images/supplied/shower-sliding-w960.webp 960w, /images/supplied/shower-sliding-w1280.webp 1280w, /images/supplied/shower-sliding.webp 1400w"
+  },
+  "/images/supplied/upvc-casement-door.webp": {
+    "width": 1400,
+    "height": 933,
+    "srcset": "/images/supplied/upvc-casement-door-w320.webp 320w, /images/supplied/upvc-casement-door-w640.webp 640w, /images/supplied/upvc-casement-door-w960.webp 960w, /images/supplied/upvc-casement-door-w1280.webp 1280w, /images/supplied/upvc-casement-door.webp 1400w"
+  },
+  "/images/supplied/upvc-french-door.webp": {
+    "width": 720,
+    "height": 1600,
+    "srcset": "/images/supplied/upvc-french-door-w320.webp 320w, /images/supplied/upvc-french-door-w640.webp 640w, /images/supplied/upvc-french-door.webp 720w"
+  },
+  "/images/supplied/upvc-sliding-door-1.webp": {
+    "width": 1400,
+    "height": 1400,
+    "srcset": "/images/supplied/upvc-sliding-door-1-w320.webp 320w, /images/supplied/upvc-sliding-door-1-w640.webp 640w, /images/supplied/upvc-sliding-door-1-w960.webp 960w, /images/supplied/upvc-sliding-door-1-w1280.webp 1280w, /images/supplied/upvc-sliding-door-1.webp 1400w"
+  },
+  "/images/supplied/upvc-sliding-door-2.webp": {
+    "width": 1400,
+    "height": 1400,
+    "srcset": "/images/supplied/upvc-sliding-door-2-w320.webp 320w, /images/supplied/upvc-sliding-door-2-w640.webp 640w, /images/supplied/upvc-sliding-door-2-w960.webp 960w, /images/supplied/upvc-sliding-door-2-w1280.webp 1280w, /images/supplied/upvc-sliding-door-2.webp 1400w"
+  },
+  "/images/supplied/upvc-slide-fold.webp": {
+    "width": 1400,
+    "height": 1400,
+    "srcset": "/images/supplied/upvc-slide-fold-w320.webp 320w, /images/supplied/upvc-slide-fold-w640.webp 640w, /images/supplied/upvc-slide-fold-w960.webp 960w, /images/supplied/upvc-slide-fold-w1280.webp 1280w, /images/supplied/upvc-slide-fold.webp 1400w"
+  },
+  "/images/supplied/client-cpwd.webp": {
+    "width": 460,
+    "height": 564,
+    "srcset": "/images/supplied/client-cpwd-w320.webp 320w, /images/supplied/client-cpwd.webp 460w"
+  },
+  "/images/supplied/client-nbcc.webp": {
+    "width": 498,
+    "height": 323,
+    "srcset": "/images/supplied/client-nbcc-w320.webp 320w, /images/supplied/client-nbcc.webp 498w"
+  },
+  "/images/generated/hero-collection-wide.webp": {
+    "width": 1997,
+    "height": 1178,
+    "srcset": "/images/generated/hero-collection-wide-w640.webp 640w, /images/generated/hero-collection-wide-w960.webp 960w, /images/generated/hero-collection-wide-w1280.webp 1280w, /images/generated/hero-collection-wide-w1920.webp 1920w, /images/generated/hero-collection-wide.webp 1997w"
+  },
+  "/images/generated/hero-touch-mobile.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/hero-touch-mobile-w640.webp 640w, /images/generated/hero-touch-mobile-w960.webp 960w, /images/generated/hero-touch-mobile.webp 1024w"
+  },
+  "/images/generated/hero-access-mobile.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/hero-access-mobile-w640.webp 640w, /images/generated/hero-access-mobile-w960.webp 960w, /images/generated/hero-access-mobile.webp 1024w"
+  },
+  "/images/generated/hero-shower-mobile.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/hero-shower-mobile-w640.webp 640w, /images/generated/hero-shower-mobile-w960.webp 960w, /images/generated/hero-shower-mobile.webp 1024w"
+  },
+  "/images/generated/hero-patch-fittings-mobile.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/hero-patch-fittings-mobile-w640.webp 640w, /images/generated/hero-patch-fittings-mobile-w960.webp 960w, /images/generated/hero-patch-fittings-mobile.webp 1024w"
+  },
+  "/images/generated/hero-collection-mobile.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/hero-collection-mobile-w640.webp 640w, /images/generated/hero-collection-mobile-w960.webp 960w, /images/generated/hero-collection-mobile.webp 1024w"
+  },
+  "/images/generated/hero-vacs12-mobile.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/hero-vacs12-mobile-w640.webp 640w, /images/generated/hero-vacs12-mobile-w960.webp 960w, /images/generated/hero-vacs12-mobile.webp 1024w"
+  },
+  "/images/generated/hero-clarity-mobile.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/hero-clarity-mobile-w640.webp 640w, /images/generated/hero-clarity-mobile-w960.webp 960w, /images/generated/hero-clarity-mobile.webp 1024w"
+  },
+  "/images/generated/hero-vacs12.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/generated/hero-vacs12-w640.webp 640w, /images/generated/hero-vacs12-w960.webp 960w, /images/generated/hero-vacs12-w1280.webp 1280w, /images/generated/hero-vacs12.webp 1536w"
+  },
+  "/images/generated/hero-vacs12-wide.webp": {
+    "width": 1997,
+    "height": 1024,
+    "srcset": "/images/generated/hero-vacs12-wide-w640.webp 640w, /images/generated/hero-vacs12-wide-w960.webp 960w, /images/generated/hero-vacs12-wide-w1280.webp 1280w, /images/generated/hero-vacs12-wide-w1920.webp 1920w, /images/generated/hero-vacs12-wide.webp 1997w"
   }
 }

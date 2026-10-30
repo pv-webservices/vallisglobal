@@ -83,8 +83,16 @@ export const ASSETS = [
     tier: 'key',
     complexity: 'low',
     orientation: 'portrait',
-    alt: 'Close detail of a brushed brass lever handle on a dark oak door with soft side light',
+    alt: 'Brushed brass VALLIS lever handle, engraved with the VALLIS logo, on a dark oak door',
+    // Edit of the original render: adds the VALLIS mark to the lever, as on the catalogue cover handles.
+    references: ['public/images/generated/craft-detail.webp', 'public/images/brand/vallis-logo.webp'],
+    artDirection: 'Photorealistic product photography. Keep the scene, lighting, door, handle shape and composition identical to the first image.',
     prompt:
+      'Edit the first image: precisely engrave the VALLIS logo from the second image (the V monogram above the word ' +
+      'VALLIS) onto the flat front face of the brushed champagne-brass lever, near its free end, as a fine laser-etched ' +
+      'mark slightly darker than the metal, following the lever surface and lit by the same light. Spell VALLIS ' +
+      'exactly. Change nothing else.',
+    originalPrompt:
       'Macro product photograph: a minimal brushed champagne-brass lever handle on a square rose, mounted on a dark ' +
       'smoked-oak door. Soft raking window light from the left, crisp metal highlights, rich shadow, fine wood grain. ' +
       'Vertical composition with generous negative space above.',
@@ -238,4 +246,127 @@ export const ASSETS = [
       'window visible and centred with space around it, multi-chamber white uPVC profile with grey EPDM gaskets, clear ' +
       'double-glazed unit. Soft natural daylight, clean and uncluttered composition.',
   })),
+  {
+    id: 'hero-collection',
+    placement: 'Home hero banner 01 — the complete architectural hardware collection',
+    tier: 'hero',
+    complexity: 'high',
+    orientation: 'landscape',
+    alt: 'VALLIS architectural hardware collection: digital lock, lever handles, mortise lock, cylinder, door closer, hinges, panic bar, floor spring, patch and spider fittings, shower hinge, cabinet handle and railing spigot',
+    references: [
+      'scripts/image-generation/references/catalogue-cover-products.png',
+      'public/images/catalogue/vallis-p70-x2408.webp',
+      'public/images/catalogue/vallis-p61-x2131.webp',
+      'public/images/catalogue/vallis-p78-x2667.webp',
+      'public/images/catalogue/vallis-p85-x2907.webp',
+      'public/images/catalogue/vallis-p110-x4371.webp',
+      'public/images/catalogue/vallis-legacy-p17-x1395.webp',
+    ],
+    prompt:
+      'A luxury editorial still-life showcasing the complete VALLIS architectural-hardware range together in one ' +
+      'composition, arranged on stepped plinths of deep navy marble with fine gold veining against a dark navy studio ' +
+      'backdrop. Reproduce the reference products faithfully: the digital mortise lock with keypad and fingerprint ' +
+      'reader, the satin lever handle on a round rose and the antique-brass lever on a long backplate (first image), ' +
+      'the silver overhead door closer, the four-arm stainless spider fitting, the glass patch fitting, the ' +
+      'glass-to-glass shower hinge, the round glass-railing spigot and the fluted cabinet handle. Also include a ' +
+      'stainless mortise lock body, a brass euro-profile cylinder with keys, a stainless ball-bearing butt hinge, a ' +
+      'stainless panic push bar, a floor spring cover plate and a small furniture lock. Group the products in the ' +
+      'right 60% of the frame with balanced spacing so each is clearly recognisable; warm gallery lighting with crisp ' +
+      'metal highlights and soft reflections. The left 40% of the frame is calm, dark navy and empty for headline text.',
+  },
+  {
+    id: 'considered-lock',
+    placement: 'Home “A considered choice” step 01 — Choose the function (VALLIS VACS 13 digital lock)',
+    tier: 'key',
+    complexity: 'high',
+    orientation: 'square',
+    alt: 'VALLIS VACS 13 camera digital lock fitted to a walnut entrance door',
+    references: ['scripts/image-generation/references/vacs-13.png'],
+    artDirection:
+      'Photorealistic editorial architectural photography for a luxury architectural-hardware brand. Palette of deep ' +
+      'midnight navy, warm champagne gold and soft ivory stone. No added text or watermarks.',
+    prompt:
+      'Show the exact VALLIS VACS 13 digital lock from the reference image installed on a tall dark walnut ' +
+      'apartment entrance door, seen at a three-quarter angle: the outside panel with its keypad, camera, fingerprint ' +
+      'reader on the lever and the VALLIS V logo on the lower panel. Keep the lock\'s matte-black aluminium body, ' +
+      'proportions, lever and logo faithful to the reference. Warm cove light grazes the wood grain, navy plaster wall ' +
+      'beside the door, polished stone floor; the lock is sharp and the background softly out of focus.',
+  },
+  ...['fhc-200', 'fhc-200d', 'fhc-100'].map((id) => ({
+    id: `${id}-clear`,
+    placement: `Shaft Doors — ${id.toUpperCase()} FHC door product image with clear vision glass`,
+    tier: 'standard',
+    complexity: 'low',
+    orientation: 'portrait',
+    alt: `VALLIS ${id.toUpperCase()} FHC door with clear glass vision panels`,
+    references: [`public/images/catalogue/${id}.webp`],
+    artDirection: 'Clean, photorealistic catalogue product photograph on a pure white background. No text or watermarks.',
+    prompt:
+      'Recreate this exact red powder-coated steel FHC shaft door as a sharp, high-resolution catalogue product photo: ' +
+      'same leaf configuration, vision-panel shapes and positions, handles, louvres and proportions, front elevation, ' +
+      'on a pure white background with a soft floor shadow. Replace the glass in every vision panel with clean, clear, ' +
+      'non-reflective toughened glass showing only an even pale neutral-grey interior behind it — no reflections, ' +
+      'no room, no objects, no frosting, no wire mesh.',
+  })),
+  // Portrait art direction for phones: landscape banners stretched over a tall screen look soft,
+  // so each hero banner has a native 1024×1536 version served through <picture> below 760 px.
+  ...[
+    ['hero-collection', 'public/images/generated/hero-collection.webp', 'the same VALLIS architectural-hardware products on navy marble plinths'],
+    ['hero-access', 'public/images/generated/hero-access.webp', 'the same matte-black digital smart lock on the walnut entrance door'],
+    ['hero-touch', 'public/images/generated/hero-touch.webp', 'the same brushed-gold pull handle on the fluted walnut door beside navy cabinetry'],
+    ['hero-patch-fittings', 'source-assets/supplied-2026-10-31/patch fittings doors-6.jpeg', 'the same frameless glass entrance doors on stainless patch fittings with long pull handles'],
+    ['hero-shower', 'source-assets/supplied-2026-10-31/shower-cubicles-1.jpeg', 'the same frameless clear-glass corner shower cubicle with chrome hinges, top rail and shower handle'],
+  ].map(([id, ref, subject]) => ({
+    id: `${id}-mobile`,
+    placement: `Home hero banner — phone (portrait) version of ${id}`,
+    tier: 'hero',
+    complexity: 'high',
+    orientation: 'portrait',
+    alt: '',
+    references: [ref],
+    artDirection:
+      'Photorealistic, razor-sharp, high-detail architectural photography. No text, no logos added, no watermarks.',
+    prompt:
+      `Recompose the reference photograph as a tall vertical (portrait) image of ${subject}. Keep the same ` +
+      'products, materials, finishes, colours, lighting and setting faithfully — only the framing changes. Place the ' +
+      'main subject large and crisp in the upper 55% of the frame; let the lower 40% continue the same floor, wall or ' +
+      'surroundings in calm, darker tones so white headline text can sit over it. Fine detail, no blur.',
+  })),
+  // Banner 02 uses the genuine VALLIS VACS 12 lock (latest catalogue, page 14).
+  ...[
+    ['hero-vacs12', 'landscape', 'Wide, pulled-back framing: the whole lock including its lever is fully visible, about 50% of the frame height, centred vertically and horizontally at about 66% of the width, with generous margin on every side (at least 20% of the width to its right). The left half stays calm, dark and uncluttered for headline text.'],
+    ['hero-vacs12-mobile', 'portrait', 'Vertical framing: the lock large and crisp in the upper 55% of the frame; the lower 40% continues the door and floor in calm, darker tones for text.'],
+  ].map(([id, orientation, framing]) => ({
+    id,
+    placement: `Home hero banner 02 — Access, refined (${orientation})`,
+    tier: 'hero',
+    complexity: 'high',
+    orientation,
+    alt: 'VALLIS VACS 12 smart entry door lock on a warm oak entrance door',
+    references: ['scripts/image-generation/references/vacs-12.png'],
+    artDirection:
+      'Photorealistic, razor-sharp editorial architectural photography for a luxury hardware brand. Palette of deep ' +
+      'midnight navy, warm oak and champagne gold. No added text or watermarks.',
+    prompt:
+      'Show the exact VALLIS VACS 12 smart entry door lock from the reference image — slim matte-black body, backlit ' +
+      'numeric keypad with CARD label, black lever with the blue-ringed fingerprint reader and the small VALLIS V logo ' +
+      'at the bottom of the panel — mounted on a tall warm-oak entrance door of a luxury apartment at dusk, seen at a ' +
+      'gentle three-quarter angle. Keep the lock faithful to the reference in shape, proportions, lever and logo. Warm ' +
+      `cove light grazes the wood grain, deep navy plaster wall, polished dark stone floor. ${framing}`,
+  })),
+  {
+    id: 'hero-clarity-mobile',
+    placement: 'Home hero banner — phone (portrait) version of hero-clarity',
+    tier: 'hero',
+    complexity: 'high',
+    orientation: 'portrait',
+    alt: '',
+    references: ['public/images/generated/hero-clarity.webp'],
+    artDirection: 'Photorealistic, razor-sharp, high-detail architectural photography. No text, no logos, no watermarks.',
+    prompt:
+      'Recompose the reference photograph as a tall vertical (portrait) image of the same dusk atrium: the floating ' +
+      'stone staircase with frameless glass balustrade on stainless spigots and the glass facade with spider fittings. ' +
+      'Keep materials, lighting and colours faithful — only the framing changes. Main subject large and crisp in the ' +
+      'upper 55%; lower 40% continues the dark polished floor in calm tones for headline text.',
+  },
 ];

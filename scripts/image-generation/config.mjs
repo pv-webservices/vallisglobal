@@ -18,6 +18,7 @@ export const IMAGE_SIZES = {
 
 export const GENERATION = {
   endpoint: 'https://api.openai.com/v1/images/generations',
+  editEndpoint: 'https://api.openai.com/v1/images/edits',
   rawDir: 'tmp/generated',
   outputDir: 'public/images/generated',
   webpQuality: 82,

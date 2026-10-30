@@ -9,7 +9,7 @@
     "locks locks door door"
     "locks locks closer spider"
     "glass rail furniture shaft"
-    "windows windows windows windows";
+    "windows windows shower shower";
   gap: clamp(12px, 1.3vw, 20px);
 }
 .tile {
@@ -168,6 +168,9 @@
 }
 .tile-windows {
   grid-area: windows;
+}
+.tile-shower {
+  grid-area: shower;
 }
 
 /* Product card */

@@ -1,0 +1,79 @@
+---
+import Icon from './Icon.astro';
+// Lead-capture form shown before any catalogue PDF opens. Rendered once by the Layout; it intercepts
+// clicks on every link to a .pdf file. Without JavaScript the links still open the PDF directly.
+// Set PUBLIC_LEAD_ENDPOINT to a form-handling URL (it receives a JSON POST) to collect the details.
+const endpoint=import.meta.env.PUBLIC_LEAD_ENDPOINT??'';
+---
+<dialog class="lead-dialog" id="catalogue-gate" aria-labelledby="lead-title" data-endpoint={endpoint}>
+ <form class="lead-form" id="lead-form" method="dialog" novalidate>
+  <button class="lead-close" type="button" value="cancel" aria-label="Close"><Icon name="close" size={20}/></button>
+  <span class="eyebrow">Catalogue download</span>
+  <h2 id="lead-title">Get the VALLIS <em>catalogue.</em></h2>
+  <p class="form-intro">Share a few details to open <b data-lead-name>the catalogue</b>. Our team may follow up about your project.</p>
+  <div class="form-grid">
+   <div class="field"><label for="lead-name">Full name <span>*</span></label><input id="lead-name" name="name" autocomplete="name" required minlength="2" maxlength="100" aria-describedby="lead-name-error"/><span class="field-error" id="lead-name-error"></span></div>
+   <div class="field"><label for="lead-email">Email address <span>*</span></label><input id="lead-email" name="email" type="email" autocomplete="email" required maxlength="150" aria-describedby="lead-email-error"/><span class="field-error" id="lead-email-error"></span></div>
+   <div class="field"><label for="lead-phone">Phone number <span>*</span></label><input id="lead-phone" name="phone" type="tel" autocomplete="tel" required maxlength="25" aria-describedby="lead-phone-error"/><span class="field-error" id="lead-phone-error"></span></div>
+   <div class="field"><label for="lead-company">Company <span class="muted">(optional)</span></label><input id="lead-company" name="company" autocomplete="organization" maxlength="150"/></div>
+  </div>
+  <div class="honeypot" aria-hidden="true"><label for="lead-website">Website</label><input id="lead-website" name="website" tabindex="-1" autocomplete="off"/></div>
+  <label class="consent"><input type="checkbox" name="consent" required aria-describedby="lead-consent-error"/><span>I have read the <a href="/privacy-policies/">Privacy &amp; Policies</a> and agree that VALLIS may use these details to contact me about its products. *</span></label>
+  <span class="field-error" id="lead-consent-error"></span>
+  <p class="form-error" id="lead-error" role="alert"></p>
+  <button class="btn btn--dark" type="submit">Download Catalogue <Icon name="arrowDown" size={16}/></button>
+ </form>
+</dialog>
+
+<script>
+ const dialog=document.querySelector<HTMLDialogElement>('#catalogue-gate');
+ const form=document.querySelector<HTMLFormElement>('#lead-form');
+ if(dialog&&form){
+  const ACCESS_KEY='vallis-catalogue-access';
+  const endpoint=dialog.dataset.endpoint||'';
+  const get=(name:string)=>form.elements.namedItem(name) as HTMLInputElement;
+  const summary=form.querySelector<HTMLElement>('#lead-error')!;
+  let pending:HTMLAnchorElement|undefined;
+  const hasAccess=()=>{try{return sessionStorage.getItem(ACCESS_KEY)==='1';}catch{return false;}};
+  const open=(link:HTMLAnchorElement)=>window.open(link.href,'_blank','noopener');
+
+  document.addEventListener('click',event=>{
+   const link=(event.target as Element|null)?.closest?.('a[href]') as HTMLAnchorElement|null;
+   if(!link||!/\.pdf$/i.test(decodeURIComponent(new URL(link.href,location.href).pathname))||hasAccess())return;
+   event.preventDefault();
+   pending=link;
+   const name=link.querySelector('h3')?.textContent?.trim();
+   form.querySelector('[data-lead-name]')!.textContent=name||'the catalogue';
+   dialog.showModal();
+   get('name').focus();
+  });
+  form.querySelector('.lead-close')?.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+
+  form.addEventListener('submit',event=>{
+   event.preventDefault();
+   const errors:Record<string,string>={};
+   if(get('name').value.trim().length<2)errors.name='Enter your full name (at least 2 characters).';
+   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(get('email').value.trim()))errors.email='Enter a valid email address.';
+   if(!/^[+()\d\s-]+$/.test(get('phone').value.trim())||get('phone').value.replace(/\D/g,'').length<7)errors.phone='Enter a valid phone number with at least 7 digits.';
+   if(!get('consent').checked)errors.consent='Please confirm that you have read the privacy information.';
+   let first:HTMLElement|undefined;
+   for(const name of ['name','email','phone','consent']){
+    const field=get(name);const err=form.querySelector(`#lead-${name}-error`);
+    if(err)err.textContent=errors[name]||'';
+    field.setAttribute('aria-invalid',errors[name]?'true':'false');
+    if(errors[name]&&!first)first=field;
+   }
+   if(first){summary.textContent='Please correct the highlighted fields.';first.focus();return;}
+   summary.textContent='';
+   if(!get('website').value&&endpoint){
+    const lead={name:get('name').value.trim(),email:get('email').value.trim(),phone:get('phone').value.trim(),company:get('company').value.trim(),catalogue:pending?.querySelector('h3')?.textContent?.trim()||pending?.href||'',page:location.pathname,consent:true,submittedAt:new Date().toISOString()};
+    fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(lead),keepalive:true}).catch(()=>{});
+   }
+   try{sessionStorage.setItem(ACCESS_KEY,'1');}catch{}
+   dialog.close();
+   form.reset();
+   if(pending)open(pending);
+  });
+ }
+</script>

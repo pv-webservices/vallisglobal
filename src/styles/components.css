@@ -475,7 +475,7 @@
       "closer spider"
       "glass rail"
       "furniture shaft"
-      "windows windows";
+      "windows shower";
   }
   .catalogues {
     grid-template-columns: minmax(0, 1fr);

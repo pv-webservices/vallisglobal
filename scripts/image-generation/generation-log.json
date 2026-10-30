@@ -41,11 +41,11 @@
   },
   "craft-detail": {
     "placement": "Home craftsmanship section and About page story",
-    "alt": "Close detail of a brushed brass lever handle on a dark oak door with soft side light",
+    "alt": "Brushed brass VALLIS lever handle, engraved with the VALLIS logo, on a dark oak door",
     "model": "gpt-image-2.5-flare",
     "quality": "high",
     "size": "1024x1536",
-    "generated": "2026-10-12T07:25:13.754Z"
+    "generated": "2026-10-30T19:56:45.579Z"
   },
   "furniture-hardware-scene": {
     "placement": "Furniture Hardware collection hero and category tile",
@@ -182,5 +182,109 @@
     "quality": "high",
     "size": "1536x1024",
     "generated": "2026-10-15T21:32:28.629Z"
+  },
+  "fhc-200d-clear": {
+    "placement": "Shaft Doors — FHC-200D FHC door product image with clear vision glass",
+    "alt": "VALLIS FHC-200D FHC door with clear glass vision panels",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1536",
+    "generated": "2026-10-30T19:56:45.577Z"
+  },
+  "fhc-100-clear": {
+    "placement": "Shaft Doors — FHC-100 FHC door product image with clear vision glass",
+    "alt": "VALLIS FHC-100 FHC door with clear glass vision panels",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1536",
+    "generated": "2026-10-30T19:56:45.579Z"
+  },
+  "fhc-200-clear": {
+    "placement": "Shaft Doors — FHC-200 FHC door product image with clear vision glass",
+    "alt": "VALLIS FHC-200 FHC door with clear glass vision panels",
+    "model": "gpt-image-2.5-flare",
+    "quality": "medium",
+    "size": "1024x1536",
+    "generated": "2026-10-30T19:56:45.579Z"
+  },
+  "hero-collection": {
+    "placement": "Home hero banner 01 — the complete architectural hardware collection",
+    "alt": "VALLIS architectural hardware collection: digital lock, lever handles, mortise lock, cylinder, door closer, hinges, panic bar, floor spring, patch and spider fittings, shower hinge, cabinet handle and railing spigot",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-30T19:56:45.579Z"
+  },
+  "considered-lock": {
+    "placement": "Home “A considered choice” step 01 — Choose the function (VALLIS VACS 13 digital lock)",
+    "alt": "VALLIS VACS 13 camera digital lock fitted to a walnut entrance door",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1024x1024",
+    "generated": "2026-10-30T19:56:45.579Z"
+  },
+  "hero-touch-mobile": {
+    "placement": "Home hero banner — phone (portrait) version of hero-touch",
+    "alt": "",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1024x1536",
+    "generated": "2026-10-30T20:12:52.444Z"
+  },
+  "hero-access-mobile": {
+    "placement": "Home hero banner — phone (portrait) version of hero-access",
+    "alt": "",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1024x1536",
+    "generated": "2026-10-30T20:12:52.446Z"
+  },
+  "hero-shower-mobile": {
+    "placement": "Home hero banner — phone (portrait) version of hero-shower",
+    "alt": "",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1024x1536",
+    "generated": "2026-10-30T20:12:52.446Z"
+  },
+  "hero-patch-fittings-mobile": {
+    "placement": "Home hero banner — phone (portrait) version of hero-patch-fittings",
+    "alt": "",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1024x1536",
+    "generated": "2026-10-30T20:12:52.446Z"
+  },
+  "hero-collection-mobile": {
+    "placement": "Home hero banner — phone (portrait) version of hero-collection",
+    "alt": "",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1024x1536",
+    "generated": "2026-10-30T20:12:52.446Z"
+  },
+  "hero-vacs12-mobile": {
+    "placement": "Home hero banner 02 — Access, refined (portrait)",
+    "alt": "VALLIS VACS 12 smart entry door lock on a warm oak entrance door",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1024x1536",
+    "generated": "2026-10-30T20:30:45.955Z"
+  },
+  "hero-clarity-mobile": {
+    "placement": "Home hero banner — phone (portrait) version of hero-clarity",
+    "alt": "",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1024x1536",
+    "generated": "2026-10-30T20:30:45.957Z"
+  },
+  "hero-vacs12": {
+    "placement": "Home hero banner 02 — Access, refined (landscape)",
+    "alt": "VALLIS VACS 12 smart entry door lock on a warm oak entrance door",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-10-30T20:33:24.294Z"
   }
 }

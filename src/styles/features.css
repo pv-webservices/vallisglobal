@@ -227,7 +227,7 @@
 }
 .upvc-guide {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(12px, 1.4vw, 20px);
 }
 .upvc-guide p {

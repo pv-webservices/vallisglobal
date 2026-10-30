@@ -16,15 +16,19 @@ import '../styles/features.css';
 import ResponsiveImage from '../components/ResponsiveImage.astro';
 import Icon from '../components/Icon.astro';
 import EnquiryCTA from '../components/EnquiryCTA.astro';
+import CatalogueGate from '../components/CatalogueGate.astro';
 import {business,offices,categories,isPhoto} from '../data/catalogue';
 import manifest from '../data/image-manifest.json';
-interface Props {title:string;description:string;home?:boolean;schema?:unknown;noindex?:boolean;solidHeader?:boolean;cta?:boolean;preload?:string;}
-const {title,description,home=false,schema,noindex=false,solidHeader=false,cta=true,preload}=Astro.props;
+interface Props {title:string;description:string;home?:boolean;schema?:unknown;noindex?:boolean;solidHeader?:boolean;cta?:boolean;preload?:string;/** Portrait image preloaded instead of `preload` on phones. */preloadMobile?:string;}
+const {title,description,home=false,schema,noindex=false,solidHeader=false,cta=true,preload,preloadMobile}=Astro.props;
 const path=Astro.url.pathname;
 const canonical=new URL(path,business.origin).href;
 const indexable=import.meta.env.PUBLIC_INDEXABLE==='true'&&!noindex;
 const nav=[['Home','/'],['About','/about/'],['Products','/products/'],['Gallery','/gallery/'],['Contact','/contact/']];
-const preloadSet=preload?(manifest as Record<string,{srcset:string}>)[preload]?.srcset:undefined;
+const srcsetOf=(src?:string)=>src?(manifest as Record<string,{srcset:string}>)[src]?.srcset:undefined;
+const preloadSet=srcsetOf(preload);
+const preloadMobileSet=srcsetOf(preloadMobile);
+const PHONE='(max-width: 760px)';
 const isCurrent=(href:string)=>href==='/'?path==='/':path.startsWith(href);
 const organization={'@context':'https://schema.org','@type':'LocalBusiness',name:business.name,legalName:business.company,url:business.origin,telephone:business.tel,email:business.email,address:{'@type':'PostalAddress',streetAddress:'A14/15, Golf Course Rd, DLF Phase 1',addressLocality:'Gurugram',addressRegion:'Haryana',postalCode:'122002',addressCountry:'IN'}};
 ---
@@ -51,7 +55,8 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
   document.documentElement.classList.add('js');
   try{if(sessionStorage.getItem('bm-visited'))document.documentElement.classList.add('no-loader');sessionStorage.setItem('bm-visited','1');}catch(e){document.documentElement.classList.add('no-loader');}
  </script>
- {preload&&<link rel="preload" as="image" fetchpriority="high" href={preload} imagesrcset={preloadSet} imagesizes={preloadSet?'100vw':undefined}/>}
+ {preload&&<link rel="preload" as="image" fetchpriority="high" href={preload} imagesrcset={preloadSet} imagesizes={preloadSet?'100vw':undefined} media={preloadMobile?'(min-width: 761px)':undefined}/>}
+ {preloadMobile&&<link rel="preload" as="image" fetchpriority="high" href={preloadMobile} imagesrcset={preloadMobileSet} imagesizes={preloadMobileSet?'75vh':undefined} media={PHONE}/>}
 </head>
 <body class:list={{'is-home':home}}>
  <div class="loader" aria-hidden="true"><img src="/images/brand/vallis-mark.webp" alt="" width="353" height="266"/><span></span></div>
@@ -120,6 +125,7 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
    <div><a href="/privacy-policies/">Privacy &amp; Policies</a><a href="/sitemap.xml">Sitemap</a><a href="#main" class="back-top">Back to top ↑</a></div>
   </div>
  </footer>
+ <CatalogueGate/>
 
  <nav class="action-bar" aria-label="Quick contact">
   <a href={`tel:${business.tel}`}><Icon name="phone" size={17}/>Call</a>
