@@ -369,4 +369,72 @@ export const ASSETS = [
       'Keep materials, lighting and colours faithful — only the framing changes. Main subject large and crisp in the ' +
       'upper 55%; lower 40% continues the dark polished floor in calm tones for headline text.',
   },
+  // People-led imagery (November 2026): international professionals in VALLIS settings.
+  {
+    id: 'hero-showroom',
+    placement: 'Home hero background — premium boardroom and VALLIS product display',
+    tier: 'hero',
+    complexity: 'high',
+    orientation: 'landscape',
+    alt: 'International business team meeting in a glass-walled VALLIS boardroom, with VALLIS handles, a digital lock and a glass hinge displayed on a marble counter',
+    references: [
+      'public/images/brand/vallis-logo.webp',
+      'public/images/products/vsmh-260.webp',
+      'public/images/products/vhlh-01.webp',
+      'public/images/products/vsh-704.webp',
+      'public/images/products/vsdc-1101.webp',
+    ],
+    artDirection:
+      'Photorealistic, razor-sharp luxury corporate architectural photography. Palette of warm ivory, soft champagne ' +
+      'gold, polished chrome and deep midnight navy accents. Bright, airy, premium. The only lettering allowed is the ' +
+      'VALLIS logo exactly as in the reference. No other text, no watermarks.',
+    prompt:
+      'Wide premium hero photograph of a luxury corporate office lobby of the architectural-hardware brand VALLIS. ' +
+      'Centre-right, behind frameless glass partitions with tall stainless pull handles, a team of four or five ' +
+      'international (European and American) business professionals in tailored suits holds a relaxed meeting around ' +
+      'a pale oak table; floor-to-ceiling windows behind them show a hazy city skyline in warm morning light. On the far ' +
+      'right a deep navy feature wall carries the VALLIS logo from the reference in brushed gold, with two potted ' +
+      'olive trees. In the right foreground, a curved white Calacatta marble display counter presents the VALLIS ' +
+      'products from the references — a polished gold lever handle, a satin stainless lever handle on a round rose, ' +
+      'a chrome glass-to-glass shower hinge and a silver overhead door closer — crisp, large and well lit, faithful in ' +
+      'shape. Polished light marble floor with soft reflections. The left 45% of the frame is a softly blurred, bright ' +
+      'ivory and glass area with calm tones, kept clear for headline typography; the bottom 18% is calm floor.',
+  },
+  {
+    id: 'team-consultation',
+    placement: 'About page story image; home "A complete collection" showcase',
+    tier: 'key',
+    complexity: 'high',
+    orientation: 'landscape',
+    alt: 'Architects and a VALLIS specialist reviewing door hardware samples and drawings around a meeting table',
+    references: ['public/images/products/vsmh-256.webp', 'public/images/products/vpf-201.webp'],
+    artDirection:
+      'Photorealistic, natural editorial business photography with soft daylight. Palette of warm ivory, oak, navy ' +
+      'and champagne gold. Candid and authentic, no posing at the camera. No text, no logos, no watermarks.',
+    prompt:
+      'A diverse team of international architects and designers — a European woman with dark hair in a white blouse ' +
+      'leaning over the table and pointing with a pen, a Black man in a light blue shirt and navy tie, a bearded man ' +
+      'with glasses in a dark sweater and a woman seen from behind — reviewing large architectural door-schedule ' +
+      'drawings in a bright modern office. On the table, beside the drawings, lie architectural hardware samples like ' +
+      'the references: a brushed brass lever handle on a square rose and a satin stainless glass patch fitting, plus a ' +
+      'tablet and a few sticky notes. Glass walls and soft window light behind, shallow depth of field.',
+  },
+  {
+    id: 'office-entrance-people',
+    placement: 'Home "Spaces that inspire" — Corporate Offices sector',
+    tier: 'key',
+    complexity: 'high',
+    orientation: 'landscape',
+    alt: 'Business professionals walking through frameless glass doors with tall stainless pull handles in a modern office',
+    references: ['public/images/products/vhsh-401.webp', 'public/images/products/vpf-202.webp'],
+    artDirection:
+      'Photorealistic, crisp editorial architectural photography with people. Palette of warm stone, glass, polished ' +
+      'stainless steel and deep navy accents. Natural, candid movement. No text, no logos, no watermarks.',
+    prompt:
+      'A bright, premium corporate office floor with frameless clear glass partitions and a pair of frameless glass ' +
+      'doors fitted with tall polished stainless H-shaped pull handles like the reference and satin patch fittings at ' +
+      'top and bottom like the reference. Two international professionals — a smiling European businesswoman in a ' +
+      'camel coat carrying a laptop and an American businessman in a navy suit — walk through the open glass door in ' +
+      'conversation, slight motion. Light stone floor, oak reception desk and plants in the background, soft daylight.',
+  },
 ];

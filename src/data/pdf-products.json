@@ -1,0 +1,3149 @@
+[
+ {
+  "model": "VACS 07",
+  "slug": "vacs-07",
+  "category": "hotel-digital-locks",
+  "page": 6,
+  "name": "RFID Hotel Lock",
+  "specs": {},
+  "image": "/images/products/vacs-07.webp"
+ },
+ {
+  "model": "VACS 09",
+  "slug": "vacs-09",
+  "category": "hotel-digital-locks",
+  "page": 8,
+  "name": "Hotel Access Lock",
+  "specs": {},
+  "image": "/images/products/vacs-09.webp"
+ },
+ {
+  "model": "VACS 10",
+  "slug": "vacs-10",
+  "category": "hotel-digital-locks",
+  "page": 10,
+  "name": "Smart Hotel Lock",
+  "specs": {},
+  "image": "/images/products/vacs-10.webp"
+ },
+ {
+  "model": "VACS 11",
+  "slug": "vacs-11",
+  "category": "hotel-digital-locks",
+  "page": 12,
+  "name": "Smart Hotel Lock",
+  "specs": {},
+  "image": "/images/products/vacs-11.webp"
+ },
+ {
+  "model": "VACS 12",
+  "slug": "vacs-12",
+  "category": "hotel-digital-locks",
+  "page": 14,
+  "name": "Fingerprint Smart Entry Door Lock",
+  "specs": {},
+  "image": "/images/products/vacs-12.webp"
+ },
+ {
+  "model": "VACS 13",
+  "slug": "vacs-13",
+  "category": "hotel-digital-locks",
+  "page": 16,
+  "name": "3D Face Camera Smart Door Lock",
+  "specs": {},
+  "image": "/images/products/vacs-13.webp"
+ },
+ {
+  "model": "VAC 14",
+  "slug": "vac-14",
+  "category": "hotel-digital-locks",
+  "page": 18,
+  "name": "Hotel Lock Card Encoder",
+  "specs": {},
+  "image": "/images/products/vac-14.webp"
+ },
+ {
+  "model": "VAC 15",
+  "slug": "vac-15",
+  "category": "hotel-digital-locks",
+  "page": 19,
+  "name": "Handheld Service Unit",
+  "specs": {},
+  "image": "/images/products/vac-15.webp"
+ },
+ {
+  "model": "VAC 16",
+  "slug": "vac-16",
+  "category": "hotel-digital-locks",
+  "page": 20,
+  "name": "Handheld Service Unit",
+  "specs": {},
+  "image": "/images/products/vac-16.webp"
+ },
+ {
+  "model": "VSL 111",
+  "slug": "vsl-111",
+  "category": "locks-cylinders",
+  "page": 22,
+  "name": "Sash Lock Body, Backset 50 mm",
+  "specs": {},
+  "image": "/images/products/vsl-111.webp"
+ },
+ {
+  "model": "VSL 112",
+  "slug": "vsl-112",
+  "category": "locks-cylinders",
+  "page": 22,
+  "name": "Sash Lock Body, Backset 50 mm",
+  "specs": {},
+  "image": "/images/products/vsl-112.webp"
+ },
+ {
+  "model": "VSL 113",
+  "slug": "vsl-113",
+  "category": "locks-cylinders",
+  "page": 22,
+  "name": "Dead Lock Body, Backset 50 mm",
+  "specs": {},
+  "image": "/images/products/vsl-113.webp"
+ },
+ {
+  "model": "VSL 114",
+  "slug": "vsl-114",
+  "category": "locks-cylinders",
+  "page": 22,
+  "name": "Narrow Lock Body, Backset 30 mm",
+  "specs": {},
+  "image": "/images/products/vsl-114.webp"
+ },
+ {
+  "model": "VSL 115",
+  "slug": "vsl-115",
+  "category": "locks-cylinders",
+  "page": 23,
+  "name": "Mortise Latch Lock Body, Backset 50 mm",
+  "specs": {},
+  "image": "/images/products/vsl-115.webp"
+ },
+ {
+  "model": "VSL 116",
+  "slug": "vsl-116",
+  "category": "locks-cylinders",
+  "page": 23,
+  "name": "Shaft Lock Body, Backset 60 mm",
+  "specs": {},
+  "image": "/images/products/vsl-116.webp"
+ },
+ {
+  "model": "VSL 117",
+  "slug": "vsl-117",
+  "category": "locks-cylinders",
+  "page": 23,
+  "name": "Sliding Lock with Laser Key",
+  "specs": {},
+  "image": "/images/products/vsl-117.webp"
+ },
+ {
+  "model": "VSL 118",
+  "slug": "vsl-118",
+  "category": "locks-cylinders",
+  "page": 24,
+  "name": "24 mm Mortise Lock – Bullet",
+  "specs": {},
+  "image": "/images/products/vsl-118.webp"
+ },
+ {
+  "model": "VSL 119",
+  "slug": "vsl-119",
+  "category": "locks-cylinders",
+  "page": 24,
+  "name": "Mortise Baby Latch",
+  "specs": {},
+  "image": "/images/products/vsl-119.webp"
+ },
+ {
+  "model": "VHLH 01",
+  "slug": "vhlh-01",
+  "category": "door-hardware",
+  "page": 26,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-01.webp"
+ },
+ {
+  "model": "VHLH 02",
+  "slug": "vhlh-02",
+  "category": "door-hardware",
+  "page": 26,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-02.webp"
+ },
+ {
+  "model": "VHLH 03",
+  "slug": "vhlh-03",
+  "category": "door-hardware",
+  "page": 26,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-03.webp"
+ },
+ {
+  "model": "VHLH 04",
+  "slug": "vhlh-04",
+  "category": "door-hardware",
+  "page": 26,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-04.webp"
+ },
+ {
+  "model": "VHLH 05",
+  "slug": "vhlh-05",
+  "category": "door-hardware",
+  "page": 27,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-05.webp"
+ },
+ {
+  "model": "VHLH 06",
+  "slug": "vhlh-06",
+  "category": "door-hardware",
+  "page": 27,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-06.webp"
+ },
+ {
+  "model": "VHLH 07",
+  "slug": "vhlh-07",
+  "category": "door-hardware",
+  "page": 27,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-07.webp"
+ },
+ {
+  "model": "VHLH 08",
+  "slug": "vhlh-08",
+  "category": "door-hardware",
+  "page": 27,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-08.webp"
+ },
+ {
+  "model": "VHLH 09",
+  "slug": "vhlh-09",
+  "category": "door-hardware",
+  "page": 28,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-09.webp"
+ },
+ {
+  "model": "VHLH 10",
+  "slug": "vhlh-10",
+  "category": "door-hardware",
+  "page": 28,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-10.webp"
+ },
+ {
+  "model": "VHLH 101",
+  "slug": "vhlh-101",
+  "category": "door-hardware",
+  "page": 28,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-101.webp"
+ },
+ {
+  "model": "VHLH 102",
+  "slug": "vhlh-102",
+  "category": "door-hardware",
+  "page": 28,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-102.webp"
+ },
+ {
+  "model": "VHLH 103",
+  "slug": "vhlh-103",
+  "category": "door-hardware",
+  "page": 29,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-103.webp"
+ },
+ {
+  "model": "VHLH 104",
+  "slug": "vhlh-104",
+  "category": "door-hardware",
+  "page": 29,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-104.webp"
+ },
+ {
+  "model": "VHLH 105",
+  "slug": "vhlh-105",
+  "category": "door-hardware",
+  "page": 29,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-105.webp"
+ },
+ {
+  "model": "VHLH 106",
+  "slug": "vhlh-106",
+  "category": "door-hardware",
+  "page": 29,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-106.webp"
+ },
+ {
+  "model": "VHLH 107",
+  "slug": "vhlh-107",
+  "category": "door-hardware",
+  "page": 30,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-107.webp"
+ },
+ {
+  "model": "VHLH 108",
+  "slug": "vhlh-108",
+  "category": "door-hardware",
+  "page": 30,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-108.webp"
+ },
+ {
+  "model": "VHLH 109",
+  "slug": "vhlh-109",
+  "category": "door-hardware",
+  "page": 30,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-109.webp"
+ },
+ {
+  "model": "VHLH 110",
+  "slug": "vhlh-110",
+  "category": "door-hardware",
+  "page": 30,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-110.webp"
+ },
+ {
+  "model": "VHLH 111",
+  "slug": "vhlh-111",
+  "category": "door-hardware",
+  "page": 31,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-111.webp"
+ },
+ {
+  "model": "VHLH 112",
+  "slug": "vhlh-112",
+  "category": "door-hardware",
+  "page": 31,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-112.webp"
+ },
+ {
+  "model": "VHLH 113",
+  "slug": "vhlh-113",
+  "category": "door-hardware",
+  "page": 31,
+  "name": "SS Lever Handle on Rose",
+  "specs": {
+   "Finish": "SS / MATT",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vhlh-113.webp"
+ },
+ {
+  "model": "VBL 251",
+  "slug": "vbl-251",
+  "category": "door-hardware",
+  "page": 31,
+  "name": "Lever Handle on Rose",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vbl-251.webp"
+ },
+ {
+  "model": "VBL 255",
+  "slug": "vbl-255",
+  "category": "door-hardware",
+  "page": 33,
+  "name": "Lever Handle on Rose",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vbl-255.webp"
+ },
+ {
+  "model": "VSMH 256",
+  "slug": "vsmh-256",
+  "category": "door-hardware",
+  "page": 33,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-256.webp"
+ },
+ {
+  "model": "VSMH 257",
+  "slug": "vsmh-257",
+  "category": "door-hardware",
+  "page": 33,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-257.webp"
+ },
+ {
+  "model": "VSMH 258",
+  "slug": "vsmh-258",
+  "category": "door-hardware",
+  "page": 33,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-258.webp"
+ },
+ {
+  "model": "VSMH 259",
+  "slug": "vsmh-259",
+  "category": "door-hardware",
+  "page": 34,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-259.webp"
+ },
+ {
+  "model": "VSMH 260",
+  "slug": "vsmh-260",
+  "category": "door-hardware",
+  "page": 34,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-260.webp"
+ },
+ {
+  "model": "VSMH 261",
+  "slug": "vsmh-261",
+  "category": "door-hardware",
+  "page": 34,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-261.webp"
+ },
+ {
+  "model": "VSMH 262",
+  "slug": "vsmh-262",
+  "category": "door-hardware",
+  "page": 34,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-262.webp"
+ },
+ {
+  "model": "VSMH 263",
+  "slug": "vsmh-263",
+  "category": "door-hardware",
+  "page": 35,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-263.webp"
+ },
+ {
+  "model": "VSMH 264",
+  "slug": "vsmh-264",
+  "category": "door-hardware",
+  "page": 35,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-264.webp"
+ },
+ {
+  "model": "VSMH 265",
+  "slug": "vsmh-265",
+  "category": "door-hardware",
+  "page": 35,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-265.webp"
+ },
+ {
+  "model": "VSMH 266",
+  "slug": "vsmh-266",
+  "category": "door-hardware",
+  "page": 35,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-266.webp"
+ },
+ {
+  "model": "VSMH 269",
+  "slug": "vsmh-269",
+  "category": "door-hardware",
+  "page": 36,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-269.webp"
+ },
+ {
+  "model": "VSMH 270",
+  "slug": "vsmh-270",
+  "category": "door-hardware",
+  "page": 36,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-270.webp"
+ },
+ {
+  "model": "VSMH 267",
+  "slug": "vsmh-267",
+  "category": "door-hardware",
+  "page": 36,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-267.webp"
+ },
+ {
+  "model": "VSMH 268",
+  "slug": "vsmh-268",
+  "category": "door-hardware",
+  "page": 36,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK | ANTIQUE",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-268.webp"
+ },
+ {
+  "model": "VSMH 273",
+  "slug": "vsmh-273",
+  "category": "door-hardware",
+  "page": 37,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-273.webp"
+ },
+ {
+  "model": "VSMH 271",
+  "slug": "vsmh-271",
+  "category": "door-hardware",
+  "page": 37,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-271.webp"
+ },
+ {
+  "model": "VSMH 272",
+  "slug": "vsmh-272",
+  "category": "door-hardware",
+  "page": 37,
+  "name": "Designer Lever Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "SS 304"
+  },
+  "image": "/images/products/vsmh-272.webp"
+ },
+ {
+  "model": "VSCL 1001",
+  "slug": "vscl-1001",
+  "category": "locks-cylinders",
+  "page": 39,
+  "name": "Cylindrical Lock – Keyless",
+  "specs": {
+   "Finish": "SS",
+   "Meterial": "SS"
+  },
+  "image": "/images/products/vscl-1001.webp"
+ },
+ {
+  "model": "VSCL 1002",
+  "slug": "vscl-1002",
+  "category": "locks-cylinders",
+  "page": 39,
+  "name": "Cylindrical Lock – Keyless (Eco)",
+  "specs": {
+   "Finish": "SS",
+   "Meterial": "SS"
+  },
+  "image": "/images/products/vscl-1002.webp"
+ },
+ {
+  "model": "VSCL 1003",
+  "slug": "vscl-1003",
+  "category": "locks-cylinders",
+  "page": 39,
+  "name": "Cylindrical Lock – Computer Key",
+  "specs": {
+   "Finish": "SS",
+   "Meterial": "SS"
+  },
+  "image": "/images/products/vscl-1003.webp"
+ },
+ {
+  "model": "VSCL 1004",
+  "slug": "vscl-1004",
+  "category": "locks-cylinders",
+  "page": 39,
+  "name": "Cylindrical Lock – Regular Key (Eco)",
+  "specs": {
+   "Finish": "SS",
+   "Meterial": "SS"
+  },
+  "image": "/images/products/vscl-1004.webp"
+ },
+ {
+  "model": "VHMDL 1201",
+  "slug": "vhmdl-1201",
+  "category": "locks-cylinders",
+  "page": 41,
+  "name": "Dead Lock – One-Side Key, Knob Inside",
+  "specs": {
+   "Finish": "SS | AB | IV | IN"
+  },
+  "image": "/images/products/vhmdl-1201.webp"
+ },
+ {
+  "model": "VHMDL 1202",
+  "slug": "vhmdl-1202",
+  "category": "locks-cylinders",
+  "page": 41,
+  "name": "Dead Lock – Key Both Sides",
+  "specs": {
+   "Finish": "SS | AB | IV | IN"
+  },
+  "image": "/images/products/vhmdl-1202.webp"
+ },
+ {
+  "model": "VHMDL 1203",
+  "slug": "vhmdl-1203",
+  "category": "locks-cylinders",
+  "page": 42,
+  "name": "Mini Dead Lock – One-Side Key, Knob Inside",
+  "specs": {
+   "Finish": "SS | AB | IV | IN"
+  },
+  "image": "/images/products/vhmdl-1203.webp"
+ },
+ {
+  "model": "VHMDL 1204",
+  "slug": "vhmdl-1204",
+  "category": "locks-cylinders",
+  "page": 42,
+  "name": "3-Bolt Dead Lock with Dimple Key",
+  "specs": {
+   "Finish": "SS | AB | IV | IN"
+  },
+  "image": "/images/products/vhmdl-1204.webp"
+ },
+ {
+  "model": "VLC 1701",
+  "slug": "vlc-1701",
+  "category": "locks-cylinders",
+  "page": 43,
+  "name": "Key & Knob Cylinder – Regular Key",
+  "specs": {
+   "Material": "BRASS",
+   "Finish": "SS | AB | RGPVD | BMPVD | GPVD"
+  },
+  "image": "/images/products/vlc-1701.webp"
+ },
+ {
+  "model": "VLC 1702",
+  "slug": "vlc-1702",
+  "category": "locks-cylinders",
+  "page": 43,
+  "name": "Double Cylinder – Regular Key",
+  "specs": {
+   "Material": "BRASS",
+   "Finish": "SS | AB | RGPVD | BMPVD | GPVD"
+  },
+  "image": "/images/products/vlc-1702.webp"
+ },
+ {
+  "model": "VLC 1703",
+  "slug": "vlc-1703",
+  "category": "locks-cylinders",
+  "page": 44,
+  "name": "Key & Knob Cylinder – Computer Key",
+  "specs": {
+   "Material": "BRASS",
+   "Finish": "SS | AB | RGPVD | BMPVD | GPVD"
+  },
+  "image": "/images/products/vlc-1703.webp"
+ },
+ {
+  "model": "VLC 1704",
+  "slug": "vlc-1704",
+  "category": "locks-cylinders",
+  "page": 44,
+  "name": "Double Cylinder – Computer Key",
+  "specs": {
+   "Material": "BRASS",
+   "Finish": "SS | AB | RGPVD | BMPVD | GPVD"
+  },
+  "image": "/images/products/vlc-1704.webp"
+ },
+ {
+  "model": "VLC 1705",
+  "slug": "vlc-1705",
+  "category": "locks-cylinders",
+  "page": 45,
+  "name": "Half Cylinder with Knob",
+  "specs": {
+   "Material": "BRASS",
+   "Finish": "SS | AB | RGPVD | BMPVD | GPVD"
+  },
+  "image": "/images/products/vlc-1705.webp"
+ },
+ {
+  "model": "VLC 1706",
+  "slug": "vlc-1706",
+  "category": "locks-cylinders",
+  "page": 45,
+  "name": "Half Cylinder – Regular Key",
+  "specs": {
+   "Material": "BRASS",
+   "Finish": "SS | AB | RGPVD | BMPVD | GPVD"
+  },
+  "image": "/images/products/vlc-1706.webp"
+ },
+ {
+  "model": "VLC 1707",
+  "slug": "vlc-1707",
+  "category": "locks-cylinders",
+  "page": 46,
+  "name": "Keyless Cylinder",
+  "specs": {
+   "Material": "BRASS",
+   "Finish": "SS | AB | RGPVD | BMPVD | GPVD"
+  },
+  "image": "/images/products/vlc-1707.webp"
+ },
+ {
+  "model": "VL 1501",
+  "slug": "vl-1501",
+  "category": "door-accessories",
+  "page": 47,
+  "name": "Ball Bearing Hinge",
+  "specs": {
+   "Material": "SS 304",
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1501.webp"
+ },
+ {
+  "model": "VL 1401",
+  "slug": "vl-1401",
+  "category": "door-accessories",
+  "page": 48,
+  "name": "Bathroom Indicator Bolt",
+  "specs": {
+   "Material": "ZINC ALLOY",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1401.webp"
+ },
+ {
+  "model": "VL 1402",
+  "slug": "vl-1402",
+  "category": "door-accessories",
+  "page": 48,
+  "name": "Floor Door Stopper",
+  "specs": {
+   "Material": "PVC",
+   "Finish": "BLACK | IV | BROWN | WHITE"
+  },
+  "image": "/images/products/vl-1402.webp"
+ },
+ {
+  "model": "VL 1403",
+  "slug": "vl-1403",
+  "category": "door-accessories",
+  "page": 48,
+  "name": "Dome Floor Door Stopper",
+  "specs": {
+   "Material": "ZINC ALLOY",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1403.webp"
+ },
+ {
+  "model": "VL 1405",
+  "slug": "vl-1405",
+  "category": "door-accessories",
+  "page": 48,
+  "name": "Floor Door Stopper",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1405.webp"
+ },
+ {
+  "model": "VL 1406",
+  "slug": "vl-1406",
+  "category": "door-accessories",
+  "page": 48,
+  "name": "Door Latch",
+  "specs": {
+   "Material": "ZINC ALLOY",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1406.webp"
+ },
+ {
+  "model": "VL 1407",
+  "slug": "vl-1407",
+  "category": "door-accessories",
+  "page": 48,
+  "name": "Wall Door Stopper",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1407.webp"
+ },
+ {
+  "model": "VL 1408",
+  "slug": "vl-1408",
+  "category": "door-accessories",
+  "page": 48,
+  "name": "Door Viewer",
+  "specs": {
+   "Material": "ZINC ALLOY",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1408.webp"
+ },
+ {
+  "model": "VL 1409",
+  "slug": "vl-1409",
+  "category": "door-accessories",
+  "page": 49,
+  "name": "Tower Bolt",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1409.webp"
+ },
+ {
+  "model": "VL 1412",
+  "slug": "vl-1412",
+  "category": "door-accessories",
+  "page": 49,
+  "name": "PVC Door Buffer",
+  "specs": {
+   "Material": "PVC",
+   "Finish": "White"
+  },
+  "image": "/images/products/vl-1412.webp"
+ },
+ {
+  "model": "VL 1410",
+  "slug": "vl-1410",
+  "category": "door-accessories",
+  "page": 49,
+  "name": "Tower Bolt",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1410.webp"
+ },
+ {
+  "model": "VL 1411",
+  "slug": "vl-1411",
+  "category": "door-accessories",
+  "page": 49,
+  "name": "Door Guard",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1411.webp"
+ },
+ {
+  "model": "VL 1413",
+  "slug": "vl-1413",
+  "category": "door-accessories",
+  "page": 49,
+  "name": "Door Guard Latch",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1413.webp"
+ },
+ {
+  "model": "VL 1414",
+  "slug": "vl-1414",
+  "category": "door-accessories",
+  "page": 49,
+  "name": "Door Holder",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1414.webp"
+ },
+ {
+  "model": "VL 1415",
+  "slug": "vl-1415",
+  "category": "door-accessories",
+  "page": 49,
+  "name": "Wide-Angle Door Viewer",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1415.webp"
+ },
+ {
+  "model": "VL 1416",
+  "slug": "vl-1416",
+  "category": "door-accessories",
+  "page": 49,
+  "name": "Magnetic Door Stopper",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1416.webp"
+ },
+ {
+  "model": "VL 1418",
+  "slug": "vl-1418",
+  "category": "door-accessories",
+  "page": 50,
+  "name": "Aldrop",
+  "specs": {
+   "Material": "Aluminium",
+   "Finish": "Aluminium"
+  },
+  "image": "/images/products/vl-1418.webp"
+ },
+ {
+  "model": "VL 1417",
+  "slug": "vl-1417",
+  "category": "door-accessories",
+  "page": 50,
+  "name": "Door Hook",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS | AB"
+  },
+  "image": "/images/products/vl-1417.webp"
+ },
+ {
+  "model": "VL 1419",
+  "slug": "vl-1419",
+  "category": "door-accessories",
+  "page": 50,
+  "name": "Sliding Door Bolt",
+  "specs": {
+   "Material": "SS",
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1419.webp"
+ },
+ {
+  "model": "VDDS 011",
+  "slug": "vdds-011",
+  "category": "door-accessories",
+  "page": 50,
+  "name": "Automatic Door Drop Seal",
+  "specs": {
+   "Standard Lengths": "900mm, 1000mm And 1200mm."
+  },
+  "image": "/images/products/vdds-011.webp"
+ },
+ {
+  "model": "VHSH 401",
+  "slug": "vhsh-401",
+  "category": "glass-door-handles",
+  "page": 52,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | COMBI | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vhsh-401.webp"
+ },
+ {
+  "model": "VDSH 402",
+  "slug": "vdsh-402",
+  "category": "glass-door-handles",
+  "page": 52,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | COMBI | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vdsh-402.webp"
+ },
+ {
+  "model": "VPHL 403",
+  "slug": "vphl-403",
+  "category": "glass-door-handles",
+  "page": 53,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | COMBI | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vphl-403.webp"
+ },
+ {
+  "model": "VPH 404",
+  "slug": "vph-404",
+  "category": "glass-door-handles",
+  "page": 53,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vph-404.webp"
+ },
+ {
+  "model": "VOSH 405",
+  "slug": "vosh-405",
+  "category": "glass-door-handles",
+  "page": 54,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | COMBI | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vosh-405.webp"
+ },
+ {
+  "model": "VSSH 406",
+  "slug": "vssh-406",
+  "category": "glass-door-handles",
+  "page": 54,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vssh-406.webp"
+ },
+ {
+  "model": "VSD 407",
+  "slug": "vsd-407",
+  "category": "glass-door-handles",
+  "page": 55,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vsd-407.webp"
+ },
+ {
+  "model": "VDO 408",
+  "slug": "vdo-408",
+  "category": "glass-door-handles",
+  "page": 55,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vdo-408.webp"
+ },
+ {
+  "model": "VSD 409",
+  "slug": "vsd-409",
+  "category": "glass-door-handles",
+  "page": 56,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vsd-409.webp"
+ },
+ {
+  "model": "VLO 410",
+  "slug": "vlo-410",
+  "category": "glass-door-handles",
+  "page": 56,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vlo-410.webp"
+ },
+ {
+  "model": "VHLO 411",
+  "slug": "vhlo-411",
+  "category": "glass-door-handles",
+  "page": 57,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vhlo-411.webp"
+ },
+ {
+  "model": "VHDO 412",
+  "slug": "vhdo-412",
+  "category": "glass-door-handles",
+  "page": 57,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vhdo-412.webp"
+ },
+ {
+  "model": "VHO 413",
+  "slug": "vho-413",
+  "category": "glass-door-handles",
+  "page": 58,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vho-413.webp"
+ },
+ {
+  "model": "VPSD 414",
+  "slug": "vpsd-414",
+  "category": "glass-door-handles",
+  "page": 58,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vpsd-414.webp"
+ },
+ {
+  "model": "VHP 415",
+  "slug": "vhp-415",
+  "category": "glass-door-handles",
+  "page": 59,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vhp-415.webp"
+ },
+ {
+  "model": "VGB 416",
+  "slug": "vgb-416",
+  "category": "glass-door-handles",
+  "page": 59,
+  "name": "Glass Door Pull Handle",
+  "specs": {
+   "Finish": "MATT | GLOSSY | BLACK",
+   "Grade": "S.S. 202 & S.S. 304"
+  },
+  "image": "/images/products/vgb-416.webp"
+ },
+ {
+  "model": "VSF 91",
+  "slug": "vsf-91",
+  "category": "spider-fittings",
+  "page": 61,
+  "name": "4 Arm Fin Type Spider",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 316"
+  },
+  "image": "/images/products/vsf-91.webp"
+ },
+ {
+  "model": "VSF 92",
+  "slug": "vsf-92",
+  "category": "spider-fittings",
+  "page": 61,
+  "name": "2 Arm 90 Degree Fin Type Spider",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 316"
+  },
+  "image": "/images/products/vsf-92.webp"
+ },
+ {
+  "model": "VSF 93",
+  "slug": "vsf-93",
+  "category": "spider-fittings",
+  "page": 62,
+  "name": "A R C H I T E C T U R A L H A R D Wa R E",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 316"
+  },
+  "image": "/images/products/vsf-93.webp"
+ },
+ {
+  "model": "VSF 94",
+  "slug": "vsf-94",
+  "category": "spider-fittings",
+  "page": 62,
+  "name": "1 Arm Fin Type Spider",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 316"
+  },
+  "image": "/images/products/vsf-94.webp"
+ },
+ {
+  "model": "VSF 95",
+  "slug": "vsf-95",
+  "category": "spider-fittings",
+  "page": 63,
+  "name": "A R C H I T E C T U R A L H A R D Wa R E",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 316"
+  },
+  "image": "/images/products/vsf-95.webp"
+ },
+ {
+  "model": "VSF 96",
+  "slug": "vsf-96",
+  "category": "spider-fittings",
+  "page": 63,
+  "name": "2 Arm 90 Degree Non Fin Type Spider",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 316"
+  },
+  "image": "/images/products/vsf-96.webp"
+ },
+ {
+  "model": "VSF 97",
+  "slug": "vsf-97",
+  "category": "spider-fittings",
+  "page": 64,
+  "name": "A R C H I T E C T U R A L H A R D Wa R E",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 316"
+  },
+  "image": "/images/products/vsf-97.webp"
+ },
+ {
+  "model": "VSF 98",
+  "slug": "vsf-98",
+  "category": "spider-fittings",
+  "page": 64,
+  "name": "1 Arm Non Fin Type Spider",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 316"
+  },
+  "image": "/images/products/vsf-98.webp"
+ },
+ {
+  "model": "VSF 99",
+  "slug": "vsf-99",
+  "category": "spider-fittings",
+  "page": 65,
+  "name": "Stainless Steel Routel Fixed Flat Head",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 304"
+  },
+  "image": "/images/products/vsf-99.webp"
+ },
+ {
+  "model": "VSF 010",
+  "slug": "vsf-010",
+  "category": "spider-fittings",
+  "page": 65,
+  "name": "Stainless Steel Articulated Routel",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 304"
+  },
+  "image": "/images/products/vsf-010.webp"
+ },
+ {
+  "model": "VSF 020",
+  "slug": "vsf-020",
+  "category": "spider-fittings",
+  "page": 65,
+  "name": "Point Type Spider Fitting Bolt",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Grade": "S.S. 304"
+  },
+  "image": "/images/products/vsf-020.webp"
+ },
+ {
+  "model": "VSF 30",
+  "slug": "vsf-30",
+  "category": "spider-fittings",
+  "page": 66,
+  "name": "Fin Brackets",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS"
+  },
+  "image": "/images/products/vsf-30.webp"
+ },
+ {
+  "model": "VSF 40",
+  "slug": "vsf-40",
+  "category": "spider-fittings",
+  "page": 66,
+  "name": "Fin Brackets",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS"
+  },
+  "image": "/images/products/vsf-40.webp"
+ },
+ {
+  "model": "VPB 193",
+  "slug": "vpb-193",
+  "category": "panic-bars",
+  "page": 68,
+  "name": "Panic Exit Bar – Rim Type",
+  "specs": {},
+  "image": "/images/products/vpb-193.webp"
+ },
+ {
+  "model": "VPB 195",
+  "slug": "vpb-195",
+  "category": "panic-bars",
+  "page": 68,
+  "name": "Outside Lever Trim",
+  "specs": {},
+  "image": "/images/products/vpb-195.webp"
+ },
+ {
+  "model": "VPT 201",
+  "slug": "vpt-201",
+  "category": "panic-bars",
+  "page": 68,
+  "name": "Outside Knob Trim",
+  "specs": {},
+  "image": "/images/products/vpt-201.webp"
+ },
+ {
+  "model": "VPB 190",
+  "slug": "vpb-190",
+  "category": "panic-bars",
+  "page": 68,
+  "name": "Push Bar Panic Exit Device",
+  "specs": {},
+  "image": "/images/products/vpb-190.webp"
+ },
+ {
+  "model": "VVR 197",
+  "slug": "vvr-197",
+  "category": "panic-bars",
+  "page": 68,
+  "name": "Vertical Rod Panic Exit Device",
+  "specs": {},
+  "image": "/images/products/vvr-197.webp"
+ },
+ {
+  "model": "VPT 200",
+  "slug": "vpt-200",
+  "category": "panic-bars",
+  "page": 68,
+  "name": "Outside Lever Trim with Cylinder",
+  "specs": {},
+  "image": "/images/products/vpt-200.webp"
+ },
+ {
+  "model": "VSDC 1101",
+  "slug": "vsdc-1101",
+  "category": "door-closers",
+  "page": 70,
+  "name": "Overhead Door Closer – 40 kg",
+  "specs": {
+   "Material": "Aluminium Alloy",
+   "Finish": "Silver"
+  },
+  "image": "/images/products/vsdc-1101.webp"
+ },
+ {
+  "model": "VSDC 1102",
+  "slug": "vsdc-1102",
+  "category": "door-closers",
+  "page": 70,
+  "name": "Overhead Door Closer – 60 kg",
+  "specs": {
+   "Material": "Aluminium Alloy",
+   "Finish": "Silver"
+  },
+  "image": "/images/products/vsdc-1102.webp"
+ },
+ {
+  "model": "VSDC 1103",
+  "slug": "vsdc-1103",
+  "category": "door-closers",
+  "page": 70,
+  "name": "Overhead Door Closer – 80 kg",
+  "specs": {
+   "Material": "Aluminium Alloy",
+   "Finish": "Silver"
+  },
+  "image": "/images/products/vsdc-1103.webp"
+ },
+ {
+  "model": "VSDC 1104",
+  "slug": "vsdc-1104",
+  "category": "door-closers",
+  "page": 71,
+  "name": "Concealed Door Closer – 80 kg",
+  "specs": {
+   "Material": "Aluminium Alloy",
+   "Finish": "Silver"
+  },
+  "image": "/images/products/vsdc-1104.webp"
+ },
+ {
+  "model": "VSDC 1105",
+  "slug": "vsdc-1105",
+  "category": "door-closers",
+  "page": 71,
+  "name": "Concealed Door Closer – 120 kg",
+  "specs": {
+   "Material": "Aluminium Alloy",
+   "Finish": "Silver"
+  },
+  "image": "/images/products/vsdc-1105.webp"
+ },
+ {
+  "model": "VSDC 1107",
+  "slug": "vsdc-1107",
+  "category": "door-closers",
+  "page": 71,
+  "name": "Overhead Door Closer with Pelmet",
+  "specs": {
+   "Material": "Aluminium Alloy",
+   "Finish": "RGPVD | GPVD | BLACK PVD"
+  },
+  "image": "/images/products/vsdc-1107.webp"
+ },
+ {
+  "model": "VSDC 1106",
+  "slug": "vsdc-1106",
+  "category": "door-closers",
+  "page": 71,
+  "name": "Overhead Door Closer with Pelmet Arm",
+  "specs": {
+   "Material": "Aluminium Alloy",
+   "Finish": "Silver | AB"
+  },
+  "image": "/images/products/vsdc-1106.webp"
+ },
+ {
+  "model": "VFS 72",
+  "slug": "vfs-72",
+  "category": "floor-springs",
+  "page": 73,
+  "name": "Double Cylinder Floor Spring",
+  "specs": {},
+  "image": "/images/products/vfs-72.webp"
+ },
+ {
+  "model": "VFS 82",
+  "slug": "vfs-82",
+  "category": "floor-springs",
+  "page": 73,
+  "name": "Double Cylinder Floor Spring",
+  "specs": {},
+  "image": "/images/products/vfs-82.webp"
+ },
+ {
+  "model": "VFS 92",
+  "slug": "vfs-92",
+  "category": "floor-springs",
+  "page": 73,
+  "name": "Heavy-Duty Double Cylinder Floor Spring",
+  "specs": {},
+  "image": "/images/products/vfs-92.webp"
+ },
+ {
+  "model": "VFS 80",
+  "slug": "vfs-80",
+  "category": "floor-springs",
+  "page": 75,
+  "name": "Floor Spring – up to 80 kg",
+  "specs": {},
+  "image": "/images/products/vfs-80.webp"
+ },
+ {
+  "model": "VFS 94",
+  "slug": "vfs-94",
+  "category": "floor-springs",
+  "page": 75,
+  "name": "Floor Spring – up to 120 kg",
+  "specs": {},
+  "image": "/images/products/vfs-94.webp"
+ },
+ {
+  "model": "VPF 201",
+  "slug": "vpf-201",
+  "category": "glass-fittings",
+  "page": 77,
+  "name": "Connecting Patch with Pivot",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-201.webp"
+ },
+ {
+  "model": "VPF 202",
+  "slug": "vpf-202",
+  "category": "glass-fittings",
+  "page": 77,
+  "name": "Top Patch",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-202.webp"
+ },
+ {
+  "model": "VPF 203",
+  "slug": "vpf-203",
+  "category": "glass-fittings",
+  "page": 77,
+  "name": "Bottom Patch",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-203.webp"
+ },
+ {
+  "model": "VPF 204",
+  "slug": "vpf-204",
+  "category": "glass-fittings",
+  "page": 78,
+  "name": "Top Fix Corner “L” Patch",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-204.webp"
+ },
+ {
+  "model": "VPF 205",
+  "slug": "vpf-205",
+  "category": "glass-fittings",
+  "page": 78,
+  "name": "Quadruple Patch",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-205.webp"
+ },
+ {
+  "model": "VPF 206",
+  "slug": "vpf-206",
+  "category": "glass-fittings",
+  "page": 78,
+  "name": "Wall to Glass Connecting Patch",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-206.webp"
+ },
+ {
+  "model": "VPF 207",
+  "slug": "vpf-207",
+  "category": "glass-fittings",
+  "page": 79,
+  "name": "Wall to Glass Connecting Patch",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-207.webp"
+ },
+ {
+  "model": "VPF 208",
+  "slug": "vpf-208",
+  "category": "glass-fittings",
+  "page": 79,
+  "name": "Center Patch Lock",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "Satin Stainless Steel (SSS)"
+  },
+  "image": "/images/products/vpf-208.webp"
+ },
+ {
+  "model": "VPF 209",
+  "slug": "vpf-209",
+  "category": "glass-fittings",
+  "page": 79,
+  "name": "Patch Lock Strike Box",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-209.webp"
+ },
+ {
+  "model": "VPF 210",
+  "slug": "vpf-210",
+  "category": "glass-fittings",
+  "page": 80,
+  "name": "Glass to Glass Clamping Patch",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-210.webp"
+ },
+ {
+  "model": "VPF 211",
+  "slug": "vpf-211",
+  "category": "glass-fittings",
+  "page": 80,
+  "name": "Wall to Glass Clamping Patch",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-211.webp"
+ },
+ {
+  "model": "VPF 212",
+  "slug": "vpf-212",
+  "category": "glass-fittings",
+  "page": 80,
+  "name": "Turn Knob Lock",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy,",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-212.webp"
+ },
+ {
+  "model": "VPF 213",
+  "slug": "vpf-213",
+  "category": "glass-fittings",
+  "page": 81,
+  "name": "Strike Box for Turn Knob Lock",
+  "specs": {
+   "Fit For Glass Thickness": "10mm | 12mm",
+   "Material": "Aluminium Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vpf-213.webp"
+ },
+ {
+  "model": "VPF 214",
+  "slug": "vpf-214",
+  "category": "glass-fittings",
+  "page": 81,
+  "name": "Glass Pivot",
+  "specs": {},
+  "image": "/images/products/vpf-214.webp"
+ },
+ {
+  "model": "VHSS 540",
+  "slug": "vhss-540",
+  "category": "shower-hardware",
+  "page": 83,
+  "name": "135 Degree Glass Seal",
+  "specs": {},
+  "image": "/images/products/vhss-540.webp"
+ },
+ {
+  "model": "VHSS 550",
+  "slug": "vhss-550",
+  "category": "shower-hardware",
+  "page": 83,
+  "name": "90 Degree Magnetic Glass Seal",
+  "specs": {},
+  "image": "/images/products/vhss-550.webp"
+ },
+ {
+  "model": "VHSS 560",
+  "slug": "vhss-560",
+  "category": "shower-hardware",
+  "page": 83,
+  "name": "180 Degree Magnetic Glass Seal",
+  "specs": {},
+  "image": "/images/products/vhss-560.webp"
+ },
+ {
+  "model": "VHSS 570",
+  "slug": "vhss-570",
+  "category": "shower-hardware",
+  "page": 83,
+  "name": "135 Degree Magnetic Glass Seal",
+  "specs": {},
+  "image": "/images/products/vhss-570.webp"
+ },
+ {
+  "model": "QGH 01",
+  "slug": "qgh-01",
+  "category": "shower-hardware",
+  "page": 85,
+  "name": "Shower Glass Handle",
+  "specs": {
+   "Material": "Stainless steel",
+   "Grade": "304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/qgh-01.webp"
+ },
+ {
+  "model": "QGH 02",
+  "slug": "qgh-02",
+  "category": "shower-hardware",
+  "page": 85,
+  "name": "Shower Glass Handle",
+  "specs": {
+   "Material": "Stainless steel",
+   "Grade": "304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/qgh-02.webp"
+ },
+ {
+  "model": "VSH 703",
+  "slug": "vsh-703",
+  "category": "shower-hardware",
+  "page": 85,
+  "name": "Wall to Glass Hinge",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Brass | SS",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsh-703.webp"
+ },
+ {
+  "model": "VSH 704",
+  "slug": "vsh-704",
+  "category": "shower-hardware",
+  "page": 86,
+  "name": "Glass to Glass Hinge 180 Degrees",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Brass | SS",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsh-704.webp"
+ },
+ {
+  "model": "VSH 705",
+  "slug": "vsh-705",
+  "category": "shower-hardware",
+  "page": 86,
+  "name": "Glass to Glass Hinge 135 Degrees",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Brass | SS",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsh-705.webp"
+ },
+ {
+  "model": "VSH 706",
+  "slug": "vsh-706",
+  "category": "shower-hardware",
+  "page": 86,
+  "name": "Glass to Glass Hinge 90 Degrees",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Brass | SS",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsh-706.webp"
+ },
+ {
+  "model": "VSH 707",
+  "slug": "vsh-707",
+  "category": "shower-hardware",
+  "page": 87,
+  "name": "Wall to Glass One Side",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Brass | SS",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsh-707.webp"
+ },
+ {
+  "model": "VSH 708",
+  "slug": "vsh-708",
+  "category": "shower-hardware",
+  "page": 87,
+  "name": "Fixed Clip",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Maximum Door Width": "750mm",
+   "Material": "Brass | SS",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsh-708.webp"
+ },
+ {
+  "model": "VSH 709",
+  "slug": "vsh-709",
+  "category": "shower-hardware",
+  "page": 87,
+  "name": "Glass Connector Fix Clip",
+  "specs": {
+   "Material": "Brass | SS",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsh-709.webp"
+ },
+ {
+  "model": "VSH 711",
+  "slug": "vsh-711",
+  "category": "shower-hardware",
+  "page": 88,
+  "name": "Glass Connector Glass to Glass",
+  "specs": {
+   "Material": "Brass | SS",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsh-711.webp"
+ },
+ {
+  "model": "VSH 710",
+  "slug": "vsh-710",
+  "category": "shower-hardware",
+  "page": 88,
+  "name": "Glass Connector Wall to Glass",
+  "specs": {
+   "Material": "Brass | SS",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsh-710.webp"
+ },
+ {
+  "model": "VSH 712",
+  "slug": "vsh-712",
+  "category": "shower-hardware",
+  "page": 88,
+  "name": "Wall to Glass Hinge",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-712.webp"
+ },
+ {
+  "model": "VSH 713",
+  "slug": "vsh-713",
+  "category": "shower-hardware",
+  "page": 89,
+  "name": "Wall to Glass Offset Hinge",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-713.webp"
+ },
+ {
+  "model": "VSH 714",
+  "slug": "vsh-714",
+  "category": "shower-hardware",
+  "page": 89,
+  "name": "Glass to Glass Hinge 180 Degrees",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-714.webp"
+ },
+ {
+  "model": "VSH 715",
+  "slug": "vsh-715",
+  "category": "shower-hardware",
+  "page": 89,
+  "name": "Glass to Glass Hinges 135 Degrees",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-715.webp"
+ },
+ {
+  "model": "VSH 716",
+  "slug": "vsh-716",
+  "category": "shower-hardware",
+  "page": 90,
+  "name": "Glass to Glass Hinges 90 Degrees",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Hold Open At": "90*",
+   "Maximum Door Width": "750mm",
+   "Maximum Door Weight": "45kg",
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-716.webp"
+ },
+ {
+  "model": "VSH 717",
+  "slug": "vsh-717",
+  "category": "shower-hardware",
+  "page": 90,
+  "name": "Wall to Glass Bracket",
+  "specs": {
+   "Glass Thickness": "8mm to 10mm",
+   "Maximum Door Width": "750",
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-717.webp"
+ },
+ {
+  "model": "VSH 720",
+  "slug": "vsh-720",
+  "category": "shower-hardware",
+  "page": 90,
+  "name": "Glass Connector Fix Clip",
+  "specs": {
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-720.webp"
+ },
+ {
+  "model": "VSH 740",
+  "slug": "vsh-740",
+  "category": "shower-hardware",
+  "page": 91,
+  "name": "Glass Connector Glass to Glass",
+  "specs": {
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-740.webp"
+ },
+ {
+  "model": "VSH 730",
+  "slug": "vsh-730",
+  "category": "shower-hardware",
+  "page": 91,
+  "name": "Glass Connector Wall to Glass",
+  "specs": {
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-730.webp"
+ },
+ {
+  "model": "VSH 750",
+  "slug": "vsh-750",
+  "category": "shower-hardware",
+  "page": 91,
+  "name": "Glass Connector Glass to Glass",
+  "specs": {
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-750.webp"
+ },
+ {
+  "model": "VSH 770",
+  "slug": "vsh-770",
+  "category": "shower-hardware",
+  "page": 92,
+  "name": "Glass Connector Wall to Glass",
+  "specs": {
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-770.webp"
+ },
+ {
+  "model": "VSH 760",
+  "slug": "vsh-760",
+  "category": "shower-hardware",
+  "page": 92,
+  "name": "Glass Connector Glass to Glass",
+  "specs": {
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-760.webp"
+ },
+ {
+  "model": "VSH 780",
+  "slug": "vsh-780",
+  "category": "shower-hardware",
+  "page": 92,
+  "name": "Glass Connnector Wall to Glass",
+  "specs": {
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-780.webp"
+ },
+ {
+  "model": "VSH 800",
+  "slug": "vsh-800",
+  "category": "shower-hardware",
+  "page": 93,
+  "name": "Glass Connector Wall to Glass",
+  "specs": {
+   "Material": "Stainless steel",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-800.webp"
+ },
+ {
+  "model": "VSH 790",
+  "slug": "vsh-790",
+  "category": "shower-hardware",
+  "page": 93,
+  "name": "0 Degrees Glass Clamp",
+  "specs": {
+   "Material": "Stainless steel",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-790.webp"
+ },
+ {
+  "model": "VSH 810",
+  "slug": "vsh-810",
+  "category": "shower-hardware",
+  "page": 93,
+  "name": "Glass Connnector Glass to Glass",
+  "specs": {
+   "Material": "Stainless steel",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-810.webp"
+ },
+ {
+  "model": "VSH 830",
+  "slug": "vsh-830",
+  "category": "shower-hardware",
+  "page": 94,
+  "name": "90 Degrees Glass to Glass Clamp",
+  "specs": {
+   "Material": "Stainless steel",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-830.webp"
+ },
+ {
+  "model": "VSH 820",
+  "slug": "vsh-820",
+  "category": "shower-hardware",
+  "page": 94,
+  "name": "90 Degrees Wall to Glass Clamp",
+  "specs": {
+   "Material": "Stainless steel",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-820.webp"
+ },
+ {
+  "model": "VSH 850",
+  "slug": "vsh-850",
+  "category": "shower-hardware",
+  "page": 94,
+  "name": "180 Degrees Wall to Glass Clamp",
+  "specs": {
+   "Material": "Stainless steel 304",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-850.webp"
+ },
+ {
+  "model": "VSH 860",
+  "slug": "vsh-860",
+  "category": "shower-hardware",
+  "page": 95,
+  "name": "180 Degrees Glass to Glass Clamp",
+  "specs": {
+   "Material": "Stainless steel",
+   "Finish": "SSS|PSS"
+  },
+  "image": "/images/products/vsh-860.webp"
+ },
+ {
+  "model": "VSA 90",
+  "slug": "vsa-90",
+  "category": "shower-hardware",
+  "page": 97,
+  "name": "Shower Header Wall Socket",
+  "specs": {
+   "Material": "Brass",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsa-90.webp"
+ },
+ {
+  "model": "VSA 91",
+  "slug": "vsa-91",
+  "category": "shower-hardware",
+  "page": 97,
+  "name": "Shower Header Wall Socket",
+  "specs": {
+   "Material": "Brass",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsa-91.webp"
+ },
+ {
+  "model": "VSA 92",
+  "slug": "vsa-92",
+  "category": "shower-hardware",
+  "page": 97,
+  "name": "Shower Header Support Clamp",
+  "specs": {
+   "Material": "Brass",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsa-92.webp"
+ },
+ {
+  "model": "VSA 93",
+  "slug": "vsa-93",
+  "category": "shower-hardware",
+  "page": 98,
+  "name": "Shower Head Support Clamp",
+  "specs": {
+   "Material": "Brass",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsa-93.webp"
+ },
+ {
+  "model": "VSA 94",
+  "slug": "vsa-94",
+  "category": "shower-hardware",
+  "page": 98,
+  "name": "Shower Header Clamp for 2 Way",
+  "specs": {
+   "Material": "Brass",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsa-94.webp"
+ },
+ {
+  "model": "VSA 95",
+  "slug": "vsa-95",
+  "category": "shower-hardware",
+  "page": 98,
+  "name": "Shower Header Clamp 3 Way",
+  "specs": {
+   "Material": "Brass",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsa-95.webp"
+ },
+ {
+  "model": "VSA 96",
+  "slug": "vsa-96",
+  "category": "shower-hardware",
+  "page": 99,
+  "name": "Reinforcing Pipe",
+  "specs": {
+   "Material": "Stainless steel",
+   "Grade": "304",
+   "Finish": "SSS | PSS"
+  },
+  "image": "/images/products/vsa-96.webp"
+ },
+ {
+  "model": "VSA 97",
+  "slug": "vsa-97",
+  "category": "shower-hardware",
+  "page": 99,
+  "name": "Glass Door Knob",
+  "specs": {
+   "Material": "Brass",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsa-97.webp"
+ },
+ {
+  "model": "VSA 98",
+  "slug": "vsa-98",
+  "category": "shower-hardware",
+  "page": 99,
+  "name": "Glass Door Knob",
+  "specs": {
+   "Material": "Brass",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsa-98.webp"
+ },
+ {
+  "model": "VSA 99",
+  "slug": "vsa-99",
+  "category": "shower-hardware",
+  "page": 100,
+  "name": "Glass Door Knob",
+  "specs": {
+   "Material": "Brass",
+   "Finish": "Satin Nickel | Chrome Plated"
+  },
+  "image": "/images/products/vsa-99.webp"
+ },
+ {
+  "model": "VL 2101",
+  "slug": "vl-2101",
+  "category": "glass-railings",
+  "page": 103,
+  "name": "Glass Railing Clamp",
+  "specs": {},
+  "image": "/images/products/vl-2101.webp"
+ },
+ {
+  "model": "VL 2102",
+  "slug": "vl-2102",
+  "category": "glass-railings",
+  "page": 103,
+  "name": "Glass Railing Clamp",
+  "specs": {},
+  "image": "/images/products/vl-2102.webp"
+ },
+ {
+  "model": "VL 2103",
+  "slug": "vl-2103",
+  "category": "glass-railings",
+  "page": 103,
+  "name": "Glass Railing Clamp",
+  "specs": {},
+  "image": "/images/products/vl-2103.webp"
+ },
+ {
+  "model": "VL 2104",
+  "slug": "vl-2104",
+  "category": "glass-railings",
+  "page": 103,
+  "name": "Glass Railing Clamp",
+  "specs": {},
+  "image": "/images/products/vl-2104.webp"
+ },
+ {
+  "model": "VL 2105",
+  "slug": "vl-2105",
+  "category": "glass-railings",
+  "page": 103,
+  "name": "Glass Standoff Connector",
+  "specs": {},
+  "image": "/images/products/vl-2105.webp"
+ },
+ {
+  "model": "VL 2106",
+  "slug": "vl-2106",
+  "category": "glass-railings",
+  "page": 103,
+  "name": "Glass Standoff Connector",
+  "specs": {},
+  "image": "/images/products/vl-2106.webp"
+ },
+ {
+  "model": "VL 2107",
+  "slug": "vl-2107",
+  "category": "glass-railings",
+  "page": 103,
+  "name": "Glass Standoff Connector",
+  "specs": {},
+  "image": "/images/products/vl-2107.webp"
+ },
+ {
+  "model": "VL 2108",
+  "slug": "vl-2108",
+  "category": "glass-railings",
+  "page": 103,
+  "name": "Glass Standoff Connector",
+  "specs": {},
+  "image": "/images/products/vl-2108.webp"
+ },
+ {
+  "model": "VL 2109",
+  "slug": "vl-2109",
+  "category": "glass-railings",
+  "page": 104,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2109.webp"
+ },
+ {
+  "model": "VL 2110",
+  "slug": "vl-2110",
+  "category": "glass-railings",
+  "page": 104,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2110.webp"
+ },
+ {
+  "model": "VL 2111",
+  "slug": "vl-2111",
+  "category": "glass-railings",
+  "page": 104,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2111.webp"
+ },
+ {
+  "model": "VL 2112",
+  "slug": "vl-2112",
+  "category": "glass-railings",
+  "page": 104,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2112.webp"
+ },
+ {
+  "model": "VL 2113",
+  "slug": "vl-2113",
+  "category": "glass-railings",
+  "page": 104,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2113.webp"
+ },
+ {
+  "model": "VL 2114",
+  "slug": "vl-2114",
+  "category": "glass-railings",
+  "page": 104,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2114.webp"
+ },
+ {
+  "model": "VL 2115",
+  "slug": "vl-2115",
+  "category": "glass-railings",
+  "page": 105,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2115.webp"
+ },
+ {
+  "model": "VL 2116",
+  "slug": "vl-2116",
+  "category": "glass-railings",
+  "page": 105,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2116.webp"
+ },
+ {
+  "model": "VL 2117",
+  "slug": "vl-2117",
+  "category": "glass-railings",
+  "page": 105,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2117.webp"
+ },
+ {
+  "model": "VL 2118",
+  "slug": "vl-2118",
+  "category": "glass-railings",
+  "page": 105,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2118.webp"
+ },
+ {
+  "model": "VL 2119",
+  "slug": "vl-2119",
+  "category": "glass-railings",
+  "page": 105,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2119.webp"
+ },
+ {
+  "model": "VL 2120",
+  "slug": "vl-2120",
+  "category": "glass-railings",
+  "page": 105,
+  "name": "Glass Railing Spigot",
+  "specs": {},
+  "image": "/images/products/vl-2120.webp"
+ },
+ {
+  "model": "VL 2121",
+  "slug": "vl-2121",
+  "category": "glass-railings",
+  "page": 107,
+  "name": "Stainless-Steel Baluster",
+  "specs": {},
+  "image": "/images/products/vl-2121.webp"
+ },
+ {
+  "model": "VL 2122",
+  "slug": "vl-2122",
+  "category": "glass-railings",
+  "page": 107,
+  "name": "Stainless-Steel Baluster",
+  "specs": {},
+  "image": "/images/products/vl-2122.webp"
+ },
+ {
+  "model": "VL 2123",
+  "slug": "vl-2123",
+  "category": "glass-railings",
+  "page": 107,
+  "name": "Stainless-Steel Baluster",
+  "specs": {},
+  "image": "/images/products/vl-2123.webp"
+ },
+ {
+  "model": "VL 2124",
+  "slug": "vl-2124",
+  "category": "glass-railings",
+  "page": 107,
+  "name": "Stainless-Steel Baluster",
+  "specs": {},
+  "image": "/images/products/vl-2124.webp"
+ },
+ {
+  "model": "VL 2125",
+  "slug": "vl-2125",
+  "category": "glass-railings",
+  "page": 107,
+  "name": "Stainless-Steel Baluster",
+  "specs": {},
+  "image": "/images/products/vl-2125.webp"
+ },
+ {
+  "model": "VL 2126",
+  "slug": "vl-2126",
+  "category": "glass-railings",
+  "page": 107,
+  "name": "Stainless-Steel Baluster",
+  "specs": {},
+  "image": "/images/products/vl-2126.webp"
+ },
+ {
+  "model": "VL 2127",
+  "slug": "vl-2127",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Stainless-Steel Baluster",
+  "specs": {},
+  "image": "/images/products/vl-2127.webp"
+ },
+ {
+  "model": "VL 2128",
+  "slug": "vl-2128",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Stainless-Steel Baluster",
+  "specs": {},
+  "image": "/images/products/vl-2128.webp"
+ },
+ {
+  "model": "VL 2129",
+  "slug": "vl-2129",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2129.webp"
+ },
+ {
+  "model": "VL 2130",
+  "slug": "vl-2130",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2130.webp"
+ },
+ {
+  "model": "VL 2131",
+  "slug": "vl-2131",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2131.webp"
+ },
+ {
+  "model": "VL 2132",
+  "slug": "vl-2132",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2132.webp"
+ },
+ {
+  "model": "VL 2133",
+  "slug": "vl-2133",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2133.webp"
+ },
+ {
+  "model": "VL 2134",
+  "slug": "vl-2134",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2134.webp"
+ },
+ {
+  "model": "VL 2135",
+  "slug": "vl-2135",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2135.webp"
+ },
+ {
+  "model": "VL 2136",
+  "slug": "vl-2136",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2136.webp"
+ },
+ {
+  "model": "VL 2137",
+  "slug": "vl-2137",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2137.webp"
+ },
+ {
+  "model": "VL 2138",
+  "slug": "vl-2138",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2138.webp"
+ },
+ {
+  "model": "VL 2139",
+  "slug": "vl-2139",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2139.webp"
+ },
+ {
+  "model": "VL 2140",
+  "slug": "vl-2140",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2140.webp"
+ },
+ {
+  "model": "VL 2141",
+  "slug": "vl-2141",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2141.webp"
+ },
+ {
+  "model": "VL 2142",
+  "slug": "vl-2142",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2142.webp"
+ },
+ {
+  "model": "VL 2143",
+  "slug": "vl-2143",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2143.webp"
+ },
+ {
+  "model": "VL 2144",
+  "slug": "vl-2144",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Handrail Bracket",
+  "specs": {},
+  "image": "/images/products/vl-2144.webp"
+ },
+ {
+  "model": "VL 2145",
+  "slug": "vl-2145",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Glass Clamp",
+  "specs": {},
+  "image": "/images/products/vl-2145.webp"
+ },
+ {
+  "model": "VL 2146",
+  "slug": "vl-2146",
+  "category": "glass-railings",
+  "page": 108,
+  "name": "Glass Clamp",
+  "specs": {},
+  "image": "/images/products/vl-2146.webp"
+ },
+ {
+  "model": "VRS 101",
+  "slug": "vrs-101",
+  "category": "glass-railings",
+  "page": 115,
+  "name": "Spigot",
+  "specs": {
+   "Finish": "SS"
+  },
+  "image": "/images/products/vrs-101.webp"
+ },
+ {
+  "model": "VRS 102",
+  "slug": "vrs-102",
+  "category": "glass-railings",
+  "page": 115,
+  "name": "Spigot",
+  "specs": {
+   "Finish": "SS"
+  },
+  "image": "/images/products/vrs-102.webp"
+ },
+ {
+  "model": "VGSH 500",
+  "slug": "vgsh-500",
+  "category": "glass-fittings",
+  "page": 117,
+  "name": "Sliding Handle Round",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Inner Dia": "48mm",
+   "Finish": "SSS | PSS"
+  },
+  "image": "/images/products/vgsh-500.webp"
+ },
+ {
+  "model": "VGSH 501",
+  "slug": "vgsh-501",
+  "category": "glass-fittings",
+  "page": 117,
+  "name": "Sliding Handle Round",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Inner Dia": "58mm",
+   "Finish": "SSS | PSS"
+  },
+  "image": "/images/products/vgsh-501.webp"
+ },
+ {
+  "model": "VGSH 502",
+  "slug": "vgsh-502",
+  "category": "glass-fittings",
+  "page": 117,
+  "name": "Sliding Handle",
+  "specs": {
+   "Material": "Stainless Steel",
+   "Finish": "SSS | PSS",
+   "Tl": "153 mm"
+  },
+  "image": "/images/products/vgsh-502.webp"
+ },
+ {
+  "model": "VGSH 503",
+  "slug": "vgsh-503",
+  "category": "glass-fittings",
+  "page": 118,
+  "name": "Sliding Handle",
+  "specs": {
+   "Material": "Stainless Steel 304",
+   "Finish": "SSS | PSS",
+   "Tl": "120 mm"
+  },
+  "image": "/images/products/vgsh-503.webp"
+ },
+ {
+  "model": "VGSH 504",
+  "slug": "vgsh-504",
+  "category": "glass-fittings",
+  "page": 118,
+  "name": "Sliding Handle Square",
+  "specs": {
+   "Material": "Stainless Steel 304",
+   "Finish": "SSS | PSS"
+  },
+  "image": "/images/products/vgsh-504.webp"
+ },
+ {
+  "model": "VGSL 505",
+  "slug": "vgsl-505",
+  "category": "glass-fittings",
+  "page": 118,
+  "name": "Without Cutout Glass Lock",
+  "specs": {
+   "Material": "Brass / Stainless Steel 304",
+   "Finish": "Satin Nickel"
+  },
+  "image": "/images/products/vgsl-505.webp"
+ },
+ {
+  "model": "VGSL 506",
+  "slug": "vgsl-506",
+  "category": "glass-fittings",
+  "page": 119,
+  "name": "Without Cutout Glass Lock",
+  "specs": {
+   "Material": "Brass / Stainless Steel 304",
+   "Finish": "Satin Nickel"
+  },
+  "image": "/images/products/vgsl-506.webp"
+ },
+ {
+  "model": "VGSL 507",
+  "slug": "vgsl-507",
+  "category": "glass-fittings",
+  "page": 119,
+  "name": "Without Cutout Glass Lock",
+  "specs": {
+   "Material": "Brass / Stainless Steel 304",
+   "Finish": "Satin Nickel"
+  },
+  "image": "/images/products/vgsl-507.webp"
+ },
+ {
+  "model": "VGSL 508",
+  "slug": "vgsl-508",
+  "category": "glass-fittings",
+  "page": 119,
+  "name": "Without Cutout Glass Lock",
+  "specs": {
+   "Material": "Brass / Stainless Steel 304",
+   "Finish": "Satin Nickel"
+  },
+  "image": "/images/products/vgsl-508.webp"
+ },
+ {
+  "model": "VGSL 509",
+  "slug": "vgsl-509",
+  "category": "glass-fittings",
+  "page": 120,
+  "name": "Glass Sliding Door Lock",
+  "specs": {
+   "Material": "Zink Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vgsl-509.webp"
+ },
+ {
+  "model": "VGSL 510",
+  "slug": "vgsl-510",
+  "category": "glass-fittings",
+  "page": 120,
+  "name": "Strike Box for QBPL 6a",
+  "specs": {
+   "Material": "Zink Alloy",
+   "Finish": "SSS"
+  },
+  "image": "/images/products/vgsl-510.webp"
+ },
+ {
+  "model": "VGCF 3001",
+  "slug": "vgcf-3001",
+  "category": "glass-fittings",
+  "page": 122,
+  "name": "Wall-to-Glass Canopy Connector",
+  "specs": {
+   "Finish": "Matt"
+  },
+  "image": "/images/products/vgcf-3001.webp"
+ },
+ {
+  "model": "VGCF 3002",
+  "slug": "vgcf-3002",
+  "category": "glass-fittings",
+  "page": 122,
+  "name": "Rod-to-Glass Canopy Connector",
+  "specs": {
+   "Finish": "Matt"
+  },
+  "image": "/images/products/vgcf-3002.webp"
+ },
+ {
+  "model": "VGCF 3003",
+  "slug": "vgcf-3003",
+  "category": "glass-fittings",
+  "page": 122,
+  "name": "Wall-to-Rod Canopy Connector",
+  "specs": {
+   "Finish": "Matt"
+  },
+  "image": "/images/products/vgcf-3003.webp"
+ },
+ {
+  "model": "VGCF 3004",
+  "slug": "vgcf-3004",
+  "category": "glass-fittings",
+  "page": 122,
+  "name": "Canopy Connector Rod",
+  "specs": {
+   "Finish": "Matt"
+  },
+  "image": "/images/products/vgcf-3004.webp"
+ },
+ {
+  "model": "VL 1801",
+  "slug": "vl-1801",
+  "category": "furniture-hardware",
+  "page": 131,
+  "name": "Cupboard Lock",
+  "specs": {
+   "Finish": "SS | AB | RG | JBM | IV"
+  },
+  "image": "/images/products/vl-1801.webp"
+ },
+ {
+  "model": "VL 1802",
+  "slug": "vl-1802",
+  "category": "furniture-hardware",
+  "page": 131,
+  "name": "Drawer Lock",
+  "specs": {
+   "Finish": "SS | AB | RG | JBM | IV"
+  },
+  "image": "/images/products/vl-1802.webp"
+ },
+ {
+  "model": "VL 1803",
+  "slug": "vl-1803",
+  "category": "furniture-hardware",
+  "page": 131,
+  "name": "Centre Sliding Lock",
+  "specs": {
+   "Finish": "SS | AB | RG | JBM | IV"
+  },
+  "image": "/images/products/vl-1803.webp"
+ },
+ {
+  "model": "VL 1804",
+  "slug": "vl-1804",
+  "category": "furniture-hardware",
+  "page": 132,
+  "name": "Side Sliding Lock",
+  "specs": {
+   "Finish": "SS | AB | RG | JBM"
+  },
+  "image": "/images/products/vl-1804.webp"
+ },
+ {
+  "model": "VL 1805",
+  "slug": "vl-1805",
+  "category": "furniture-hardware",
+  "page": 132,
+  "name": "Universal Cupboard Lock",
+  "specs": {
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1805.webp"
+ },
+ {
+  "model": "VL 1806",
+  "slug": "vl-1806",
+  "category": "furniture-hardware",
+  "page": 132,
+  "name": "Vertex Lock",
+  "specs": {
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1806.webp"
+ },
+ {
+  "model": "VL 1807",
+  "slug": "vl-1807",
+  "category": "furniture-hardware",
+  "page": 133,
+  "name": "Multi Lock – Laser Key",
+  "specs": {
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1807.webp"
+ },
+ {
+  "model": "VL 1808",
+  "slug": "vl-1808",
+  "category": "furniture-hardware",
+  "page": 133,
+  "name": "Multi Lock – Regular Key (Economy)",
+  "specs": {
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1808.webp"
+ },
+ {
+  "model": "VL 1809",
+  "slug": "vl-1809",
+  "category": "furniture-hardware",
+  "page": 133,
+  "name": "Multi Lock",
+  "specs": {
+   "Finish": "Black"
+  },
+  "image": "/images/products/vl-1809.webp"
+ },
+ {
+  "model": "VL 1810",
+  "slug": "vl-1810",
+  "category": "furniture-hardware",
+  "page": 134,
+  "name": "Push Lock",
+  "specs": {
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1810.webp"
+ },
+ {
+  "model": "VL 1811",
+  "slug": "vl-1811",
+  "category": "furniture-hardware",
+  "page": 134,
+  "name": "Sliding Door Lock (Side Mounted)",
+  "specs": {
+   "Finish": "SS"
+  },
+  "image": "/images/products/vl-1811.webp"
+ },
+ {
+  "model": "VL 1812",
+  "slug": "vl-1812",
+  "category": "furniture-hardware",
+  "page": 134,
+  "name": "Sliding Door Lock",
+  "specs": {
+   "Finish": "Black"
+  },
+  "image": "/images/products/vl-1812.webp"
+ },
+ {
+  "model": "VL 1813",
+  "slug": "vl-1813",
+  "category": "furniture-hardware",
+  "page": 134,
+  "name": "Pedestal Lock",
+  "specs": {
+   "Finish": "Black"
+  },
+  "image": "/images/products/vl-1813.webp"
+ }
+]

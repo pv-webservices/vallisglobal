@@ -50,6 +50,15 @@ The site was art-directed into a premium navy, ivory and champagne-gold system b
 - **Catalogue lead form** (`src/components/CatalogueGate.astro`): every PDF link opens a name / email / phone / consent form first. Set `PUBLIC_LEAD_ENDPOINT` to a form-handling URL to receive each lead as JSON; without it the form still gates the download but stores nothing. Without JavaScript, the PDF links open directly.
 - **Corporate image** (`src/components/ClientLogos.astro`): CPWD and NBCC logos on the homepage.
 
+## November 2026 client updates
+
+- **Product range** comes from the latest catalogue, `source-assets/supplied-2026-10-31/vallis-logo latest.pdf` (the edition with the VALLIS logo printed on each product photo). It is also published as `public/vallisglobal products pdf.pdf`, so product "source catalogue" page links match. `python scripts/extract-latest-catalogue.py` renders each product photo region (keeping the printed logo), removes the studio background, and writes `public/images/products/<model>.webp` and `src/data/pdf-products.json`. Pairing fixes and curated names live at the top of the script. Use `--sheet` to write a review contact sheet to `tmp/`, or `--scenes` to re-render only the collection banners.
+- **Collections**: 13 catalogue collections plus FHC Doors, uPVC Windows & Doors and Shower Cubicles, 16 in total. Handrail profile tables (pages 109–112) and furniture hinges/channels (pages 123–130) are not listed as individual products. The designer lever handles (VDH) are still listed.
+- **VSH 704** product gallery: the QGH shower handles, the companion VSH 703/705–708 hinges, and shower cubicles 4, 3 and 2.
+- **Hero** (`src/styles/hero.css`): an AI boardroom scene (`hero-showroom`), four brand pillars and a CSS marquee of every collection. With reduced motion the marquee becomes a swipeable rail.
+- **People imagery**: `hero-showroom`, `team-consultation` (About page and the "A complete collection" showcase) and `office-entrance-people` (Corporate Offices sector). All three are generated with `npm run images:generate`.
+- **Our Prestigious Clients** (`src/components/ClientLogos.astro`): supplied logos are in `public/images/clients/` (originals in `source-assets/client-logos/`). Institutions without a logo show their campus photograph; Pruthu Homes and Crystal Magic World show a wordmark until logos are supplied.
+
 ## AI image generation
 
 Fifteen art-directed images in `public/images/generated/`: four hero chapters, a craftsmanship detail, a precision macro, finishes, a fit-check still life, the Door Hardware, Glass Fittings, Furniture Hardware and Shaft Doors scenes, two sector images and a consultation scene. Each one has a single, recorded placement. Product pages always use the genuine catalogue image. The privacy page states that atmospheric images are illustrative.

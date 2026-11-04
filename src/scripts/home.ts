@@ -1,87 +1,6 @@
-// Homepage interactions: cinematic hero timeline, "Why choose" showcase, sector hover, process storytelling.
+// Homepage interactions: "Why choose" showcase, sector hover, process storytelling.
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const clamp = (v: number, min = 0, max = 1) => Math.min(max, Math.max(min, v));
-const ease = (t: number) => 1 - Math.pow(1 - t, 3);
 const pad = (n: number) => String(n + 1).padStart(2, '0');
-
-/* ---------- Hero: scroll progress → scene, copy and rail state ---------- */
-function initHero() {
-  const hero = document.querySelector<HTMLElement>('[data-hero]');
-  if (!hero || reduce) return;
-  const scenes = Array.from(hero.querySelectorAll<HTMLElement>('[data-scene]'));
-  const panels = Array.from(hero.querySelectorAll<HTMLElement>('[data-panel]'));
-  const rail = Array.from(hero.querySelectorAll<HTMLButtonElement>('[data-goto]'));
-  const counter = hero.querySelector<HTMLElement>('[data-counter]');
-  const foot = hero.querySelector<HTMLElement>('.hero-foot');
-  const count = scenes.length;
-  const FADE = 0.3; // crossfade width, in chapter units
-  const SPAN = count - 0.35; // the final chapter holds before the section releases
-  let current = -1;
-
-  const progress = () => {
-    const total = hero.offsetHeight - window.innerHeight;
-    return total > 0 ? clamp(-hero.getBoundingClientRect().top / total) : 0;
-  };
-
-  const render = () => {
-    const p = progress();
-    const seg = p * SPAN;
-    hero.style.setProperty('--p', p.toFixed(4));
-    hero.style.setProperty('--close', (clamp((p - 0.95) / 0.05) * 0.7).toFixed(3));
-
-    scenes.forEach((scene, i) => {
-      const fadeIn = i === 0 ? 1 : ease(clamp((seg - i + FADE / 2) / FADE));
-      const push = clamp((seg - i + FADE / 2) / 1.3); // slow camera push through each chapter
-      scene.style.opacity = fadeIn.toFixed(3);
-      scene.style.transform = `scale(${(1.12 - push * 0.12).toFixed(4)})`;
-    });
-
-    panels.forEach((panel, i) => {
-      // Each chapter fully exits (by i + 0.84) before the next enters (from i + 0.88): no overlapping copy.
-      const start = i === 0 ? -1 : i - 0.12;
-      const end = i === count - 1 ? Infinity : i + 0.7;
-      const inT = i === 0 ? 1 : ease(clamp((seg - start) / 0.24));
-      const outT = ease(clamp((seg - end) / 0.14));
-      const opacity = Math.min(inT, 1 - outT);
-      const y = (1 - inT) * 48 - outT * 56;
-      panel.style.opacity = opacity.toFixed(3);
-      panel.style.transform = `translate3d(0, ${y.toFixed(1)}px, 0)`;
-      const visible = opacity > 0.05;
-      panel.style.visibility = visible ? 'visible' : 'hidden';
-      panel.toggleAttribute('inert', !visible);
-    });
-
-    const active = clamp(Math.round(seg - 0.2), 0, count - 1);
-    if (active !== current) {
-      current = active;
-      rail.forEach((b, i) => (i === active ? b.setAttribute('aria-current', 'step') : b.removeAttribute('aria-current')));
-      if (counter) counter.textContent = pad(active);
-    }
-    if (foot) foot.style.opacity = (1 - clamp((p - 0.92) / 0.08)).toFixed(3);
-  };
-
-  rail.forEach((button) =>
-    button.addEventListener('click', () => {
-      const i = Number(button.dataset.goto);
-      const total = hero.offsetHeight - window.innerHeight;
-      const top = hero.offsetTop + ((i + 0.3) / SPAN) * total;
-      window.scrollTo({ top: i === 0 ? hero.offsetTop : top, behavior: 'smooth' });
-    }),
-  );
-
-  // Subtle pointer parallax on precise pointers only.
-  if (matchMedia('(pointer: fine)').matches) {
-    const layer = hero.querySelector<HTMLElement>('.hero-scenes');
-    hero.addEventListener('pointermove', (e) => {
-      layer?.style.setProperty('--mx', (e.clientX / window.innerWidth - 0.5).toFixed(3));
-      layer?.style.setProperty('--my', (e.clientY / window.innerHeight - 0.5).toFixed(3));
-    });
-  }
-
-  render();
-  window.addEventListener('scroll', render, { passive: true });
-  window.addEventListener('resize', render);
-}
 
 /* ---------- Why choose: selectable, auto-advancing showcase ---------- */
 function initWhy() {
@@ -218,7 +137,6 @@ function initProcess() {
   window.addEventListener('scroll', () => active && pick(), { passive: true });
 }
 
-initHero();
 initWhy();
 initSectors();
 initProcess();

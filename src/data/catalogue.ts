@@ -1,3 +1,4 @@
+import catalogueProducts from "./pdf-products.json";
 export const business = {
   /** Customer-facing brand. */
   name: "VALLIS",
@@ -30,20 +31,20 @@ export const offices = [
 ];
 export const asset = (name: string) => `/images/catalogue/${name}.webp`;
 /** Photographs (rather than transparent product cut-outs) should fill their frame. */
-const PHOTO_IMAGES = ["vallis-legacy-p17-x1343", "vallis-legacy-p28-x2408", "vallis-legacy-p37-x3374", "vallis-legacy-p5-x134", "vallis-p13-x344", "vallis-p32-x1118", "vallis-p60-x2078", "vallis-p69-x2356", "vallis-p77-x2613"];
+const PHOTO_IMAGES = ["vallis-p13-x344", "vallis-p60-x2078", "vallis-p69-x2356", "vacs-07", "vacs-09", "vacs-10", "vacs-11", "vacs-12", "vacs-13", "vac-15"];
 export const isPhoto = (src: string) =>
-  src.includes("/generated/") || src.includes("/supplied/") || src.includes("/vallis-rail-") || PHOTO_IMAGES.some((name) => src.includes(`/${name}.`));
+  src.includes("/generated/") || src.includes("/supplied/") || src.includes("/vallis-rail-") || src.includes("/scene-") ||
+  PHOTO_IMAGES.some((name) => src.includes(`/${name}.`));
 /** AI-generated art-directed imagery (see scripts/image-generation). */
 export const generated = (name: string) => `/images/generated/${name}.webp`;
 /** Client-supplied photographs, upscaled and optimised by scripts/optimize-supplied-photos.py. */
 export const supplied = (name: string) => `/images/supplied/${name}.webp`;
-// The Legacy Series handle PDF is withheld until a VALLIS-branded edition is supplied.
 export const catalogues = [
   {
     name: "VALLIS Architectural Hardware",
     file: "/vallisglobal products pdf.pdf",
-    note: "Locks, door hardware, glass fittings and railing components",
-    size: "14.9 MB",
+    note: "Locks, handles, door accessories, glass, shower, railing and furniture hardware",
+    size: "14.0 MB",
   },
   {
     name: "VALLIS Glass Railing Systems",
@@ -52,70 +53,121 @@ export const catalogues = [
     size: "23.7 MB",
   },
 ];
+/** Product cut-outs and collection banners extracted from the latest catalogue (scripts/extract-latest-catalogue.py). */
+export const product = (slug: string) => `/images/products/${slug}.webp`;
+const scene = (slug: string) => `/images/products/scene-${slug}.webp`;
 export const categories = [
   {
     slug: "hotel-digital-locks",
     name: "Hotel & Digital Locks",
     short: "Hotel & Digital Locks",
     number: "01",
-    image: asset("vallis-p13-x372"),
+    image: product("vacs-12"),
     scene: asset("vallis-p13-x344"),
     intro:
-      "A considered welcome. Explore hotel access and residential digital locking solutions from the VALLIS catalogue.",
-    applications: [
-      "Hotel guest rooms",
-      "Residential entrances",
-      "Apartment doors",
-    ],
+      "A considered welcome. RFID hotel locks, smart entry door locks, card encoders and service units from the VALLIS access control range.",
+    applications: ["Hotel guest rooms", "Residential entrances", "Apartment doors"],
     considerations:
       "Choose access methods, door thickness and mortise compatibility for the specific model. Confirm the installation requirements before ordering.",
     icon: "lock",
   },
   {
     slug: "door-hardware",
-    name: "Door Hardware",
-    short: "Door Hardware",
+    name: "Lever Handles",
+    short: "Lever Handles",
     number: "02",
-    image: asset("vallis-p32-x1133"),
+    image: product("vsmh-260"),
     scene: generated("door-hardware-scene"),
     intro:
-      "The detail you touch every day. Discover stainless-steel lever handles and architectural pull handles in a choice of documented finishes.",
-    applications: [
-      "Residential interiors",
-      "Commercial doors",
-      "Glass entrances",
-    ],
-    considerations:
-      "Match handle dimensions, centres, door material and finish to your door schedule.",
+      "The detail you touch every day. SS lever handles on rose, designer mortise handles and escutcheons in documented finishes.",
+    applications: ["Residential interiors", "Commercial doors", "Hospitality"],
+    considerations: "Match the handle, rose and lock body to your door schedule, then confirm the finish and grade for each model.",
+    icon: "handle",
+  },
+  {
+    slug: "locks-cylinders",
+    name: "Mortise Locks & Cylinders",
+    short: "Locks & Cylinders",
+    number: "03",
+    image: product("vhmdl-1201"),
+    scene: scene("locks-cylinders"),
+    intro:
+      "Security, quietly engineered. Mortise lock bodies, cylindrical locks, main-door dead locks and euro-profile cylinders.",
+    applications: ["Main entrances", "Bedrooms & bathrooms", "Commercial doors"],
+    considerations: "Confirm the backset, door thickness, handing and key type, and match cylinders to the lock body before ordering.",
+    icon: "lock",
+  },
+  {
+    slug: "door-accessories",
+    name: "Hinges & Door Accessories",
+    short: "Door Accessories",
+    number: "04",
+    image: product("vl-1501"),
+    scene: scene("door-accessories"),
+    intro:
+      "The finishing details. Ball-bearing hinges, tower bolts, door stoppers, viewers, guards and automatic drop seals.",
+    applications: ["Residential doors", "Hotel rooms", "Offices"],
+    considerations: "Select hinges by door weight and size, and confirm material and finish for each accessory.",
+    icon: "door",
+  },
+  {
+    slug: "glass-door-handles",
+    name: "Glass Door Handles",
+    short: "Glass Door Handles",
+    number: "05",
+    image: product("vhsh-401"),
+    scene: scene("glass-door-handles"),
+    intro: "Make an entrance. Stainless-steel pull handles for glass, timber and aluminium doors in a range of profiles and lengths.",
+    applications: ["Glass entrances", "Office doors", "Retail fronts"],
+    considerations: "Choose the diameter and centre-to-centre length for the door height, and confirm the fixing for the door material.",
     icon: "handle",
   },
   {
     slug: "door-closers",
     name: "Door Closers",
     short: "Door Closers",
-    number: "03",
-    image: asset("vallis-p70-x2408"),
+    number: "06",
+    image: product("vsdc-1101"),
     scene: asset("vallis-p69-x2356"),
-    intro:
-      "Controlled movement, considered design. Overhead and concealed door closers for a range of door requirements.",
-    applications: [
-      "Office entrances",
-      "Hospitality corridors",
-      "Interior doors",
-    ],
+    intro: "Controlled movement, considered design. Overhead and concealed door closers for a range of door weights.",
+    applications: ["Office entrances", "Hospitality corridors", "Interior doors"],
     considerations:
       "Select the closer against door weight, width and mounting conditions. Listed weight parameters apply to each model individually.",
     icon: "closer",
   },
   {
+    slug: "floor-springs",
+    name: "Floor Springs",
+    short: "Floor Springs",
+    number: "07",
+    image: product("vfs-80"),
+    scene: scene("floor-springs"),
+    intro: "Glass doors that glide and settle. Double-cylinder and heavy-duty floor springs for frameless glass entrances.",
+    applications: ["Frameless glass doors", "Shopfronts", "Lobbies"],
+    considerations: "Select by door width and weight, and confirm hold-open, closing speed and the matching patch fittings.",
+    icon: "closer",
+  },
+  {
+    slug: "panic-bars",
+    name: "Panic Bars",
+    short: "Panic Bars",
+    number: "08",
+    image: product("vpb-193"),
+    scene: scene("panic-bars"),
+    intro: "Safe, simple exit. Rim and vertical-rod panic exit devices with matching outside lever and knob trims.",
+    applications: ["Emergency exits", "Schools & hospitals", "Commercial buildings"],
+    considerations:
+      "Confirm the door type, handing and required exit-device configuration. No fire rating is stated without model-specific evidence.",
+    icon: "door",
+  },
+  {
     slug: "spider-fittings",
     name: "Spider Fittings",
     short: "Spider Fittings",
-    number: "04",
-    image: asset("vallis-p61-x2131"),
+    number: "09",
+    image: product("vsf-91"),
     scene: asset("vallis-p60-x2078"),
-    intro:
-      "Let the glass take centre stage. Stainless-steel fin-type spider fittings for point-supported architectural glass.",
+    intro: "Let the glass take centre stage. Stainless-steel fin and non-fin spider fittings, routels and glass brackets.",
     applications: ["Glass façades", "Glazed entrances", "Glass partitions"],
     considerations:
       "Glass preparation, bolt selection and structural design need project-specific confirmation by the responsible designer.",
@@ -123,27 +175,36 @@ export const categories = [
   },
   {
     slug: "glass-fittings",
-    name: "Glass Fittings",
+    name: "Patch & Glass Fittings",
     short: "Glass Fittings",
-    number: "05",
-    image: asset("vallis-p85-x2907"),
+    number: "10",
+    image: product("vpf-201"),
     scene: generated("glass-fittings-scene"),
-    intro:
-      "Quietly engineered for clarity. Patch fittings, shower hinges and canopy connectors for refined glass installations.",
-    applications: ["Glass doors", "Shower enclosures", "Glass canopies"],
-    considerations:
-      "Confirm glass thickness, fixing details, opening angles and component compatibility for the selected fitting.",
+    intro: "Quietly engineered for clarity. Patch fittings, glass sliding-door handles and locks, and glass canopy connectors.",
+    applications: ["Glass doors", "Sliding glass partitions", "Glass canopies"],
+    considerations: "Confirm glass thickness, fixing details and component compatibility for the selected fitting.",
+    icon: "glass",
+  },
+  {
+    slug: "shower-hardware",
+    name: "Shower Hinges & Accessories",
+    short: "Shower Hardware",
+    number: "11",
+    image: product("vsh-704"),
+    scene: scene("shower-hardware"),
+    intro: "Calm, frameless showers. Shower hinges, glass connectors and clamps, PVC seals, shower handles and header fittings.",
+    applications: ["Shower enclosures", "Hotel bathrooms", "Spa & wellness"],
+    considerations: "Confirm glass thickness, opening angle and door weight, and select hinges for the weight of each glass panel.",
     icon: "glass",
   },
   {
     slug: "glass-railings",
     name: "Glass Railings",
     short: "Glass Railings",
-    number: "06",
-    image: asset("vallis-rail-p24-x180"),
+    number: "12",
+    image: product("vl-2109"),
     scene: asset("vallis-rail-p10-x82"),
-    intro:
-      "Open views, elegant lines. Explore VALLIS glass railing applications and spigot components.",
+    intro: "Open views, elegant lines. Spigots, glass clamps, balusters and handrail brackets for glass railing systems.",
     applications: ["Staircases", "Balconies", "Terraces"],
     considerations:
       "Railing systems require project-specific structural and fixing design. Discuss glass selection, substrate and local requirements with your project team.",
@@ -151,23 +212,21 @@ export const categories = [
   },
   {
     slug: "furniture-hardware",
-    name: "Furniture Hardware",
-    short: "Furniture Hardware",
-    number: "07",
-    image: asset("vallis-legacy-p17-x1395"),
+    name: "Furniture Locks",
+    short: "Furniture Locks",
+    number: "13",
+    image: product("vl-1807"),
     scene: generated("furniture-hardware-scene"),
-    intro:
-      "Small details. Lasting character. VALLIS Legacy Series cabinet handles, concealed handles and knobs for carefully finished interiors.",
-    applications: ["Cabinetry", "Wardrobes", "Furniture"],
-    considerations:
-      "Select the model, finish and size together. Verify fixing centres and suitability for the cabinet before ordering.",
+    intro: "Small details. Lasting character. Cupboard, drawer, sliding-door, multi and push locks for carefully finished interiors.",
+    applications: ["Cabinetry", "Wardrobes", "Office furniture"],
+    considerations: "Confirm the panel thickness, lock type and key system for each piece of furniture.",
     icon: "furniture",
   },
   {
     slug: "fhc-doors",
     name: "FHC Doors",
     short: "FHC Doors",
-    number: "08",
+    number: "14",
     image: asset("fhc-200"),
     scene: generated("shaft-doors-scene"),
     intro:
@@ -181,7 +240,7 @@ export const categories = [
     slug: "upvc-windows",
     name: "uPVC Windows",
     short: "uPVC Windows",
-    number: "09",
+    number: "15",
     image: supplied("upvc-casement-door"),
     scene: generated("upvc-windows-scene"),
     intro:
@@ -195,7 +254,7 @@ export const categories = [
     slug: "shower-cubicles",
     name: "Shower Cubicles",
     short: "Shower Cubicles",
-    number: "10",
+    number: "16",
     image: supplied("shower-cubicle-4"),
     scene: supplied("shower-cubicle-1"),
     intro:
@@ -225,7 +284,6 @@ export interface Product {
   applications: string[];
 }
 const v = "VALLIS Architectural Hardware catalogue";
-const legacy = "VALLIS Legacy Series catalogue";
 const windows = "VALLIS uPVC window systems";
 const designer = "VALLIS designer lever handle collection";
 const SOURCE_FILES: Record<string, string> = {
@@ -258,13 +316,7 @@ const p = (
   page,
   applications: categories.find((c) => c.slug === category)?.applications || [],
 });
-const lock = "hotel-digital-locks",
-  door = "door-hardware",
-  closer = "door-closers",
-  spider = "spider-fittings",
-  glass = "glass-fittings",
-  rail = "glass-railings",
-  furniture = "furniture-hardware",
+const door = "door-hardware",
   shaft = "fhc-doors",
   win = "upvc-windows";
 const lever = (n: number) => asset(`vallis-lever-${String(n).padStart(2, "0")}`);
@@ -323,133 +375,107 @@ const showerHardware = {
   Hardware: "VALLIS shower hinges, glass-to-glass connectors and shower handles",
   Finishes: "Chrome / satin — confirm per project",
 };
+
+/** One sentence per collection, completing each catalogue product's description. */
+const BLURBS: Record<string, string> = {
+  "hotel-digital-locks": "Part of the VALLIS access control range for hotels and residences.",
+  "door-hardware": "Part of the VALLIS lever handle range, documented by finish and grade.",
+  "locks-cylinders": "Part of the VALLIS mortise lock, dead lock and cylinder range.",
+  "door-accessories": "Part of the VALLIS hinges and door accessories range.",
+  "glass-door-handles": "A stainless-steel pull handle for glass, timber and aluminium doors.",
+  "door-closers": "Part of the VALLIS door closer range.",
+  "floor-springs": "A floor spring for frameless glass and heavy entrance doors.",
+  "panic-bars": "Part of the VALLIS panic exit device range.",
+  "spider-fittings": "A stainless-steel fitting for point-supported architectural glass.",
+  "glass-fittings": "Part of the VALLIS patch, sliding-door and canopy glass fittings range.",
+  "shower-hardware": "Part of the VALLIS shower hinges, connectors and accessories range.",
+  "glass-railings": "A stainless-steel component for VALLIS glass railing systems.",
+  "furniture-hardware": "Part of the VALLIS furniture lock range.",
+};
+
+/** Catalogue details that the extracted page text does not carry. */
+const ENRICH: Record<string, Partial<Pick<Product, "name" | "description" | "specs" | "features">>> = {
+  "VACS 07": {
+    description: "A hotel locking solution with contactless RFID access and a mechanical override.",
+    specs: { Mechanism: "Electro-mechanical mortise locking", "Door thickness": "40–50 mm", Finishes: "Silver / Black / Gold", RFID: "13.56 MHz", Power: "4 × AA batteries" },
+    features: ["Offline installation", "Mechanical emergency opening", "LED access indication"],
+  },
+  "VACS 09": {
+    description: "An aluminium-alloy hotel handle and panel with contactless card access.",
+    specs: { "Door thickness": "40–50 mm", Finishes: "Black / Coffee Gold", RFID: "13.56 MHz", Power: "4 × AA batteries" },
+    features: ["Contactless RFID access", "Mechanical override", "Access-event audit capability"],
+  },
+  "VACS 10": {
+    description: "A stainless-steel smart hotel lock with RFID card access, PMS integration and mobile-app unlocking.",
+    specs: { Material: "304 stainless steel", "Door thickness": "40–50 mm", Power: "4 × AA alkaline batteries" },
+    features: ["Supports Mifare and mobile-app access", "Connects with hotel PMS systems", "Low-voltage alarm"],
+  },
+  "VACS 11": {
+    description: "An aluminium-alloy smart hotel lock with RFID card access, PMS integration and mobile-app unlocking.",
+    specs: { Material: "Aluminium alloy", "Door thickness": "40–50 mm", Finish: "Black / Satin Nickel", Power: "4 × AA alkaline batteries" },
+    features: ["Supports Mifare and mobile-app access", "Connects with hotel PMS systems", "Low-voltage alarm"],
+  },
+  "VACS 12": {
+    description: "A black digital entrance lock with fingerprint, password, card, app and key access.",
+    specs: { Material: "Aluminium alloy", "Product size": "260 × 60 × 130 mm", "Door thickness": "30–65 mm", Mortise: "5050", Finish: "Black", Power: "4 × AA (1.5 V) alkaline batteries" },
+    features: ["Fingerprint, password and Mifare card access", "Tuya Wi-Fi / Bluetooth versions listed", "Type-C emergency charging", "Mechanical backup key"],
+  },
+  "VACS 13": {
+    description: "A digital lock combining a glass screen with fingerprint and 3D face camera access.",
+    specs: { Material: "Aluminium alloy", "Product size": "370 × 73 mm", "Door thickness": "30–55 mm", Mortise: "6068 lock body", Power: "4 × AA (1.5 V) alkaline batteries" },
+    features: ["Fingerprint, password, card and key access", "Tuya app and camera listed", "Type-C emergency charging", "Mechanical backup key"],
+  },
+  "VAC 14": { description: "A desktop RFID encoder that issues and reads guest cards for VALLIS hotel locks." },
+  "VFS 72": { specs: { "Maximum door width": "850 mm", "Maximum door weight": "80 kg", "Maximum open angle": "130°", "Hold open": "105° / 90°" } },
+  "VFS 82": { specs: { "Maximum door width": "950 mm", "Maximum door weight": "100 kg", "Maximum open angle": "130°", "Hold open": "105° / 90°" } },
+  "VFS 92": { specs: { "Maximum door width": "1100 mm", "Maximum door weight": "150 kg", "Maximum open angle": "130°", "Hold open": "105° / 90°" } },
+  "VSH 704": {
+    name: "180° Glass-to-Glass Hinge",
+    description:
+      "A shower hinge connecting a glass door to fixed glass at 180 degrees. Shown with the matching VALLIS shower handles, companion hinges and finished shower cubicles.",
+    features: ["Hold-open at 90°", "Maximum opening angle 95°", "Pairs with QGH shower handles and VSH glass connectors"],
+  },
+};
+
+/** Extra gallery images: VSH 704 with its catalogue accessories and installed shower cubicles. */
+const EXTRA_IMAGES: Record<string, string[]> = {
+  "VSH 704": [
+    ...["qgh-01", "qgh-02", "vsh-703", "vsh-705", "vsh-706", "vsh-707", "vsh-708"].map(product),
+    ...[4, 3, 2].map((n) => supplied(`shower-cubicle-${n}`)),
+  ],
+};
+
+interface CatalogueEntry {
+  model: string;
+  slug: string;
+  category: string;
+  page: number;
+  name: string;
+  specs: Record<string, string>;
+  image: string;
+}
+const fromCatalogue = (e: CatalogueEntry): Product => {
+  const extra = ENRICH[e.model] ?? {};
+  return {
+    slug: e.slug,
+    category: e.category,
+    model: e.model,
+    name: extra.name ?? e.name,
+    brand: "VALLIS",
+    image: e.image,
+    images: [e.image, ...(EXTRA_IMAGES[e.model] ?? [])],
+    description: extra.description ?? `${e.name}, model ${e.model}. ${BLURBS[e.category] ?? ""}`.trim(),
+    specs: { ...e.specs, ...extra.specs },
+    features: extra.features ?? [],
+    source: v,
+    sourceFile: SOURCE_FILES[v],
+    page: e.page,
+    applications: categories.find((c) => c.slug === e.category)?.applications || [],
+  };
+};
+
 export const products: Product[] = [
-  p(
-    lock,
-    "VACS 07",
-    "RFID Hotel Lock",
-    "vallis-p5-x101",
-    6,
-    "A hotel locking solution with contactless RFID access and a mechanical override.",
-    {
-      Mechanism: "Electro-mechanical mortise locking",
-      "Door thickness": "40–50 mm",
-      Finishes: "Silver / Black / Gold",
-      RFID: "13.56 MHz",
-      Power: "4 × AA batteries",
-    },
-    [
-      "Offline installation",
-      "Mechanical emergency opening",
-      "LED access indication",
-    ],
-  ),
-  p(
-    lock,
-    "VACS 09",
-    "Hotel Access Lock",
-    "vallis-p7-x168",
-    8,
-    "An aluminium-alloy hotel handle and panel with contactless card access.",
-    {
-      "Door thickness": "40–50 mm",
-      Finishes: "Black / Coffee Gold",
-      RFID: "13.56 MHz",
-      Power: "4 × AA batteries",
-    },
-    [
-      "Contactless RFID access",
-      "Mechanical override",
-      "Access-event audit capability",
-    ],
-  ),
-  p(
-    lock,
-    "VACS 12",
-    "Fingerprint Digital Lock",
-    "vallis-p13-x372",
-    14,
-    "A black digital entrance lock with fingerprint, password, card, app and key access.",
-    {
-      Material: "Aluminium alloy",
-      "Product size": "260 × 60 × 130 mm",
-      "Door thickness": "30–65 mm",
-      Mortise: "5050",
-      Finish: "Black",
-      Power: "4 × AA (1.5 V) alkaline batteries",
-    },
-    [
-      "Fingerprint, password and Mifare card access",
-      "Tuya Wi-Fi / Bluetooth versions listed",
-      "Type-C emergency charging",
-      "Mechanical backup key",
-    ],
-  ),
-  p(
-    lock,
-    "VACS 13",
-    "Camera Digital Lock",
-    "vallis-p15-x438",
-    16,
-    "A digital lock combining a glass screen with fingerprint and camera access features.",
-    {
-      Material: "Aluminium alloy",
-      "Product size": "370 × 73 mm",
-      "Door thickness": "30–55 mm",
-      Mortise: "6068 lock body",
-      Power: "4 × AA (1.5 V) alkaline batteries",
-    },
-    [
-      "Fingerprint, password, card and key access",
-      "Tuya app and camera listed",
-      "Type-C emergency charging",
-      "Mechanical backup key",
-    ],
-  ),
-  p(
-    door,
-    "VHLH 01",
-    "Curved Lever Handle",
-    "vallis-p25-x904",
-    25,
-    "A softly curved stainless-steel lever handle on a round rose.",
-    { Grade: "SS 304", Finish: "SS / Matt" },
-  ),
-  p(
-    door,
-    "VHLH 02",
-    "Straight Lever Handle",
-    "vallis-p25-x906",
-    25,
-    "A restrained straight-profile stainless-steel lever handle.",
-    { Grade: "SS 304", Finish: "SS / Matt" },
-  ),
-  p(
-    door,
-    "VBL 255",
-    "Architectural Lever Handle",
-    "vallis-p33-x1192",
-    33,
-    "A geometric lever profile for contemporary architectural doors.",
-    {
-      Grade: "SS 304",
-      "Catalogue finishes": "Matt / Black / Antique / PVC Gold / PVC Rose Gold",
-    },
-  ),
-  p(
-    door,
-    "VOSH 405",
-    "Glass Door Pull Handle",
-    "vallis-p54-x1915",
-    54,
-    "An architectural pull handle with a rounded profile for glass doors.",
-    {
-      Grade: "SS 202 & SS 304",
-      Diameter: "25 mm",
-      "Centres (CTC)": "300 / 450 / 600 mm",
-      Finishes: "Matt / Combi / Black",
-    },
-  ),
+  ...(catalogueProducts as CatalogueEntry[]).map(fromCatalogue),
   designerHandle(
     "VDH 01",
     "Round-Rose Inlay Lever Handle",
@@ -513,194 +539,6 @@ export const products: Product[] = [
     "A slim, flat lever with an engraved edge detail on a square rose.",
     { Rose: "Square", "Finish shown": "Antique brass", Type: "Lever handle on rose" },
     ["Slim flat profile", "Fine edge detail", "Warm antique-brass finish"],
-  ),
-  ...[
-    ["1101", "2408", "40"],
-    ["1102", "2410", "60"],
-    ["1103", "2415", "80"],
-  ].map(([m, x, weight]) =>
-    p(
-      closer,
-      `VSDC ${m}`,
-      "Overhead Door Closer",
-      `vallis-p70-x${x}`,
-      70,
-      "An overhead aluminium-alloy closer in a silver finish.",
-      {
-        Material: "Aluminium alloy",
-        Finish: "Silver",
-        "Catalogue door weight": `${weight} kg`,
-      },
-    ),
-  ),
-  p(
-    closer,
-    "VSDC 1104",
-    "Concealed Door Closer",
-    "vallis-p71-x2445",
-    71,
-    "A concealed closer for a discreet architectural installation.",
-    {
-      Material: "Aluminium alloy",
-      Finish: "Silver",
-      "Catalogue door weight": "80 kg",
-    },
-  ),
-  ...[
-    ["91", "61", "2131", "4-arm fin-type spider"],
-    ["92", "61", "2132", "2-arm 90° fin-type spider"],
-    ["93", "62", "2160", "2-arm 180° fin-type spider"],
-    ["94", "62", "2161", "1-arm fin-type spider"],
-  ].map(([m, page, x, title]) =>
-    p(
-      spider,
-      `VSF ${m}`,
-      title,
-      `vallis-p${page}-x${x}`,
-      Number(page),
-      "A stainless-steel fin-type fitting for point-supported glass.",
-      { Material: "Stainless steel", Grade: "SS 316", Finishes: "SSS / PSS" },
-    ),
-  ),
-  ...[
-    ["201", "2667", "Connecting Patch with Pivot"],
-    ["202", "2668", "Top Patch"],
-    ["203", "2669", "Bottom Patch"],
-  ].map(([m, x, title]) =>
-    p(
-      glass,
-      `VPF ${m}`,
-      title,
-      `vallis-p78-x${x}`,
-      78,
-      "A patch fitting with an aluminium-alloy body and stainless-steel cover plate.",
-      {
-        "Glass thickness": "10 / 12 mm",
-        Body: "Aluminium alloy",
-        Cover: "Stainless steel",
-        Finish: "SSS",
-      },
-    ),
-  ),
-  p(
-    glass,
-    "VSH 704",
-    "180° Glass-to-Glass Hinge",
-    "vallis-p85-x2907",
-    85,
-    "A shower hinge connecting a glass door to fixed glass at 180 degrees.",
-    {
-      "Glass thickness": "8–10 mm",
-      "Maximum door width": "750 mm",
-      "Maximum door weight": "45 kg",
-      Material: "Brass / SS",
-      Finishes: "Satin Nickel / Chrome Plated",
-    },
-    ["Hold-open at 90°", "Maximum opening angle 95°"],
-  ),
-  p(
-    glass,
-    "VGCF 3001",
-    "Wall-to-Glass Canopy Connector",
-    "vallis-p123-x4791",
-    123,
-    "A wall-to-glass connector from the VALLIS glass canopy range.",
-    { Finish: "Matt" },
-  ),
-  p(
-    glass,
-    "VGCF 3002",
-    "Rod-to-Glass Canopy Connector",
-    "vallis-p123-x4792",
-    123,
-    "A rod-to-glass connector for the documented canopy hardware range.",
-    { Finish: "Matt" },
-  ),
-  p(
-    rail,
-    "VRS 101",
-    "Round-Profile Glass Spigot",
-    "vallis-p110-x4371",
-    110,
-    "A spigot component for architectural glass railing installations.",
-    { Finish: "SS" },
-  ),
-  p(
-    rail,
-    "VRS 102",
-    "Square-Profile Glass Spigot",
-    "vallis-p110-x4373",
-    110,
-    "A square-profile spigot for contemporary glass railing designs.",
-    { Finish: "SS" },
-  ),
-  p(
-    rail,
-    "VL 2101",
-    "Glass Railing Spigot",
-    "vallis-p97-x3488",
-    97,
-    "A compact railing spigot shown in the supplied architectural hardware catalogue.",
-    { Model: "VL 2101" },
-  ),
-  p(
-    furniture,
-    "H 2001",
-    "Dual Cabinet Handle",
-    "vallis-legacy-p5-x134",
-    5,
-    "A contrasting cabinet-handle design from the VALLIS Legacy Series.",
-    {
-      Sizes: "4 / 8 / 10 / 12 inches",
-      "Catalogue finishes":
-        "Satin + CP / Black + Antique / Rosegold + Black / Black + Rosegold / Black + Gold",
-    },
-    [],
-    "VALLIS",
-    legacy,
-  ),
-  p(
-    furniture,
-    "H 2102",
-    "Fluted Cabinet Handle",
-    "vallis-legacy-p17-x1343",
-    17,
-    "A fluted cabinet handle in a choice of metal-inspired finishes.",
-    {
-      Sizes: "4 / 8 / 10 / 12 inches",
-      Finishes: "Olive Green / Satin / Antique / Gold / Black",
-    },
-    [],
-    "VALLIS",
-    legacy,
-  ),
-  p(
-    furniture,
-    "C 2202",
-    "Concealed Cabinet Handle",
-    "vallis-legacy-p28-x2408",
-    28,
-    "A concealed cabinet handle with a contrasting recessed profile.",
-    {
-      Sizes: "4 / 8 / 10 inches",
-      "Catalogue finishes":
-        "Rosegold + Black / Satin + CP / Black + Antique / Black + Gold / Black + Rosegold",
-    },
-    [],
-    "VALLIS",
-    legacy,
-  ),
-  p(
-    furniture,
-    "N 2313",
-    "Cabinet Knob",
-    "vallis-legacy-p37-x3374",
-    37,
-    "A cabinet knob from the VALLIS Legacy Series.",
-    { Finishes: "Satin / Antique / Gold / Rosegold / Black" },
-    [],
-    "VALLIS",
-    legacy,
   ),
   ...[
     [
@@ -841,18 +679,6 @@ export const products: Product[] = [
     showers,
   ),
 ];
-products
-  .find((p) => p.model === "VACS 12")!
-  .images.push(asset("vallis-p14-x403"));
-products
-  .find((p) => p.model === "VACS 13")!
-  .images.push(asset("vallis-p16-x469"));
-products
-  .find((p) => p.model === "H 2102")!
-  .images.push(asset("vallis-legacy-p17-x1395"));
-products
-  .find((p) => p.model === "C 2202")!
-  .images.push(asset("vallis-legacy-p28-x2467"));
 export const productUrl = (p: Product) => `/products/${p.category}/${p.slug}/`;
 export const enquiryUrl = (p?: Product, c?: Category) =>
   `/contact/?${new URLSearchParams({ ...(p ? { product: `${p.brand} ${p.model} — ${p.name}` } : {}), ...(p ? { category: p.category } : c ? { category: c.slug } : {}) }).toString()}#enquiry`;

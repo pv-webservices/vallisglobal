@@ -286,5 +286,29 @@
     "quality": "high",
     "size": "1536x1024",
     "generated": "2026-10-30T20:33:24.294Z"
+  },
+  "office-entrance-people": {
+    "placement": "Home \"Spaces that inspire\" — Corporate Offices sector",
+    "alt": "Business professionals walking through frameless glass doors with tall stainless pull handles in a modern office",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-11-04T08:27:54.835Z"
+  },
+  "team-consultation": {
+    "placement": "About page story image; home \"A complete collection\" showcase",
+    "alt": "Architects and a VALLIS specialist reviewing door hardware samples and drawings around a meeting table",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-11-04T08:27:54.836Z"
+  },
+  "hero-showroom": {
+    "placement": "Home hero background — premium boardroom and VALLIS product display",
+    "alt": "International business team meeting in a glass-walled VALLIS boardroom, with VALLIS handles, a digital lock and a glass hinge displayed on a marble counter",
+    "model": "gpt-image-2.5-sunburst",
+    "quality": "high",
+    "size": "1536x1024",
+    "generated": "2026-11-04T08:27:54.837Z"
   }
 }

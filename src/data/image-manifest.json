@@ -613,5 +613,20 @@
     "width": 1997,
     "height": 1024,
     "srcset": "/images/generated/hero-vacs12-wide-w640.webp 640w, /images/generated/hero-vacs12-wide-w960.webp 960w, /images/generated/hero-vacs12-wide-w1280.webp 1280w, /images/generated/hero-vacs12-wide-w1920.webp 1920w, /images/generated/hero-vacs12-wide.webp 1997w"
+  },
+  "/images/generated/office-entrance-people.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/generated/office-entrance-people-w640.webp 640w, /images/generated/office-entrance-people-w960.webp 960w, /images/generated/office-entrance-people-w1280.webp 1280w, /images/generated/office-entrance-people.webp 1536w"
+  },
+  "/images/generated/team-consultation.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/generated/team-consultation-w640.webp 640w, /images/generated/team-consultation-w960.webp 960w, /images/generated/team-consultation-w1280.webp 1280w, /images/generated/team-consultation.webp 1536w"
+  },
+  "/images/generated/hero-showroom.webp": {
+    "width": 1536,
+    "height": 1024,
+    "srcset": "/images/generated/hero-showroom-w640.webp 640w, /images/generated/hero-showroom-w960.webp 960w, /images/generated/hero-showroom-w1280.webp 1280w, /images/generated/hero-showroom.webp 1536w"
   }
 }

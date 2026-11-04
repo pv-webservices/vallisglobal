@@ -1,21 +1,51 @@
 ---
 import ResponsiveImage from './ResponsiveImage.astro';
 import {supplied} from '../data/catalogue';
-// Corporate image: the public-sector organisations supplied by VALLIS for brand representation.
-const clients=[
+// Prestigious clients, in the order supplied by VALLIS. Logos live in public/images/clients/ (from
+// source-assets/client-logos/); institutions without a logo file show their campus photograph, and
+// clients without any image show a wordmark.
+interface Mark {src:string;width:number;height:number;}
+interface Client {name:string;note?:string;logos?:Mark[];photo?:Mark;}
+const client=(slug:string,width:number,height:number):Mark=>({src:`/images/clients/${slug}.webp`,width,height});
+const clients:Client[]=[
+ {name:'DEE VEE Projects Limited',logos:[client('dee-vee-projects',480,117)]},
+ {name:'Cosmo First Limited',logos:[client('cosmo-first',480,91)]},
+ {name:'Gawar Construction Limited',logos:[client('gawar-construction',200,65)]},
+ {name:'Vertex Construction',logos:[client('vertex-construction',225,169)]},
+ {name:'Pruthu Homes'},
+ {name:'Crystal Magic World'},
+ {name:'UPRNN and B&R',note:'Government departments',logos:[client('uprnn',189,204),client('b-and-r',201,251)]},
+ {name:'Central University of Rajasthan',photo:client('central-university-rajasthan',720,540)},
+ {name:'Yamuna Nagar Medical College',photo:client('yamuna-nagar-medical-college',400,300)},
+ {name:'Panipat Refinery',photo:client('panipat-refinery',640,480)},
+ {name:'Guru Ghasidas Vishwavidyalaya',photo:client('guru-ghasidas-vishwavidyalaya',720,504)},
+];
+// Public-sector associations shown beneath the client grid.
+const institutions=[
  {name:'Central Public Works Department',short:'CPWD',image:supplied('client-cpwd')},
- {name:'NBCC (India) Limited — A Navratna CPSE',short:'NBCC',image:supplied('client-nbcc')},
+ {name:'NBCC (India) Limited',short:'NBCC',image:supplied('client-nbcc')},
 ];
 ---
 <section class="section clients" aria-labelledby="clients-title">
- <div class="container clients-inner">
+ <div class="container">
   <div class="clients-head" data-reveal>
-   <span class="eyebrow">Corporate image</span>
-   <h2 id="clients-title">Trusted by leading <em>institutions.</em></h2>
-   <p class="lead">VALLIS architectural hardware is associated with India’s leading public-sector construction organisations.</p>
+   <span class="eyebrow">Our prestigious clients</span>
+   <h2 id="clients-title">Proud to work with <em>esteemed organisations.</em></h2>
+   <p class="lead">We are proud to be associated with the following esteemed organisations — builders, industry leaders, government departments and institutions across India.</p>
   </div>
-  <ul class="clients-logos">
-   {clients.map((c,i)=><li data-reveal style={`--i:${i}`}><ResponsiveImage src={c.image} sizes="200px" alt={`${c.short} logo`} loading="lazy"/><span>{c.name}</span></li>)}
+  <ul class="clients-grid">
+   {clients.map((c,i)=><li class:list={['client-card',{'client-card--photo':c.photo,'client-card--wide':(c.logos?.length??0)>1}]} data-reveal style={`--i:${i%4}`}>
+    <div class="client-mark">
+     {c.logos&&c.logos.map(l=><ResponsiveImage src={l.src} alt={`${c.name} logo`} width={l.width} height={l.height} loading="lazy"/>)}
+     {c.photo&&<ResponsiveImage src={c.photo.src} alt={c.name} width={c.photo.width} height={c.photo.height} loading="lazy"/>}
+     {!c.logos&&!c.photo&&<span class="client-wordmark">{c.name}</span>}
+    </div>
+    <p><b>{c.name}</b>{c.note&&<small>{c.note}</small>}</p>
+   </li>)}
   </ul>
+  <div class="clients-institutions" data-reveal>
+   <span class="eyebrow">Also associated with</span>
+   <ul>{institutions.map(n=><li><ResponsiveImage src={n.image} sizes="120px" alt={`${n.short} logo`} loading="lazy"/><span>{n.name}</span></li>)}</ul>
+  </div>
  </div>
 </section>

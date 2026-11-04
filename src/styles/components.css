@@ -471,11 +471,14 @@
     grid-template-areas:
       "locks locks"
       "locks locks"
-      "door door"
+      "door handles"
       "closer spider"
-      "glass rail"
-      "furniture shaft"
-      "windows shower";
+      "cylinders access"
+      "springs panic"
+      "glass showerhw"
+      "rail furniture"
+      "windows windows"
+      "shaft shower";
   }
   .catalogues {
     grid-template-columns: minmax(0, 1fr);

@@ -1,5 +1,5 @@
 ---
-import {categories,generated,asset,supplied} from '../data/catalogue';
+import {categories,generated,asset,supplied,product} from '../data/catalogue';
 import ResponsiveImage from './ResponsiveImage.astro';
 import Icon from './Icon.astro';
 interface Props {headingLevel?:'h2'|'h3';}
@@ -7,12 +7,18 @@ const {headingLevel='h3'}=Astro.props;
 const H=headingLevel;
 // Art direction per collection: "stage" tiles float a genuine product cut-out; others use a scene photograph.
 const tiles:Record<string,{area:string;image:string;stage?:boolean;alt:string}>={
- 'hotel-digital-locks':{area:'locks',image:asset('vallis-p15-x438'),stage:true,alt:'VALLIS VACS 13 camera digital lock'},
+ 'hotel-digital-locks':{area:'locks',image:product('vacs-13'),alt:'VALLIS VACS 13 3D face camera smart lock on a timber door'},
  'door-hardware':{area:'door',image:generated('door-hardware-scene'),alt:'Hallway of flush doors with slim stainless lever handles'},
- 'door-closers':{area:'closer',image:asset('vallis-p70-x2408'),stage:true,alt:'VALLIS overhead door closer'},
+ 'locks-cylinders':{area:'cylinders',image:product('vhmdl-1201'),stage:true,alt:'VALLIS VHMDL 1201 main-door dead lock'},
+ 'door-accessories':{area:'access',image:product('vl-1501'),stage:true,alt:'VALLIS VL 1501 ball-bearing hinge'},
+ 'glass-door-handles':{area:'handles',image:product('scene-glass-door-handles'),alt:'Visitor opening a glass door with a black VALLIS pull handle'},
+ 'door-closers':{area:'closer',image:product('vsdc-1101'),stage:true,alt:'VALLIS overhead door closer'},
+ 'floor-springs':{area:'springs',image:product('vfs-80'),stage:true,alt:'VALLIS VFS 80 floor spring'},
+ 'panic-bars':{area:'panic',image:product('vpb-193'),stage:true,alt:'VALLIS VPB 193 panic exit bar'},
  'spider-fittings':{area:'spider',image:asset('vallis-p60-x2078'),alt:'Spider fittings supporting an interior glass wall'},
- 'glass-fittings':{area:'glass',image:asset('vallis-p85-x2907'),stage:true,alt:'VALLIS glass-to-glass shower hinge'},
- 'glass-railings':{area:'rail',image:asset('vallis-p110-x4371'),stage:true,alt:'VALLIS round-profile glass railing spigot'},
+ 'glass-fittings':{area:'glass',image:product('vpf-201'),stage:true,alt:'VALLIS VPF 201 connecting patch fitting'},
+ 'shower-hardware':{area:'showerhw',image:product('vsh-704'),stage:true,alt:'VALLIS VSH 704 glass-to-glass shower hinge'},
+ 'glass-railings':{area:'rail',image:product('vl-2115'),stage:true,alt:'VALLIS VL 2115 glass railing spigot'},
  'furniture-hardware':{area:'furniture',image:generated('furniture-hardware-scene'),alt:'Navy kitchen cabinetry with brushed-gold handles'},
  'fhc-doors':{area:'shaft',image:generated('shaft-doors-scene'),alt:'Service corridor with flush metal FHC doors'},
  'upvc-windows':{area:'windows',image:generated('upvc-windows-scene'),alt:'Living room with tall white uPVC casement and fixed windows overlooking a garden'},
