@@ -7,42 +7,33 @@ import CollectionBento from '../components/CollectionBento.astro';
 import CatalogueDownloads from '../components/CatalogueDownloads.astro';
 import FireDoorHardware from '../components/FireDoorHardware.astro';
 import ClientLogos from '../components/ClientLogos.astro';
-import {categories,products,gallery,catalogues,asset,generated,supplied} from '../data/catalogue';
-import manifest from '../data/image-manifest.json';
+import {categories,products,gallery,asset,generated,supplied,product,isPhoto} from '../data/catalogue';
 
-// Hero scroll scenes: image, desktop/mobile focal points and the progress-rail label.
-// `mobile` is a native portrait version served on phones, where a landscape image would be stretched soft.
-const scenes=[
- {image:generated('hero-collection-wide'),mobile:generated('hero-collection-mobile'),pos:'85% 35%',posM:'50% 30%',label:'Collection'},
- {image:generated('hero-vacs12-wide'),mobile:generated('hero-vacs12-mobile'),pos:'60% 40%',posM:'50% 30%',label:'Access'},
- {image:generated('hero-clarity'),mobile:generated('hero-clarity-mobile'),pos:'60% 50%',posM:'50% 30%',label:'Clarity'},
- {image:supplied('hero-patch-fittings'),mobile:generated('hero-patch-fittings-mobile'),pos:'50% 50%',posM:'50% 30%',label:'Entrances'},
- {image:supplied('shower-cubicle-1'),mobile:generated('hero-shower-mobile'),pos:'50% 50%',posM:'50% 30%',label:'Shower'},
+// Hero: one premium boardroom scene, four brand pillars and a running strip of collections.
+const heroImage=generated('hero-showroom');
+const pillars=[
+ {icon:'diamond',title:'Premium',sub:'Quality'},
+ {icon:'shield',title:'Enhanced',sub:'Security'},
+ {icon:'globe',title:'Global',sub:'Standards'},
+ {icon:'handshake',title:'Trusted',sub:'Worldwide'},
 ];
-type ManifestEntry={width:number;height:number;srcset:string};
-const meta=(src:string)=>(manifest as Record<string,ManifestEntry>)[src];
-// object-fit: cover renders the image at max(viewport width, viewport height × aspect), plus the 1.12 camera push.
-const coverSizes=(src:string)=>{const m=meta(src);const ratio=m?m.width/m.height:1.5;return `(max-aspect-ratio: ${m?.width??3}/${m?.height??2}) ${Math.ceil(ratio*112)}vh, 112vw`;};
-const chapters=[
- {label:'Hotel & Digital Locks',title:'Access, <em>refined.</em>',text:'Fingerprint, PIN, card and app access for hotel rooms and residential entrances — with mechanical backup on the listed models.',href:'/products/hotel-digital-locks/',cta:'Explore locks'},
- {label:'Spider Fittings · Glass Fittings · Railings',title:'Clarity in <em>glass.</em>',text:'Point-supported façades, patch fittings and frameless railings that let light lead the architecture.',href:'/products/glass-railings/',cta:'Explore glass hardware'},
- {label:'Patch Fittings · Glass Doors',title:'Frameless <em>entrances.</em>',text:'Frameless glass doors on patch fittings and floor springs, finished with architectural pull handles — let light lead the architecture.',href:'/products/glass-fittings/',cta:'Explore glass fittings'},
- {label:'Shower Cubicles · Hinges & Handles',title:'Calm, <em>enclosed.</em>',text:'Hinged, corner and sliding shower cubicles in clear glass, assembled with VALLIS shower hinges, connectors and shower handles.',href:'/products/shower-cubicles/',cta:'Explore shower cubicles'},
-];
+// Each running card shows a genuine VALLIS product cut-out for its collection.
+const runImages:Record<string,string>={'hotel-digital-locks':product('vac-14'),'door-hardware':product('vsmh-264'),'glass-door-handles':product('vosh-405'),'shower-hardware':product('vsh-704'),'glass-railings':product('vl-2115'),'furniture-hardware':product('vl-1802')};
+const running=categories.map(c=>({name:c.name,href:`/products/${c.slug}/`,image:runImages[c.slug]??c.image}));
 const benefits=[
  {icon:'diamond',title:'Considered materials',text:'Explore documented materials and grades for each product.',image:generated('craft-detail'),alt:'Brushed brass VALLIS lever handle, engraved with the VALLIS logo, on a dark oak door',caption:'Stainless steel, brass tones and aluminium alloy — documented per model.'},
  {icon:'grid',title:'Precision in the details',text:'Select fittings around your door and glass requirements.',image:generated('precision-macro'),alt:'Stainless-steel spider fitting holding four glass panels',caption:'Glass thickness, fixing conditions and door weights matter.'},
  {icon:'spark',title:'Elegant finishes',text:'Find a finish that complements your architectural palette.',image:generated('furniture-hardware-scene'),alt:'Navy kitchen cabinetry with brushed-gold handles',caption:'From brushed steel to warmer metal tones and black accents.'},
  {icon:'shield',title:'Purposeful performance',text:'Choose the right model for the demands of your space.',image:generated('healthcare-corridor'),alt:'Hospital corridor with timber doors and overhead door closers',caption:'Hotel access, busy corridors, service risers — each has its own needs.'},
- {icon:'building',title:'A complete collection',text:'From entrance locks to the finishing touch on cabinetry.',image:generated('consultation'),alt:'Hardware samples, a digital lock and drawings on a consultation table',caption:'Ten collections, one conversation.'},
+ {icon:'building',title:'A complete collection',text:'From entrance locks to the finishing touch on cabinetry.',image:generated('team-consultation'),alt:'Architects reviewing door hardware samples and drawings around a meeting table',caption:'Sixteen collections, one conversation.'},
 ];
-const featured=['VACS 12','VBL 255','VSDC 1101','VSF 91','VSH 704','H 2102','VRS 101','FHC 200','uPVC Casement'].map(m=>products.find(p=>p.model===m)!);
+const featured=['VACS 12','VBL 255','VSDC 1101','VSF 91','VSH 704','VHSH 401','VRS 101','FHC 200','uPVC Casement'].map(m=>products.find(p=>p.model===m)!);
 const sectors=[
  {name:'Residential Spaces',slug:'hotel-digital-locks',image:supplied('upvc-sliding-door-1'),alt:'Residential living room opening onto a pool through slim sliding doors',text:'Digital entrance locks, lever handles, uPVC windows & doors, shower cubicles and cabinet hardware for private homes.'},
  {name:'Hotels & Hospitality',slug:'hotel-digital-locks',image:asset('vallis-p13-x344'),alt:'Hotel guest room interior from the VALLIS catalogue',text:'RFID guest-room locks, door closers and refined hardware for hospitality interiors.'},
  {name:'Hospitals & Institutions',slug:'door-closers',image:generated('healthcare-corridor'),alt:'Calm hospital corridor with timber doors and overhead door closers',text:'Controlled door movement and durable fittings for busy corridors and shared spaces.'},
  {name:'Commercial Buildings',slug:'glass-fittings',image:supplied('patch-door-1'),alt:'Marble commercial lobby entered through frameless glass doors on patch fittings',text:'Patch fittings, frameless glass doors and spider fittings for open, light-filled commercial interiors.'},
- {name:'Corporate Offices',slug:'glass-fittings',image:asset('vallis-p60-x2078'),alt:'Office meeting room enclosed by point-fixed glass',text:'Glass partitions, pull handles and closers for contemporary workplaces.'},
+ {name:'Corporate Offices',slug:'glass-door-handles',image:generated('office-entrance-people'),alt:'Business professionals walking through frameless glass doors with tall stainless pull handles',text:'Glass partitions, pull handles, floor springs and closers for contemporary workplaces.'},
  {name:'Institutional Projects',slug:'fhc-doors',image:generated('shaft-doors-scene'),alt:'Institutional service corridor with flush FHC doors',text:'FHC doors for service risers and glass systems for large public buildings.'},
 ];
 const steps=[
@@ -54,50 +45,30 @@ const steps=[
 const byTitle=(title:string)=>gallery.find(g=>g.title===title)!;
 const mosaic=['Frameless glass entrances','A considered arrival','A frameless shower enclosure','The clarity of glass','Slim sliding doors','Sliding into calm'].map(byTitle);
 ---
-<Layout title="The Art of Architectural Hardware" description="Explore VALLIS’ architectural hardware collection: hotel and digital locks, door hardware, glass fittings, railings, shower cubicles, uPVC windows & doors, furniture hardware and FHC doors in Gurugram." home preload="/images/generated/hero-collection-wide.webp" preloadMobile="/images/generated/hero-collection-mobile.webp">
+<Layout title="The Art of Architectural Hardware" description="Explore VALLIS’ architectural hardware collection: hotel and digital locks, door hardware, glass fittings, railings, shower cubicles, uPVC windows & doors, furniture hardware and FHC doors in Gurugram." home preload="/images/generated/hero-showroom.webp">
 
- <!-- Hero: pinned, scroll-driven chapters -->
- <section class="hero-cine" data-hero aria-labelledby="hero-title">
-  <div class="hero-sticky">
-   <div class="hero-scenes" aria-hidden="true">
-    {scenes.map((sc,i)=><div class="hero-scene" data-scene={i} style={`--pos:${sc.pos};--pos-m:${sc.posM}`}><picture><source media="(max-width: 760px)" srcset={meta(sc.mobile)?.srcset??sc.mobile} sizes={coverSizes(sc.mobile)}/><ResponsiveImage src={sc.image} sizes={coverSizes(sc.image)} alt="" width="1536" height="1024" fetchpriority={i===0?'high':undefined} loading={i===0?undefined:'lazy'} decoding="async"/></picture></div>)}
-   </div>
+ <!-- Hero: premium boardroom scene with a running strip of collections -->
+ <section class="hero-show" data-hero aria-labelledby="hero-title">
+  <div class="hero-stage">
+   <div class="hero-media" aria-hidden="true"><ResponsiveImage src={heroImage} sizes="100vw" alt="" width="1536" height="1024" fetchpriority="high" decoding="async"/></div>
    <div class="hero-veil" aria-hidden="true"></div>
-   <span class="hero-frame-line v" aria-hidden="true"></span>
-   <div class="container hero-layer">
-    <div class="hero-panel hero-intro" data-panel="0">
-     <span class="eyebrow">Premium architectural hardware · Gurugram</span>
-     <h1 id="hero-title"><span class="line"><span style="--i:0">The art of</span></span><span class="line"><span style="--i:1">architectural</span></span><span class="line"><span style="--i:2"><em>hardware</em></span></span></h1>
-     <p class="hero-sub"><strong>Innovative. Durable. Elegant.</strong><span class="hero-sub-text">Complete hardware solutions for modern architecture — from the first touch of an entrance lock to the line of a glass railing.</span></p>
-     <div class="btn-row"><a class="btn" href="/products/">Explore Catalogue <Icon name="arrow" size={16}/></a><a class="btn btn--ghost" href="/contact/#enquiry">Request a Quote <Icon name="arrow" size={16}/></a></div>
-    </div>
-    {chapters.map((c,i)=><article class="hero-panel hero-chapter" data-panel={i+1}>
-     <span class="chapter-num">0{i+2}<small>/ 0{scenes.length}</small></span>
-     <span class="eyebrow">{c.label}</span>
-     <h2 set:html={c.title}/>
-     <p>{c.text}</p>
-     <a class="link-arrow" href={c.href}>{c.cta} <Icon name="arrow" size={14}/></a>
-    </article>)}
+   <div class="container hero-copy">
+    <p class="hero-kicker">Premium <i aria-hidden="true"></i> Innovative <i aria-hidden="true"></i> Durable</p>
+    <h1 id="hero-title">World class <em>architectural hardware</em> for a better tomorrow</h1>
+    <p class="hero-lede">Elegant design. Superior quality.<br/>Trusted worldwide.</p>
+    <div class="btn-row"><a class="btn" href="/products/">Explore our range <Icon name="arrow" size={16}/></a><a class="btn btn--line" href="/contact/#enquiry">Request a quote <Icon name="arrow" size={16}/></a></div>
    </div>
-   <nav class="hero-progress" aria-label="Hero chapters">{scenes.map((sc,i)=><button type="button" data-goto={i} aria-current={i===0?'step':undefined}><span>0{i+1}</span>{sc.label}</button>)}</nav>
-   <div class="hero-foot">
-    <div class="container hero-foot-inner">
-     <div class="hero-fact"><b>{String(categories.length).padStart(2,'0')}</b><span>Product<br/>collections</span></div>
-     <div class="hero-fact"><b>{products.length}</b><span>Catalogue<br/>models</span></div>
-     <div class="hero-fact"><b>{String(catalogues.length).padStart(2,'0')}</b><span>Source<br/>catalogues</span></div>
-     <a class="scroll-cue" href="#intro">Scroll to explore <i aria-hidden="true"></i></a>
-     <span class="hero-counter" aria-hidden="true"><b data-counter>01</b><small>/ 0{scenes.length}</small></span>
-    </div>
+   <ul class="hero-pillars" aria-label="Why VALLIS">
+    {pillars.map(pl=><li><Icon name={pl.icon} size={34}/><span>{pl.title}<br/>{pl.sub}</span></li>)}
+   </ul>
+  </div>
+  <div class="hero-run" aria-label="Product collections">
+   <div class="hero-run-track">
+    {[0,1].map(copy=><ul class="hero-run-group" aria-hidden={copy===1?'true':undefined}>{running.map(r=><li><a href={r.href} tabindex={copy===1?-1:undefined}><span class="hero-run-media"><ResponsiveImage class={isPhoto(r.image)?'is-photo':undefined} src={r.image} sizes="160px" alt="" width="160" height="120" loading={copy===1?'lazy':undefined}/></span><span class="hero-run-name">{r.name}</span></a></li>)}</ul>)}
    </div>
   </div>
+  <p class="hero-tagline"><span>VALLIS — your global partner in architectural excellence</span></p>
  </section>
-
- <!-- Collections marquee -->
- <div class="marquee" aria-label="Product collections">
-  <div class="marquee-track">
-   {[0,1].map(copy=><div class="marquee-group" aria-hidden={copy===1?'true':undefined}>{categories.map(c=><a href={`/products/${c.slug}/`} tabindex={copy===1?-1:undefined}>{c.name}</a>)}</div>)}
-  </div>
- </div>
 
  <!-- Intro / Why choose: interactive showcase -->
  <section class="section why" id="intro" data-why>
