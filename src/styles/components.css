@@ -397,6 +397,30 @@
 .field-error:empty {
   display: none;
 }
+.form-error:not(:empty) {
+  padding: 12px 14px;
+  border-left: 3px solid #a1281f;
+  background: #fbeeec;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.form-error a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.form-error:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+.field-hint {
+  font-size: 12px;
+  color: var(--muted, #5b6472);
+}
+button[aria-busy="true"] {
+  cursor: progress;
+  opacity: 0.75;
+}
 
 /* Lightbox */
 .lightbox {
@@ -648,5 +672,19 @@
   }
   .loader {
     display: none;
+  }
+}
+
+.breadcrumb a {
+  display: inline-block;
+  padding-block: 3px;
+}
+
+/* Long button labels (e.g. "Request Architectural Specifications") wrap on very narrow phones. */
+@media (max-width: 420px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
   }
 }

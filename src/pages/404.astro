@@ -1,15 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
+import {business,categories} from '../data/catalogue';
+const popular=['hotel-digital-locks','door-hardware','glass-fittings','upvc-windows'].map(slug=>categories.find(c=>c.slug===slug)!);
 ---
-<Layout title="Page Not Found" description="Return to the VALLIS architectural hardware collection." noindex solidHeader cta={false}>
+<Layout title="Page Not Found" description="The page you were looking for could not be found. Explore VALLIS architectural hardware collections or contact our team." noindex solidHeader cta={false}>
  <section class="not-found bg-deep grain">
   <div>
    <span class="eyebrow">A detail out of place</span>
-   <b>404</b>
+   <b aria-hidden="true">404</b>
    <h1>This page couldn’t be found.</h1>
-   <p>Explore our architectural hardware collection or contact us for help finding a product.</p>
-   <div class="btn-row"><a class="btn" href="/products/">Explore the Catalogue <Icon name="arrow" size={16}/></a><a class="btn btn--ghost" href="/contact/">Contact Us <Icon name="arrow" size={16}/></a></div>
+   <p>The link may be out of date or the page may have moved. Try one of these instead, or call <a href={`tel:${business.tel}`}>{business.phone}</a>.</p>
+   <div class="btn-row"><a class="btn" href="/">Back to Home <Icon name="arrow" size={16}/></a><a class="btn btn--ghost" href="/products/">Explore Collections <Icon name="arrow" size={16}/></a><a class="btn btn--ghost" href="/contact/">Contact Us <Icon name="arrow" size={16}/></a></div>
+   <nav class="not-found-links" aria-label="Popular pages">
+    <h2>Popular collections</h2>
+    <ul>{popular.map(c=><li><a href={`/products/${c.slug}/`}>{c.name}</a></li>)}<li><a href="/hospitality-projects/">Hospitality &amp; Projects</a></li><li><a href="/about/">About VALLIS</a></li><li><a href="/gallery/">Gallery</a></li></ul>
+   </nav>
   </div>
  </section>
 </Layout>

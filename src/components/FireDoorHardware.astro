@@ -15,7 +15,7 @@ const H=headingLevel;
   <div class="fire-door-grid">
    <figure class="fire-door-figure" data-reveal>
     <ResponsiveImage src={generated('fire-door-hardware')} sizes="(max-width: 1024px) 92vw, 60vw" alt="Steel fire-rated double door fitted with a door closer, hinges, door silencers, panic bars, outside lever trim, smoke strips and door bottom strips" width="1536" height="1024" loading="lazy"/>
-    {fireDoorHardware.map((h,i)=><button class="fire-pin" style={`left:${h.x}%;top:${h.y}%`} data-pin={i} aria-label={`${h.name}: ${h.text}`} aria-describedby={`fire-item-${i}`}><span>{i+1}</span></button>)}
+    {fireDoorHardware.map((h,i)=><button class="fire-pin" style={`left:${h.x}%;top:${h.y}%`} data-pin={i} aria-label={`${i+1}: ${h.name}`} aria-describedby={`fire-item-${i}`}><span>{i+1}</span></button>)}
    </figure>
    <ol class="fire-door-list">
     {fireDoorHardware.map((h,i)=><li id={`fire-item-${i}`} data-item={i} tabindex="0"><b>{String(i+1).padStart(2,'0')}</b><div><h3>{h.name}</h3><p>{h.text}</p></div></li>)}

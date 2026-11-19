@@ -1,2 +1,9 @@
 import type { APIRoute } from 'astro';
-export const GET:APIRoute=()=>new Response(import.meta.env.PUBLIC_INDEXABLE==='true'?'User-agent: *\nAllow: /\nSitemap: https://www.vallisglobal.in/sitemap.xml\n':'User-agent: *\nDisallow: /\n',{headers:{'Content-Type':'text/plain'}});
+import { business } from '../data/catalogue';
+
+// Allow everything (including noindex pages, CSS and JS) so crawlers can read each page's robots meta tag.
+// Preview deployments stay out of search through their noindex meta tag and Vercel's preview X-Robots-Tag.
+export const GET: APIRoute = () =>
+  new Response(`User-agent: *\nAllow: /\n\nSitemap: ${business.origin}/sitemap-index.xml\n`, {
+    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+  });

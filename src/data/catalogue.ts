@@ -42,13 +42,13 @@ export const supplied = (name: string) => `/images/supplied/${name}.webp`;
 export const catalogues = [
   {
     name: "VALLIS Architectural Hardware",
-    file: "/vallisglobal products pdf.pdf",
+    file: "/catalogues/vallis-architectural-hardware-catalogue.pdf",
     note: "Locks, handles, door accessories, glass, shower, railing and furniture hardware",
     size: "14.0 MB",
   },
   {
     name: "VALLIS Glass Railing Systems",
-    file: "/railings pdf.pdf",
+    file: "/catalogues/vallis-glass-railing-systems-catalogue.pdf",
     note: "Glass railing systems, spigots and architectural applications",
     size: "23.7 MB",
   },
@@ -287,7 +287,7 @@ const v = "VALLIS Architectural Hardware catalogue";
 const windows = "VALLIS uPVC window systems";
 const designer = "VALLIS designer lever handle collection";
 const SOURCE_FILES: Record<string, string> = {
-  [v]: "/vallisglobal products pdf.pdf",
+  [v]: "/catalogues/vallis-architectural-hardware-catalogue.pdf",
 };
 const p = (
   category: string,
@@ -573,7 +573,7 @@ export const products: Product[] = [
       "Double leaf with louvers",
       "pvc-doors-4.jpeg",
     ],
-  ].map(([model, img, name, finish, configuration, source]) => ({
+  ].map(([model, img, name, finish, configuration]) => ({
     ...p(
       shaft,
       model,
@@ -584,12 +584,12 @@ export const products: Product[] = [
       { "Finish shown": finish, Configuration: configuration },
       ["Project-specific size and fixing to be confirmed"],
       "VALLIS",
-      `VALLIS FHC door sheet: ${source}`,
+      "VALLIS FHC door product sheet",
     ),
     // FHC doors use re-rendered photographs with clear, reflection-free vision glass.
     ...(img.endsWith("-clear") ? { image: generated(img), images: [generated(img)] } : {}),
     page: undefined,
-    sourceFile: `/${source}`,
+    sourceFile: undefined,
   })),
   windowProduct(
     "Casement",

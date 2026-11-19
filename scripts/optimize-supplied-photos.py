@@ -1,6 +1,6 @@
 """Upscale, sharpen and convert the client-supplied photographs (WhatsApp JPEGs) to responsive WebP.
 
-Sources live in source-assets/supplied-2026-10-31/ (not published) and are left untouched. Output goes to public/images/supplied/
+Sources live in source-files/supplied-2026-10-31/ (not published) and are left untouched. Output goes to public/images/supplied/
 and the responsive entries are merged into src/data/image-manifest.json.
 """
 from pathlib import Path
@@ -8,7 +8,7 @@ import json
 from PIL import Image, ImageFilter, ImageOps
 
 root = Path(__file__).resolve().parents[1]
-src_dir = root / 'source-assets/supplied-2026-10-31'
+src_dir = root / 'source-files/supplied-2026-10-31'
 out_dir = root / 'public/images/supplied'
 manifest_file = root / 'src/data/image-manifest.json'
 

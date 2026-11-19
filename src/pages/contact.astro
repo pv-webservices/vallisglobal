@@ -5,7 +5,7 @@ import ResponsiveImage from '../components/ResponsiveImage.astro';
 import Icon from '../components/Icon.astro';
 import {business,offices,categories,generated} from '../data/catalogue';
 ---
-<Layout title="Contact & Product Enquiries" description="Contact VALLIS in Gurugram and Dubai for architectural hardware enquiries and quotations. Call +91 9990069207, +971 551504568 or email info@vallisglobal.in." cta={false} preload={generated('consultation')}>
+<Layout breadcrumbs={[{label:'Contact'}]} title="Contact & Product Enquiries" description="Contact VALLIS in Gurugram and Dubai for architectural hardware enquiries and quotations. Call +91 9990069207, +971 551504568 or email info@vallisglobal.in." cta={false} preload={generated('consultation')}>
  <PageHero label="Let’s talk about your project" title="Every great space starts with <em>a conversation.</em>" description="Share your product shortlist, preferred finishes and project requirements. We’ll help you explore the right details." image={generated('consultation')} alt="Hardware samples and architectural drawings on a walnut consultation table" crumbs={[{label:'Contact'}]} compact>
   <div class="btn-row"><a class="btn" href={`tel:${business.tel}`}><Icon name="phone" size={16}/>{business.phone}</a><a class="btn btn--ghost" href={`mailto:${business.email}`}><Icon name="mail" size={16}/>{business.email}</a></div>
  </PageHero>
@@ -23,33 +23,28 @@ import {business,offices,categories,generated} from '../data/catalogue';
     </div>
    </div>
 
-   <form class="contact-form" id="enquiry-form" data-reveal style="--i:1">
-    <span class="eyebrow">Request a quote</span>
+   <form class="contact-form" id="enquiry-form" action="/api/enquiry" method="post" data-reveal style="--i:1">
+    <span class="eyebrow">Request architectural specifications</span>
     <h2>Tell us what you have in mind.</h2>
-    <p class="form-intro">Fields marked * are required. Prepare your enquiry, then send it using your email app.</p>
+    <p class="form-intro">Fields marked * are required. Your enquiry goes straight to our team at {business.email}.</p>
+    <input type="hidden" name="formType" value="enquiry"/>
+    <input type="hidden" name="page" value="/contact/"/>
+    <input type="hidden" name="startedAt" value=""/>
     <div class="form-grid">
-     <div class="field"><label for="full-name">Full name <span>*</span></label><input id="full-name" name="name" autocomplete="name" required minlength="2" maxlength="100" aria-describedby="name-error"/><span class="field-error" id="name-error"></span></div>
-     <div class="field"><label for="email">Email address <span>*</span></label><input id="email" name="email" type="email" autocomplete="email" required maxlength="150" aria-describedby="email-error"/><span class="field-error" id="email-error"></span></div>
-     <div class="field"><label for="phone">Phone number <span>*</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="25" aria-describedby="phone-error"/><span class="field-error" id="phone-error"></span></div>
+     <div class="field"><label for="full-name">Full name <span aria-hidden="true">*</span></label><input id="full-name" name="name" autocomplete="name" required minlength="2" maxlength="100" aria-describedby="name-error"/><span class="field-error" id="name-error"></span></div>
+     <div class="field"><label for="email">Email address <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" autocomplete="email" required maxlength="150" aria-describedby="email-error"/><span class="field-error" id="email-error"></span></div>
+     <div class="field"><label for="phone">Phone number <span aria-hidden="true">*</span></label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required minlength="10" maxlength="20" aria-describedby="phone-hint phone-error"/><span class="field-hint" id="phone-hint">10–15 digits, with country code if outside India.</span><span class="field-error" id="phone-error"></span></div>
      <div class="field"><label for="company">Company <span class="muted">(optional)</span></label><input id="company" name="company" autocomplete="organization" maxlength="150"/></div>
-     <div class="field full"><label for="category">Product category <span>*</span></label><select id="category" name="category" required aria-describedby="category-error"><option value="">Select a collection</option>{categories.map(c=><option value={c.slug}>{c.name}</option>)}<option value="multiple">Multiple collections / General enquiry</option></select><span class="field-error" id="category-error"></span></div>
+     <div class="field full"><label for="category">Product category <span aria-hidden="true">*</span></label><select id="category" name="category" required aria-describedby="category-error"><option value="">Select a collection</option>{categories.map(c=><option value={c.name} data-slug={c.slug}>{c.name}</option>)}<option value="Multiple collections / General enquiry" data-slug="multiple">Multiple collections / General enquiry</option></select><span class="field-error" id="category-error"></span></div>
      <div class="field full"><label for="product">Product / model of interest <span class="muted">(optional)</span></label><input id="product" name="product" maxlength="250"/></div>
-     <div class="field full"><label for="message">Project requirements <span>*</span></label><textarea id="message" name="message" required minlength="10" maxlength="2500" placeholder="Tell us about your project, quantities and preferred finishes…" aria-describedby="message-error"></textarea><span class="field-error" id="message-error"></span></div>
+     <div class="field full"><label for="message">Project requirements <span aria-hidden="true">*</span></label><textarea id="message" name="message" required minlength="10" maxlength="2500" placeholder="Tell us about your project, quantities and preferred finishes…" aria-describedby="message-error"></textarea><span class="field-error" id="message-error"></span></div>
     </div>
     <div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"/></div>
-    <label class="consent"><input type="checkbox" name="consent" required aria-describedby="consent-error"/><span>I have read the <a href="/privacy-policies/">Privacy &amp; Policies</a> and agree to share these details for my enquiry. *</span></label>
+    <label class="consent"><input type="checkbox" name="consent" value="on" required aria-describedby="consent-error"/><span>I have read the <a href="/privacy-policies/">Privacy &amp; Policies</a> and agree to share these details for my enquiry. <span aria-hidden="true">*</span></span></label>
     <span class="field-error" id="consent-error"></span>
-    <p id="form-error" class="form-error" role="alert"></p>
-    <button class="btn btn--dark" type="submit">Prepare Enquiry <Icon name="arrow" size={16}/></button>
-    <p class="form-note">This prepares a draft. Your enquiry is sent only when you choose to send it in your email app.</p>
-    <noscript><p>To enquire, email <a href={`mailto:${business.email}`}>{business.email}</a> or call <a href={`tel:${business.tel}`}>{business.phone}</a>.</p></noscript>
-    <section class="draft-result" id="draft-result" hidden aria-labelledby="draft-title">
-     <h3 id="draft-title" tabindex="-1">Your enquiry draft is ready.</h3>
-     <p>Review your details below, open your preferred app and send the message to reach our team.</p>
-     <pre id="draft-preview"></pre>
-     <div class="btn-row"><a class="btn" id="email-draft">Open Email Draft <Icon name="mail" size={16}/></a></div>
-    </section>
-    <p id="draft-status" class="form-note" aria-live="polite"></p>
+    <div id="form-error" class="form-error" role="alert" tabindex="-1"></div>
+    <button class="btn btn--dark" type="submit" data-submit>Send Enquiry <Icon name="arrow" size={16}/></button>
+    <p class="form-note" id="form-status">We reply from {business.email}. Prefer to talk? Call <a href={`tel:${business.tel}`}>{business.phone}</a>.</p>
    </form>
   </div>
  </section>
@@ -75,29 +70,8 @@ import {business,offices,categories,generated} from '../data/catalogue';
  </section>
 
  <script>
-  const form=document.querySelector<HTMLFormElement>('#enquiry-form');if(form){
-   form.noValidate=true;const get=(name:string)=>form.elements.namedItem(name) as HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement;
-   const params=new URLSearchParams(location.search);const category=params.get('category')||'';if(Array.from((get('category') as HTMLSelectElement).options).some(o=>o.value===category))get('category').value=category;get('product').value=(params.get('product')||'').slice(0,250);
-   const result=document.querySelector<HTMLElement>('#draft-result')!;const status=document.querySelector<HTMLElement>('#draft-status')!;const summary=document.querySelector<HTMLElement>('#form-error')!;
-   const emailLink=document.querySelector<HTMLAnchorElement>('#email-draft')!;
-   function invalidate(){if(!result.hidden){result.hidden=true;emailLink.removeAttribute('href');status.textContent='Your details changed. Prepare your enquiry again to update the draft.';}summary.textContent='';}
-   form.addEventListener('input',invalidate);form.addEventListener('change',invalidate);
-   form.addEventListener('submit',event=>{event.preventDefault();let first:HTMLElement|undefined;const errors:Record<string,string>={};
-    if(get('name').value.trim().length<2)errors.name='Enter your full name (at least 2 characters).';
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(get('email').value.trim()))errors.email='Enter a valid email address.';
-    if(!/^[+()\d\s-]+$/.test(get('phone').value.trim())||get('phone').value.replace(/\D/g,'').length<7)errors.phone='Enter a valid phone number with at least 7 digits.';
-    if(!get('category').value)errors.category='Choose a product category.';
-    if(get('message').value.trim().length<10)errors.message='Describe your requirements in at least 10 characters.';
-    if(!(get('consent') as HTMLInputElement).checked)errors.consent='Please confirm that you have read the privacy information.';
-    for(const name of ['name','email','phone','category','message','consent']){const field=get(name);const err=document.querySelector(`#${name}-error`);if(err)err.textContent=errors[name]||'';field.setAttribute('aria-invalid',errors[name]?'true':'false');if(errors[name]&&!first)first=field;}
-    if(get('website').value){summary.textContent='Please contact us directly by email or phone.';return;}
-    if(first){result.hidden=true;summary.textContent='Please correct the highlighted fields before preparing your enquiry.';first.focus();return;}
-    const label=(get('category') as HTMLSelectElement).selectedOptions[0].text;
-    const body=`Hello VALLIS team,\n\nI would like to enquire about architectural hardware for my project.\n\nName: ${get('name').value.trim()}\nEmail: ${get('email').value.trim()}\nPhone: ${get('phone').value.trim()}\nCompany: ${get('company').value.trim()||'Not specified'}\nCategory: ${label}\nProduct / model: ${get('product').value.trim()||'Please advise'}\n\nProject requirements:\n${get('message').value.trim()}\n\nPlease contact me to discuss availability and a quotation.`;
-    const subject=`Product enquiry — ${get('product').value.trim()||label}`;
-    emailLink.href=`mailto:info@vallisglobal.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    document.querySelector('#draft-preview')!.textContent=body;result.hidden=false;summary.textContent='';status.textContent='Draft prepared. No message has been sent.';document.querySelector<HTMLElement>('#draft-title')?.focus();
-   });
-  }
+  import {initEnquiryForm} from '../scripts/enquiry-form';
+  const form=document.querySelector<HTMLFormElement>('#enquiry-form');
+  if(form)initEnquiryForm(form);
  </script>
 </Layout>

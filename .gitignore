@@ -3,3 +3,9 @@ dist/
 .astro/
 tmp/
 .env
+.env.*
+!.env.example
+.vercel/
+test-results/
+playwright-report/
+.playwright-cli/

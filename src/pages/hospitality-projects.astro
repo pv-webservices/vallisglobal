@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import Icon from '../components/Icon.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import {asset,generated,supplied} from '../data/catalogue';
+
+const audiences=[
+ {icon:'building',title:'Hotel developers & operators',text:'Smart guest-room access, silent door control and refined fittings that keep a hotel calm, secure and consistent from lobby to suite.'},
+ {icon:'grid',title:'Architects',text:'Architect-specified hardware with documented models, finishes and dimensions, so the schedule you draw is the hardware that arrives.'},
+ {icon:'diamond',title:'Interior designers',text:'Tailored finishes and minimalist hardware design that carry a material palette through every touchpoint — handles, hinges, glass and cabinetry.'},
+ {icon:'handshake',title:'Residential developers',text:'High-end residential and villa hardware for signature developments: entrance locks, glass systems, windows and wet-area fittings.'},
+];
+const projects=[
+ {title:'Boutique hotels & resorts',text:'RFID and smart guest-room locks, card encoders, concealed and overhead closers, and lever handles for guest corridors and suites.',image:asset('vallis-p13-x344'),alt:'Boutique hotel guest room fitted with smart access door hardware',links:[['Hotel & Digital Locks','/products/hotel-digital-locks/'],['Door Closers','/products/door-closers/'],['Lever Handles','/products/door-hardware/']]},
+ {title:'Villas & signature residences',text:'Smart entrance locks, designer lever handles, frameless shower cubicles, uPVC windows & doors and glass railings for private homes.',image:supplied('upvc-sliding-door-1'),alt:'Villa living room opening onto a pool through slim sliding doors',links:[['Shower Cubicles','/products/shower-cubicles/'],['uPVC Windows & Doors','/products/upvc-windows/'],['Glass Railings','/products/glass-railings/']]},
+ {title:'Commercial & flagship landmarks',text:'Patch fittings, floor springs, spider fittings and pull handles for frameless glass entrances, plus panic bars and FHC doors for code-driven areas.',image:supplied('patch-door-1'),alt:'Marble commercial lobby entered through frameless glass doors on patch fittings',links:[['Patch & Glass Fittings','/products/glass-fittings/'],['Floor Springs','/products/floor-springs/'],['Panic Bars','/products/panic-bars/']]},
+];
+const steps=[
+ ['Share your drawings','Send the door schedule, glass details or room types. We review the door and glass conditions for each opening.'],
+ ['Shortlist specification-grade models','We propose matching models from the documented range, with finishes and the related components for each opening.'],
+ ['Review samples & documentation','Ask for samples, catalogue data and the compliance or test documentation available for the selected models.'],
+ ['Confirm quantities & quotation','Finalise the hardware schedule and receive a project quotation for your approval.'],
+];
+---
+<Layout title="Hospitality & Project Hardware" description="Specification-grade architectural hardware for boutique hotels, villas and flagship commercial projects. VALLIS supports architects, designers and developers." preload={asset('vallis-p13-x344')} breadcrumbs={[{label:'Hospitality & Projects'}]}>
+ <PageHero label="Hospitality & signature projects" title="Specification-grade hardware for <em>hospitality and flagship projects.</em>" description="Luxury hospitality hardware, boutique hotel architectural fittings and smart access — specified with architects, interior designers and developers." image={asset('vallis-p13-x344')} alt="Boutique hotel guest room with VALLIS smart access hardware" crumbs={[{label:'Hospitality & Projects'}]}>
+  <a class="btn" href="/contact/#enquiry">Request Architectural Specifications <Icon name="arrow" size={16}/></a>
+ </PageHero>
+
+ <section class="section" aria-labelledby="audiences-title">
+  <div class="container">
+   <div class="section-head"><div data-reveal><span class="eyebrow">Who we work with</span><h2 id="audiences-title">Partners in <em>signature spaces.</em></h2></div><p class="lead" data-reveal style="--i:1">We work alongside the people who specify, design and deliver hospitality and high-end residential projects.</p></div>
+   <div class="pillars">{audiences.map((a,i)=><article class="pillar" data-reveal style={`--i:${i}`}><Icon name={a.icon} size={28}/><h3>{a.title}</h3><p>{a.text}</p></article>)}</div>
+  </div>
+ </section>
+
+ <section class="section bg-ivory" aria-labelledby="projects-title">
+  <div class="container">
+   <div class="section-head"><div data-reveal><span class="eyebrow">Project types</span><h2 id="projects-title">Hardware for every <em>elevated space.</em></h2></div><p class="lead" data-reveal style="--i:1">Each project type has its own demands — guest turnover, silent motion, wet areas or heavy glass. Start with the collections that suit yours.</p></div>
+   <div class="project-types">
+    {projects.map((p,i)=><article class="project-type" data-reveal style={`--i:${i}`}>
+     <ResponsiveImage src={p.image} sizes="(max-width: 900px) 92vw, 30vw" alt={p.alt} width="900" height="600" loading="lazy"/>
+     <div><h3>{p.title}</h3><p>{p.text}</p><ul>{p.links.map(([label,href])=><li><a class="link-arrow" href={href}>{label} <Icon name="arrow" size={14}/></a></li>)}</ul></div>
+    </article>)}
+   </div>
+  </div>
+ </section>
+
+ <section class="section on-dark" aria-labelledby="process-title">
+  <div class="container split reverse">
+   <div class="prose">
+    <span class="eyebrow" data-reveal>How we support specification</span>
+    <h2 id="process-title" data-reveal style="--i:1">From drawing to <em>door schedule.</em></h2>
+    <ol class="spec-steps">{steps.map(([title,text],i)=><li data-reveal style={`--i:${i}`}><b>0{i+1}</b><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol>
+    <a class="btn" href="/contact/#enquiry" data-reveal>Start a project conversation <Icon name="arrow" size={16}/></a>
+   </div>
+   <div class="split-media wide" data-reveal="clip"><ResponsiveImage src={generated('team-consultation')} sizes="(max-width: 1024px) 90vw, 46vw" alt="Architects reviewing VALLIS door hardware samples and drawings around a meeting table" width="1536" height="1024" loading="lazy"/></div>
+  </div>
+ </section>
+
+ <ClientLogos/>
+</Layout>

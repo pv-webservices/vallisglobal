@@ -22,7 +22,7 @@ import pymupdf
 from PIL import Image, ImageDraw, ImageFilter
 
 root = Path(__file__).resolve().parents[1]
-PDF = root / 'source-assets/supplied-2026-10-31/vallis-logo latest.pdf'
+PDF = root / 'source-files/supplied-2026-10-31/vallis-logo latest.pdf'
 OUT = root / 'public/images/products'
 DATA = root / 'src/data/pdf-products.json'
 ZOOM = 3

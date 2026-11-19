@@ -19,38 +19,63 @@ import EnquiryCTA from '../components/EnquiryCTA.astro';
 import CatalogueGate from '../components/CatalogueGate.astro';
 import {business,offices,categories,isPhoto} from '../data/catalogue';
 import manifest from '../data/image-manifest.json';
-interface Props {title:string;description:string;home?:boolean;schema?:unknown;noindex?:boolean;solidHeader?:boolean;cta?:boolean;preload?:string;/** Portrait image preloaded instead of `preload` on phones. */preloadMobile?:string;}
-const {title,description,home=false,schema,noindex=false,solidHeader=false,cta=true,preload,preloadMobile}=Astro.props;
+import {isIndexable,pageTitle,breadcrumbSchema,siteGraph,jsonLd,OG_IMAGE,type Crumb} from '../lib/seo';
+import manropeRegular from '@fontsource/manrope/files/manrope-latin-400-normal.woff2?url';
+import cormorantMedium from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2?url';
+interface Props {
+ title:string;description:string;home?:boolean;schema?:Record<string,unknown>|Record<string,unknown>[];noindex?:boolean;solidHeader?:boolean;cta?:boolean;
+ preload?:string;/** Portrait image preloaded instead of `preload` on phones. */preloadMobile?:string;
+ /** Breadcrumb trail after "Home", used for BreadcrumbList JSON-LD. */breadcrumbs?:Crumb[];
+ ogType?:'website'|'article';
+}
+const {title,description,home=false,schema,noindex=false,solidHeader=false,cta=true,preload,preloadMobile,breadcrumbs,ogType='website'}=Astro.props;
 const path=Astro.url.pathname;
 const canonical=new URL(path,business.origin).href;
-const indexable=import.meta.env.PUBLIC_INDEXABLE==='true'&&!noindex;
-const nav=[['Home','/'],['About','/about/'],['Products','/products/'],['Gallery','/gallery/'],['Contact','/contact/']];
+const indexable=isIndexable(noindex);
+const fullTitle=pageTitle(title);
+const nav=[['Home','/'],['About','/about/'],['Products','/products/'],['Projects','/hospitality-projects/'],['Gallery','/gallery/'],['Contact','/contact/']];
 const srcsetOf=(src?:string)=>src?(manifest as Record<string,{srcset:string}>)[src]?.srcset:undefined;
 const preloadSet=srcsetOf(preload);
 const preloadMobileSet=srcsetOf(preloadMobile);
 const PHONE='(max-width: 760px)';
 const isCurrent=(href:string)=>href==='/'?path==='/':path.startsWith(href);
-const organization={'@context':'https://schema.org','@type':'LocalBusiness',name:business.name,legalName:business.company,url:business.origin,telephone:business.tel,email:business.email,address:{'@type':'PostalAddress',streetAddress:'A14/15, Golf Course Rd, DLF Phase 1',addressLocality:'Gurugram',addressRegion:'Haryana',postalCode:'122002',addressCountry:'IN'}};
+const extra=schema?(Array.isArray(schema)?schema:[schema]):[];
+const graph=[...siteGraph(),...(breadcrumbs&&!noindex?[breadcrumbSchema(breadcrumbs,canonical)]:[]),...extra];
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en-IN">
 <head>
  <meta charset="utf-8"/>
  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
- <title>{title} | {business.name}</title>
+ <title>{fullTitle}</title>
  <meta name="description" content={description}/>
- <meta name="robots" content={indexable?'index, follow':'noindex, nofollow'}/>
- <link rel="canonical" href={canonical}/>
- <link rel="icon" href="/favicon.png" type="image/png"/>
- <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+ <meta name="robots" content={indexable?'index, follow, max-image-preview:large':'noindex, follow'}/>
+ {!noindex&&<link rel="canonical" href={canonical}/>}
+ <link rel="preload" href={manropeRegular} as="font" type="font/woff2" crossorigin/>
+ <link rel="preload" href={cormorantMedium} as="font" type="font/woff2" crossorigin/>
+ <link rel="icon" href="/favicon.ico" sizes="48x48"/>
+ <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+ <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96"/>
+ <link rel="icon" href="/favicon-48x48.png" type="image/png" sizes="48x48"/>
+ <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180"/>
+ <link rel="manifest" href="/site.webmanifest"/>
  <meta name="theme-color" content="#030d1a"/>
- <meta property="og:type" content="website"/>
- <meta property="og:title" content={`${title} | ${business.name}`}/>
+ <meta property="og:site_name" content={business.name}/>
+ <meta property="og:locale" content="en_IN"/>
+ <meta property="og:type" content={ogType}/>
+ <meta property="og:title" content={fullTitle}/>
  <meta property="og:description" content={description}/>
  <meta property="og:url" content={canonical}/>
- <meta property="og:image" content={`${business.origin}/vallis-website-logo.webp`}/>
- <meta property="og:site_name" content={business.name}/>
- <script type="application/ld+json" set:html={JSON.stringify(schema||organization).replace(/</g,'<')}/>
+ <meta property="og:image" content={`${business.origin}${OG_IMAGE.src}`}/>
+ <meta property="og:image:width" content={String(OG_IMAGE.width)}/>
+ <meta property="og:image:height" content={String(OG_IMAGE.height)}/>
+ <meta property="og:image:alt" content={OG_IMAGE.alt}/>
+ <meta name="twitter:card" content="summary_large_image"/>
+ <meta name="twitter:title" content={fullTitle}/>
+ <meta name="twitter:description" content={description}/>
+ <meta name="twitter:image" content={`${business.origin}${OG_IMAGE.src}`}/>
+ <meta name="twitter:image:alt" content={OG_IMAGE.alt}/>
+ <script type="application/ld+json" set:html={jsonLd({'@context':'https://schema.org','@graph':graph})}/>
  <script is:inline>
   document.documentElement.classList.add('js');
   try{if(sessionStorage.getItem('bm-visited'))document.documentElement.classList.add('no-loader');sessionStorage.setItem('bm-visited','1');}catch(e){document.documentElement.classList.add('no-loader');}
@@ -105,8 +130,8 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
   <div class="container footer-grid">
    <div class="footer-brand">
     <a href="/" aria-label="VALLIS Architectural Hardware home"><ResponsiveImage src="/images/brand/vallis-logo.webp" sizes="150px" alt="VALLIS Architectural Hardware" width="647" height="506" loading="lazy"/></a>
-    <p class="tagline">Considered hardware.<br/>Exceptional spaces.</p>
-    <p>Architectural hardware solutions for modern homes, hospitality and commercial spaces.</p>
+    <p class="tagline">Precision-engineered.<br/>Made for luxury spaces.</p>
+    <p>Bespoke architectural hardware and smart access solutions for architects, interior designers, hospitality and signature residential projects.</p>
    </div>
    <div><h2>Explore</h2><ul>{nav.map(([name,href])=><li><a href={href}>{name}</a></li>)}<li><a href="/privacy-policies/">Privacy &amp; Policies</a></li></ul></div>
    <div class="footer-collections"><h2>Our collections</h2><ul>{categories.map(c=><li><a href={`/products/${c.slug}/`}>{c.name}</a></li>)}</ul></div>
@@ -122,7 +147,7 @@ const organization={'@context':'https://schema.org','@type':'LocalBusiness',name
   </div>
   <div class="container footer-bottom">
    <span>© {new Date().getFullYear()} {business.name} — a brand of {business.company}. All rights reserved.</span>
-   <div><a href="/privacy-policies/">Privacy &amp; Policies</a><a href="/sitemap.xml">Sitemap</a><a href="#main" class="back-top">Back to top ↑</a></div>
+   <div><a href="/privacy-policies/">Privacy &amp; Policies</a><a href="/sitemap-index.xml">Sitemap</a><a href="#main" class="back-top">Back to top ↑</a></div>
   </div>
  </footer>
  <CatalogueGate/>

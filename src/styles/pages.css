@@ -724,6 +724,39 @@
   justify-content: center;
   margin-top: 30px;
 }
+.not-found p a {
+  color: var(--gold);
+  text-decoration: underline;
+}
+.not-found-links {
+  margin-top: 48px;
+}
+.not-found-links h2 {
+  font-size: 13px;
+  font-family: var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.not-found-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+  padding: 0;
+  list-style: none;
+}
+.not-found-links a {
+  display: inline-block;
+  padding: 10px 14px;
+  color: var(--ivory);
+  border-bottom: 1px solid rgba(217, 192, 140, 0.4);
+}
+.not-found-links a:hover,
+.not-found-links a:focus-visible {
+  color: var(--gold);
+}
 
 @media (max-width: 1024px) {
   .split,
@@ -987,4 +1020,97 @@
     padding: 12px 10px 14px;
     font-size: 13px;
   }
+}
+
+/* Hospitality & Projects */
+.pillars:has(> :nth-child(4)) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.pillar > svg {
+  color: var(--gold-deep);
+  margin-bottom: 22px;
+}
+.project-types {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+}
+.project-type {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.project-type img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  height: auto;
+  object-fit: cover;
+}
+.project-type > div {
+  padding: clamp(22px, 2.4vw, 34px);
+}
+.project-type h3 {
+  margin-bottom: 12px;
+}
+.project-type ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 18px;
+  display: grid;
+  gap: 4px;
+}
+.project-type .link-arrow {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+.spec-steps {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 32px;
+  display: grid;
+  gap: 22px;
+}
+.spec-steps li {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+}
+.spec-steps b {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.8rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.spec-steps h3 {
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+@media (max-width: 1024px) {
+  .pillars:has(> :nth-child(4)) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .project-types {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .pillars:has(> :nth-child(4)) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Links inside running text must be distinguishable without colour (WCAG 1.4.1). */
+.policy p a,
+.form-note a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.contact-card a,
+.policy a.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
 }

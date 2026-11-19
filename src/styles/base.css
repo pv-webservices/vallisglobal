@@ -6,12 +6,12 @@
   --navy-700: #14385d;
   --gold: #c4a05c;
   --gold-light: #e4cd9c;
-  --gold-deep: #94733a;
+  --gold-deep: #7a5c26; /* 5.6:1 on ivory — WCAG AA for small text */
   --ivory: #f7f3ec;
   --paper: #fcfaf6;
   --stone: #ebe4d7;
   --ink: #0c1a2c;
-  --muted: #5d6876;
+  --muted: #4c5764;
   --muted-light: rgba(247, 243, 236, 0.72);
   --line: rgba(12, 26, 44, 0.12);
   --line-strong: rgba(12, 26, 44, 0.22);
@@ -136,12 +136,20 @@ em,
 }
 h1 em,
 h2 em {
-  color: var(--gold);
+  color: var(--gold-deep);
   font-weight: 500;
 }
 .on-dark h1 em,
-.on-dark h2 em {
+.on-dark h2 em,
+.bg-deep h1 em,
+.bg-deep h2 em,
+.page-hero h1 em,
+.not-found h1 em {
   color: var(--gold-light);
+}
+.bg-deep .eyebrow,
+.page-hero .eyebrow {
+  color: var(--gold);
 }
 .lead {
   font-size: clamp(1.05rem, 1.25vw, 1.2rem);

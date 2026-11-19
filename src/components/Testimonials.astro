@@ -1,0 +1,40 @@
+---
+import Icon from './Icon.astro';
+import {testimonials,layoutPlaceholders,type Testimonial} from '../data/testimonials';
+// Production renders verified reviews only. `npm run dev` shows clearly-marked layout placeholders
+// until real reviews are added, so the section never publishes invented quotes.
+const verified=testimonials.filter(t=>t.verified);
+const isPreview=import.meta.env.DEV&&verified.length===0;
+const items:Testimonial[]=isPreview?layoutPlaceholders:verified;
+const month=(iso:string)=>new Date(`${iso}-01T00:00:00Z`).toLocaleDateString('en-IN',{month:'long',year:'numeric',timeZone:'UTC'});
+---
+{items.length>0&&(
+<section class="section testimonials bg-ivory" aria-labelledby="testimonials-title" data-rail>
+ <div class="container">
+  <div class="section-head">
+   <div data-reveal><span class="eyebrow">Client voices</span><h2 id="testimonials-title">Specified with <em>confidence.</em></h2></div>
+   <div class="section-head-actions" data-reveal style="--i:1"><p class="lead">What architects, developers and hospitality teams say about working with VALLIS.</p></div>
+  </div>
+  {isPreview&&<p class="testimonials-preview-note" role="note">Development preview: placeholder cards. This section is hidden on the live site until verified client reviews are added in <code>src/data/testimonials.ts</code>.</p>}
+  <ul class="rail-track testimonial-track" tabindex="0" aria-label="Client testimonials, scroll horizontally">
+   {items.map(t=>(
+    <li class="testimonial-card">
+     <figure>
+      {t.rating&&<p class="testimonial-rating" aria-label={`Rated ${t.rating} out of 5`}>{'★'.repeat(t.rating)}<span aria-hidden="true">{'★'.repeat(5-t.rating)}</span></p>}
+      <blockquote><p>“{t.quote}”</p></blockquote>
+      <figcaption>
+       <span class="testimonial-avatar" aria-hidden="true">{t.name.replace(/[^A-Za-z ]/g,'').split(' ').filter(Boolean).slice(0,2).map(w=>w[0]).join('')||'V'}</span>
+       <span><b>{t.name}</b><small>{[t.role,t.organisation].filter(Boolean).join(', ')}{t.city&&` · ${t.city}`}</small></span>
+      </figcaption>
+      <p class="testimonial-meta">{t.project&&<span>{t.project}</span>}<span>{t.sourceUrl?<a href={t.sourceUrl} target="_blank" rel="noopener">{t.source}<span class="sr-only"> (opens in a new tab)</span></a>:t.source} · {month(t.date)}</span></p>
+     </figure>
+    </li>
+   ))}
+  </ul>
+  <div class="rail-foot">
+   <div class="rail-progress" aria-hidden="true"><span></span></div>
+   <div class="rail-controls"><button class="round-btn" type="button" data-direction="-1" aria-label="Previous testimonials"><Icon name="arrowLeft" size={20}/></button><button class="round-btn" type="button" data-direction="1" aria-label="Next testimonials"><Icon name="arrow" size={20}/></button></div>
+   <a class="link-arrow" href="/contact/#enquiry">Discuss your project <Icon name="arrow" size={14}/></a>
+  </div>
+ </div>
+</section>)}

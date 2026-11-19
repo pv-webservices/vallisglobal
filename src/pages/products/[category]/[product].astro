@@ -6,9 +6,12 @@ import {products,categories,enquiryUrl,productUrl,business,isPhoto} from '../../
 export function getStaticPaths(){return products.map(product=>({params:{category:product.category,product:product.slug},props:{product}}));}
 const {product:p}=Astro.props;const c=categories.find(c=>c.slug===p.category)!;
 const related=products.filter(o=>o.category===p.category&&o.slug!==p.slug).slice(0,4);
-const schema={'@context':'https://schema.org','@type':'Product',name:`${p.brand} ${p.model} ${p.name}`,model:p.model,description:p.description,image:p.images.map(i=>`${business.origin}${i}`),brand:{'@type':'Brand',name:p.brand},url:`${business.origin}${productUrl(p)}`};
+const clip=(s:string,max:number)=>s.length>max?s.slice(0,s.lastIndexOf(' ',max-1))+'…':s;
+const productTitle=clip(`${p.model} ${p.name}`,56);
+const productDescription=clip(`${p.brand} ${p.model} ${p.name}: ${p.description.replace(/\.$/,'')}. View specifications and request a quotation.`,165);
+const schema={'@type':'Product',name:`${p.brand} ${p.model} ${p.name}`,model:p.model,description:p.description,image:p.images.map(i=>`${business.origin}${i}`),brand:{'@type':'Brand',name:p.brand},url:`${business.origin}${productUrl(p)}`};
 ---
-<Layout title={`${p.model} — ${p.name}`} description={`${p.description} View ${p.brand} ${p.model} catalogue specifications and request a quotation from VALLIS.`} schema={schema} solidHeader>
+<Layout title={productTitle} description={productDescription} schema={schema} solidHeader breadcrumbs={[{label:'Products',href:'/products/'},{label:c.name,href:`/products/${c.slug}/`},{label:p.model}]}>
  <section class="product-hero">
   <div class="container">
    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/products/">Products</a><span aria-hidden="true">/</span><a href={`/products/${c.slug}/`}>{c.name}</a><span aria-hidden="true">/</span><span aria-current="page">{p.model}</span></nav>

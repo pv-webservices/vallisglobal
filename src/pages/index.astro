@@ -7,15 +7,16 @@ import CollectionBento from '../components/CollectionBento.astro';
 import CatalogueDownloads from '../components/CatalogueDownloads.astro';
 import FireDoorHardware from '../components/FireDoorHardware.astro';
 import ClientLogos from '../components/ClientLogos.astro';
+import Testimonials from '../components/Testimonials.astro';
 import {categories,products,gallery,asset,generated,supplied,product,isPhoto} from '../data/catalogue';
 
 // Hero: one premium boardroom scene, four brand pillars and a running strip of collections.
 const heroImage=generated('hero-showroom');
 const pillars=[
- {icon:'diamond',title:'Premium',sub:'Quality'},
- {icon:'shield',title:'Enhanced',sub:'Security'},
- {icon:'globe',title:'Global',sub:'Standards'},
- {icon:'handshake',title:'Trusted',sub:'Worldwide'},
+ {icon:'diamond',title:'Bespoke',sub:'Design'},
+ {icon:'lock',title:'Smart',sub:'Access'},
+ {icon:'spark',title:'Silent',sub:'Motion'},
+ {icon:'shield',title:'Specification',sub:'Grade'},
 ];
 // Each running card shows a genuine VALLIS product cut-out for its collection.
 const runImages:Record<string,string>={'hotel-digital-locks':product('vac-14'),'door-hardware':product('vsmh-264'),'glass-door-handles':product('vosh-405'),'shower-hardware':product('vsh-704'),'glass-railings':product('vl-2115'),'furniture-hardware':product('vl-1802')};
@@ -29,8 +30,8 @@ const benefits=[
 ];
 const featured=['VACS 12','VBL 255','VSDC 1101','VSF 91','VSH 704','VHSH 401','VRS 101','FHC 200','uPVC Casement'].map(m=>products.find(p=>p.model===m)!);
 const sectors=[
- {name:'Residential Spaces',slug:'hotel-digital-locks',image:supplied('upvc-sliding-door-1'),alt:'Residential living room opening onto a pool through slim sliding doors',text:'Digital entrance locks, lever handles, uPVC windows & doors, shower cubicles and cabinet hardware for private homes.'},
- {name:'Hotels & Hospitality',slug:'hotel-digital-locks',image:asset('vallis-p13-x344'),alt:'Hotel guest room interior from the VALLIS catalogue',text:'RFID guest-room locks, door closers and refined hardware for hospitality interiors.'},
+ {name:'Residential & Villas',slug:'hotel-digital-locks',image:supplied('upvc-sliding-door-1'),alt:'Villa living room opening onto a pool through slim sliding doors',text:'High-end residential and villa hardware: smart entrance locks, lever handles, uPVC windows & doors, shower cubicles and cabinet hardware.'},
+ {name:'Hotels & Hospitality',slug:'hotel-digital-locks',image:asset('vallis-p13-x344'),alt:'Boutique hotel guest room with VALLIS smart access door hardware',text:'Boutique hotel architectural fittings: RFID guest-room locks, silent door closers and refined hardware for hospitality interiors.'},
  {name:'Hospitals & Institutions',slug:'door-closers',image:generated('healthcare-corridor'),alt:'Calm hospital corridor with timber doors and overhead door closers',text:'Controlled door movement and durable fittings for busy corridors and shared spaces.'},
  {name:'Commercial Buildings',slug:'glass-fittings',image:supplied('patch-door-1'),alt:'Marble commercial lobby entered through frameless glass doors on patch fittings',text:'Patch fittings, frameless glass doors and spider fittings for open, light-filled commercial interiors.'},
  {name:'Corporate Offices',slug:'glass-door-handles',image:generated('office-entrance-people'),alt:'Business professionals walking through frameless glass doors with tall stainless pull handles',text:'Glass partitions, pull handles, floor springs and closers for contemporary workplaces.'},
@@ -45,7 +46,7 @@ const steps=[
 const byTitle=(title:string)=>gallery.find(g=>g.title===title)!;
 const mosaic=['Frameless glass entrances','A considered arrival','A frameless shower enclosure','The clarity of glass','Slim sliding doors','Sliding into calm'].map(byTitle);
 ---
-<Layout title="The Art of Architectural Hardware" description="Explore VALLIS’ architectural hardware collection: hotel and digital locks, door hardware, glass fittings, railings, shower cubicles, uPVC windows & doors, furniture hardware and FHC doors in Gurugram." home preload="/images/generated/hero-showroom.webp">
+<Layout title="VALLIS | Precision-Engineered Architectural Hardware & Smart Access" description="Discover VALLIS — bespoke architectural hardware, luxury hospitality fittings and seamless smart access solutions crafted for discerning architects and signature spaces." home preload="/images/generated/hero-showroom.webp">
 
  <!-- Hero: premium boardroom scene with a running strip of collections -->
  <section class="hero-show" data-hero aria-labelledby="hero-title">
@@ -53,10 +54,10 @@ const mosaic=['Frameless glass entrances','A considered arrival','A frameless sh
    <div class="hero-media" aria-hidden="true"><ResponsiveImage src={heroImage} sizes="100vw" alt="" width="1536" height="1024" fetchpriority="high" decoding="async"/></div>
    <div class="hero-veil" aria-hidden="true"></div>
    <div class="container hero-copy">
-    <p class="hero-kicker">Premium <i aria-hidden="true"></i> Innovative <i aria-hidden="true"></i> Durable</p>
-    <h1 id="hero-title"><span>World class</span> <em>architectural hardware</em> <span>for a better tomorrow</span></h1>
-    <p class="hero-lede">Elegant design. Superior quality.<br/>Trusted worldwide.</p>
-    <div class="btn-row"><a class="btn" href="/products/">Explore our range <Icon name="arrow" size={16}/></a><a class="btn btn--line" href="/contact/#enquiry">Request a quote <Icon name="arrow" size={16}/></a></div>
+    <p class="hero-kicker">Bespoke <i aria-hidden="true"></i> Minimalist <i aria-hidden="true"></i> Intelligent</p>
+    <h1 id="hero-title"><span>Precision-engineered</span> <em>architectural hardware</em> <span>for luxury spaces</span></h1>
+    <p class="hero-lede">Blending bespoke architectural aesthetics, minimalist form and seamless smart access ecosystems for luxury hospitality and signature developments.</p>
+    <div class="btn-row"><a class="btn" href="/products/">Explore Collections <Icon name="arrow" size={16}/></a><a class="btn btn--line" href="/contact/#enquiry">Request Architectural Specifications <Icon name="arrow" size={16}/></a></div>
    </div>
    <ul class="hero-pillars" aria-label="Why VALLIS">
     {pillars.map(pl=><li><Icon name={pl.icon} size={34}/><span>{pl.title}<br/>{pl.sub}</span></li>)}
@@ -67,7 +68,7 @@ const mosaic=['Frameless glass entrances','A considered arrival','A frameless sh
     {[0,1].map(copy=><ul class="hero-run-group" aria-hidden={copy===1?'true':undefined}>{running.map(r=><li><a href={r.href} tabindex={copy===1?-1:undefined}><span class="hero-run-media"><ResponsiveImage class={isPhoto(r.image)?'is-photo':undefined} src={r.image} sizes="160px" alt="" width="160" height="120" loading={copy===1?'lazy':undefined}/></span><span class="hero-run-name">{r.name}</span></a></li>)}</ul>)}
    </div>
   </div>
-  <p class="hero-tagline"><span>VALLIS — your global partner in architectural excellence</span></p>
+  <p class="hero-tagline"><span>VALLIS — architect-specified hardware for signature spaces</span></p>
  </section>
 
  <!-- Intro / Why choose: interactive showcase -->
@@ -77,7 +78,7 @@ const mosaic=['Frameless glass entrances','A considered arrival','A frameless sh
     <div class="why-head">
      <span class="eyebrow" data-reveal>Why choose VALLIS</span>
      <p class="statement" data-reveal style="--i:1">Hardware is part of how a space feels — <em>the way a door opens,</em> the line of a glass railing, the finish of a cabinet handle.</p>
-     <p class="lead" data-reveal style="--i:2">VALLIS, a brand of Buildmart India, presents architectural hardware solutions for modern residential, hospitality and commercial environments — a considered range brought together under one roof in Gurugram.</p>
+     <p class="lead" data-reveal style="--i:2">Built for discerning architects, interior designers and luxury developments, VALLIS — a brand of Buildmart India — crafts precision-engineered architectural hardware that elevates everyday touchpoints: tailored finishes, concealed mechanics, silent motion and intelligent access, brought together in Gurugram.</p>
     </div>
     <div class="why-body">
      <ol class="why-items">
@@ -105,8 +106,8 @@ const mosaic=['Frameless glass entrances','A considered arrival','A frameless sh
  <section class="section bg-ivory" id="collection">
   <div class="container">
    <div class="section-head">
-    <div data-reveal><span class="eyebrow">Premium collection</span><h2>Our product <em>range.</em></h2></div>
-    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead">A complete range of architectural hardware designed for safety, functionality and aesthetics across every space.</p><a class="link-arrow" href="/products/">View all products <Icon name="arrow" size={14}/></a></div>
+    <div data-reveal><span class="eyebrow">Bespoke architectural hardware</span><h2>Our product <em>range.</em></h2></div>
+    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead">Specification-grade door hardware, concealed and integrated systems, glass fittings and smart access — sixteen collections for curated luxury spaces.</p><a class="link-arrow" href="/products/">View all products <Icon name="arrow" size={14}/></a></div>
    </div>
    <CollectionBento/>
   </div>
@@ -133,7 +134,7 @@ const mosaic=['Frameless glass entrances','A considered arrival','A frameless sh
   <div class="container">
    <div class="section-head">
     <div data-reveal><span class="eyebrow">Industries we serve</span><h2 id="spaces-title">Spaces that <em>inspire.</em></h2></div>
-    <p class="lead" data-reveal style="--i:1">High-performance hardware solutions for residential, commercial, hospitality and infrastructure projects.</p>
+    <p class="lead" data-reveal style="--i:1">Luxury hospitality hardware, high-end residential and villa hardware, and commercial-grade fittings for flagship projects. <a class="link-arrow" href="/hospitality-projects/">Hospitality &amp; projects <Icon name="arrow" size={14}/></a></p>
    </div>
    <div class="spaces-grid" data-sectors>
     <ol class="sector-list">
@@ -156,6 +157,9 @@ const mosaic=['Frameless glass entrances','A considered arrival','A frameless sh
 
  <!-- Corporate image: client and institutional associations -->
  <ClientLogos/>
+
+ <!-- Client testimonials (renders only verified reviews in production) -->
+ <Testimonials/>
 
  <!-- Fire door hardware explorer -->
  <FireDoorHardware/>

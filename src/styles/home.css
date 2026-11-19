@@ -106,8 +106,8 @@
   font-style: italic;
   font-size: 1.35rem;
   line-height: 1.5;
-  color: var(--gold-deep);
-  opacity: 0.45;
+  color: var(--muted);
+  opacity: 1;
   transition: opacity 0.4s;
 }
 .why-title {
@@ -117,7 +117,7 @@
   font-family: var(--serif);
   font-size: clamp(1.45rem, 2vw, 1.95rem);
   line-height: 1.2;
-  opacity: 0.5;
+  opacity: 0.72;
   transition:
     opacity 0.4s,
     transform 0.5s var(--ease);
@@ -294,7 +294,7 @@
   min-height: clamp(260px, 46vh, 440px);
   padding: 40px 0;
   border-top: 1px solid var(--line-strong);
-  opacity: 0.38;
+  opacity: 1;
   transition: opacity 0.6s var(--ease);
 }
 .step:last-child {
@@ -364,7 +364,6 @@
   .step {
     min-height: 0;
     padding: 30px 0;
-    opacity: 0.6;
   }
   .step-thumb {
     display: block;
@@ -693,4 +692,106 @@
     bottom: 12px;
     font-size: 1rem;
   }
+}
+
+/* Testimonials */
+.testimonial-track {
+  list-style: none;
+  grid-auto-columns: clamp(280px, 30vw, 400px);
+}
+.testimonials .rail-progress {
+  background: var(--line);
+}
+.testimonials .rail-progress span {
+  background: var(--gold-deep);
+}
+.testimonial-card figure {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  margin: 0;
+  padding: clamp(24px, 2.4vw, 36px);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  box-shadow: var(--shadow-soft);
+}
+.testimonial-card blockquote {
+  margin: 0;
+  flex: 1;
+}
+.testimonial-card blockquote p {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--ink);
+}
+.testimonial-rating {
+  color: var(--gold-deep);
+  letter-spacing: 0.12em;
+}
+.testimonial-rating span {
+  color: var(--line-strong);
+}
+.testimonial-card figcaption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testimonial-card figcaption b {
+  display: block;
+  font-weight: 600;
+}
+.testimonial-card figcaption small {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+}
+.testimonial-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--navy-950);
+  color: var(--gold-light);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.testimonial-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.testimonial-meta a {
+  color: inherit;
+  text-decoration: underline;
+}
+.testimonials-preview-note {
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border: 1px dashed var(--gold-deep);
+  font-size: 14px;
+}
+
+.why-item.is-active .why-num {
+  color: var(--gold-deep);
+}
+
+/* Inactive steps are dimmed by colour (not opacity) so their text keeps AA contrast. */
+.step:not(.is-active) h3,
+.step:not(.is-active) b {
+  color: var(--muted);
+}
+.step:not(.is-active) .step-thumb {
+  opacity: 0.6;
 }

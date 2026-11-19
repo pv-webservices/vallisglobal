@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import {business} from '../data/catalogue';
+---
+<Layout title="Thank You for Your Enquiry" description="Your enquiry has reached the VALLIS team. Explore our architectural hardware collections while we review your requirements." noindex solidHeader cta={false}>
+ <section class="not-found bg-deep grain">
+  <div>
+   <span class="eyebrow">Enquiry received</span>
+   <h1>Thank you. Your enquiry is with our team.</h1>
+   <p>We have received your details and will reply from {business.email}. If your project is urgent, call us on <a href={`tel:${business.tel}`}>{business.phone}</a>.</p>
+   <div class="btn-row"><a class="btn" href="/products/">Explore Collections <Icon name="arrow" size={16}/></a><a class="btn btn--ghost" href="/">Back to Home <Icon name="arrow" size={16}/></a></div>
+  </div>
+ </section>
+</Layout>

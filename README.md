@@ -1,99 +1,87 @@
-# BUILDMART INDIA
+# VALLIS — vallisglobal.in
 
-Static Astro business website for architectural hardware, built in the supplied `vallisglobal` workspace. The supplied BUILDMART INDIA eagle logo and navy/gold homepage reference guide the site. Contact details follow the user's message rather than conflicting catalogue footers.
+Static [Astro](https://astro.build) website for **VALLIS Architectural Hardware** (a brand of Buildmart India), with one Vercel Function that emails enquiries through the client's own GoDaddy mailbox.
 
-## Run locally
+- Live: <https://www.vallisglobal.in/> (apex `vallisglobal.in` → `www` 308 redirect, set in Vercel Domains)
+- Hosting: **Vercel**, auto-deployed from GitHub `main` (`pv-webservices/vallisglobal`)
+- DNS & email: **GoDaddy** (nameservers `ns55/ns56.domaincontrol.com`, MX `smtp.secureserver.net`, SPF `include:secureserver.net`, DMARC `p=quarantine`)
+- Requires Node.js 22.12+ (validated with Node 24.19)
 
-Requires Node.js 22.12 or later (validated using Node.js 24.19).
+## Commands
 
-```powershell
-npm install
-npm run dev
-npm run check
-npm run build
-npm run preview -- --port 4322
-python scripts/verify-build.py
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Dev server at http://127.0.0.1:4321 (testimonial placeholders visible here only) |
+| `npm run build` | Builds the static site to `dist/` (+ `sitemap-index.xml`) |
+| `npm run preview` | Serves `dist/` locally |
+| `npm run check` | Astro/TypeScript type check |
+| `npm run test:unit` | Unit tests for the enquiry function (mocked SMTP — never sends) |
+| `npm run test:e2e` | Playwright: form flows (endpoint intercepted), axe on every page, responsive checks |
+| `npm run audit:seo` | SEO audit of every built page (titles, descriptions, H1s, canonicals, robots, OG, JSON-LD, links, images, sitemap) |
+| `npm run lighthouse -- <baseUrl> <label>` | Mobile Lighthouse for home + one inner page → `output/lighthouse/` |
+| `npm run verify` | check → build → unit tests → SEO audit → E2E |
+| `npm run icons:generate` | Regenerates favicons, app icons and the 1200×630 OG image from the logo (Python + Pillow) |
+| `python scripts/sync-image-manifest.py` | Adds srcset entries for any image that has `-w<width>` variants |
+
+E2E tests use the locally installed Google Chrome (`channel: 'chrome'`). Set `PW_CHANNEL=chromium` after `npx playwright install chromium` to use Playwright's build.
+
+## Folder structure
+
+```
+api/
+  enquiry.js              Vercel Function: POST /api/enquiry (nodemailer → GoDaddy SMTP)
+  _lib/enquiry-core.js    validation, spam checks, rate limit, email composition (pure, unit-tested)
+  _lib/enquiry-handler.js request/response handling (JSON for fetch, 303/HTML for no-JS posts)
+src/
+  pages/                  routes (index, about, products/…, hospitality-projects, gallery, contact,
+                          privacy-policies, thank-you [noindex], 404 [noindex], robots.txt)
+  layouts/Layout.astro    <head> (SEO, OG/Twitter, JSON-LD, favicons), header, footer
+  components/             shared UI (Testimonials, ClientLogos, CatalogueGate, PageHero, …)
+  data/                   catalogue.ts (business details, collections, products),
+                          testimonials.ts, image-manifest.json (responsive srcsets)
+  lib/seo.ts              indexability rule, titles, JSON-LD graph, breadcrumbs
+  scripts/                client scripts (enquiry form, validation, home interactions)
+  styles/                 design system CSS
+public/
+  images/brand|catalogue|clients|generated|hero|products|supplied/
+  catalogues/             published PDF catalogues (lowercase, hyphenated)
+  favicon.*, apple-touch-icon.png, web-app-manifest-*.png, site.webmanifest
+source-files/             full-resolution masters — NOT deployed (logos, supplied photos, extra PDFs, references)
+docs/                     GOOGLE-SEARCH-CONSOLE.md, TESTIMONIALS.md, QA.md, ASSET-SOURCES.json
+scripts/                  build/asset tooling, audit-seo.mjs, lighthouse.mjs, generate-brand-icons.py
+tests/unit/               node:test unit tests     tests/e2e/   Playwright specs
+vercel.json               redirects, trailing slash, security & cache headers, function config
 ```
 
-The development URL is `http://127.0.0.1:4321/`. `dist/` is the deployable static output. Configure the host to serve `404.html` for unknown routes. No database or application server is required.
+## Deploy
 
-## Content and images
+1. Push to `main` → Vercel builds (`npm run build`, output `dist/`) and deploys automatically.
+2. Preview deployments are **noindex** automatically (`VERCEL_ENV !== 'production'`); only Production is indexable.
+3. After the first deploy with the form, add the environment variables below and **redeploy**.
 
-- `src/data/catalogue.ts` holds business details, eight categories, 33 product entries, specifications, source references and gallery labels.
-- `src/components/` contains shared category/product cards, icons, catalogue links, enquiry strip and page heroes.
-- `src/layouts/Layout.astro` provides the shared header, mobile navigation, footer and metadata.
-- `ASSET-SOURCES.json` records the source catalogue page and embedded-image reference for each selected product/application image. `src/data/image-manifest.json` holds responsive image dimensions and variants.
-- The hero uses an AI-generated luxury entrance scene (see *AI image generation*). The original supplied logo file is retained unchanged; transparent variants are derived from it.
-- Gallery images are VALLIS/MRW catalogue application imagery. They do not claim completed BUILDMART INDIA projects.
-- The three original PDFs remain available as downloadable/openable catalogue documents. Original user-supplied assets have been preserved.
+### Environment variables (Vercel → Project → Settings → Environment Variables)
 
-To regenerate extraction/audit assets, use `python scripts/audit-pdfs.py` and `python scripts/extract-assets.py` with PyMuPDF and Pillow installed. Extraction respects embedded PDF alpha masks. After a build, `python scripts/curate-assets.py` removes unused generated WebP extractions only. Run `python scripts/responsive-images.py` to generate smaller WebP variants and refresh the responsive manifest, then build again to package the curated set. It never deletes the original supplied documents/photos.
+| Name | Value | Environment | Sensitive |
+| --- | --- | --- | --- |
+| `SMTP_HOST` | `smtpout.secureserver.net` | Production | no |
+| `SMTP_PORT` | `465` | Production | no |
+| `SMTP_USER` | `info@vallisglobal.in` | Production | no |
+| `SMTP_PASS` | the mailbox password | **Production only** | **yes** |
+| `MAIL_TO` | `info@vallisglobal.in` | Production | no |
+| `MAIL_FROM` | `info@vallisglobal.in` (must equal `SMTP_USER`) | Production | no |
 
-## Redesign (October 2026) — design system
+Vercel environment variables are available to Functions automatically. See `.env.example`. Never commit real values.
 
-The site was art-directed into a premium navy, ivory and champagne-gold system built around the supplied eagle logo.
+## Enquiry form
 
-- **Styles** (`src/styles/`): `base.css` (tokens, typography, reveal motion), `layout.css` (loader, header and mega menu, mobile menu, CTA band, footer, floating contact), `cards.css` (collection bento tiles, product cards, rails, catalogue cards), `components.css` (buttons, page hero, marquee, chips, forms, lightbox and responsive overrides), `home.css` and `pages.css`.
-- **Brand**: `scripts/brand-logo-variants.py` derives transparent logo variants (`logo-reversed.webp` for navy backgrounds, `logo-transparent.webp`, `eagle-mark.webp` for the loader) from the untouched original JPEG.
-- **Catalogue imagery**: `scripts/cutout-white-backgrounds.py` removes flat white studio backgrounds from product shots so they sit on the ivory product stages. `scripts/crop-catalogue-photos.py` crops MRW application photos to the photograph (removing PDF page margins and page marks). Originals are kept in `tmp/`.
-- **Hero** (`src/styles/hero.css`, `src/scripts/home.ts`): a pinned, scroll-driven sequence of four chapters (The art → Access → Clarity → Touch). Scroll progress drives the image cross-fades, a slow camera push and the chapter copy. Hidden chapters are `inert`. The chapter rail is clickable, and precise pointers get subtle parallax. On phones the scroll distance is shorter. With reduced motion or no JavaScript, it becomes a single static full-screen scene.
-- **Interactive sections**: "Why choose" is a selectable showcase that auto-advances and pauses on hover, focus or a click. "Function. Finish. Fit." has sticky storytelling where the step at the middle of the screen drives the image. The Spaces sectors swap the image on hover on desktop and become a swipe rail on phones.
-- **Motion**: CSS transitions on transform/opacity and IntersectionObserver reveals, with a scroll-position backup so content is never left hidden. Clip reveals clip the child, not the observed element. There's also a brief first-visit loader and a collections marquee. Everything respects `prefers-reduced-motion`.
-- **Conversion**: Enquire/Call/WhatsApp actions appear in the header, hero and every CTA band. On phones, a sticky Call · WhatsApp · Enquire bar appears once the visitor scrolls past the hero. The site has no floating WhatsApp button and no header search icon (product search lives on /products/).
+- Works without JavaScript (plain POST → `303` to `/thank-you/`; validation errors return a page that tells the visitor to press Back — the browser keeps their entries).
+- With JavaScript: inline validation, JSON `fetch` with a 20 s timeout, field/summary/offline/timeout/rate-limit/delivery-failure messages that never clear entered data.
+- Server: origin allow-list, 5 per IP per 10 min (per instance), honeypot + 3 s timer (silently discarded), full validation incl. consent, header-injection stripping, HTML escaping, suspicious keywords flagged in the subject.
+- Email: `"Visitor Name via VALLIS Website" <info@vallisglobal.in>`, `Reply-To: visitor`, HTML table + plain text, source page and IST timestamp. Subject `New enquiry from {Name}: {Product/Category}`.
 
-## October 2026 client updates
+## Content notes
 
-- **Hero**: five banners — full product range (`hero-collection`, widened by `scripts/extend-hero-canvas.py`), digital lock, handles, patch-fitting glass doors and shower cubicles. Chapter numbers follow the rail (02 / 05 …).
-- **Supplied photos** (WhatsApp originals in `source-assets/supplied-2026-10-31/`, kept out of `public/`): `python scripts/optimize-supplied-photos.py` upscales, sharpens and writes responsive WebP to `public/images/supplied/`, merging entries into the image manifest.
-- **Reference-based AI images**: assets in `scripts/image-generation/assets.mjs` may list `references`; these go to the OpenAI edits endpoint (VALLIS logo on the `craft-detail` handle, the VACS 13 lock scene, the product-range banner and the FHC doors with clear vision glass). Reference crops from the latest catalogue live in `scripts/image-generation/references/`.
-- **New collection**: Shower Cubicles (hinged, corner, sliding). uPVC now includes Casement Window & Door, Sliding Window & Door, French Door and Slide & Fold Door.
-- **Catalogue lead form** (`src/components/CatalogueGate.astro`): every PDF link opens a name / email / phone / consent form first. Set `PUBLIC_LEAD_ENDPOINT` to a form-handling URL to receive each lead as JSON; without it the form still gates the download but stores nothing. Without JavaScript, the PDF links open directly.
-- **Corporate image** (`src/components/ClientLogos.astro`): CPWD and NBCC logos on the homepage.
-
-## November 2026 client updates
-
-- **Product range** comes from the latest catalogue, `source-assets/supplied-2026-10-31/vallis-logo latest.pdf` (the edition with the VALLIS logo printed on each product photo). It is also published as `public/vallisglobal products pdf.pdf`, so product "source catalogue" page links match. `python scripts/extract-latest-catalogue.py` renders each product photo region (keeping the printed logo), removes the studio background, and writes `public/images/products/<model>.webp` and `src/data/pdf-products.json`. Pairing fixes and curated names live at the top of the script. Use `--sheet` to write a review contact sheet to `tmp/`, or `--scenes` to re-render only the collection banners.
-- **Collections**: 13 catalogue collections plus FHC Doors, uPVC Windows & Doors and Shower Cubicles, 16 in total. Handrail profile tables (pages 109–112) and furniture hinges/channels (pages 123–130) are not listed as individual products. The designer lever handles (VDH) are still listed.
-- **VSH 704** product gallery: the QGH shower handles, the companion VSH 703/705–708 hinges, and shower cubicles 4, 3 and 2.
-- **Hero** (`src/styles/hero.css`): an AI boardroom scene (`hero-showroom`), four brand pillars and a CSS marquee of every collection. With reduced motion the marquee becomes a swipeable rail.
-- **People imagery**: `hero-showroom`, `team-consultation` (About page and the "A complete collection" showcase) and `office-entrance-people` (Corporate Offices sector). All three are generated with `npm run images:generate`.
-- **Our Prestigious Clients** (`src/components/ClientLogos.astro`): supplied logos are in `public/images/clients/` (originals in `source-assets/client-logos/`). Institutions without a logo show their campus photograph; Pruthu Homes and Crystal Magic World show a wordmark until logos are supplied.
-
-## AI image generation
-
-Fifteen art-directed images in `public/images/generated/`: four hero chapters, a craftsmanship detail, a precision macro, finishes, a fit-check still life, the Door Hardware, Glass Fittings, Furniture Hardware and Shaft Doors scenes, two sector images and a consultation scene. Each one has a single, recorded placement. Product pages always use the genuine catalogue image. The privacy page states that atmospheric images are illustrative.
-
-- `scripts/image-generation/config.mjs` sets the model names, quality tiers, sizes, WebP quality and responsive widths. Environment overrides are listed in `.env.example`.
-- `scripts/image-generation/assets.mjs` holds each image's prompt, placement, alt text, tier and orientation. Routing: Flare is the default, and Sunburst is used only for the hero and complex premium scenes. Images marked `hero`/`key` use high quality and the rest use medium.
-- `npm run images:plan` shows the routing without calling the API. `npm run images:generate [id ...] [--force]` generates images server-side, using `OPENAI_API_KEY` from `.env`. It writes WebP variants and updates `src/data/image-manifest.json`. Raw PNGs are cached in `tmp/generated/`. `scripts/image-generation/generation-log.json` records the model and quality used for each image.
-- The API key is read only by this Node script. It never ships to the browser and is not referenced anywhere in `src/` or `dist/`.
-
-## Enquiries
-
-The enquiry form validates input and prepares a reviewable email or WhatsApp draft. Product CTAs preselect the product and category. Editing details invalidates the previous draft. No message is sent by the website, and values are not stored in local storage. The visitor sends the draft in their chosen app.
-
-This is not a verified server-delivered form. A direct email submission service would require authorised service configuration, recipient activation, a privacy-policy update and a real production delivery test. No external messages were sent during QA.
-
-## Production launch
-
-The configured canonical origin is `https://www.vallisglobal.in`, matching the supplied domain. Previews default to `noindex, nofollow`; `robots.txt` disallows crawling. Set `PUBLIC_INDEXABLE=true` only for the approved production launch and rebuild. Review whether www or apex should be the final origin and configure a consistent host redirect before deployment. Update `business.origin` and `astro.config.mjs` together if the approved origin changes.
-
-Before launch, the business owner should approve product availability/variants, catalogue permissions, final policy text, domain strategy and any desired email submission service. Model-specific fire-rating/test certificates have not been supplied, so ratings, ISO claims and universal compliance statements are not published.
-
-No deployment, commit or push was performed.
-
-## Browser verification
-
-The scripts in `scripts/browser-*.js` run as Playwright CLI `run-code` functions, not application code:
-
-```powershell
-npx --yes --package @playwright/cli playwright-cli -s=buildmart open http://127.0.0.1:4322/
-npx --yes --package @playwright/cli playwright-cli -s=buildmart snapshot
-npx --yes --package @playwright/cli playwright-cli -s=buildmart run-code --filename=scripts/browser-matrix.js
-npx --yes --package @playwright/cli playwright-cli -s=buildmart run-code --filename=scripts/browser-interactions.js
-npx --yes --package @playwright/cli playwright-cli -s=buildmart run-code --filename=scripts/browser-accessibility.js
-```
-
-Use local synthetic input only. Preserve results in `output/`. `QA.md` describes the completed checks and limitations. Automated accessibility results are a local check, not formal certification.
-
-Implementation follows Astro's [static routing documentation](https://docs.astro.build/en/guides/routing/).
+- Brand positioning copy (hero, about, meta, keywords) follows *VALLIS Brand Positioning & Website Keywords* (Nov 2026).
+- Gallery and some atmospheric images are catalogue/illustrative imagery, not completed VALLIS projects (stated on the site and privacy page).
+- Testimonials render only entries marked `verified: true` in `src/data/testimonials.ts` — see `docs/TESTIMONIALS.md`.
+- Older history (October/November 2026 redesign, AI image generation and catalogue extraction scripts) is in git history and `docs/QA.md`.

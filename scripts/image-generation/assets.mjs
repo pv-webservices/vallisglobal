@@ -314,8 +314,8 @@ export const ASSETS = [
     ['hero-collection', 'public/images/generated/hero-collection.webp', 'the same VALLIS architectural-hardware products on navy marble plinths'],
     ['hero-access', 'public/images/generated/hero-access.webp', 'the same matte-black digital smart lock on the walnut entrance door'],
     ['hero-touch', 'public/images/generated/hero-touch.webp', 'the same brushed-gold pull handle on the fluted walnut door beside navy cabinetry'],
-    ['hero-patch-fittings', 'source-assets/supplied-2026-10-31/patch fittings doors-6.jpeg', 'the same frameless glass entrance doors on stainless patch fittings with long pull handles'],
-    ['hero-shower', 'source-assets/supplied-2026-10-31/shower-cubicles-1.jpeg', 'the same frameless clear-glass corner shower cubicle with chrome hinges, top rail and shower handle'],
+    ['hero-patch-fittings', 'source-files/supplied-2026-10-31/patch fittings doors-6.jpeg', 'the same frameless glass entrance doors on stainless patch fittings with long pull handles'],
+    ['hero-shower', 'source-files/supplied-2026-10-31/shower-cubicles-1.jpeg', 'the same frameless clear-glass corner shower cubicle with chrome hinges, top rail and shower handle'],
   ].map(([id, ref, subject]) => ({
     id: `${id}-mobile`,
     placement: `Home hero banner — phone (portrait) version of ${id}`,

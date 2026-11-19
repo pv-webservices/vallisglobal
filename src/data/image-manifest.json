@@ -1,18 +1,8 @@
 {
-  "/images/catalogue/fhc-100.webp": {
-    "width": 185,
-    "height": 345,
-    "srcset": "/images/catalogue/fhc-100.webp 185w"
-  },
   "/images/catalogue/fhc-200.webp": {
     "width": 210,
     "height": 345,
     "srcset": "/images/catalogue/fhc-200.webp 210w"
-  },
-  "/images/catalogue/fhc-200d.webp": {
-    "width": 210,
-    "height": 345,
-    "srcset": "/images/catalogue/fhc-200d.webp 210w"
   },
   "/images/catalogue/lv-200.webp": {
     "width": 330,
@@ -44,225 +34,30 @@
     "height": 954,
     "srcset": "/images/catalogue/vallis-rail-p22-x166-w320.webp 320w, /images/catalogue/vallis-rail-p22-x166-w640.webp 640w, /images/catalogue/vallis-rail-p22-x166-w960.webp 960w, /images/catalogue/vallis-rail-p22-x166.webp 1444w"
   },
-  "/images/catalogue/vallis-rail-p24-x180.webp": {
-    "width": 1443,
-    "height": 954,
-    "srcset": "/images/catalogue/vallis-rail-p24-x180-w320.webp 320w, /images/catalogue/vallis-rail-p24-x180-w640.webp 640w, /images/catalogue/vallis-rail-p24-x180-w960.webp 960w, /images/catalogue/vallis-rail-p24-x180.webp 1443w"
-  },
   "/images/catalogue/vallis-rail-p35-x257.webp": {
     "width": 1444,
     "height": 953,
     "srcset": "/images/catalogue/vallis-rail-p35-x257-w320.webp 320w, /images/catalogue/vallis-rail-p35-x257-w640.webp 640w, /images/catalogue/vallis-rail-p35-x257-w960.webp 960w, /images/catalogue/vallis-rail-p35-x257.webp 1444w"
-  },
-  "/images/catalogue/vallis-rail-p43-x312.webp": {
-    "width": 1444,
-    "height": 954,
-    "srcset": "/images/catalogue/vallis-rail-p43-x312-w320.webp 320w, /images/catalogue/vallis-rail-p43-x312-w640.webp 640w, /images/catalogue/vallis-rail-p43-x312-w960.webp 960w, /images/catalogue/vallis-rail-p43-x312.webp 1444w"
   },
   "/images/catalogue/vallis-rail-p45-x326.webp": {
     "width": 1444,
     "height": 954,
     "srcset": "/images/catalogue/vallis-rail-p45-x326-w320.webp 320w, /images/catalogue/vallis-rail-p45-x326-w640.webp 640w, /images/catalogue/vallis-rail-p45-x326-w960.webp 960w, /images/catalogue/vallis-rail-p45-x326.webp 1444w"
   },
-  "/images/catalogue/vallis-legacy-p17-x1343.webp": {
-    "width": 861,
-    "height": 1154,
-    "srcset": "/images/catalogue/vallis-legacy-p17-x1343-w320.webp 320w, /images/catalogue/vallis-legacy-p17-x1343-w640.webp 640w, /images/catalogue/vallis-legacy-p17-x1343.webp 861w"
-  },
-  "/images/catalogue/vallis-legacy-p17-x1395.webp": {
-    "width": 169,
-    "height": 168,
-    "srcset": "/images/catalogue/vallis-legacy-p17-x1395.webp 169w"
-  },
-  "/images/catalogue/vallis-legacy-p28-x2408.webp": {
-    "width": 694,
-    "height": 930,
-    "srcset": "/images/catalogue/vallis-legacy-p28-x2408-w320.webp 320w, /images/catalogue/vallis-legacy-p28-x2408-w640.webp 640w, /images/catalogue/vallis-legacy-p28-x2408.webp 694w"
-  },
-  "/images/catalogue/vallis-legacy-p28-x2467.webp": {
-    "width": 168,
-    "height": 168,
-    "srcset": "/images/catalogue/vallis-legacy-p28-x2467.webp 168w"
-  },
-  "/images/catalogue/vallis-legacy-p37-x3374.webp": {
-    "width": 686,
-    "height": 918,
-    "srcset": "/images/catalogue/vallis-legacy-p37-x3374-w320.webp 320w, /images/catalogue/vallis-legacy-p37-x3374-w640.webp 640w, /images/catalogue/vallis-legacy-p37-x3374.webp 686w"
-  },
-  "/images/catalogue/vallis-legacy-p5-x134.webp": {
-    "width": 881,
-    "height": 1180,
-    "srcset": "/images/catalogue/vallis-legacy-p5-x134-w320.webp 320w, /images/catalogue/vallis-legacy-p5-x134-w640.webp 640w, /images/catalogue/vallis-legacy-p5-x134.webp 881w"
-  },
-  "/images/catalogue/vallis-p110-x4371.webp": {
-    "width": 145,
-    "height": 342,
-    "srcset": "/images/catalogue/vallis-p110-x4371.webp 145w"
-  },
-  "/images/catalogue/vallis-p110-x4373.webp": {
-    "width": 287,
-    "height": 379,
-    "srcset": "/images/catalogue/vallis-p110-x4373.webp 287w"
-  },
-  "/images/catalogue/vallis-p123-x4791.webp": {
-    "width": 330,
-    "height": 260,
-    "srcset": "/images/catalogue/vallis-p123-x4791-w320.webp 320w, /images/catalogue/vallis-p123-x4791.webp 330w"
-  },
-  "/images/catalogue/vallis-p123-x4792.webp": {
-    "width": 329,
-    "height": 304,
-    "srcset": "/images/catalogue/vallis-p123-x4792-w320.webp 320w, /images/catalogue/vallis-p123-x4792.webp 329w"
-  },
   "/images/catalogue/vallis-p13-x344.webp": {
     "width": 1031,
     "height": 1600,
     "srcset": "/images/catalogue/vallis-p13-x344-w320.webp 320w, /images/catalogue/vallis-p13-x344-w640.webp 640w, /images/catalogue/vallis-p13-x344-w960.webp 960w, /images/catalogue/vallis-p13-x344.webp 1031w"
-  },
-  "/images/catalogue/vallis-p13-x372.webp": {
-    "width": 467,
-    "height": 864,
-    "srcset": "/images/catalogue/vallis-p13-x372-w320.webp 320w, /images/catalogue/vallis-p13-x372.webp 467w"
-  },
-  "/images/catalogue/vallis-p14-x403.webp": {
-    "width": 543,
-    "height": 543,
-    "srcset": "/images/catalogue/vallis-p14-x403-w320.webp 320w, /images/catalogue/vallis-p14-x403.webp 543w"
-  },
-  "/images/catalogue/vallis-p15-x438.webp": {
-    "width": 345,
-    "height": 758,
-    "srcset": "/images/catalogue/vallis-p15-x438-w320.webp 320w, /images/catalogue/vallis-p15-x438.webp 345w"
-  },
-  "/images/catalogue/vallis-p16-x469.webp": {
-    "width": 425,
-    "height": 451,
-    "srcset": "/images/catalogue/vallis-p16-x469-w320.webp 320w, /images/catalogue/vallis-p16-x469.webp 425w"
-  },
-  "/images/catalogue/vallis-p25-x904.webp": {
-    "width": 324,
-    "height": 113,
-    "srcset": "/images/catalogue/vallis-p25-x904-w320.webp 320w, /images/catalogue/vallis-p25-x904.webp 324w"
-  },
-  "/images/catalogue/vallis-p25-x906.webp": {
-    "width": 324,
-    "height": 106,
-    "srcset": "/images/catalogue/vallis-p25-x906-w320.webp 320w, /images/catalogue/vallis-p25-x906.webp 324w"
-  },
-  "/images/catalogue/vallis-p32-x1118.webp": {
-    "width": 1132,
-    "height": 1600,
-    "srcset": "/images/catalogue/vallis-p32-x1118-w320.webp 320w, /images/catalogue/vallis-p32-x1118-w640.webp 640w, /images/catalogue/vallis-p32-x1118-w960.webp 960w, /images/catalogue/vallis-p32-x1118.webp 1132w"
-  },
-  "/images/catalogue/vallis-p32-x1133.webp": {
-    "width": 496,
-    "height": 536,
-    "srcset": "/images/catalogue/vallis-p32-x1133-w320.webp 320w, /images/catalogue/vallis-p32-x1133.webp 496w"
-  },
-  "/images/catalogue/vallis-p33-x1192.webp": {
-    "width": 324,
-    "height": 147,
-    "srcset": "/images/catalogue/vallis-p33-x1192-w320.webp 320w, /images/catalogue/vallis-p33-x1192.webp 324w"
-  },
-  "/images/catalogue/vallis-p5-x101.webp": {
-    "width": 475,
-    "height": 881,
-    "srcset": "/images/catalogue/vallis-p5-x101-w320.webp 320w, /images/catalogue/vallis-p5-x101.webp 475w"
-  },
-  "/images/catalogue/vallis-p54-x1915.webp": {
-    "width": 216,
-    "height": 519,
-    "srcset": "/images/catalogue/vallis-p54-x1915.webp 216w"
   },
   "/images/catalogue/vallis-p60-x2078.webp": {
     "width": 1240,
     "height": 1265,
     "srcset": "/images/catalogue/vallis-p60-x2078-w320.webp 320w, /images/catalogue/vallis-p60-x2078-w640.webp 640w, /images/catalogue/vallis-p60-x2078-w960.webp 960w, /images/catalogue/vallis-p60-x2078.webp 1240w"
   },
-  "/images/catalogue/vallis-p61-x2131.webp": {
-    "width": 302,
-    "height": 214,
-    "srcset": "/images/catalogue/vallis-p61-x2131.webp 302w"
-  },
-  "/images/catalogue/vallis-p61-x2132.webp": {
-    "width": 273,
-    "height": 272,
-    "srcset": "/images/catalogue/vallis-p61-x2132.webp 273w"
-  },
-  "/images/catalogue/vallis-p62-x2160.webp": {
-    "width": 324,
-    "height": 173,
-    "srcset": "/images/catalogue/vallis-p62-x2160-w320.webp 320w, /images/catalogue/vallis-p62-x2160.webp 324w"
-  },
-  "/images/catalogue/vallis-p62-x2161.webp": {
-    "width": 273,
-    "height": 206,
-    "srcset": "/images/catalogue/vallis-p62-x2161.webp 273w"
-  },
   "/images/catalogue/vallis-p69-x2356.webp": {
     "width": 1242,
     "height": 1579,
     "srcset": "/images/catalogue/vallis-p69-x2356-w320.webp 320w, /images/catalogue/vallis-p69-x2356-w640.webp 640w, /images/catalogue/vallis-p69-x2356-w960.webp 960w, /images/catalogue/vallis-p69-x2356.webp 1242w"
-  },
-  "/images/catalogue/vallis-p7-x168.webp": {
-    "width": 465,
-    "height": 786,
-    "srcset": "/images/catalogue/vallis-p7-x168-w320.webp 320w, /images/catalogue/vallis-p7-x168.webp 465w"
-  },
-  "/images/catalogue/vallis-p70-x2408.webp": {
-    "width": 301,
-    "height": 146,
-    "srcset": "/images/catalogue/vallis-p70-x2408.webp 301w"
-  },
-  "/images/catalogue/vallis-p70-x2410.webp": {
-    "width": 296,
-    "height": 147,
-    "srcset": "/images/catalogue/vallis-p70-x2410.webp 296w"
-  },
-  "/images/catalogue/vallis-p70-x2415.webp": {
-    "width": 549,
-    "height": 357,
-    "srcset": "/images/catalogue/vallis-p70-x2415-w320.webp 320w, /images/catalogue/vallis-p70-x2415.webp 549w"
-  },
-  "/images/catalogue/vallis-p71-x2445.webp": {
-    "width": 297,
-    "height": 99,
-    "srcset": "/images/catalogue/vallis-p71-x2445.webp 297w"
-  },
-  "/images/catalogue/vallis-p77-x2613.webp": {
-    "width": 1241,
-    "height": 1167,
-    "srcset": "/images/catalogue/vallis-p77-x2613-w320.webp 320w, /images/catalogue/vallis-p77-x2613-w640.webp 640w, /images/catalogue/vallis-p77-x2613-w960.webp 960w, /images/catalogue/vallis-p77-x2613.webp 1241w"
-  },
-  "/images/catalogue/vallis-p78-x2667.webp": {
-    "width": 377,
-    "height": 218,
-    "srcset": "/images/catalogue/vallis-p78-x2667-w320.webp 320w, /images/catalogue/vallis-p78-x2667.webp 377w"
-  },
-  "/images/catalogue/vallis-p78-x2668.webp": {
-    "width": 325,
-    "height": 234,
-    "srcset": "/images/catalogue/vallis-p78-x2668-w320.webp 320w, /images/catalogue/vallis-p78-x2668.webp 325w"
-  },
-  "/images/catalogue/vallis-p78-x2669.webp": {
-    "width": 302,
-    "height": 220,
-    "srcset": "/images/catalogue/vallis-p78-x2669.webp 302w"
-  },
-  "/images/catalogue/vallis-p85-x2907.webp": {
-    "width": 319,
-    "height": 263,
-    "srcset": "/images/catalogue/vallis-p85-x2907.webp 319w"
-  },
-  "/images/catalogue/vallis-p97-x3488.webp": {
-    "width": 108,
-    "height": 203,
-    "srcset": "/images/catalogue/vallis-p97-x3488.webp 108w"
-  },
-  "/images/brand/logo-original.jpeg": {
-    "width": 719,
-    "height": 398,
-    "srcset": "/images/brand/logo-original-w320.webp 320w, /images/brand/logo-original-w640.webp 640w, /images/brand/logo-original.jpeg 719w"
   },
   "/images/generated/finishes.webp": {
     "width": 1024,
@@ -279,11 +74,6 @@
     "height": 1024,
     "srcset": "/images/generated/healthcare-corridor-w640.webp 640w, /images/generated/healthcare-corridor-w960.webp 960w, /images/generated/healthcare-corridor-w1280.webp 1280w, /images/generated/healthcare-corridor.webp 1536w"
   },
-  "/images/generated/institutional-atrium.webp": {
-    "width": 1536,
-    "height": 1024,
-    "srcset": "/images/generated/institutional-atrium-w640.webp 640w, /images/generated/institutional-atrium-w960.webp 960w, /images/generated/institutional-atrium-w1280.webp 1280w, /images/generated/institutional-atrium.webp 1536w"
-  },
   "/images/generated/door-hardware-scene.webp": {
     "width": 1536,
     "height": 1024,
@@ -299,25 +89,10 @@
     "height": 1024,
     "srcset": "/images/generated/furniture-hardware-scene-w640.webp 640w, /images/generated/furniture-hardware-scene-w960.webp 960w, /images/generated/furniture-hardware-scene-w1280.webp 1280w, /images/generated/furniture-hardware-scene.webp 1536w"
   },
-  "/images/generated/hero-entrance.webp": {
-    "width": 1536,
-    "height": 1024,
-    "srcset": "/images/generated/hero-entrance-w640.webp 640w, /images/generated/hero-entrance-w960.webp 960w, /images/generated/hero-entrance-w1280.webp 1280w, /images/generated/hero-entrance.webp 1536w"
-  },
   "/images/generated/consultation.webp": {
     "width": 1536,
     "height": 1024,
     "srcset": "/images/generated/consultation-w640.webp 640w, /images/generated/consultation-w960.webp 960w, /images/generated/consultation-w1280.webp 1280w, /images/generated/consultation.webp 1536w"
-  },
-  "/images/brand/logo-reversed.webp": {
-    "width": 652,
-    "height": 369,
-    "srcset": "/images/brand/logo-reversed-w320.webp 320w, /images/brand/logo-reversed.webp 652w"
-  },
-  "/images/brand/logo-transparent.webp": {
-    "width": 652,
-    "height": 369,
-    "srcset": "/images/brand/logo-transparent-w320.webp 320w, /images/brand/logo-transparent.webp 652w"
   },
   "/images/hero/navy-marble.webp": {
     "width": 1672,
@@ -338,51 +113,6 @@
     "width": 1024,
     "height": 1024,
     "srcset": "/images/generated/fit-check-w640.webp 640w, /images/generated/fit-check-w960.webp 960w, /images/generated/fit-check.webp 1024w"
-  },
-  "/images/generated/hero-touch.webp": {
-    "width": 1536,
-    "height": 1024,
-    "srcset": "/images/generated/hero-touch-w640.webp 640w, /images/generated/hero-touch-w960.webp 960w, /images/generated/hero-touch-w1280.webp 1280w, /images/generated/hero-touch.webp 1536w"
-  },
-  "/images/generated/hero-access.webp": {
-    "width": 1536,
-    "height": 1024,
-    "srcset": "/images/generated/hero-access-w640.webp 640w, /images/generated/hero-access-w960.webp 960w, /images/generated/hero-access-w1280.webp 1280w, /images/generated/hero-access.webp 1536w"
-  },
-  "/images/generated/hero-clarity.webp": {
-    "width": 1536,
-    "height": 1024,
-    "srcset": "/images/generated/hero-clarity-w640.webp 640w, /images/generated/hero-clarity-w960.webp 960w, /images/generated/hero-clarity-w1280.webp 1280w, /images/generated/hero-clarity.webp 1536w"
-  },
-  "/images/generated/upvc-tilt-turn.webp": {
-    "width": 1024,
-    "height": 1024,
-    "srcset": "/images/generated/upvc-tilt-turn-w640.webp 640w, /images/generated/upvc-tilt-turn-w960.webp 960w, /images/generated/upvc-tilt-turn.webp 1024w"
-  },
-  "/images/generated/upvc-fixed.webp": {
-    "width": 1024,
-    "height": 1024,
-    "srcset": "/images/generated/upvc-fixed-w640.webp 640w, /images/generated/upvc-fixed-w960.webp 960w, /images/generated/upvc-fixed.webp 1024w"
-  },
-  "/images/generated/upvc-casement.webp": {
-    "width": 1024,
-    "height": 1024,
-    "srcset": "/images/generated/upvc-casement-w640.webp 640w, /images/generated/upvc-casement-w960.webp 960w, /images/generated/upvc-casement.webp 1024w"
-  },
-  "/images/generated/upvc-sliding.webp": {
-    "width": 1024,
-    "height": 1024,
-    "srcset": "/images/generated/upvc-sliding-w640.webp 640w, /images/generated/upvc-sliding-w960.webp 960w, /images/generated/upvc-sliding.webp 1024w"
-  },
-  "/images/generated/upvc-top-hung.webp": {
-    "width": 1024,
-    "height": 1024,
-    "srcset": "/images/generated/upvc-top-hung-w640.webp 640w, /images/generated/upvc-top-hung-w960.webp 960w, /images/generated/upvc-top-hung.webp 1024w"
-  },
-  "/images/generated/upvc-french.webp": {
-    "width": 1024,
-    "height": 1024,
-    "srcset": "/images/generated/upvc-french-w640.webp 640w, /images/generated/upvc-french-w960.webp 960w, /images/generated/upvc-french.webp 1024w"
   },
   "/images/generated/upvc-windows-scene.webp": {
     "width": 1536,
@@ -417,12 +147,12 @@
   "/images/catalogue/vallis-lever-05.webp": {
     "width": 556,
     "height": 480,
-    "srcset": "/images/catalogue/vallis-lever-05-w320.webp 320w, /images/catalogue/vallis-lever-05.webp 556w"
+    "srcset": "/images/catalogue/vallis-lever-05.webp 556w"
   },
   "/images/catalogue/vallis-lever-06.webp": {
     "width": 1022,
     "height": 709,
-    "srcset": "/images/catalogue/vallis-lever-06-w320.webp 320w, /images/catalogue/vallis-lever-06-w640.webp 640w, /images/catalogue/vallis-lever-06-w960.webp 960w, /images/catalogue/vallis-lever-06.webp 1022w"
+    "srcset": "/images/catalogue/vallis-lever-06.webp 1022w"
   },
   "/images/catalogue/vallis-lever-07.webp": {
     "width": 499,
@@ -432,22 +162,22 @@
   "/images/catalogue/vallis-lever-08.webp": {
     "width": 781,
     "height": 475,
-    "srcset": "/images/catalogue/vallis-lever-08-w320.webp 320w, /images/catalogue/vallis-lever-08-w640.webp 640w, /images/catalogue/vallis-lever-08.webp 781w"
+    "srcset": "/images/catalogue/vallis-lever-08.webp 781w"
   },
   "/images/catalogue/vallis-lever-09.webp": {
     "width": 1088,
     "height": 599,
-    "srcset": "/images/catalogue/vallis-lever-09-w320.webp 320w, /images/catalogue/vallis-lever-09-w640.webp 640w, /images/catalogue/vallis-lever-09-w960.webp 960w, /images/catalogue/vallis-lever-09.webp 1088w"
+    "srcset": "/images/catalogue/vallis-lever-09.webp 1088w"
   },
   "/images/catalogue/vallis-lever-10.webp": {
     "width": 1001,
     "height": 613,
-    "srcset": "/images/catalogue/vallis-lever-10-w320.webp 320w, /images/catalogue/vallis-lever-10-w640.webp 640w, /images/catalogue/vallis-lever-10-w960.webp 960w, /images/catalogue/vallis-lever-10.webp 1001w"
+    "srcset": "/images/catalogue/vallis-lever-10.webp 1001w"
   },
   "/images/catalogue/vallis-lever-11.webp": {
     "width": 535,
     "height": 529,
-    "srcset": "/images/catalogue/vallis-lever-11-w320.webp 320w, /images/catalogue/vallis-lever-11.webp 535w"
+    "srcset": "/images/catalogue/vallis-lever-11.webp 535w"
   },
   "/images/catalogue/vallis-lever-12.webp": {
     "width": 560,
@@ -472,37 +202,22 @@
   "/images/brand/vallis-mark.webp": {
     "width": 353,
     "height": 266,
-    "srcset": "/images/brand/vallis-mark-w320.webp 320w, /images/brand/vallis-mark.webp 353w"
+    "srcset": "/images/brand/vallis-mark.webp 353w"
   },
   "/images/supplied/patch-door-1.webp": {
     "width": 1400,
     "height": 933,
     "srcset": "/images/supplied/patch-door-1-w320.webp 320w, /images/supplied/patch-door-1-w640.webp 640w, /images/supplied/patch-door-1-w960.webp 960w, /images/supplied/patch-door-1-w1280.webp 1280w, /images/supplied/patch-door-1.webp 1400w"
   },
-  "/images/supplied/patch-door-2.webp": {
-    "width": 1050,
-    "height": 1400,
-    "srcset": "/images/supplied/patch-door-2-w320.webp 320w, /images/supplied/patch-door-2-w640.webp 640w, /images/supplied/patch-door-2-w960.webp 960w, /images/supplied/patch-door-2.webp 1050w"
-  },
   "/images/supplied/patch-door-3.webp": {
     "width": 1400,
     "height": 933,
     "srcset": "/images/supplied/patch-door-3-w320.webp 320w, /images/supplied/patch-door-3-w640.webp 640w, /images/supplied/patch-door-3-w960.webp 960w, /images/supplied/patch-door-3-w1280.webp 1280w, /images/supplied/patch-door-3.webp 1400w"
   },
-  "/images/supplied/patch-door-4.webp": {
-    "width": 1400,
-    "height": 933,
-    "srcset": "/images/supplied/patch-door-4-w320.webp 320w, /images/supplied/patch-door-4-w640.webp 640w, /images/supplied/patch-door-4-w960.webp 960w, /images/supplied/patch-door-4-w1280.webp 1280w, /images/supplied/patch-door-4.webp 1400w"
-  },
   "/images/supplied/patch-door-5.webp": {
     "width": 1400,
     "height": 933,
-    "srcset": "/images/supplied/patch-door-5-w320.webp 320w, /images/supplied/patch-door-5-w640.webp 640w, /images/supplied/patch-door-5-w960.webp 960w, /images/supplied/patch-door-5-w1280.webp 1280w, /images/supplied/patch-door-5.webp 1400w"
-  },
-  "/images/supplied/hero-patch-fittings.webp": {
-    "width": 2048,
-    "height": 1142,
-    "srcset": "/images/supplied/hero-patch-fittings-w320.webp 320w, /images/supplied/hero-patch-fittings-w640.webp 640w, /images/supplied/hero-patch-fittings-w960.webp 960w, /images/supplied/hero-patch-fittings-w1280.webp 1280w, /images/supplied/hero-patch-fittings.webp 2048w"
+    "srcset": "/images/supplied/patch-door-5.webp 1400w"
   },
   "/images/supplied/shower-cubicle-1.webp": {
     "width": 2048,
@@ -564,56 +279,6 @@
     "height": 323,
     "srcset": "/images/supplied/client-nbcc-w320.webp 320w, /images/supplied/client-nbcc.webp 498w"
   },
-  "/images/generated/hero-collection-wide.webp": {
-    "width": 1997,
-    "height": 1178,
-    "srcset": "/images/generated/hero-collection-wide-w640.webp 640w, /images/generated/hero-collection-wide-w960.webp 960w, /images/generated/hero-collection-wide-w1280.webp 1280w, /images/generated/hero-collection-wide-w1920.webp 1920w, /images/generated/hero-collection-wide.webp 1997w"
-  },
-  "/images/generated/hero-touch-mobile.webp": {
-    "width": 1024,
-    "height": 1536,
-    "srcset": "/images/generated/hero-touch-mobile-w640.webp 640w, /images/generated/hero-touch-mobile-w960.webp 960w, /images/generated/hero-touch-mobile.webp 1024w"
-  },
-  "/images/generated/hero-access-mobile.webp": {
-    "width": 1024,
-    "height": 1536,
-    "srcset": "/images/generated/hero-access-mobile-w640.webp 640w, /images/generated/hero-access-mobile-w960.webp 960w, /images/generated/hero-access-mobile.webp 1024w"
-  },
-  "/images/generated/hero-shower-mobile.webp": {
-    "width": 1024,
-    "height": 1536,
-    "srcset": "/images/generated/hero-shower-mobile-w640.webp 640w, /images/generated/hero-shower-mobile-w960.webp 960w, /images/generated/hero-shower-mobile.webp 1024w"
-  },
-  "/images/generated/hero-patch-fittings-mobile.webp": {
-    "width": 1024,
-    "height": 1536,
-    "srcset": "/images/generated/hero-patch-fittings-mobile-w640.webp 640w, /images/generated/hero-patch-fittings-mobile-w960.webp 960w, /images/generated/hero-patch-fittings-mobile.webp 1024w"
-  },
-  "/images/generated/hero-collection-mobile.webp": {
-    "width": 1024,
-    "height": 1536,
-    "srcset": "/images/generated/hero-collection-mobile-w640.webp 640w, /images/generated/hero-collection-mobile-w960.webp 960w, /images/generated/hero-collection-mobile.webp 1024w"
-  },
-  "/images/generated/hero-vacs12-mobile.webp": {
-    "width": 1024,
-    "height": 1536,
-    "srcset": "/images/generated/hero-vacs12-mobile-w640.webp 640w, /images/generated/hero-vacs12-mobile-w960.webp 960w, /images/generated/hero-vacs12-mobile.webp 1024w"
-  },
-  "/images/generated/hero-clarity-mobile.webp": {
-    "width": 1024,
-    "height": 1536,
-    "srcset": "/images/generated/hero-clarity-mobile-w640.webp 640w, /images/generated/hero-clarity-mobile-w960.webp 960w, /images/generated/hero-clarity-mobile.webp 1024w"
-  },
-  "/images/generated/hero-vacs12.webp": {
-    "width": 1536,
-    "height": 1024,
-    "srcset": "/images/generated/hero-vacs12-w640.webp 640w, /images/generated/hero-vacs12-w960.webp 960w, /images/generated/hero-vacs12-w1280.webp 1280w, /images/generated/hero-vacs12.webp 1536w"
-  },
-  "/images/generated/hero-vacs12-wide.webp": {
-    "width": 1997,
-    "height": 1024,
-    "srcset": "/images/generated/hero-vacs12-wide-w640.webp 640w, /images/generated/hero-vacs12-wide-w960.webp 960w, /images/generated/hero-vacs12-wide-w1280.webp 1280w, /images/generated/hero-vacs12-wide-w1920.webp 1920w, /images/generated/hero-vacs12-wide.webp 1997w"
-  },
   "/images/generated/office-entrance-people.webp": {
     "width": 1536,
     "height": 1024,
@@ -628,5 +293,25 @@
     "width": 1536,
     "height": 1024,
     "srcset": "/images/generated/hero-showroom-w640.webp 640w, /images/generated/hero-showroom-w960.webp 960w, /images/generated/hero-showroom-w1280.webp 1280w, /images/generated/hero-showroom.webp 1536w"
+  },
+  "/images/generated/considered-lock.webp": {
+    "width": 1024,
+    "height": 1024,
+    "srcset": "/images/generated/considered-lock-w640.webp 640w, /images/generated/considered-lock-w960.webp 960w, /images/generated/considered-lock.webp 1024w"
+  },
+  "/images/generated/fhc-100-clear.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/fhc-100-clear-w640.webp 640w, /images/generated/fhc-100-clear-w960.webp 960w, /images/generated/fhc-100-clear.webp 1024w"
+  },
+  "/images/generated/fhc-200-clear.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/fhc-200-clear-w640.webp 640w, /images/generated/fhc-200-clear-w960.webp 960w, /images/generated/fhc-200-clear.webp 1024w"
+  },
+  "/images/generated/fhc-200d-clear.webp": {
+    "width": 1024,
+    "height": 1536,
+    "srcset": "/images/generated/fhc-200d-clear-w640.webp 640w, /images/generated/fhc-200d-clear-w960.webp 960w, /images/generated/fhc-200d-clear.webp 1024w"
   }
 }

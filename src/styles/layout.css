@@ -572,3 +572,13 @@
 .action-bar {
   display: none;
 }
+
+/* Tap targets: footer and utility links at least 24px tall (WCAG 2.2 target size). */
+.site-footer ul a,
+.footer-bottom a {
+  display: inline-block;
+  padding-block: 5px;
+}
+.header-phone {
+  min-height: 32px;
+}

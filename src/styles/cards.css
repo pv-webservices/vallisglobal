@@ -444,3 +444,17 @@
   margin-top: auto;
   align-self: flex-start;
 }
+
+.product-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding-inline: 4px;
+}
+.product-info h3 a {
+  display: inline-block;
+  padding-block: 2px;
+}
+.on-dark .product-card .eyebrow {
+  color: var(--gold-deep);
+}

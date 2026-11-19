@@ -2,7 +2,7 @@
 import ResponsiveImage from './ResponsiveImage.astro';
 import {supplied} from '../data/catalogue';
 // Prestigious clients, in the order supplied by VALLIS. Logos live in public/images/clients/ (from
-// source-assets/client-logos/); institutions without a logo file show their campus photograph, and
+// source-files/client-logos/); institutions without a logo file show their campus photograph, and
 // clients without any image show a wordmark.
 interface Mark {src:string;width:number;height:number;}
 interface Client {name:string;note?:string;logos?:Mark[];photo?:Mark;}
