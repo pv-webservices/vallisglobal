@@ -248,3 +248,84 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Engineering & quality highlights */
+.quality-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(14px, 1.6vw, 24px);
+}
+.quality-item {
+  padding: clamp(24px, 2.4vw, 36px);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold-deep);
+  background: var(--paper);
+}
+.on-dark .quality-item {
+  border-color: var(--line-light);
+  border-top-color: var(--gold);
+  background: rgba(247, 243, 236, 0.04);
+}
+.quality-item > svg {
+  color: var(--gold-deep);
+  margin-bottom: 20px;
+}
+.on-dark .quality-item > svg {
+  color: var(--gold);
+}
+.quality-item h3 {
+  font-size: clamp(1.25rem, 1.5vw, 1.45rem);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.quality-item p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.on-dark .quality-item p,
+.on-dark .quality-note {
+  color: var(--muted-light);
+}
+.quality-note {
+  max-width: 900px;
+  margin-top: clamp(28px, 3vw, 44px);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+@media (max-width: 1024px) {
+  .quality-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  .quality-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Product material badge */
+.material-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 18px;
+  padding: 8px 16px;
+  border: 1px solid var(--line-gold);
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.material-badge small {
+  font-size: 11px;
+  color: var(--gold-deep);
+  letter-spacing: 0.16em;
+}

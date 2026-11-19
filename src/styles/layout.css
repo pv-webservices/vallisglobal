@@ -94,7 +94,9 @@
 .site-header.scrolled::before {
   opacity: 0;
 }
+/* The wide grouped mega menu is centred on the header, not on the Products link. */
 .header-inner {
+  position: relative;
   height: 100%;
   display: flex;
   align-items: center;
@@ -157,17 +159,17 @@
   transition: transform 0.3s;
 }
 .nav-item {
-  position: relative;
+  position: static;
 }
 .mega {
   position: absolute;
-  top: calc(100% + 18px);
+  top: calc(100% - 6px);
   left: 50%;
-  width: min(760px, 80vw);
-  padding: 28px;
+  width: min(1040px, 92vw);
+  padding: 30px 32px 24px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 4px 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 28px;
   background: var(--paper);
   color: var(--ink);
   border-top: 2px solid var(--gold);
@@ -581,4 +583,49 @@
 }
 .header-phone {
   min-height: 32px;
+}
+
+/* Grouped mega menu: Door | Glass | Smart Access | Architectural */
+.mega .mega-heading {
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.mega ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mega .mega-group a {
+  display: block;
+  padding: 7px 8px;
+  margin-inline: -8px;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.mega .mega-foot {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.mega .mega-foot a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }

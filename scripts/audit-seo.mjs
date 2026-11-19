@@ -73,6 +73,10 @@ for (const file of htmlFiles) {
     if (canonical !== ORIGIN + route) issue(route, `canonical "${canonical}" is not self-referencing (${ORIGIN + route})`);
   }
 
+  // Brand copy rule (Supplementary Positioning Guide): never use low-end wording.
+  const banned = (root.querySelector('body')?.text ?? '').match(/\b(cheap|cheapest|discount(?:ed|s)?|budget|wholesale)\b/i);
+  if (banned) issue(route, `low-end wording "${banned[0]}" on page`);
+
   // Headings: exactly one H1, no skipped levels
   const headings = root.querySelectorAll('h1,h2,h3,h4,h5,h6').map((h) => Number(h.tagName[1]));
   const h1s = headings.filter((l) => l === 1).length;

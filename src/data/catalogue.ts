@@ -266,6 +266,68 @@ export const categories = [
   },
 ];
 export type Category = (typeof categories)[number];
+
+/**
+ * Top-level navigation groups (VALLIS Supplementary Positioning Guide, Nov 2026):
+ * Architectural Hardware | Door Hardware | Glass Hardware | Smart Access.
+ */
+export const categoryGroups = [
+  {
+    slug: "door-hardware-systems",
+    name: "Door Hardware",
+    keyword: "Luxury Door Hardware",
+    blurb: "Lever handles, mortise locks, hinges, closers, panic exits and FHC doors.",
+    categories: ["door-hardware", "locks-cylinders", "door-accessories", "door-closers", "panic-bars", "fhc-doors"],
+  },
+  {
+    slug: "glass-hardware",
+    name: "Glass Hardware",
+    keyword: "Architectural Glass Hardware",
+    blurb: "Frameless glass patch fittings, floor springs, spiders, railings and showers.",
+    categories: ["glass-door-handles", "floor-springs", "spider-fittings", "glass-fittings", "shower-hardware", "glass-railings", "shower-cubicles"],
+  },
+  {
+    slug: "smart-access",
+    name: "Smart Access",
+    keyword: "Smart Access Systems",
+    blurb: "RFID hotel locks, smart entrance locks, encoders and access units.",
+    categories: ["hotel-digital-locks"],
+  },
+  {
+    slug: "architectural-hardware",
+    name: "Architectural Hardware",
+    keyword: "Architectural Hardware",
+    blurb: "Furniture locks and uPVC windows & doors that complete the specification.",
+    categories: ["furniture-hardware", "upvc-windows"],
+  },
+] as const;
+export type CategoryGroup = (typeof categoryGroups)[number];
+export const groupOf = (slug: string): CategoryGroup =>
+  categoryGroups.find((g) => (g.categories as readonly string[]).includes(slug)) ?? categoryGroups[3];
+export const categoriesIn = (group: CategoryGroup) => group.categories.map((slug) => categories.find((c) => c.slug === slug)!);
+
+/** Documented base material for a product, normalised from its catalogue specification (never inferred). */
+export const materialOf = (specs: Record<string, string>): string | undefined => {
+  const material = (specs.Material ?? specs.Meterial ?? "").replace(/,\s*$/, "").trim();
+  const grade = (specs.Grade ?? "").trim();
+  // Prefer the specific grade (e.g. "SS 316") when the material is only given generically as "SS".
+  const raw = grade && (!material || /^(ss|stainless steel)$/i.test(material)) ? grade : material;
+  if (!raw) return undefined;
+  return raw
+    .replace(/^GRADE\s+/i, "")
+    .replace(/S\.S\.\s*/g, "SS ")
+    .replace(/^SS$/i, "Stainless steel")
+    .replace(/^BRASS$/i, "Brass")
+    .replace(/^ZINC ALLOY$|^Zink Alloy$/i, "Zinc alloy")
+    .replace(/^(\d{3})$/, "SS $1")
+    .replace(/Stainless [Ss]teel (\d{3})/, "SS $1 stainless steel")
+    .replace(/Brass \| SS/, "Brass / stainless steel")
+    .replace(/^(\d{3}) stainless steel$/i, "SS $1")
+    .replace(/SS (\d{3}) stainless steel/g, "SS $1")
+    .replace(/Stainless Steel/g, "Stainless steel")
+    .replace(/Aluminium Alloy/g, "Aluminium alloy")
+    .replace(/^Aluminium$/, "Aluminium alloy");
+};
 export interface Product {
   slug: string;
   category: string;

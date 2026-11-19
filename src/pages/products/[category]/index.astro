@@ -6,17 +6,18 @@ import ResponsiveImage from '../../../components/ResponsiveImage.astro';
 import Icon from '../../../components/Icon.astro';
 import FireDoorHardware from '../../../components/FireDoorHardware.astro';
 import UpvcGuide from '../../../components/UpvcGuide.astro';
-import {categories,products,enquiryUrl,isPhoto} from '../../../data/catalogue';
+import {categories,products,enquiryUrl,isPhoto,groupOf} from '../../../data/catalogue';
 export function getStaticPaths(){return categories.map(category=>({params:{category:category.slug},props:{category}}));}
 const {category:c}=Astro.props;
+const group=groupOf(c.slug);
 const selected=products.filter(p=>p.category===c.slug);
 const [lead,...rest]=c.intro.split('. ');
 const detail=rest.join('. ')||c.intro;
 const suited=c.applications.map(a=>a.toLowerCase()).join(', ').replace(/, ([^,]*)$/,' and $1');
-const categoryDescription=((d:string)=>d.length>165?d.slice(0,d.lastIndexOf(' ',162))+'…':d)(`${detail.replace(/\.$/,'')}. Specification-grade VALLIS models with enquiry support in Gurugram and Dubai.`);
+const categoryDescription=((d:string)=>d.length>165?d.slice(0,d.lastIndexOf(' ',162))+'…':d)(`${detail.replace(/\.$/,'')}. ${group.keyword} by VALLIS, with project support in Gurugram and Dubai.`);
 ---
-<Layout title={`${c.name} — Architectural Hardware`} description={categoryDescription} preload={c.scene} breadcrumbs={[{label:'Products',href:'/products/'},{label:c.name}]}>
- <PageHero label={`Collection ${c.number} · VALLIS`} title={c.name} description={detail} image={c.scene} alt={`${c.name} application setting`} crumbs={[{label:'Products',href:'/products/'},{label:c.name}]}>
+<Layout title={`${c.name} — ${group.keyword}`} description={categoryDescription} preload={c.scene} breadcrumbs={[{label:'Products',href:'/products/'},{label:c.name}]}>
+ <PageHero label={`${group.name} · Collection ${c.number}`} title={c.name} description={detail} image={c.scene} alt={`${c.name} application setting`} crumbs={[{label:'Products',href:'/products/'},{label:c.name}]}>
   <a class="btn" href={enquiryUrl(undefined,c)}>Discuss this collection <Icon name="arrow" size={16}/></a>
  </PageHero>
 

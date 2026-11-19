@@ -17,7 +17,7 @@ import ResponsiveImage from '../components/ResponsiveImage.astro';
 import Icon from '../components/Icon.astro';
 import EnquiryCTA from '../components/EnquiryCTA.astro';
 import CatalogueGate from '../components/CatalogueGate.astro';
-import {business,offices,categories,isPhoto} from '../data/catalogue';
+import {business,offices,categories,categoryGroups,categoriesIn} from '../data/catalogue';
 import manifest from '../data/image-manifest.json';
 import {isIndexable,pageTitle,breadcrumbSchema,siteGraph,jsonLd,OG_IMAGE,type Crumb} from '../lib/seo';
 import manropeRegular from '@fontsource/manrope/files/manrope-latin-400-normal.woff2?url';
@@ -95,8 +95,8 @@ const graph=[...siteGraph(),...(breadcrumbs&&!noindex?[breadcrumbSchema(breadcru
      <div class="nav-item">
       <a class="nav-link" href={href} aria-current={isCurrent(href)?'page':undefined}>{name}<Icon name="chevron" size={14}/></a>
       <div class="mega">
-       {categories.map(c=><a href={`/products/${c.slug}/`}><ResponsiveImage class={isPhoto(c.image)?'is-photo':undefined} src={c.image} sizes="54px" alt="" width="54" height="54" loading="lazy"/><span><small>{c.number}</small><b>{c.name}</b></span></a>)}
-       <a class="mega-all" href="/products/">View the complete collection <Icon name="arrow" size={16}/></a>
+       {categoryGroups.map(g=><div class="mega-group"><p class="mega-heading">{g.name}</p><ul>{categoriesIn(g).map(c=><li><a href={`/products/${c.slug}/`}>{c.name}</a></li>)}</ul></div>)}
+       <div class="mega-foot"><a href="/finishes/">Finishes &amp; bespoke detailing <Icon name="arrow" size={14}/></a><a href="/products/">View the complete collection <Icon name="arrow" size={16}/></a></div>
       </div>
      </div>
     ):<a class="nav-link" href={href} aria-current={isCurrent(href)?'page':undefined}>{name}</a>)}
@@ -113,7 +113,7 @@ const graph=[...siteGraph(),...(breadcrumbs&&!noindex?[breadcrumbSchema(breadcru
   <div class="mobile-menu-inner">
    <div class="mobile-menu-top"><img src="/images/brand/vallis-logo-w320.webp" alt="VALLIS Architectural Hardware" width="320" height="250"/><button class="icon-btn menu-close" aria-label="Close navigation"><Icon name="close" size={20}/></button></div>
    <nav class="mobile-nav" aria-label="Mobile navigation">{nav.map(([name,href],i)=><a href={href} aria-current={isCurrent(href)?'page':undefined}><small>0{i+1}</small>{name}</a>)}</nav>
-   <div><span class="eyebrow">Collections</span><div class="mobile-collections">{categories.map(c=><a href={`/products/${c.slug}/`}>{c.name}</a>)}</div></div>
+   {categoryGroups.map(g=><div><span class="eyebrow">{g.name}</span><div class="mobile-collections">{categoriesIn(g).map(c=><a href={`/products/${c.slug}/`}>{c.name}</a>)}</div></div>)}
    <div class="mobile-menu-contact">
     <a class="btn" href="/contact/#enquiry">Discuss your project <Icon name="arrow" size={16}/></a>
     <a href={`tel:${business.tel}`}><Icon name="phone" size={18}/>{business.phone}</a>
@@ -133,7 +133,7 @@ const graph=[...siteGraph(),...(breadcrumbs&&!noindex?[breadcrumbSchema(breadcru
     <p class="tagline">Precision-engineered.<br/>Made for luxury spaces.</p>
     <p>Bespoke architectural hardware and smart access solutions for architects, interior designers, hospitality and signature residential projects.</p>
    </div>
-   <div><h2>Explore</h2><ul>{nav.map(([name,href])=><li><a href={href}>{name}</a></li>)}<li><a href="/privacy-policies/">Privacy &amp; Policies</a></li></ul></div>
+   <div><h2>Explore</h2><ul>{nav.map(([name,href])=><li><a href={href}>{name}</a></li>)}<li><a href="/finishes/">Finishes</a></li><li><a href="/privacy-policies/">Privacy &amp; Policies</a></li></ul></div>
    <div class="footer-collections"><h2>Our collections</h2><ul>{categories.map(c=><li><a href={`/products/${c.slug}/`}>{c.name}</a></li>)}</ul></div>
    <div>
     <h2>Visit &amp; connect</h2>

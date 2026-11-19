@@ -8,23 +8,24 @@ import CatalogueDownloads from '../components/CatalogueDownloads.astro';
 import FireDoorHardware from '../components/FireDoorHardware.astro';
 import ClientLogos from '../components/ClientLogos.astro';
 import Testimonials from '../components/Testimonials.astro';
+import QualityHighlights from '../components/QualityHighlights.astro';
 import {categories,products,gallery,asset,generated,supplied,product,isPhoto} from '../data/catalogue';
 
 // Hero: one premium boardroom scene, four brand pillars and a running strip of collections.
 const heroImage=generated('hero-showroom');
 const pillars=[
- {icon:'diamond',title:'Bespoke',sub:'Design'},
- {icon:'lock',title:'Smart',sub:'Access'},
- {icon:'spark',title:'Silent',sub:'Motion'},
- {icon:'shield',title:'Specification',sub:'Grade'},
+ {icon:'diamond',title:'Solid Brass',sub:'& SS 316'},
+ {icon:'spark',title:'PVD & Handcrafted',sub:'Finishes'},
+ {icon:'shield',title:'High-Cycle',sub:'Durability Tested'},
+ {icon:'globe',title:'Global',sub:'Compliance'},
 ];
 // Each running card shows a genuine VALLIS product cut-out for its collection.
 const runImages:Record<string,string>={'hotel-digital-locks':product('vac-14'),'door-hardware':product('vsmh-264'),'glass-door-handles':product('vosh-405'),'shower-hardware':product('vsh-704'),'glass-railings':product('vl-2115'),'furniture-hardware':product('vl-1802')};
 const running=categories.map(c=>({name:c.name,href:`/products/${c.slug}/`,image:runImages[c.slug]??c.image}));
 const benefits=[
- {icon:'diamond',title:'Considered materials',text:'Explore documented materials and grades for each product.',image:generated('craft-detail'),alt:'Brushed brass VALLIS lever handle, engraved with the VALLIS logo, on a dark oak door',caption:'Stainless steel, brass tones and aluminium alloy — documented per model.'},
+ {icon:'diamond',title:'Solid brass & SS 316',text:'Solid brass, SS 304 and marine-grade SS 316 ranges, with the material documented model by model.',image:generated('craft-detail'),alt:'Brushed brass VALLIS lever handle, engraved with the VALLIS logo, on a dark oak door',caption:'Stainless steel, brass tones and aluminium alloy — documented per model.'},
  {icon:'grid',title:'Precision in the details',text:'Select fittings around your door and glass requirements.',image:generated('precision-macro'),alt:'Stainless-steel spider fitting holding four glass panels',caption:'Glass thickness, fixing conditions and door weights matter.'},
- {icon:'spark',title:'Elegant finishes',text:'Find a finish that complements your architectural palette.',image:generated('furniture-hardware-scene'),alt:'Navy kitchen cabinetry with brushed-gold handles',caption:'From brushed steel to warmer metal tones and black accents.'},
+ {icon:'spark',title:'Elegant brass finishes',text:'Brushed brass, satin bronze, matte obsidian and PVD-coated surfaces.',image:generated('furniture-hardware-scene'),alt:'Navy kitchen cabinetry with brushed-gold handles',caption:'From brushed steel to warmer metal tones and black accents.'},
  {icon:'shield',title:'Purposeful performance',text:'Choose the right model for the demands of your space.',image:generated('healthcare-corridor'),alt:'Hospital corridor with timber doors and overhead door closers',caption:'Hotel access, busy corridors, service risers — each has its own needs.'},
  {icon:'building',title:'A complete collection',text:'From entrance locks to the finishing touch on cabinetry.',image:generated('team-consultation'),alt:'Architects reviewing door hardware samples and drawings around a meeting table',caption:'Sixteen collections, one conversation.'},
 ];
@@ -59,7 +60,7 @@ const mosaic=['Frameless glass entrances','A considered arrival','A frameless sh
     <p class="hero-lede">Blending bespoke architectural aesthetics, minimalist form and seamless smart access ecosystems for luxury hospitality and signature developments.</p>
     <div class="btn-row"><a class="btn" href="/products/">Explore Collections <Icon name="arrow" size={16}/></a><a class="btn btn--line" href="/contact/#enquiry">Request Architectural Specifications <Icon name="arrow" size={16}/></a></div>
    </div>
-   <ul class="hero-pillars" aria-label="Why VALLIS">
+   <ul class="hero-pillars" aria-label="Why VALLIS: material, finish, durability and compliance">
     {pillars.map(pl=><li><Icon name={pl.icon} size={34}/><span>{pl.title}<br/>{pl.sub}</span></li>)}
    </ul>
   </div>
@@ -102,12 +103,15 @@ const mosaic=['Frameless glass entrances','A considered arrival','A frameless sh
   </div>
  </section>
 
+ <!-- Engineering & quality: material grade, standards, origin, finishes & warranty -->
+ <QualityHighlights/>
+
  <!-- Collections -->
  <section class="section bg-ivory" id="collection">
   <div class="container">
    <div class="section-head">
     <div data-reveal><span class="eyebrow">Bespoke architectural hardware</span><h2>Our product <em>range.</em></h2></div>
-    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead">Specification-grade door hardware, concealed and integrated systems, glass fittings and smart access — sixteen collections for curated luxury spaces.</p><a class="link-arrow" href="/products/">View all products <Icon name="arrow" size={14}/></a></div>
+    <div class="section-head-actions" data-reveal style="--i:1"><p class="lead">From precision-engineered architectural door hardware and concealed hinge systems to minimalist frameless glass fittings and patch systems, VALLIS delivers cohesive hardware ecosystems across every entry and spatial transition.</p><a class="link-arrow" href="/products/">View all products <Icon name="arrow" size={14}/></a></div>
    </div>
    <CollectionBento/>
   </div>

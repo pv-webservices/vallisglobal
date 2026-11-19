@@ -1,0 +1,28 @@
+---
+import Icon from './Icon.astro';
+// Client-supplied positioning: "VALLIS Supplementary Positioning Guide" (material, lifecycle value) and
+// "Vallis Global Additional Points" (standards, engineering, origin, finishes & warranty), Nov 2026.
+// Claims are the client's own; see docs/CONTENT-CLAIMS.md for what needs supporting documents.
+interface Props {tone?:'light'|'dark';}
+const {tone='dark'}=Astro.props;
+const highlights=[
+ {icon:'shield',title:'Certified to global architectural standards',text:'Qualified to the international test standards and certifications followed by the world’s leading architectural hardware brands — for uncompromising performance and reliability.'},
+ {icon:'diamond',title:'German engineering, ultra-luxury brass craftsmanship',text:'Built with German engineering precision for ultra-luxury spaces, including statement brass hardware that stands shoulder-to-shoulder with the finest global offerings.'},
+ {icon:'globe',title:'Middle East origin, global luxury pedigree',text:'Rooted in the Middle East with a focus on high-end architectural projects, VALLIS brings refined aesthetics, durability and precision to every detail.'},
+ {icon:'spark',title:'Signature finishes, 1 to 10-year warranty',text:'Enduring architectural finishes backed by a 1 to 10-year warranty, depending on the hardware category, for long-term peace of mind and lasting value.'},
+];
+---
+<section class:list={['section quality',tone==='dark'?'on-dark':'bg-stone']} aria-labelledby="quality-title">
+ <div class="container">
+  <div class="section-head">
+   <div data-reveal><span class="eyebrow">Engineering &amp; quality</span><h2 id="quality-title">Engineered to a <em>global benchmark.</em></h2></div>
+   <div class="section-head-actions" data-reveal style="--i:1">
+    <p class="lead">Our premium ranges are crafted from solid brass, SS 304 and marine-grade SS 316 stainless steel — built for structural integrity, corrosion resistance and multi-decade performance in demanding architectural environments.</p>
+   </div>
+  </div>
+  <ul class="quality-grid">
+   {highlights.map((h,i)=><li class="quality-item" data-reveal style={`--i:${i}`}><Icon name={h.icon} size={30}/><h3>{h.title}</h3><p>{h.text}</p></li>)}
+  </ul>
+  <p class="quality-note" data-reveal>Engineered to global specification benchmarks, VALLIS hardware is designed to resist premature wear, sagging and finish degradation — delivering lifecycle value and whisper-quiet operation worthy of flagship residences and five-star hospitality. Material, finish and warranty terms are confirmed for each model with your quotation.</p>
+ </div>
+</section>

@@ -336,6 +336,8 @@
 .field {
   display: grid;
   gap: 8px;
+  /* Keep label + input at the top when a neighbouring field (e.g. phone + hint) is taller. */
+  align-content: start;
 }
 .field label {
   font-size: 12px;

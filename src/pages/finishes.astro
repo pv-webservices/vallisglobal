@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import Icon from '../components/Icon.astro';
+import {generated} from '../data/catalogue';
+// Finish names and notes follow the VALLIS Supplementary Positioning Guide (Nov 2026).
+// Swatches are CSS renderings for orientation; finish availability is confirmed per model.
+const finishes=[
+ {name:'Brushed Solid Brass',swatch:'linear-gradient(100deg,#8a6a2f 0%,#c9a45d 28%,#e6cd92 46%,#b8904a 64%,#7d5d27 100%)',note:'Warm, hand-brushed grain on solid brass that deepens gracefully over time.',care:'Handcrafted · lacquered or living finish'},
+ {name:'Satin Bronze',swatch:'linear-gradient(100deg,#4a3324 0%,#7a5a40 35%,#9c7a5b 52%,#6b4b33 72%,#3e2a1d 100%)',note:'A soft, low-sheen bronze that brings quiet warmth to timber and stone palettes.',care:'Multi-stage surface finishing'},
+ {name:'Matte Obsidian (PVD)',swatch:'linear-gradient(100deg,#0f1013 0%,#24262b 40%,#34363c 55%,#1b1c20 75%,#0b0c0e 100%)',note:'A deep architectural black for contemporary, minimalist interiors.',care:'PVD-coated for colour stability'},
+ {name:'PVD Gold',swatch:'linear-gradient(100deg,#9b7a35 0%,#d9b866 30%,#f3dc9b 48%,#caa553 66%,#8d6c2b 100%)',note:'The richness of gold with the hardness of a physical-vapour-deposition coating.',care:'PVD · tarnish-resistant'},
+ {name:'Satin Stainless Steel',swatch:'linear-gradient(100deg,#7d838a 0%,#b9bec4 30%,#dde1e5 48%,#a9aeb4 66%,#70767d 100%)',note:'Clean, fingerprint-discreet satin steel in SS 304 and SS 316 for high-traffic and coastal settings.',care:'Corrosion-resistant · low maintenance'},
+];
+const process=[
+ ['Base metal first','Finishes start on solid brass, SS 304 or marine-grade SS 316 base metals for structural integrity and corrosion resistance.'],
+ ['Multi-stage surface finishing','Each piece is brushed, polished or satin-finished by hand before coating, for a refined tactile surface.'],
+ ['PVD & protective coatings','Physical vapour deposition (PVD) and anti-tarnish coatings give lasting colour stability.'],
+ ['Bespoke detailing','Discuss tailored finishes and detailing for signature projects, matched across handles, hinges, glass fittings and cabinetry.'],
+];
+---
+<Layout title="Finishes & Bespoke Detailing" description="Brushed solid brass, satin bronze, matte obsidian, PVD gold and satin stainless steel — elegant architectural finishes by VALLIS, built for lasting colour stability." preload={generated('finishes')} breadcrumbs={[{label:'Finishes'}]}>
+ <PageHero label="Finishes & bespoke detailing" title="Elegant finishes, <em>made to last.</em>" description="Curated architectural finishes — brushed solid brass, satin bronze, matte obsidian and PVD-coated surfaces — each with multi-stage surface finishing for tactile elegance and lasting colour stability." image={generated('finishes')} alt="Brushed stainless steel, satin brass, matte black and champagne gold finish samples on navy stone" crumbs={[{label:'Finishes'}]} compact>
+  <a class="btn" href="/contact/?product=Finish%20samples#enquiry">Request finish samples <Icon name="arrow" size={16}/></a>
+ </PageHero>
+
+ <section class="section" aria-labelledby="swatches-title">
+  <div class="container">
+   <div class="section-head"><div data-reveal><span class="eyebrow">The finish palette</span><h2 id="swatches-title">Five signature <em>finishes.</em></h2></div><p class="lead" data-reveal style="--i:1">Brushed brass door hardware, PVD-coated luxury hardware and tarnish-resistant designer finishes. Availability varies by model — each product page lists the finishes documented for it.</p></div>
+   <ul class="swatch-grid">
+    {finishes.map((f,i)=><li class="swatch-card" data-reveal style={`--i:${i}`}>
+     <span class="swatch" style={`background:${f.swatch}`} role="img" aria-label={`${f.name} finish swatch`}></span>
+     <h3>{f.name}</h3>
+     <p>{f.note}</p>
+     <small>{f.care}</small>
+    </li>)}
+   </ul>
+   <p class="source-note">Swatches are digital renderings; colour varies by screen. Ask for physical samples before specifying.</p>
+  </div>
+ </section>
+
+ <section class="section on-dark" aria-labelledby="finish-process-title">
+  <div class="container split">
+   <div class="prose">
+    <span class="eyebrow" data-reveal>Finish craftsmanship</span>
+    <h2 id="finish-process-title" data-reveal style="--i:1">Aesthetic <em>longevity.</em></h2>
+    <ol class="spec-steps">{process.map(([title,text],i)=><li data-reveal style={`--i:${i}`}><b>0{i+1}</b><div><h3>{title}</h3><p>{text}</p></div></li>)}</ol>
+    <div class="btn-row" data-reveal><a class="btn" href="/products/">Explore Collections <Icon name="arrow" size={16}/></a><a class="link-arrow" href="/hospitality-projects/">Hospitality &amp; projects <Icon name="arrow" size={14}/></a></div>
+   </div>
+   <figure class="framed split-media tall" data-reveal="clip"><ResponsiveImage src={generated('craft-detail')} sizes="(max-width: 1024px) 90vw, 44vw" alt="Brushed brass VALLIS lever handle with the VALLIS logo on a dark oak door" width="1024" height="1536" loading="lazy"/><figcaption><small>Handcrafted brass</small>A finish that ages gracefully.</figcaption></figure>
+  </div>
+ </section>
+</Layout>

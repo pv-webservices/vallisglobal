@@ -2,9 +2,10 @@
 import Layout from '../../../layouts/Layout.astro';
 import ProductCard from '../../../components/ProductCard.astro';
 import Icon from '../../../components/Icon.astro';
-import {products,categories,enquiryUrl,productUrl,business,isPhoto} from '../../../data/catalogue';
+import {products,categories,enquiryUrl,productUrl,business,isPhoto,materialOf} from '../../../data/catalogue';
 export function getStaticPaths(){return products.map(product=>({params:{category:product.category,product:product.slug},props:{product}}));}
 const {product:p}=Astro.props;const c=categories.find(c=>c.slug===p.category)!;
+const material=materialOf(p.specs);
 const related=products.filter(o=>o.category===p.category&&o.slug!==p.slug).slice(0,4);
 const clip=(s:string,max:number)=>s.length>max?s.slice(0,s.lastIndexOf(' ',max-1))+'…':s;
 const productTitle=clip(`${p.model} ${p.name}`,56);
@@ -17,13 +18,14 @@ const schema={'@type':'Product',name:`${p.brand} ${p.model} ${p.name}`,model:p.m
    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/products/">Products</a><span aria-hidden="true">/</span><a href={`/products/${c.slug}/`}>{c.name}</a><span aria-hidden="true">/</span><span aria-current="page">{p.model}</span></nav>
    <div class="product-layout">
     <div class="detail-gallery">
-     <div class:list={['detail-stage',{'is-photo':isPhoto(p.image)}]}><img id="main-product-image" src={p.image} alt={`${p.brand} ${p.model} ${p.name}`} width="650" height="600" fetchpriority="high"/><button class="zoom-trigger" aria-label="Enlarge product image"><Icon name="expand" size={16}/>Enlarge</button></div>
+     <div class:list={['detail-stage',{'is-photo':isPhoto(p.image)}]}><img id="main-product-image" src={p.image} alt={`${p.brand} ${p.model} ${p.name}${material?` in ${material.toLowerCase().replace(/^ss /,'SS ')}`:''}`} width="650" height="600" fetchpriority="high"/><button class="zoom-trigger" aria-label="Enlarge product image"><Icon name="expand" size={16}/>Enlarge</button></div>
      {p.images.length>1&&<div class="thumbnails" role="group" aria-label="Product images">{p.images.map((im,i)=><button data-image={im} aria-label={`View product image ${i+1}`} aria-pressed={i===0?'true':'false'}><img class={isPhoto(im)?'is-photo':undefined} src={im} alt="" width="80" height="80"/></button>)}</div>}
     </div>
     <div class="product-copy">
      <span class="eyebrow">{p.brand} · {c.name}</span>
      <h1>{p.name}</h1>
      <span class="product-model">MODEL · {p.model}</span>
+     {material&&<p class="material-badge"><small>Material &amp; metallurgy</small>{material}</p>}
      <p>{p.description}</p>
      {p.features.length>0&&<ul class="feature-list">{p.features.map(f=><li><Icon name="check" size={18}/>{f}</li>)}</ul>}
      <div class="tags">{p.applications.map(a=><span>{a}</span>)}</div>
@@ -46,7 +48,7 @@ const schema={'@type':'Product',name:`${p.brand} ${p.model} ${p.name}`,model:p.m
     <span class="eyebrow">For your project</span>
     <h3>Select the right detail.</h3>
     <p style="margin-top:16px">{c.considerations}</p>
-    <p>Share your quantities, preferred finish and project requirements for a considered product recommendation.</p>
+    <p>Share your quantities, preferred finish and project requirements for a considered product recommendation. Explore our <a href="/finishes/">finishes &amp; bespoke detailing</a>.</p>
     <a class="btn" href={enquiryUrl(p)}>Request a quotation <Icon name="arrow" size={16}/></a>
    </aside>
   </div>

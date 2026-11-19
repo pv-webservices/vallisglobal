@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero.astro';
 import Icon from '../components/Icon.astro';
 import CollectionBento from '../components/CollectionBento.astro';
 import CatalogueDownloads from '../components/CatalogueDownloads.astro';
+import QualityHighlights from '../components/QualityHighlights.astro';
 import {asset,generated} from '../data/catalogue';
 const pillars=[
  ['Choose the function.','Consider access methods, door movement, glass connections or service-access needs first. Start with the requirements of the space.'],
@@ -23,7 +24,7 @@ const pillars=[
     <p class="lead" data-reveal style="--i:2">Hardware is part of how a space feels. The way a door opens, the line of a glass railing, the finish of a cabinet handle.</p>
     <p data-reveal style="--i:2">Built for discerning architects, interior designers and luxury developments, VALLIS crafts precision-engineered architectural hardware that elevates everyday touchpoints. From tailored finishes and concealed mechanics to silent motion engineering and intelligent access integration, every piece is designed to meet international quality benchmarks while bringing timeless elegance to flagship spaces.</p>
     <p data-reveal style="--i:2">VALLIS is a brand of Buildmart India. Our collection covers hotel and digital locks, door hardware, door closers, spider fittings, glass fittings, glass railings, furniture hardware, FHC doors, uPVC windows &amp; doors and shower cubicles.</p>
-    <p data-reveal style="--i:3">Based in Gurugram, we welcome product and project enquiries through our published contact details. Explore the catalogue, share your requirements and discuss the details that suit your space.</p>
+    <p data-reveal style="--i:3">Rooted in the Middle East and serving projects from our offices in Gurugram and Dubai, VALLIS pairs German engineering precision with ultra-luxury brass craftsmanship. We welcome product and project enquiries through our published contact details. Explore the catalogue, share your requirements and discuss the details that suit your space.</p>
     <a class="link-arrow" href="/contact/" data-reveal>Start a conversation <Icon name="arrow" size={14}/></a>
    </div>
    <figure class="framed split-media tall" data-reveal="clip"><ResponsiveImage src={generated('craft-detail')} sizes="(max-width: 1024px) 90vw, 44vw" alt="Brushed brass VALLIS lever handle, engraved with the VALLIS logo, on a dark oak door" width="1024" height="1536" loading="lazy"/><figcaption><small>Form &amp; function</small>Hardware you touch every day.</figcaption></figure>
@@ -38,11 +39,13 @@ const pillars=[
     <p class="lead" data-reveal style="--i:2">Each architectural detail has a job to do. We help you explore the documented product range with attention to application, compatibility and finish.</p>
     <p data-reveal style="--i:2">A hotel lock and a residential entrance lock can have different access requirements. A glass fitting needs to match its glass thickness and fixing conditions. A closer needs to suit the door it controls.</p>
     <p data-reveal style="--i:3">Our product pages keep model information distinct, helping you make a considered shortlist before discussing your project.</p>
-    <a class="btn" href="/products/" data-reveal>Explore the collection <Icon name="arrow" size={16}/></a>
+    <div class="btn-row" data-reveal><a class="btn" href="/products/">Explore the collection <Icon name="arrow" size={16}/></a><a class="link-arrow" href="/finishes/">Finishes &amp; bespoke detailing <Icon name="arrow" size={14}/></a></div>
    </div>
    <div class="split-media wide" data-reveal="clip"><ResponsiveImage src={generated('team-consultation')} sizes="(max-width: 1024px) 90vw, 46vw" alt="Architects and a VALLIS specialist reviewing door hardware samples and drawings" width="1536" height="1024" loading="lazy"/></div>
   </div>
  </section>
+
+ <QualityHighlights tone="light"/>
 
  <section class="section bg-ivory">
   <div class="container">
